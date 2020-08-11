@@ -1,16 +1,14 @@
 <!DOCTYPE html>
+<html>
 <head>
-
     <title>
         Editions!
     </title>
 
 </head>
 
-<script src="scripts/scripts.js"></script>
-
 <body>
-    
+
     <div class="container">
 
         <div id="edition">
@@ -20,4 +18,30 @@
 
     </div>
 
+    <!-- The Core Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+    <!-- Firebase Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+    <!-- Firebase Initialization -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAAOwUXgy5tZe0SbQqdLaaj86BugGGQWJA",
+        authDomain: "stemlights-website.firebaseapp.com",
+        databaseURL: "https://stemlights-website.firebaseio.com",
+        projectId: "stemlights-website",
+        storageBucket: "stemlights-website.appspot.com",
+        messagingSenderId: "954058583838",
+        appId: "1:954058583838:web:9298532255ee349260630f",
+        measurementId: "G-J4WKYV8FWL"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics()
+    </script>
+    <script src="scripts/scripts.js"></script>
 </body>
+</html>
