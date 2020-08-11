@@ -50,27 +50,6 @@
 
     gtag('config', 'UA-172907340-1');
   </script>
-
-  <!-- jquery -->
-  <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>
-    <!-- load header into div with id="header" -->
-    <script> 
-        $(function(){
-            $("#header").load("/header.html"); 
-        });
-    </script> 
-    <!-- search bar expands when clicked -->
-    <script>
-      $(document).ready(function() {
-          $(".search-icon").click(function() {
-              $(".search-bar").toggleClass("active")
-          })
-      })
-  </script>
 </head>
 
 <body>
@@ -229,6 +208,22 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+
+
+    <!-- load header into div with id="header" -->
+    <script> 
+        $(function(){
+            $("#header").load("/header.html"); 
+        });
+    </script> 
+    <!-- search bar expands when clicked -->
+    <script>
+        $(document).ready(function() {
+            $(".search-icon").click(function() {
+                $(".search-bar").toggleClass("active")
+            })
+        })
+    </script>
     
   </body>
 
