@@ -21,15 +21,16 @@ body{
 
 .card-header{
   width: 100%;
-  height: 80%;
   background-color: #a6b1e1;
 }
 
 .card-title1{
   text-align: left;
   font-family: 'Josefin Sans'; 
-  font-weight: bold; 
-  font-size: 20px; 
+  font-weight: 800;
+  font-size: 40px;
+  padding: 0em 0em 0.3em 0em;
+  margin: 0em 1em 0em 0.9em;
   color: #233142; 
   width: 40%;
 }
@@ -37,8 +38,10 @@ body{
 .card-text1{
   text-align: left;
   font-family: 'Josefin Sans'; 
-  font-weight: 5px; 
-  font-size: 20px; 
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0em 0em 0.5em 0em;
+  margin: 0em 1em 0em 2em;
   color: #233142; 
   width: 40%;
 }
@@ -53,6 +56,7 @@ body{
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 12px;
+ margin: 0em 1em 0em 2em;
 }
 
 .btn1:hover {
@@ -60,25 +64,19 @@ body{
   color: white; 
 }
 
-.rectangle{
-  position: absolute;
-  width: 40%;
-  height: 280px;
-  left: 50%;
-  top: 20%;
-  background: #233142; 
-}
-
-.mostpoptxt{
+.header-title{
   text-align: center;
   font-family: 'Josefin Sans'; 
-  font-weight: 5px; 
+  font-weight: 800;
+  font-size: 30px;
   color: #233142; 
   width: 100%;
 }
 
 .card-deck{
   top: 95%;  
+  margin-left: auto;
+  margin-right: auto;
 }
 .card{
   width: 26.66%; 
@@ -90,13 +88,14 @@ body{
   border: none;
   color: white;
   padding: 10px;
-  text-align: center;
   text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 12px;
-  display: flex; 
-  justify-content: center; 
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* FOOTER */
