@@ -56,24 +56,17 @@
   <!-- load header into div with id="header" -->
   <script>
       $(function(){
-          $("#header").load("/header.html");
+          $("#header").load("/insertables/header.html");
+          $("#footer").load("/insertables/footer.html");
       });
-  </script>
-  <!-- search bar expands when clicked -->
-  <script>
-      $(document).ready(function() {
-          $(".search-icon").click(function() {
-              $(".search-bar").toggleClass("active")
-          })
-      })
   </script>
 </head>
 
 <body>
   <!-- HEADER -->
-  <div id="header">
+  <div id="header"></div>
 
-  </div>
+
   <div class="card-header">
     <div class="card-body1">
       <div class="container my-5">
