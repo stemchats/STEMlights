@@ -57,16 +57,9 @@
   <!-- load header into div with id="header" -->
   <script>
       $(function(){
-          $("#header").load("/header.html");
+          $("#header").load("/insertables/header.html");
+          $("#footer").load("/insertables/footer.html");
       });
-  </script>
-  <!-- search bar expands when clicked -->
-  <script>
-      $(document).ready(function() {
-          $(".search-icon").click(function() {
-              $(".search-bar").toggleClass("active")
-          })
-      })
   </script>
 </head>
 
@@ -157,44 +150,7 @@
 
 
     <!-- footer -->
-    <footer>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <a href="https://stemchats.org/">
-            <p class="text-light">
-              Main Website
-            </p>
-          </a>
-          <a href="https://www.instagram.com/stemchats/?hl=en">
-            <p class="text-light">Instagram</p>
-          </a>
-          <a href="https://www.facebook.com/stemchats/">
-            <p class="text-light">Facebook</p>
-          </a>
-          <a href="https://www.linkedin.com/company/stemchats/">
-            <p class="text-light">LinkedIn</p>
-          </a>
-          <p class="text-light">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z" />
-            </svg>
-            E-mail
-          </p>
-        </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-          <p class="logo">
-            <a class="" href="#"><img src="logo.png" width="100" height="100" alt="logo"></a>
-          </p>
-        </div>
-        <div class="row text-center">
-          <p class="text-light copy">Copyright © 2020 STEMlights</p>
-        </div>
-      </div>
-    </footer>
+    <div id="footer"></div>
 
     <!-- The Core Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>

@@ -1,6 +1,12 @@
+/* VARIABLES */
+
 $dark-blue: #233142;
 $lavendar: #a6b1e1;
 $yellow: #f6d970;
+
+
+
+/* BASE STYLES */
 
 * {
     margin: 0;
@@ -16,25 +22,42 @@ $yellow: #f6d970;
             color: black;
         }
     }
-    
-    
 }
 
+html {
+    overflow-y: scroll;
+}
+
+
+
+/* REUSABLE */
+
 h2 {
-    font-family: 'Oswald', sans-serif;
     font-size: 40px;
     color: #181174;
     text-transform: uppercase;
     margin-bottom: 50px;
 }
-  
-h5 {
-    font-family: 'Oswald', sans-serif;
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
-  
-p {
-    font-family: 'Raleway', sans-serif;
+
+.img-row-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 300px;
+        border-radius: 15px;
+        margin: 50px;
+    }
 }
+
 
 
 /* HEADER */ 
@@ -214,6 +237,14 @@ header {
         }
     }
 }
+
+.main {
+    margin: 150px 20%;
+    
+    p {
+        font-family: 'Josefin Sans', sans-serif !important;
+    }
+}
   
 
 
@@ -304,7 +335,14 @@ body {
 }
 
 
+
+
+// ABOUT US 
+
+
   
+
+
   /* FOOTER */
 footer {
     background-color: #444;

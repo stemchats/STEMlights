@@ -1,3 +1,5 @@
+/* VARIABLES */
+/* BASE STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -15,20 +17,41 @@
   color: black;
 }
 
+html {
+  overflow-y: scroll;
+}
+
+/* REUSABLE */
 h2 {
-  font-family: 'Oswald', sans-serif;
   font-size: 40px;
   color: #181174;
   text-transform: uppercase;
   margin-bottom: 50px;
 }
 
-h5 {
-  font-family: 'Oswald', sans-serif;
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-p {
-  font-family: 'Raleway', sans-serif;
+.img-row-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.img-row-container img {
+  height: 300px;
+  border-radius: 15px;
+  margin: 50px;
 }
 
 /* HEADER */
@@ -230,6 +253,14 @@ header ul li:hover {
 
 .search-bar.active .search-icon {
   color: #f6d970;
+}
+
+.main {
+  margin: 150px 20%;
+}
+
+.main p {
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 
 /* Home page */
