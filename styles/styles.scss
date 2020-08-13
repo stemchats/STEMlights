@@ -264,6 +264,8 @@ body {
     background-color: #a6b1e1;
     padding-top: 10em; 
     padding-bottom: 8em; 
+    border: none;
+    margin-bottom: 20px;
 }
   
 .card-title1{
@@ -342,7 +344,7 @@ body {
 
 
 
-// ABOUT US 
+/* ABOUT US */
 
 .teamcard-container {
     position: relative;
@@ -379,7 +381,7 @@ body {
             opacity: 0.5;
     
             &:hover {
-                color: $yellow;
+                color: $lavendar;
                 opacity: 1;
             }
         }
@@ -394,7 +396,7 @@ body {
         }
 
         .teamcard-position {
-            color: $lavendar;
+            color: grey;
             margin-bottom: 0;
         }
     }

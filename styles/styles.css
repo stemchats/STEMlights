@@ -277,6 +277,8 @@ body {
   background-color: #a6b1e1;
   padding-top: 10em;
   padding-bottom: 8em;
+  border: none;
+  margin-bottom: 20px;
 }
 
 .card-title1 {
@@ -355,6 +357,7 @@ body {
   margin-right: auto;
 }
 
+/* ABOUT US */
 .teamcard-container {
   position: relative;
 }
@@ -397,7 +400,7 @@ body {
 }
 
 .teamcard-container .socials-popup i:hover {
-  color: #f6d970;
+  color: #a6b1e1;
   opacity: 1;
 }
 
@@ -412,7 +415,7 @@ body {
 }
 
 .teamcard-container .teamcard-desc .teamcard-position {
-  color: #a6b1e1;
+  color: grey;
   margin-bottom: 0;
 }
 
