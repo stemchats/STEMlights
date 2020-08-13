@@ -366,12 +366,13 @@ body {
   height: 300px;
   margin: 50px 40px 20px;
   overflow: hidden;
-  border: 0;
+  -webkit-animation: 0.7s ease-out 0s 1 slideUp;
+          animation: 0.7s ease-out 0s 1 slideUp;
 }
 
 .teamcard-container img:hover ~ .socials-popup, .teamcard-container .socials-popup:hover {
-  -webkit-transform: translateY(-85%);
-          transform: translateY(-85%);
+  -webkit-transform: translateY(-71%);
+          transform: translateY(-71%);
 }
 
 .teamcard-container .socials-popup {
@@ -379,10 +380,10 @@ body {
   width: 100%;
   height: 120px;
   background-color: white;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 .teamcard-container .socials-popup h1 {
@@ -392,20 +393,27 @@ body {
 .teamcard-container .socials-popup i {
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  opacity: 0.5;
 }
 
 .teamcard-container .socials-popup i:hover {
   color: #f6d970;
+  opacity: 1;
+}
+
+.teamcard-container .teamcard-desc {
+  text-align: center;
+  -webkit-animation: 1.2s ease-out 0s 1 fadeIn;
+          animation: 1.2s ease-out 0s 1 fadeIn;
+}
+
+.teamcard-container .teamcard-desc .teamcard-name {
+  margin-bottom: 5px;
 }
 
 .teamcard-container .teamcard-desc .teamcard-position {
   color: #a6b1e1;
   margin-bottom: 0;
-}
-
-.teamcard-container .teamcard-desc {
-  text-align: center;
-  padding-bottom: 20px;
 }
 
 /* FOOTER */
@@ -421,5 +429,55 @@ footer {
 
 .logo {
   padding-top: 100px;
+}
+
+/* ANIMATIONS (GENERALLY FOR ONLOAD) */
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
