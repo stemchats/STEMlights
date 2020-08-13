@@ -55,8 +55,6 @@ html {
 
     img {
         height: 300px;
-        border-radius: 50%;
-        margin: 50px 40px 20px;
     }
 }
 
@@ -349,37 +347,49 @@ body {
 .teamcard-container {
     position: relative;
 
-    .teamcard-desc .teamcard-position {
-        color: grey;
-    }
-    .teamcard-desc {
-        text-align: center;
+    .img-hover {
+        position: relative;
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        margin: 50px 40px 20px;
+        overflow: hidden;
+        border: 0;
     }
 
     img:hover ~ .socials-popup, .socials-popup:hover {
-        transform: translateY(-70%);
-    }
-}
-
-.socials-popup {
-    position: absolute;
-    width: 100%;
-    height: 150px;
-    background-color: white;
-    transition: 0.3s;
-    text-align: center;
-    padding-top: 20px;
-
-    h1 {
-        font-size: 50px;
+        transform: translateY(-85%);
     }
 
-    i {
-        transition: 0.2s;
-
-        &:hover {
-            color: $yellow;
+    .socials-popup {
+        position: absolute;
+        width: 100%;
+        height: 120px;
+        background-color: white;
+        transition: 0.3s;
+        text-align: center;
+        padding-top: 20px;
+    
+        h1 {
+            font-size: 50px;
         }
+    
+        i {
+            transition: 0.2s;
+    
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+
+    .teamcard-desc .teamcard-position {
+        color: $lavendar;
+        margin-bottom: 0;
+    }
+    .teamcard-desc {
+        text-align: center;
+        padding-bottom: 20px;
     }
 }
   
