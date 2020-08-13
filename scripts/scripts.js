@@ -32,17 +32,37 @@ const collection = document.getElementsByClassName("editions");
 //
 //
 // //create edition will add everything/basically create the entire page
+
+var sections = ["investemgations", "opportunities", "news"];
+var fields = ["paragraph1", "paragraph2", "paragraph3"];
+
+
+for(var i = 0;i<sections.length;i++){
+  for(var j = 0;j<fields.length;j++){
+    db.collection("editions").doc("edition15").collection(sections[i]).get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          console.log(doc.id, " => ", doc.data().fields[j]);
+      });
+    });
+  }
+}
+
+
+
+
+db.collection("editions").get().then(function(querySnapshot) {
+  querySnapshot.forEach(function(doc) {
+    console.log(doc.id);
+      // doc.data() is never undefined for query doc snapshots
+      //console.log(doc.id);
+      // console.log(createEdition(doc.id));
+
+  });
+});
 function createEdition(edition){
 
-      db.collection("editions").get().then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-            console.log(doc);
-              // doc.data() is never undefined for query doc snapshots
-              //console.log(doc.id);
-              // console.log(createEdition(doc.id));
-
-          });
-      });
+      
 
      //  var main = document.getElementById('editionId');
      //
