@@ -10,6 +10,7 @@
 
 * a {
   color: black;
+  cursor: pointer;
 }
 
 * a:hover {
@@ -21,14 +22,15 @@ html {
   overflow-y: scroll;
 }
 
-/* REUSABLE */
-h2 {
-  font-size: 40px;
-  color: #181174;
-  text-transform: uppercase;
-  margin-bottom: 50px;
+.main {
+  margin: 150px 20% 110px;
 }
 
+.main p {
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+/* REUSABLE */
 .center {
   display: block;
   margin-left: auto;
@@ -50,8 +52,20 @@ h2 {
 
 .img-row-container img {
   height: 300px;
-  border-radius: 15px;
-  margin: 50px;
+  border-radius: 50%;
+  margin: 50px 40px 20px;
+}
+
+span.title {
+  font-weight: bold;
+}
+
+span.title::before, span.title::after {
+  content: ' - ';
+}
+
+.content-notitle {
+  margin-top: 20px;
 }
 
 /* HEADER */
@@ -235,7 +249,7 @@ header ul li:hover {
   outline: none;
   background: transparent;
   pointer-events: none;
-  /* MAKE SURE TO TURN POINTER EVENTS BACK ON */
+  /* MAKE SURE TO TURN POINTER EVENTS BACK ON WHEN SUBMIT IS IMPLEMENTED */
 }
 
 .search-bar .search-input::-webkit-search-cancel-button {
@@ -255,14 +269,6 @@ header ul li:hover {
   color: #f6d970;
 }
 
-.main {
-  margin: 150px 20%;
-}
-
-.main p {
-  font-family: 'Josefin Sans', sans-serif !important;
-}
-
 /* Home page */
 body {
   overflow-x: hidden;
@@ -271,6 +277,8 @@ body {
 .card-header {
   width: 100%;
   background-color: #a6b1e1;
+  padding-top: 10em;
+  padding-bottom: 8em;
 }
 
 .card-title1 {
@@ -347,6 +355,47 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.teamcard-container {
+  position: relative;
+}
+
+.teamcard-container .teamcard-desc .teamcard-position {
+  color: grey;
+}
+
+.teamcard-container .teamcard-desc {
+  text-align: center;
+}
+
+.teamcard-container img:hover ~ .socials-popup, .teamcard-container .socials-popup:hover {
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+}
+
+.socials-popup {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.socials-popup h1 {
+  font-size: 50px;
+}
+
+.socials-popup i {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.socials-popup i:hover {
+  color: #f6d970;
 }
 
 /* FOOTER */

@@ -16,6 +16,7 @@ $yellow: #f6d970;
 
     a {
         color: black;
+        cursor: pointer;
 
         &:hover {
             text-decoration: none;
@@ -28,16 +29,17 @@ html {
     overflow-y: scroll;
 }
 
+.main {
+    margin: 150px 20% 110px;
+    
+    p {
+        font-family: 'Josefin Sans', sans-serif !important;
+    }
+}
+
 
 
 /* REUSABLE */
-
-h2 {
-    font-size: 40px;
-    color: #181174;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
 
 .center {
     display: block;
@@ -53,9 +55,21 @@ h2 {
 
     img {
         height: 300px;
-        border-radius: 15px;
-        margin: 50px;
+        border-radius: 50%;
+        margin: 50px 40px 20px;
     }
+}
+
+span.title {
+    font-weight: bold;
+
+    &::before, &::after {
+        content: ' - ';
+    }
+}
+
+.content-notitle {
+    margin-top: 20px;
 }
 
 
@@ -217,7 +231,7 @@ header {
         border: none;
         outline: none;
         background: transparent;
-        pointer-events: none; /* MAKE SURE TO TURN POINTER EVENTS BACK ON */
+        pointer-events: none; /* MAKE SURE TO TURN POINTER EVENTS BACK ON WHEN SUBMIT IS IMPLEMENTED */
     }
 
     .search-input::-webkit-search-cancel-button{
@@ -235,14 +249,6 @@ header {
         .search-icon {
             color: $yellow;
         }
-    }
-}
-
-.main {
-    margin: 150px 20%;
-    
-    p {
-        font-family: 'Josefin Sans', sans-serif !important;
     }
 }
   
@@ -338,10 +344,44 @@ body {
 
 
 
-
 // ABOUT US 
 
+.teamcard-container {
+    position: relative;
 
+    .teamcard-desc .teamcard-position {
+        color: grey;
+    }
+    .teamcard-desc {
+        text-align: center;
+    }
+
+    img:hover ~ .socials-popup, .socials-popup:hover {
+        transform: translateY(-70%);
+    }
+}
+
+.socials-popup {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    transition: 0.3s;
+    text-align: center;
+    padding-top: 20px;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    i {
+        transition: 0.2s;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+}
   
 
 
