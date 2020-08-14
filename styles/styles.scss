@@ -38,7 +38,7 @@ html {
 
 .main {
     margin: 150px 20% 110px;
-    
+
     p {
         font-family: 'Josefin Sans', sans-serif !important;
     }
@@ -79,7 +79,7 @@ span.title {
 
 
 
-/* HEADER */ 
+/* HEADER */
 
 header {
     display: flex;
@@ -140,7 +140,7 @@ header {
         &:hover {
             background: $dark-blue;
             text-decoration: none;
-    
+
             .logotxt-lights {
                 color: white;
             }
@@ -150,7 +150,7 @@ header {
             }
         }
     }
-        
+
     a {
         text-decoration: none;
         color: black;
@@ -172,7 +172,7 @@ header {
         display: flex;
         align-items: center;
         margin-bottom: 0;
-    
+
         li {
             margin: 0 30px;
             font-size: 18px;
@@ -240,7 +240,7 @@ header {
     }
 
     .search-input::-webkit-search-cancel-button{
-        display: none;   
+        display: none;
     }
 
     &.active {
@@ -256,7 +256,7 @@ header {
         }
     }
 }
-  
+
 
 
 /* Home page */
@@ -269,34 +269,34 @@ body {
 .card-header{
     width: 100%;
     background-color: #a6b1e1;
-    padding-top: 10em; 
-    padding-bottom: 8em; 
+    padding-top: 10em;
+    padding-bottom: 8em;
     border: none;
     margin-bottom: 20px;
 }
-  
+
 .card-title1{
     text-align: left;
-    font-family: 'Josefin Sans'; 
+    font-family: 'Josefin Sans';
     font-weight: 800;
     font-size: 40px;
     padding: 0em 0em 0.3em 0em;
     margin: 0em 1em 0em 0.9em;
-    color: #233142; 
+    color: #233142;
     width: 40%;
 }
-  
+
 .card-text1{
     text-align: left;
-    font-family: 'Josefin Sans'; 
+    font-family: 'Josefin Sans';
     font-weight: 400;
     font-size: 18px;
     padding: 0em 0em 0.5em 0em;
     margin: 0em 1em 0em 2em;
-    color: #233142; 
+    color: #233142;
     width: 100%;
 }
-  
+
 .btn1{
     background-color: #233142;
     border: none;
@@ -309,31 +309,31 @@ body {
     border-radius: 12px;
    margin: 0em 1em 0em 2em;
 }
-  
+
 .btn1:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-    color: white; 
+    color: white;
 }
-  
+
 .header-title{
     text-align: center;
-    font-family: 'Josefin Sans'; 
+    font-family: 'Josefin Sans';
     font-weight: 800;
     font-size: 30px;
-    color: #233142; 
+    color: #233142;
     width: 100%;
 }
-  
+
 .card-deck{
-    top: 95%;  
+    top: 95%;
     margin-left: auto;
     margin-right: auto;
 }
 .card{
-    width: 26.66%; 
-    background-color: #f6d970; 
+    width: 26.66%;
+    background-color: #f6d970;
 }
-  
+
 .btn-light{
     background-color: #233142;
     border: none;
@@ -349,6 +349,15 @@ body {
     margin-right: auto;
 }
 
+/* EDITIONS */
+
+#edition {
+  text-align: center;
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+}
 
 
 /* ABOUT US */
@@ -378,15 +387,15 @@ body {
         transition: 0.35s;
         text-align: center;
         padding-top: 15px;
-    
+
         h1 {
             font-size: 50px;
         }
-    
+
         i {
             transition: 0.2s;
             opacity: 0.5;
-    
+
             &:hover {
                 color: $lavendar;
                 opacity: 1;
@@ -396,7 +405,7 @@ body {
 
     .teamcard-desc {
         text-align: center;
-        animation: 1.2s ease-out 0s 1 fadeIn; 
+        animation: 1.2s ease-out 0s 1 fadeIn;
 
         .teamcard-name {
             margin-bottom: 5px;
@@ -408,18 +417,18 @@ body {
         }
     }
 }
-  
+
 
 
   /* FOOTER */
 footer {
     background-color: #444;
 }
-  
+
 .copy {
     font-size:10px;
 }
-  
+
 .logo {
     padding-top: 85px;
 }
@@ -427,7 +436,7 @@ footer {
 .socialmedia-links {
     padding-top: 40px;
 }
-  
+
 
 
 

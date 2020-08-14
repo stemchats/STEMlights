@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <!-- Bootstrap Meta Tags -->
   <meta charset="utf-8">
@@ -13,7 +12,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
     integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/72d227a617.js" SameSite="None; Secure" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/72d227a617.js" SameSite="none Secure" crossorigin="anonymous"></script>
   <!-- Josefin Sans Font -->
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
@@ -37,9 +36,9 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- Website CSS -->
-  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i' rel='stylesheet'>
-  <title>STEMlights</title>
+  <title>STEMlights: Edition 13</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-1"></script>
@@ -68,83 +67,29 @@
   <div id="header"></div>
 
 
-  <!-- Home Page -->
-    <div class="card-header">
-      <div class="card-body1">
-        <div class="container my-5">
-          <div class="row justify-content-between align-items-center">
-            <div class="col-md-6">
-              <h5 class="card-title1">STEMlights</h5>
-              <p class="card-text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua.</p>
-              <a href="#" class="btn btn1"
-                onclick="window.location.href = 'https://confirmsubscription.com/h/t/88449A101872A7A4'">Subscribe</a>
-            </div>
-
-            <div class="col-md-5">
-              <img src="/images/newsletter.svg" class="rounded float-right img-fluid" alt="Image Here">
-            </div>
+  <div class="card-header">
+    <div class="card-body1">
+      <div class="container my-5">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-md-6">
+            <h5 class="card-title1">Edition#</h5>
+            <p class="card-text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="/images/newsletter.svg" class="rounded float-right img-fluid" alt="Image Here">
           </div>
         </div>
       </div>
     </div>
-    <br>
-    <h4 class="header-title">Most Popular Newsletters</h4>
-    <br>
-    <div class="card-deck">
-      <div class="card">
-        <a id="15" href="/edition/e15.html">
-          <div class="card-body">
-            <h5 class="card-title">Edition 15</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </a>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <a id="14" href="/edition/e14.html">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </a>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <a id="13" href="/edition/e13.html">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </a>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <br>
-    <button type="button" class="btn btn-light">More Newsletters</button>
-    <br>
-    <br>
-    <div class="card text-center" style="width: 100%; background-color: #a6b1e1;">
-      <div class="card-body" style = "padding-top: 2em; padding-bottom: 3em; ">
-        <h5 class="header-title">Listen to our Podcasts!</h5>
-        <p class="card-text" style="font-family: 'Josefin Sans'; font-weight: 5px; ">With supporting text below as a
-          natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
-      </div>
-    </div>
+  </div>
 
+  <div id="edition">
+            <!-- everything from the database goes in here (its where the edition goes) -->
+  </div>
 
-    <!-- footer -->
-    <div id="footer"></div>
+  <!-- footer -->
+  <div id="footer"></div>
 
     <!-- The Core Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
@@ -170,7 +115,6 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics()
     </script>
-
     <!-- Bootstrap Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -179,9 +123,9 @@
       integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
       crossorigin="anonymous"></script>
 
-    <!-- Scripts -->
     <script type="text/javascript" src="/scripts/scripts.js"></script>
-
-  </body>
-
+    <script>
+      createEdition(13);
+    </script>
+</body>
 </html>
