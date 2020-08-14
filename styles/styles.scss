@@ -373,6 +373,15 @@ body {
         margin: 50px 40px 20px;
         overflow: hidden;
         animation: 0.7s ease-out 0s 1 slideUp;
+        transition: 0.35s;
+
+        &:hover {
+            transform: translateY(-10%);
+
+            & ~ .teamcard-desc {
+                transform: scale(1.2) translateY(-10%);
+            }
+        }
     }
 
     img:hover ~ .socials-popup, .socials-popup:hover {
@@ -394,7 +403,7 @@ body {
 
         i {
             transition: 0.2s;
-            opacity: 0.5;
+            opacity: 0.75;
 
             &:hover {
                 color: $lavendar;
@@ -406,6 +415,7 @@ body {
     .teamcard-desc {
         text-align: center;
         animation: 1.2s ease-out 0s 1 fadeIn;
+        transition: 0.35s;
 
         .teamcard-name {
             margin-bottom: 5px;

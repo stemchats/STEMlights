@@ -8,8 +8,9 @@ const elements = {
       editionSection.appendChild(img);
     },
     hyperlink: function() {
-      const link = document.createElement("span");
-      link.innerHTML = this.content;
+      const link = document.createElement("a");
+      link.href = this.content.link;
+      link.textContent = this.content.text;
       editionSection.appendChild(link);
     },
     paragraph: function() {
@@ -18,12 +19,15 @@ const elements = {
       editionSection.appendChild(p);
     },
     header: function() {
-      const head = document.createElement("div");
+      const head = document.createElement("h4");
       head.innerHTML = this.content;
       editionSection.appendChild(head);
     },
     button: function() {
-      // create the button
+      const button = document.createElement("button");
+      button.href = this.content.link;
+      button.textContent = this.content.text;
+      editionSection.appendChild(button);
     }
 };
 
@@ -51,6 +55,8 @@ function createEdition(edition){
                     elements.hyperlink.call(renderElement);
                   } else if(entries2[j][0] == "paragraph") {
                     elements.paragraph.call(renderElement);
+                  } else if(entries2[j][0] == "button") {
+                    elements.button.call(renderElement);
                   }
                 }
               }
