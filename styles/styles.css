@@ -18,6 +18,13 @@
   color: black;
 }
 
+* .btn {
+  background-color: #233142;
+  border-radius: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+}
+
 html {
   overflow-y: scroll;
 }
