@@ -3,8 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -46,15 +45,9 @@ html {
 }
 
 .img-row-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-row-container img {
@@ -75,12 +68,8 @@ span.title::before, span.title::after {
 
 /* HEADER */
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
   position: fixed;
@@ -97,19 +86,16 @@ header .logo {
   position: relative;
   padding: 10px 10px 5px;
   border-radius: 5px;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 header .logo .logotxt-stem {
   color: #f6d970;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 header .logo .logotxt-lights {
   color: #233142;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -127,22 +113,19 @@ header .logo .logo-text::before, header .logo .logo-text::after {
   font-size: 22px;
   opacity: 0;
   color: #f6d970;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 header .logo .logo-text::before {
   left: -25px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 header .logo .logo-text::after {
   right: -25px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 header .logo:hover {
@@ -161,15 +144,13 @@ header .logo:hover .logo-text::before, header .logo:hover .logo-text::after {
 header a {
   text-decoration: none;
   color: black;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
 header nav {
   position: fixed;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 header nav .nav-link {
@@ -178,12 +159,8 @@ header nav .nav-link {
 
 header ul {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 0;
 }
 
@@ -191,7 +168,6 @@ header ul li {
   margin: 0 30px;
   font-size: 18px;
   border-bottom: 2px solid rgba(246, 217, 112, 0);
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   line-height: initial;
 }
@@ -209,7 +185,6 @@ header ul li:hover {
   border: 1px solid #233142;
   border-radius: 20px;
   padding: 5px;
-  -webkit-transition: width 0.5s;
   transition: width 0.5s;
   overflow: hidden;
 }
@@ -223,7 +198,6 @@ header ul li:hover {
   float: right;
   background: white;
   color: #233142;
-  -webkit-transition: color 0.2s;
   transition: color 0.2s;
   padding: 10px;
 }
@@ -240,7 +214,6 @@ header ul li:hover {
   outline: none;
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
 
@@ -324,8 +297,7 @@ body {
 }
 
 .btn1:hover {
-  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   color: white;
 }
 
@@ -364,6 +336,16 @@ body {
   margin-right: auto;
 }
 
+/* EDITIONS */
+#edition {
+  text-align: center;
+}
+
+#edition a {
+  color: blue;
+  text-decoration: underline;
+}
+
 /* ABOUT US */
 .teamcard-container {
   position: relative;
@@ -376,13 +358,11 @@ body {
   height: 300px;
   margin: 50px 40px 20px;
   overflow: hidden;
-  -webkit-animation: 0.7s ease-out 0s 1 slideUp;
-          animation: 0.7s ease-out 0s 1 slideUp;
+  animation: 0.7s ease-out 0s 1 slideUp;
 }
 
 .teamcard-container img:hover ~ .socials-popup, .teamcard-container .socials-popup:hover {
-  -webkit-transform: translateY(-71%);
-          transform: translateY(-71%);
+  transform: translateY(-71%);
 }
 
 .teamcard-container .socials-popup {
@@ -390,7 +370,6 @@ body {
   width: 100%;
   height: 120px;
   background-color: white;
-  -webkit-transition: 0.35s;
   transition: 0.35s;
   text-align: center;
   padding-top: 15px;
@@ -401,7 +380,6 @@ body {
 }
 
 .teamcard-container .socials-popup i {
-  -webkit-transition: 0.2s;
   transition: 0.2s;
   opacity: 0.5;
 }
@@ -413,8 +391,7 @@ body {
 
 .teamcard-container .teamcard-desc {
   text-align: center;
-  -webkit-animation: 1.2s ease-out 0s 1 fadeIn;
-          animation: 1.2s ease-out 0s 1 fadeIn;
+  animation: 1.2s ease-out 0s 1 fadeIn;
 }
 
 .teamcard-container .teamcard-desc .teamcard-name {
@@ -444,39 +421,13 @@ footer {
 }
 
 /* ANIMATIONS (GENERALLY FOR ONLOAD) */
-@-webkit-keyframes slideUp {
-  0% {
-    -webkit-transform: translateY(20%);
-            transform: translateY(20%);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
 @keyframes slideUp {
   0% {
-    -webkit-transform: translateY(20%);
-            transform: translateY(20%);
+    transform: translateY(20%);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -492,4 +443,3 @@ footer {
     opacity: 1;
   }
 }
-/*# sourceMappingURL=styles.css.map */
