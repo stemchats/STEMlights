@@ -381,8 +381,17 @@ body {
   margin: 4px 2px;
   text-align: center;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 30px auto 70px;
+}
+
+.text-center {
+  width: 100%;
+  background-color: #233142;
+}
+
+.card-body {
+  padding-top: 2em;
+  padding-bottom: 3em;
 }
 
 /* EDITIONS */
