@@ -4,7 +4,7 @@ const editionSection = document.getElementById("edition"); //section where the e
 const elements = {
     image: function() {
       const img = document.createElement("img");
-      img.src = this.content;
+      img.src = this.content.link;
       editionSection.appendChild(img);
     },
     hyperlink: function() {
@@ -32,7 +32,7 @@ const elements = {
 };
 
 function createEdition(edition){
-  for(var i = 0;i<sections.length;i++){ //how many sections the edition has
+  for(var i = 0;i<sections.length;i++){ //how many sections the edition has, iterates through sections (below)
       db.collection("editions").doc("edition" + edition).collection(sections[i]).get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
