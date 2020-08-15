@@ -4,7 +4,7 @@ const editionSection = document.getElementById("edition"); //section where the e
 const elements = {
     image: function() {
       const img = document.createElement("img");
-      img.src = this.content;
+      img.src = this.content.link;
       editionSection.appendChild(img);
     },
     hyperlink: function() {
