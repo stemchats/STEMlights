@@ -17,6 +17,7 @@ $yellow: #f6d970;
     a {
         color: black;
         cursor: pointer;
+        transition: 0.2s;
 
         &:hover {
             text-decoration: none;
@@ -24,12 +25,13 @@ $yellow: #f6d970;
         }
     }
 
-    .btn {
+    .btn, button {
         background-color: $dark-blue;
+        padding: 8px;
         border-radius: 10px;
         font-family: 'Josefin Sans', sans-serif;
         border: none;
-        background: linear-gradient(to right, $yellow 50%, white 50%);
+        background: linear-gradient(to right, $yellow 50%, $dark-blue 50%);
         background-size: 200% 100%;
         background-position: left bottom;
         transition: all 0.5s ease;
@@ -37,7 +39,7 @@ $yellow: #f6d970;
 
         &:hover {
             background-position: right bottom;
-            color: black;
+            color: white;
         }
     }
 }
@@ -309,7 +311,6 @@ body {
 
 .btn1{
     background-color: $yellow;
-    padding: 10px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -373,11 +374,34 @@ body {
 /* EDITIONS */
 
 #edition {
-  text-align: center;
-  a {
-    color: blue;
-    text-decoration: underline;
-  }
+    text-align: center;
+    font-size: 1.1em;
+    
+    
+    a {
+        color: $lavendar;
+        text-decoration: underline;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    h4 {
+        margin: 3rem 2rem 1rem;
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    img:not(:first-child) {
+        margin-top: 3rem;
+    }
+    
+    .section-header-img {
+        margin-top: 3rem;
+    }
 }
 
 

@@ -11,6 +11,8 @@
 * a {
   color: black;
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 * a:hover {
@@ -18,13 +20,14 @@
   color: black;
 }
 
-* .btn {
+* .btn, * button {
   background-color: #233142;
+  padding: 8px;
   border-radius: 10px;
   font-family: 'Josefin Sans', sans-serif;
   border: none;
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #f6d970), color-stop(50%, white));
-  background: linear-gradient(to right, #f6d970 50%, white 50%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #f6d970), color-stop(50%, #233142));
+  background: linear-gradient(to right, #f6d970 50%, #233142 50%);
   background-size: 200% 100%;
   background-position: left bottom;
   -webkit-transition: all 0.5s ease;
@@ -32,9 +35,9 @@
   color: black;
 }
 
-* .btn:hover {
+* .btn:hover, * button:hover {
   background-position: right bottom;
-  color: black;
+  color: white;
 }
 
 html {
@@ -324,7 +327,6 @@ body {
 
 .btn1 {
   background-color: #f6d970;
-  padding: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -388,11 +390,32 @@ body {
 /* EDITIONS */
 #edition {
   text-align: center;
+  font-size: 1.1em;
 }
 
 #edition a {
-  color: blue;
+  color: #a6b1e1;
   text-decoration: underline;
+}
+
+#edition a:hover {
+  color: #f6d970;
+}
+
+#edition h4 {
+  margin: 3rem 2rem 1rem;
+}
+
+#edition p {
+  margin: 1rem 0;
+}
+
+#edition img:not(:first-child) {
+  margin-top: 3rem;
+}
+
+#edition .section-header-img {
+  margin-top: 3rem;
 }
 
 /* ABOUT US */
