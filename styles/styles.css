@@ -44,6 +44,10 @@ html {
   overflow-y: scroll;
 }
 
+.main {
+  margin: 150px 25% 110px;
+}
+
 /* REUSABLE */
 .center {
   display: block;
@@ -390,16 +394,18 @@ body {
 
 /* EDITIONS */
 #edition {
-  text-align: center;
-  font-size: 1.1em;
-  margin: 150px 0 110px;
-}
-
-#edition a {
   display: block;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  font-size: 1.1em;
+  margin-top: 150px;
+  margin-bottom: 110px;
+  width: 100%;
+  max-width: 800px;
+}
+
+#edition a {
   color: #a6b1e1;
   text-decoration: underline;
   width: -webkit-max-content;
@@ -412,21 +418,24 @@ body {
 }
 
 #edition h4 {
-  margin: 3rem 25% 1rem;
+  margin: 3rem 30px 1rem;
 }
 
 #edition p {
-  margin: 1rem 25%;
+  padding: 1rem 30px;
   text-align: left;
+  margin-bottom: 0;
   font-family: 'Josefin Sans', sans-serif !important;
 }
 
 #edition .section-header-img, #edition img {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
   margin-top: 3rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+#edition .section-header-img:first-child, #edition img:first-child {
+  margin-top: 0;
 }
 
 /* ABOUT US */

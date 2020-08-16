@@ -55,6 +55,7 @@ html {
 }
 
 .main {
+    margin: 150px 25% 110px;
 }
 
 
@@ -386,12 +387,14 @@ body {
 /* EDITIONS */
 
 #edition {
-    text-align: center;
+    @include center;
     font-size: 1.1em;
-    margin: 150px 0 110px;
+    margin-top: 150px;
+    margin-bottom: 110px;
+    width: 100%;
+    max-width: 800px;
     
     a {
-        @include center;
         color: $lavendar;
         text-decoration: underline;
         width: max-content;
@@ -402,18 +405,24 @@ body {
     }
 
     h4 {
-        margin: 3rem 25% 1rem;
+        margin: 3rem 30px 1rem;
     }
 
     p {
-        margin: 1rem 25%;
+        padding: 1rem 30px;
         text-align: left;
+        margin-bottom: 0;
         font-family: 'Josefin Sans', sans-serif !important;
     }
     
     .section-header-img, img {
-        @include center;
         margin-top: 3rem;
+        max-width: 800px;
+        width: 100%;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 
