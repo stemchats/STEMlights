@@ -45,7 +45,7 @@ html {
 }
 
 .main {
-  margin: 150px 20% 110px;
+  margin: 150px 25% 110px;
 }
 
 .main p {
@@ -394,8 +394,15 @@ body {
 }
 
 #edition a {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
   color: #a6b1e1;
   text-decoration: underline;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 #edition a:hover {
@@ -408,13 +415,14 @@ body {
 
 #edition p {
   margin: 1rem 0;
+  text-align: left;
 }
 
-#edition img:not(:first-child) {
-  margin-top: 3rem;
-}
-
-#edition .section-header-img {
+#edition .section-header-img, #edition img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
   margin-top: 3rem;
 }
 

@@ -4,6 +4,12 @@ $dark-blue: #233142;
 $lavendar: #a6b1e1;
 $yellow: #f6d970;
 
+@mixin center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
 
 
 /* BASE STYLES */
@@ -49,7 +55,7 @@ html {
 }
 
 .main {
-    margin: 150px 20% 110px;
+    margin: 150px 25% 110px;
 
     p {
         font-family: 'Josefin Sans', sans-serif !important;
@@ -377,10 +383,11 @@ body {
     text-align: center;
     font-size: 1.1em;
     
-    
     a {
+        @include center;
         color: $lavendar;
         text-decoration: underline;
+        width: max-content;
 
         &:hover {
             color: $yellow;
@@ -393,13 +400,11 @@ body {
 
     p {
         margin: 1rem 0;
-    }
-
-    img:not(:first-child) {
-        margin-top: 3rem;
+        text-align: left;
     }
     
-    .section-header-img {
+    .section-header-img, img {
+        @include center;
         margin-top: 3rem;
     }
 }
