@@ -44,14 +44,6 @@ html {
   overflow-y: scroll;
 }
 
-.main {
-  margin: 150px 25% 110px;
-}
-
-.main p {
-  font-family: 'Josefin Sans', sans-serif !important;
-}
-
 /* REUSABLE */
 .center {
   display: block;
@@ -400,6 +392,7 @@ body {
 #edition {
   text-align: center;
   font-size: 1.1em;
+  margin: 150px 0 110px;
 }
 
 #edition a {
@@ -419,12 +412,13 @@ body {
 }
 
 #edition h4 {
-  margin: 3rem 2rem 1rem;
+  margin: 3rem 25% 1rem;
 }
 
 #edition p {
-  margin: 1rem 0;
+  margin: 1rem 25%;
   text-align: left;
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 
 #edition .section-header-img, #edition img {
