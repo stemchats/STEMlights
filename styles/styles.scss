@@ -3,6 +3,7 @@
 $dark-blue: #233142;
 $lavendar: #a6b1e1;
 $yellow: #f6d970;
+$light-grey : #f8f8f8;
 
 @mixin center {
     display: block;
@@ -11,7 +12,7 @@ $yellow: #f6d970;
     text-align: center;
 }
 
-@mixin responsive {
+@mixin responsive-edition {
     width: 100%;
     max-width: 800px;
 }
@@ -49,6 +50,7 @@ $yellow: #f6d970;
         background-position: left bottom;
         transition: all 0.5s ease;
         color: black;
+        outline: none;
 
         &:hover {
             background-position: right bottom;
@@ -62,7 +64,11 @@ html {
 }
 
 .main {
-    @include responsive;
+    margin: 150px 25% 100px;
+
+    p {
+        font-family: 'Josefin Sans', sans-serif !important;
+    }
 }
 
 
@@ -72,6 +78,7 @@ html {
 
 #edition {
     @include center;
+    @include responsive-edition;
     font-size: 1.1em;
     margin-top: 150px;
     margin-bottom: 110px;
@@ -94,11 +101,10 @@ html {
         padding: 1rem 30px;
         text-align: left;
         margin-bottom: 0;
-        font-family: 'Josefin Sans', sans-serif !important;
     }
     
-    .section-header-img, img { /* REMOVE img WHEN .section-header-img ADDED IN DATABASE */
-        @include responsive;
+    .section-header-img, .edition-header-img, img { /* REMOVE img WHEN .section-header-img ADDED IN DATABASE */
+        @include responsive-edition;
         margin-top: 3rem;
         margin-bottom: 1.5rem;
 
@@ -118,10 +124,11 @@ html {
 /* REUSABLE */
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    @include center;
+}
+
+.grey-bg {
+    background-color: $light-grey;
 }
 
 .img-row-container {
@@ -243,7 +250,7 @@ header {
         li {
             margin: 0 30px;
             font-size: 18px;
-            border-bottom: 2px solid rgba(246, 217, 112,0);
+            border-bottom: 2px solid rgba($color: $yellow, $alpha: 0.0);
             transition: 0.3s;
             line-height: initial;
 
@@ -383,7 +390,7 @@ body {
     font-weight: 800;
     font-size: 30px;
     width: 100%;
-    color: #233142;
+    color: $dark-blue;
 }
 
 .header-title1{
@@ -411,11 +418,11 @@ body {
 }
 .card{
     width: 26.66%;
-    background-color: #f6d970;
+    background-color: $yellow;
 }
 
 .btn-light{
-    background-color: #233142;
+    background-color: $dark-blue;
     padding: 10px;
     text-decoration: none;
     font-size: 16px;
@@ -434,6 +441,37 @@ body {
 .card-body{
     padding-top: 2em;
     padding-bottom: 3em;
+}
+
+
+
+/* NEWSLETTER MENU */
+
+.newsletter {
+    .card {
+        width: 100%;
+        background-color: white;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        .card-body {
+            p {
+                color: black;
+                height: max-content;
+            }
+        }
+
+        img {
+            top: 0;
+            float: right;
+            max-width: 25%;
+            max-height: 150px;
+            margin: 0 0 2rem 1.25rem;
+        }
+    }
 }
 
 
@@ -513,7 +551,7 @@ body {
 
 footer {
     background-color: $dark-blue;
-    border-top: 20px solid white;
+    border-top: 20px solid white; /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
 
     .copy {
         font-size: 10px;
@@ -556,6 +594,7 @@ footer {
             transition: 0.2s;
     
             &:hover {
+                transform: translateY(-20%);
                 opacity: 1;
             }
         }

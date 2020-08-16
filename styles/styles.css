@@ -33,6 +33,7 @@
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   color: black;
+  outline: none;
 }
 
 * .btn:hover, * button:hover {
@@ -45,8 +46,11 @@ html {
 }
 
 .main {
-  width: 100%;
-  max-width: 800px;
+  margin: 150px 25% 100px;
+}
+
+.main p {
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 
 /* EDITIONS */
@@ -55,6 +59,8 @@ html {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  width: 100%;
+  max-width: 800px;
   font-size: 1.1em;
   margin-top: 150px;
   margin-bottom: 110px;
@@ -80,10 +86,9 @@ html {
   padding: 1rem 30px;
   text-align: left;
   margin-bottom: 0;
-  font-family: 'Josefin Sans', sans-serif !important;
 }
 
-#edition .section-header-img, #edition img {
+#edition .section-header-img, #edition .edition-header-img, #edition img {
   /* REMOVE img WHEN .section-header-img ADDED IN DATABASE */
   width: 100%;
   max-width: 800px;
@@ -91,7 +96,7 @@ html {
   margin-bottom: 1.5rem;
 }
 
-#edition .section-header-img:first-child, #edition img:first-child {
+#edition .section-header-img:first-child, #edition .edition-header-img:first-child, #edition img:first-child {
   margin-top: 0;
 }
 
@@ -102,9 +107,13 @@ html {
 /* REUSABLE */
 .center {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
   text-align: center;
+}
+
+.grey-bg {
+  background-color: #f8f8f8;
 }
 
 .img-row-container {
@@ -442,6 +451,32 @@ body {
   padding-bottom: 3em;
 }
 
+/* NEWSLETTER MENU */
+.newsletter .card {
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.newsletter .card:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.newsletter .card .card-body p {
+  color: black;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.newsletter .card img {
+  top: 0;
+  float: right;
+  max-width: 25%;
+  max-height: 150px;
+  margin: 0 0 2rem 1.25rem;
+}
+
 /* ABOUT US */
 .teamcard-container {
   position: relative;
@@ -522,6 +557,7 @@ body {
 footer {
   background-color: #233142;
   border-top: 20px solid white;
+  /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
 }
 
 footer .copy {
@@ -573,6 +609,8 @@ footer .social-icons i {
 }
 
 footer .social-icons i:hover {
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
   opacity: 1;
 }
 
