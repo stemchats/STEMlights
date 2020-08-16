@@ -11,6 +11,13 @@ $yellow: #f6d970;
     text-align: center;
 }
 
+@mixin responsive {
+    width: 100%;
+    max-width: 800px;
+}
+
+
+
 
 /* BASE STYLES */
 
@@ -33,7 +40,7 @@ $yellow: #f6d970;
 
     .btn, button {
         background-color: $dark-blue;
-        padding: 8px;
+        padding: 8px 15px;
         border-radius: 10px;
         font-family: 'Josefin Sans', sans-serif;
         border: none;
@@ -55,8 +62,56 @@ html {
 }
 
 .main {
-    margin: 150px 25% 110px;
+    @include responsive;
 }
+
+
+
+
+/* EDITIONS */
+
+#edition {
+    @include center;
+    font-size: 1.1em;
+    margin-top: 150px;
+    margin-bottom: 110px;
+    
+    a {
+        color: $lavendar;
+        text-decoration: underline;
+        width: max-content;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    h4 {
+        margin: 2rem 30px 1rem;
+    }
+
+    p {
+        padding: 1rem 30px;
+        text-align: left;
+        margin-bottom: 0;
+        font-family: 'Josefin Sans', sans-serif !important;
+    }
+    
+    .section-header-img, img { /* REMOVE img WHEN .section-header-img ADDED IN DATABASE */
+        @include responsive;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    button {
+        margin-bottom: 30px;
+    }
+}
+
 
 
 
@@ -106,7 +161,7 @@ header {
     height: 75px;
     background: white;
     z-index: 1000;
-    overflow-y: hidden;
+    overflow: hidden;
 
     .logo {
         margin-left: 90px;
@@ -139,16 +194,14 @@ header {
             opacity: 0;
             color: $yellow;
             transition: 0.4s;
+            top: 50%;
+            transform: translateY(-50%);
         }
         .logo-text::before {
             left: -25px;
-            top: 50%;
-            transform: translateY(-50%);
         }
         .logo-text::after {
             right: -25px;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
         &:hover {
@@ -374,7 +427,9 @@ body {
 
 .text-center{
     width: 100%; 
-    background-color: #233142;
+    background-color: $dark-blue;
+    border: none;
+    border-radius: 0;
 }
 .card-body{
     padding-top: 2em;
@@ -382,49 +437,6 @@ body {
 }
 
 
-
-
-/* EDITIONS */
-
-#edition {
-    @include center;
-    font-size: 1.1em;
-    margin-top: 150px;
-    margin-bottom: 110px;
-    width: 100%;
-    max-width: 800px;
-    
-    a {
-        color: $lavendar;
-        text-decoration: underline;
-        width: max-content;
-
-        &:hover {
-            color: $yellow;
-        }
-    }
-
-    h4 {
-        margin: 3rem 30px 1rem;
-    }
-
-    p {
-        padding: 1rem 30px;
-        text-align: left;
-        margin-bottom: 0;
-        font-family: 'Josefin Sans', sans-serif !important;
-    }
-    
-    .section-header-img, img {
-        margin-top: 3rem;
-        max-width: 800px;
-        width: 100%;
-
-        &:first-child {
-            margin-top: 0;
-        }
-    }
-}
 
 
 /* ABOUT US */
@@ -497,21 +509,57 @@ body {
 
 
 
-  /* FOOTER */
+/* FOOTER */
+
 footer {
-    background-color: #444;
-}
+    background-color: $dark-blue;
+    border-top: 20px solid white;
 
-.copy {
-    font-size:10px;
-}
+    .copy {
+        font-size: 10px;
+    }
+    
+    .logo {
+        padding-top: 85px;
+    
+        img {
+            border-radius: 10px;
+            transition: 0.25s;
 
-.logo {
-    padding-top: 85px;
-}
+            &:hover {
+                transform: translateY(-10%);
+                box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+            }
+        }
+    }
 
-.socialmedia-links {
-    padding-top: 40px;
+    .row {
+        margin: 0; //nullifies boostrap margin-right: -15px; margin-left: -15px;
+    }
+
+    .socialmedia-links {
+        padding-top: 40px;
+    }
+    
+    .social-icons {
+        margin: 20px auto;
+        font-size: 24px;
+        width: max-content;
+    
+        &:hover i {
+            opacity: 0.5;
+        }
+    
+        i {
+            margin: 0 10px;
+            color: white;
+            transition: 0.2s;
+    
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 
