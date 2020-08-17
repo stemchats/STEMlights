@@ -5,6 +5,13 @@ const elements = {
     image: function() {
       const img = document.createElement("img");
       img.src = this.content.link;
+      if(typeof this.content.class == "string") {
+        img.classList.add(this.content.class);
+      }
+      if(typeof this.content.title == "string") {
+         img.id = this.content.title; //set
+         createDirectory(this.content.title); //add title name of each section to the directory
+      }
       editionSection.appendChild(img);
     },
     hyperlink: function() {
@@ -86,17 +93,14 @@ what we have:
   - e.g if we use (1) header, it should call the createHeader() function
 */
 
-
 // creating a dynamic directory for each edition page
 var directory = document.getElementById('directory');
 
-for(var i=1; i<sections.length; i++) { //CHANGE BACK TO i=0 WHEN TITLES ARE ADDED
-  var sectionName = sections[i]; //DELETE WHEN TITLES ARE ADDED + UNCOMMENT vv
-  //var sectionName = document.getElementsByClassName("section-header-img")[i].title;
+function createDirectory(title) {
   var linkText = document.createElement('li');
   var directoryLink = document.createElement('a');
-  directoryLink.setAttribute('href', "#" + sectionName);
-  directoryLink.textContent = sectionName;
+  directoryLink.setAttribute('href', "#" + title);
+  directoryLink.textContent = title;
   linkText.appendChild(directoryLink); //<li><a>SECTION TITLE</a></li>
   directory.appendChild(linkText);
 }
