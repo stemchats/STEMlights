@@ -90,8 +90,8 @@ what we have:
 // creating a dynamic directory for each edition page
 var directory = document.getElementById('directory');
 
-for(var i = 1; i<sections.length; i++) {
-  var sectionName = sections[i];
+for(var i=1; i<sections.length; i++) { //CHANGE BACK TO i=0 WHEN TITLES ARE ADDED
+  var sectionName = sections[i]; //DELETE WHEN TITLES ARE ADDED + UNCOMMENT vv
   //var sectionName = document.getElementsByClassName("section-header-img")[i].title;
   var linkText = document.createElement('li');
   var directoryLink = document.createElement('a');

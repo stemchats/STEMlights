@@ -59,6 +59,8 @@ html {
   top: 170px;
   left: 6%;
   list-style-position: inside;
+  -webkit-animation: 1.5s ease-out 0s 1 fadeIn;
+          animation: 1.5s ease-out 0s 1 fadeIn;
 }
 
 #directory h3 {
