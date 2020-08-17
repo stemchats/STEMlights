@@ -85,3 +85,18 @@ what we have:
 - using a parse function to find out which element function to call
   - e.g if we use (1) header, it should call the createHeader() function
 */
+
+
+// creating a dynamic directory for each edition page
+var directory = document.getElementById('directory');
+
+for(var i = 1; i<sections.length; i++) {
+  var sectionName = sections[i];
+  //var sectionName = document.getElementsByClassName("section-header-img")[i].title;
+  var linkText = document.createElement('li');
+  var directoryLink = document.createElement('a');
+  directoryLink.setAttribute('href', "#" + sectionName);
+  directoryLink.textContent = sectionName;
+  linkText.appendChild(directoryLink); //<li><a>SECTION TITLE</a></li>
+  directory.appendChild(linkText);
+}
