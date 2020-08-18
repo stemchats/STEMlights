@@ -128,25 +128,24 @@ html {
   margin-bottom: 0;
 }
 
-#edition .section-header-img, #edition .edition-header-img, #edition img {
-  /* REMOVE img WHEN .section-header-img ADDED IN DATABASE */
+#edition img {
+  max-width: 100%;
+}
+
+#edition .section-header-img, #edition .edition-header-img {
   width: 100%;
   max-width: 800px;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 
-#edition .section-header-img:first-child, #edition .edition-header-img:first-child, #edition img:first-child {
+#edition .section-header-img:first-child, #edition .edition-header-img:first-child {
   margin-top: 0;
 }
 
-#edition .section-header-img::before, #edition .edition-header-img::before, #edition img::before {
-  display: block;
-  content: " ";
-  margin-top: -150px;
-  height: 150px;
-  visibility: hidden;
-  pointer-events: none;
+#edition .section-header-img:target, #edition .edition-header-img:target {
+  padding-top: 100px;
+  margin-top: calc(3rem + -100px);
 }
 
 #edition button {

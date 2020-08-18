@@ -142,8 +142,12 @@ html {
         text-align: left;
         margin-bottom: 0;
     }
+
+    img {
+        max-width: 100%;
+    }
     
-    .section-header-img, .edition-header-img, img { /* REMOVE img WHEN .section-header-img ADDED IN DATABASE */
+    .section-header-img, .edition-header-img {
         @include responsive-edition;
         margin-top: 3rem;
         margin-bottom: 1.5rem;
@@ -152,13 +156,9 @@ html {
             margin-top: 0;
         }
 
-        &::before { //allows header space when jumped to with id anchor link
-            display: block; 
-            content: " "; 
-            margin-top: -150px; 
-            height: 150px; 
-            visibility: hidden; 
-            pointer-events: none;
+        &:target { //allows header space when jumped to with id anchor link
+            padding-top: 100px;
+            margin-top: calc(3rem + -100px);
         }
     }
 
