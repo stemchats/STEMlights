@@ -64,7 +64,8 @@ html {
 }
 
 .main {
-    margin: 150px 25% 100px;
+    @include responsive-edition();
+    margin: 150px auto 100px;
 
     p {
         font-family: 'Josefin Sans', sans-serif !important;

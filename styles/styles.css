@@ -46,7 +46,9 @@ html {
 }
 
 .main {
-  margin: 150px 25% 100px;
+  width: 100%;
+  max-width: 800px;
+  margin: 150px auto 100px;
 }
 
 .main p {

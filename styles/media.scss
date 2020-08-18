@@ -23,17 +23,32 @@ $light-grey : #f8f8f8;
 
 
 
-@media only screen and (min-width: 920px) {
-/* computer */
-
-}
-
-
-
-
 @media screen and (max-width: 991px) {
 /* start of large tablet styles */
+    header {
+        nav {
+            display: none;
+        }
+    }
 
+    #directory {
+        display: none;
+    }
+
+    .img-row-container {
+        display: flex;
+        flex-direction: column;
+    
+        .teamcard-container {
+            display: block;
+            width: 100%;
+
+            .img-hover {
+                @include center();
+                max-width: 100%;
+            }
+        }
+    }
 }
 
 
@@ -49,5 +64,10 @@ $light-grey : #f8f8f8;
 
 @media screen and (max-width: 479px) {
 /* start of phone styles */
-
+    .newsletter {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
 }
