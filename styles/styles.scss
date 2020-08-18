@@ -496,6 +496,7 @@ body {
     margin-right: auto; 
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; 
     .card-title {
         color: black;
     }
