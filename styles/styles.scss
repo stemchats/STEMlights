@@ -215,7 +215,12 @@ header {
     z-index: 1000;
     overflow: hidden;
 
+    button {
+        display: none;
+    }
+
     .logo {
+        width: max-content;
         margin-left: 90px;
         position: relative;
         padding: 10px 10px 5px;
@@ -277,7 +282,7 @@ header {
         transition: 0.2s;
     }
 
-    nav {
+    .navbar-collapse {
         position: fixed;
         left: 50%;
         transform: translateX(-50%);

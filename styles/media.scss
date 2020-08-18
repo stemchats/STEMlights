@@ -26,8 +26,29 @@ $light-grey : #f8f8f8;
 @media screen and (max-width: 991px) {
 /* start of large tablet styles */
     header {
-        nav {
-            display: none;
+        overflow: visible;
+        height: max-content;
+        flex-direction: column;
+
+        button {
+            display: block;
+            position: absolute;
+            right: 100px;
+            margin-top: 5px;
+        }
+
+        .navbar-collapse {
+            position: relative;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .logo {
+            @include center;
+            margin: 0;
         }
     }
 
