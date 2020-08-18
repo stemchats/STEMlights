@@ -1,0 +1,53 @@
+//Only media queries
+
+
+/* VARIABLES */
+
+$dark-blue: #233142;
+$lavendar: #a6b1e1;
+$yellow: #f6d970;
+$light-grey : #f8f8f8;
+
+@mixin center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+@mixin responsive-edition {
+    width: 100%;
+    max-width: 800px;
+}
+
+
+
+
+@media only screen and (min-width: 920px) {
+/* computer */
+
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+/* start of large tablet styles */
+
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+/* start of medium tablet styles */
+
+}
+
+
+
+
+@media screen and (max-width: 479px) {
+/* start of phone styles */
+
+}

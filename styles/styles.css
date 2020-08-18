@@ -73,12 +73,6 @@ html {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 1.1em;
-  /* &:not(:nth-child(1))::before {
-            content: '';
-            height: 2px;
-            width: 100%;
-            background-color: rgb(223, 223, 223);
-        } */
 }
 
 #directory li:not(:nth-child(2)) {
@@ -130,6 +124,7 @@ html {
 
 #edition img {
   max-width: 100%;
+  padding: 0 1rem;
 }
 
 #edition .section-header-img, #edition .edition-header-img {
@@ -137,6 +132,7 @@ html {
   max-width: 800px;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
+  padding: 0;
 }
 
 #edition .section-header-img:first-child, #edition .edition-header-img:first-child {

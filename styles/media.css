@@ -1,0 +1,17 @@
+/* VARIABLES */
+@media only screen and (min-width: 920px) {
+  /* computer */
+}
+
+@media screen and (max-width: 991px) {
+  /* start of large tablet styles */
+}
+
+@media screen and (max-width: 767px) {
+  /* start of medium tablet styles */
+}
+
+@media screen and (max-width: 479px) {
+  /* start of phone styles */
+}
+/*# sourceMappingURL=media.css.map */
