@@ -1,17 +1,92 @@
 /* VARIABLES */
-@media only screen and (min-width: 920px) {
-  /* computer */
-}
-
 @media screen and (max-width: 991px) {
   /* start of large tablet styles */
+  /* header {
+        overflow: visible;
+        height: max-content;
+        flex-direction: column;
+
+        button {
+            display: block;
+            position: absolute;
+            right: 100px;
+            margin-top: 5px;
+        }
+
+        .navbar-collapse {
+            position: relative;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .logo {
+            @include center;
+            margin: 0;
+        }
+    } */
+  #directory {
+    display: none;
+  }
+  .img-row-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .img-row-container .teamcard-container {
+    display: block;
+    width: 100%;
+  }
+  .img-row-container .teamcard-container .img-hover {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 767px) {
   /* start of medium tablet styles */
+  .card-header {
+    padding-bottom: 4em;
+  }
+  .card-header .col-md-6 > * {
+    margin: 0;
+  }
+  .card-header .float-right {
+    margin-top: 80px;
+  }
+  .newsletter .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .newsletter .card img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    float: none;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 @media screen and (max-width: 479px) {
   /* start of phone styles */
+  .newsletter img {
+    display: block;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=media.css.map */

@@ -104,3 +104,10 @@ function createDirectory(title) {
   linkText.appendChild(directoryLink); //<li><a>SECTION TITLE</a></li>
   directory.appendChild(linkText);
 }
+
+
+//loop generating editions in newsletter page
+for (var i=0; i<edition.length; i++) {
+  var editionNum = document.createElement('div');
+  editionNum.classList.add('card');
+}

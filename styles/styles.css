@@ -46,7 +46,9 @@ html {
 }
 
 .main {
-  margin: 150px 25% 100px;
+  width: 100%;
+  max-width: 800px;
+  margin: 150px auto 100px;
 }
 
 .main p {
@@ -207,7 +209,14 @@ header {
   overflow: hidden;
 }
 
+header button {
+  display: none;
+}
+
 header .logo {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   margin-left: 90px;
   position: relative;
   padding: 10px 10px 5px;
@@ -278,14 +287,14 @@ header a {
   transition: 0.2s;
 }
 
-header nav {
+header .navbar-collapse {
   position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
-header nav .nav-link {
+header .navbar-collapse .nav-link {
   padding: 0;
 }
 
