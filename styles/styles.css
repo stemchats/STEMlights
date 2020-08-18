@@ -462,7 +462,6 @@ body {
 }
 
 .card-deck {
-  top: 95%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -471,7 +470,12 @@ body {
   color: black;
 }
 
-.card {
+.card-deck .card-body {
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
+
+.card-deck .card {
   background-color: #f6d970;
 }
 
@@ -480,7 +484,6 @@ body {
   padding: 10px;
   text-decoration: none;
   font-size: 16px;
-  margin: 4px 2px;
   text-align: center;
   display: block;
   margin: 30px auto 70px;
@@ -493,9 +496,33 @@ body {
   border-radius: 0;
 }
 
-.card-body {
-  padding-top: 2em;
-  padding-bottom: 3em;
+.card-body2 {
+  padding-top: 3em;
+  padding-bottom: 8em;
+}
+
+.card-deck1 {
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-deck1 .card-title {
+  color: black;
+}
+
+.card-deck1 .card1 {
+  background-color: #efefef;
+  color: black;
+  padding: 25px 10px 25px 10px;
+  border-radius: 12px;
+  float: left;
+  margin: 30px 25px 25px 25px;
 }
 
 /* NEWSLETTER MENU */

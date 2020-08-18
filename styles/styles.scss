@@ -455,16 +455,19 @@ body {
 }
 
 .card-deck{
-    top: 95%;
     margin-left: auto;
     margin-right: auto;
 
     .card-text {
         color: black;
     }
-}
-.card{
-    background-color: $yellow;
+    .card-body{
+        padding-top: 2em;
+        padding-bottom: 3em;
+    }
+    .card{
+        background-color: $yellow;
+    }
 }
 
 .btn-light{
@@ -472,7 +475,6 @@ body {
     padding: 10px;
     text-decoration: none;
     font-size: 16px;
-    margin: 4px 2px;
     text-align: center;
     display: block;
     margin: 30px auto 70px;
@@ -484,12 +486,29 @@ body {
     border: none;
     border-radius: 0;
 }
-.card-body{
-    padding-top: 2em;
-    padding-bottom: 3em;
+
+.card-body2{
+    padding-top: 3em;
+    padding-bottom: 8em;
 }
 
-
+.card-deck1{
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
+    justify-content: center;
+    .card-title {
+        color: black;
+    }
+    .card1{
+        background-color: #efefef;
+        color: black;
+        padding: 25px 10px 25px 10px;
+        border-radius: 12px;
+        float: left; 
+        margin: 30px 25px 25px 25px;; 
+    }
+}
 
 /* NEWSLETTER MENU */
 
