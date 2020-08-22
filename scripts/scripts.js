@@ -22,7 +22,7 @@ const elements = {
     },
     paragraph: function() {
       const p = document.createElement("p");
-      p.textContent = this.content;
+      p.innerHTML = this.content;
       editionSection.appendChild(p);
     },
     header: function() {
