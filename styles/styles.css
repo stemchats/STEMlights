@@ -644,6 +644,11 @@ footer {
   padding-bottom: 5px;
 }
 
+footer .wave {
+  text-align: center;
+  position: absolute;
+  top: 310px;
+}
 footer .copy {
   font-size: 0.5px;
   padding-bottom: 0px;
@@ -698,6 +703,7 @@ footer .social-icons i:hover {
           transform: translateY(-20%);
   opacity: 1;
 }
+
 
 /* ANIMATIONS (GENERALLY FOR ONLOAD) */
 @-webkit-keyframes slideUp {
