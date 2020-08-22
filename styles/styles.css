@@ -506,7 +506,7 @@ body {
 .card-body2 {
   background-color: #a6b1e1;
   padding-top: 3em;
-  padding-bottom: 8em;
+  padding-bottom: 5em;
 }
 
 .card-deck1 {
@@ -640,18 +640,19 @@ body {
 /* FOOTER */
 footer {
   background-color: #233142;
-  border-top: 20px solid white; 
-  padding-top: 40px;
-  padding-bottom: 40px;
+  /* border-top: 20px solid white;  */
+  padding-top: 100px;
+  padding-bottom: 5px;
   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
 }
 
 footer .copy {
-  font-size: 10px;
+  font-size: 0.5px;
+  padding-bottom: 0px;
 }
 
 footer .logo {
-  padding-top: 85px;
+  padding-top: 100px;
 }
 
 footer .logo img {
