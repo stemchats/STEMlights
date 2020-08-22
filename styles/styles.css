@@ -36,12 +36,8 @@
   outline: none;
 }
 
-* .btn:hover, * button:hover {
+* .btn:hover, * .btn:hover a, * button:hover, * button:hover a {
   background-position: right bottom;
-  color: white;
-}
-
-* .btn a:hover, * button a:hover {
   color: white;
 }
 
@@ -509,8 +505,7 @@ body {
 
 .card-body2 {
   background-color: #a6b1e1;
-  padding-top: 3em;
-  padding-bottom: 5em;
+  padding: 3em 0;
 }
 
 .card-deck1 {
@@ -531,7 +526,7 @@ body {
 }
 
 .card-deck1 .card1 {
-  background-color: #efefef;
+  background-color: #f8f8f8;
   color: black;
   padding: 25px 10px 25px 10px;
   border-radius: 12px;
@@ -645,7 +640,7 @@ body {
 footer {
   background-color: #233142;
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-top: 100px;
+  padding-top: 10px;
   padding-bottom: 5px;
 }
 
