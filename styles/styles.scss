@@ -56,6 +56,10 @@ $light-grey : #f8f8f8;
             background-position: right bottom;
             color: white;
         }
+
+        a:hover {
+            color: white;
+        }
     }
 }
 
@@ -493,8 +497,9 @@ body {
 }
 
 .card-body2{
+    background-color: #a6b1e1;
     padding-top: 3em;
-    padding-bottom: 8em;
+    padding-bottom: 5em;
 }
 
 .card-deck1{
@@ -622,14 +627,17 @@ body {
 
 footer {
     background-color: $dark-blue;
-    border-top: 20px solid white; /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
+    /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
+    padding-top: 100px;
+    padding-bottom: 5px;
 
     .copy {
-        font-size: 10px;
+        font-size: 0.5px;
+        padding-bottom: 0px;
     }
     
     .logo {
-        padding-top: 85px;
+        padding-top: 100px;
     
         img {
             border-radius: 10px;

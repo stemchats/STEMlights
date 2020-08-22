@@ -41,6 +41,10 @@
   color: white;
 }
 
+* .btn a:hover, * button a:hover {
+  color: white;
+}
+
 html {
   overflow-y: scroll;
 }
@@ -640,10 +644,9 @@ body {
 /* FOOTER */
 footer {
   background-color: #233142;
-  /* border-top: 20px solid white;  */
+  /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
   padding-top: 100px;
   padding-bottom: 5px;
-  /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
 }
 
 footer .copy {
