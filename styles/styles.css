@@ -473,6 +473,10 @@ body {
   margin-right: auto;
 }
 
+.card-deck .card-title {
+  font-weight: bold;
+}
+
 .card-deck .card-text {
   color: black;
 }
@@ -483,7 +487,7 @@ body {
 }
 
 .card-deck .card {
-  background-color: #f6d970;
+  background-color: rgba(196, 196, 196, 0.49);
 }
 
 .btn-light {
@@ -640,15 +644,10 @@ body {
 footer {
   background-color: #233142;
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-top: 150px;
+  padding-top: 10px;
   padding-bottom: 5px;
 }
 
-footer .wave {
-  text-align: center;
-  position: absolute;
-  top: 310px;
-}
 footer .copy {
   font-size: 0.5px;
   padding-bottom: 0px;
@@ -703,7 +702,6 @@ footer .social-icons i:hover {
           transform: translateY(-20%);
   opacity: 1;
 }
-
 
 /* ANIMATIONS (GENERALLY FOR ONLOAD) */
 @-webkit-keyframes slideUp {
