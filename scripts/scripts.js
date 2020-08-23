@@ -18,6 +18,9 @@ const elements = {
       const link = document.createElement("a");
       link.href = this.content.link;
       link.textContent = this.content.text;
+      if(typeof this.content.class == "string") {
+        link.classList.add(this.content.class);
+      }
       editionSection.appendChild(link);
     },
     paragraph: function() {

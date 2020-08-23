@@ -20,10 +20,6 @@
   color: black;
 }
 
-* .disabled {
-  pointer-events: none;
-}
-
 * .btn, * button {
   background-color: #233142;
   padding: 8px 15px;
@@ -116,6 +112,11 @@ html {
 
 #edition a:hover {
   color: #f6d970;
+}
+
+#edition .disabled {
+  text-decoration: none;
+  pointer-events: none;
 }
 
 #edition h4 {

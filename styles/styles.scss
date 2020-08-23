@@ -39,10 +39,6 @@ $light-grey : #f8f8f8;
         }
     }
 
-    .disabled {
-        pointer-events: none;
-    }
-
     .btn, button {
         background-color: $dark-blue;
         padding: 8px 15px;
@@ -129,6 +125,11 @@ html {
         &:hover {
             color: $yellow;
         }
+    }
+        
+    .disabled {
+        text-decoration: none;
+        pointer-events: none;
     }
 
     h4 {
