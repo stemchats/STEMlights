@@ -473,7 +473,11 @@ body {
         padding-bottom: 3em;
     }
     .card{
-        background-color:  rgba(196, 196, 196, 0.49);
+        background-color:  $light-grey;
+
+        img {
+            padding: 2rem;
+        }
     }
 }
 

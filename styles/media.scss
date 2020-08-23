@@ -87,7 +87,12 @@ $light-grey : #f8f8f8;
             margin-top: 80px;
         }
     }
+}
 
+
+
+
+@media screen and (max-width: 645px) {
     .newsletter {
         .card {
             display: flex;

@@ -487,7 +487,11 @@ body {
 }
 
 .card-deck .card {
-  background-color: rgba(196, 196, 196, 0.49);
+  background-color: #f8f8f8;
+}
+
+.card-deck .card img {
+  padding: 2rem;
 }
 
 .btn-light {
