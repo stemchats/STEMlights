@@ -20,6 +20,10 @@
   color: black;
 }
 
+* .disabled {
+  pointer-events: none;
+}
+
 * .btn, * button {
   background-color: #233142;
   padding: 8px 15px;
@@ -127,13 +131,13 @@ html {
 #edition img {
   max-width: 100%;
   padding: 0 1rem;
+  margin-bottom: 1.5rem;
 }
 
 #edition .section-header-img, #edition .edition-header-img {
   width: 100%;
   max-width: 800px;
   margin-top: 3rem;
-  margin-bottom: 1.5rem;
   padding: 0;
 }
 

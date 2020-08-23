@@ -39,6 +39,10 @@ $light-grey : #f8f8f8;
         }
     }
 
+    .disabled {
+        pointer-events: none;
+    }
+
     .btn, button {
         background-color: $dark-blue;
         padding: 8px 15px;
@@ -140,12 +144,12 @@ html {
     img {
         max-width: 100%;
         padding: 0 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .section-header-img, .edition-header-img {
         @include responsive-edition;
         margin-top: 3rem;
-        margin-bottom: 1.5rem;
         padding: 0;
 
         &:first-child {
