@@ -548,6 +548,10 @@ body {
 }
 
 /* NEWSLETTER MENU */
+.newsletter {
+  padding: 0 2rem;
+}
+
 .newsletter .card {
   width: 100%;
   background-color: white;
