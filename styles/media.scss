@@ -78,13 +78,14 @@ $light-grey : #f8f8f8;
 /* start of medium tablet styles */
     .card-header {
         padding-bottom: 4em;
+        padding-top: 7em;
 
         .col-md-6 > * {
             margin: 0;
         }
 
         .float-right {
-            margin-top: 80px;
+            margin-top: 60px;
         }
     }
 }
@@ -104,6 +105,17 @@ $light-grey : #f8f8f8;
                 max-width: 100%;
                 max-height: 100%;
             }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 576px) {
+//edition cards on home page become blocks
+    .card-deck {
+        .card {
+            margin-bottom: 2rem;
         }
     }
 }
