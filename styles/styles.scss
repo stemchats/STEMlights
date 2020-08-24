@@ -536,10 +536,7 @@ body {
         width: 100%;
         background-color: white;
         position: relative;
-
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+        margin-top: 2rem;
 
         .card-body {
             p {
@@ -563,10 +560,10 @@ body {
 
 /* ABOUT US */
 
-.meet-the-team {
+.about-us {
     .subtitle {
         font-size: 1.1em;
-        padding: 0 1.5rem;
+        padding: 1rem 1.5rem 3rem;
     }
 }
 
