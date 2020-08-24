@@ -35,7 +35,7 @@ const elements = {
     },
     button: function() {
       const button = document.createElement("button");
-      button.href = this.content.link;
+      button.setAttribute('onclick', "location.href='" + this.content.link + "';");
       button.textContent = this.content.text;
       editionSection.appendChild(button);
     }
