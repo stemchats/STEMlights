@@ -478,6 +478,14 @@ body {
   margin-right: auto;
 }
 
+.card-deck .card {
+  background-color: #f8f8f8;
+}
+
+.card-deck .card img {
+  padding: 2rem;
+}
+
 .card-deck .card-title {
   font-weight: bold;
 }
@@ -487,19 +495,7 @@ body {
 }
 
 .card-deck .card-body {
-  padding-top: 2em;
-  padding-bottom: 3em;
-}
-
-.card-deck .card {
-  background-color: #f8f8f8;
-}
-
-.card-deck .card img {
-  padding: 2rem;
-  height: 60%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  padding: 1.5rem 1.5rem 2rem;
 }
 
 .btn-light {

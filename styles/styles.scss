@@ -467,6 +467,14 @@ body {
 .card-deck{
     margin-left: auto;
     margin-right: auto;
+    
+    .card{
+        background-color:  $light-grey;
+
+        img {
+            padding: 2rem;
+        }
+    }
     .card-title{
         font-weight: bold; 
     }
@@ -474,17 +482,7 @@ body {
         color: black;
     }
     .card-body{
-        padding-top: 2em;
-        padding-bottom: 3em;
-    }
-    .card{
-        background-color:  $light-grey;
-
-        img {
-            padding: 2rem;
-            height: 60%;
-            object-fit: contain; 
-        }
+        padding: 1.5rem 1.5rem 2rem;
     }
 }
 
@@ -533,7 +531,7 @@ body {
 
 .newsletter {
     padding: 0 2rem;
-    
+
     .card {
         width: 100%;
         background-color: white;
