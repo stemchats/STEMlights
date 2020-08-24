@@ -482,6 +482,8 @@ body {
 
         img {
             padding: 2rem;
+            height: 60%;
+            object-fit: contain; 
         }
     }
 }

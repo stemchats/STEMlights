@@ -497,6 +497,9 @@ body {
 
 .card-deck .card img {
   padding: 2rem;
+  height: 60%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .btn-light {
