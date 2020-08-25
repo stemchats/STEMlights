@@ -671,21 +671,9 @@ footer .copy {
   padding-bottom: 0px;
 }
 
-footer .logo {
-  padding-top: 100px;
-}
-
-footer .logo img {
-  border-radius: 10px;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-}
-
-footer .logo img:hover {
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
-  -webkit-box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+footer .wave img {
+  width: 80%;
+  max-width: 500px;
 }
 
 footer .row {

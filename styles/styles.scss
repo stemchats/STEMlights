@@ -653,23 +653,16 @@ footer {
         font-size: 0.5px;
         padding-bottom: 0px;
     }
-    
-    .logo {
-        padding-top: 100px;
-    
-        img {
-            border-radius: 10px;
-            transition: 0.25s;
 
-            &:hover {
-                transform: translateY(-10%);
-                box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
-            }
+    .wave {
+        img {
+            width: 80%;
+            max-width: 500px;
         }
     }
 
     .row {
-        margin: 0; //nullifies boostrap margin-right: -15px; margin-left: -15px;
+        margin: 0; //nullifies bootstrap margin-right: -15px; margin-left: -15px;
     }
 
     .socialmedia-links {
