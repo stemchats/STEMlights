@@ -118,6 +118,19 @@ $light-grey : #f8f8f8;
             margin-bottom: 2rem;
         }
     }
+
+    footer {
+        .wave {
+            img:nth-child(1) {
+                width: 120%;
+                margin-left: -30px;
+                transform: translateY(-80%);
+            }
+            img:nth-child(2) {
+                display: none;
+            }
+        }
+    }
 }
 
 
