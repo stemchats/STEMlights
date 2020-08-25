@@ -680,11 +680,11 @@ footer .wave img {
 
 footer .wave img:first-child {
   left: 0;
-  margin-left: -10px;
+  margin-left: -30px;
 }
 
 footer .wave img:nth-child(2) {
-  right: -20;
+  right: -10;
 }
 
 footer .row {
