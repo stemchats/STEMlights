@@ -136,4 +136,4 @@ function search(input){
     };
   }
   }
-  search("hi");
+  console.log(search("hi"));

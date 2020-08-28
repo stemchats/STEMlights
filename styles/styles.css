@@ -662,7 +662,7 @@ body {
 footer {
   background-color: #233142;
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-top: 10px;
+  padding-top: 120px;
   padding-bottom: 5px;
 }
 
@@ -672,15 +672,15 @@ footer .copy {
 }
 
 footer .wave img {
-  width: 55%; 
+  width: 55.1%; 
   position: absolute;
-  -webkit-transform: translateY(-45%);
-          transform: translateY(-60%);
+  -webkit-transform: translateY(-105%);
+          transform: translateY(-105%);
 }
 
 footer .wave img:first-child {
   left: 0;
-  margin-left: -30px;
+  margin-left: -31px;
 }
 
 footer .wave img:nth-child(2) {
