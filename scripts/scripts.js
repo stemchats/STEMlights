@@ -115,7 +115,7 @@ for (var i=0; i<edition.length; i++) {
   editionNum.classList.add('card');
 }
 
-var sections = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", ];
+var sections = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", "coronavirus", "spotlight"];
 function search(input){
   var edition = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // update this later depending on # of completed editions (searches through them)
   for(var j = 0; j<edition.length;j++){

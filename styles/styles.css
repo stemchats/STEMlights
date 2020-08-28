@@ -521,7 +521,7 @@ body {
 
 .card-body2 {
   background-color: #a6b1e1;
-  padding: 3em 0 4em;
+  padding: 3em 0 8em;
 }
 
 .card-deck1 {
@@ -672,9 +672,9 @@ footer .copy {
 }
 
 footer .wave img {
-  width: 60%;
+  width: 55%; 
   position: absolute;
-  -webkit-transform: translateY(-60%);
+  -webkit-transform: translateY(-45%);
           transform: translateY(-60%);
 }
 
@@ -684,7 +684,7 @@ footer .wave img:first-child {
 }
 
 footer .wave img:nth-child(2) {
-  right: -10;
+  right: -100;
 }
 
 footer .row {
