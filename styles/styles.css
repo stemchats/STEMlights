@@ -521,7 +521,7 @@ body {
 
 .card-body2 {
   background-color: #a6b1e1;
-  padding: 3em 0 8em;
+  padding: 3em 0 4em;
 }
 
 .card-deck1 {
@@ -662,7 +662,7 @@ body {
 footer {
   background-color: #233142;
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-top: 120px;
+  padding-top: 100px;
   padding-bottom: 5px;
 }
 
@@ -672,19 +672,19 @@ footer .copy {
 }
 
 footer .wave img {
-  width: 55.1%; 
+  width: 55%;
   position: absolute;
-  -webkit-transform: translateY(-105%);
-          transform: translateY(-105%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-90%);
 }
 
 footer .wave img:first-child {
   left: 0;
-  margin-left: -31px;
+  margin-left: -30px;
 }
 
 footer .wave img:nth-child(2) {
-  right: -100;
+  right: -10;
 }
 
 footer .row {
