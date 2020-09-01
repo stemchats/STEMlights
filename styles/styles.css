@@ -682,7 +682,6 @@ footer .wave img {
   position: absolute;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  z-index: 0;
 }
 
 footer .wave img:first-child {
