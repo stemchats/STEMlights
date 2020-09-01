@@ -679,8 +679,9 @@ footer .copy {
 footer .wave img {
   width: 60%;
   position: absolute;
-  -webkit-transform: translateY(-60%);
-          transform: translateY(-60%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
 }
 
 footer .wave img:first-child {
@@ -689,7 +690,7 @@ footer .wave img:first-child {
 }
 
 footer .wave img:nth-child(2) {
-  right: -10;
+  left: 50%;
 }
 
 footer .row {

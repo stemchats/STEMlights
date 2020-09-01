@@ -140,9 +140,9 @@
     margin-bottom: 2rem;
   }
   footer .wave img:nth-child(1) {
-    width: 120%;
-    -webkit-transform: translateY(-80%);
-            transform: translateY(-80%);
+    width: 140%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
   footer .wave img:nth-child(2) {
     display: none;
