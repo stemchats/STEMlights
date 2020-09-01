@@ -141,8 +141,8 @@
   }
   footer .wave img:nth-child(1) {
     width: 140%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translateY(-45%);
+            transform: translateY(-45%);
   }
   footer .wave img:nth-child(2) {
     display: none;
