@@ -226,9 +226,10 @@ header {
     z-index: 1000;
     overflow: hidden;
 
-    button {
+    #menu-icon, #menu-icon ~ label, input[type=checkbox] {
         display: none;
-    }
+        z-index: 5;
+    } /* */
 
     .logo {
         width: max-content;
@@ -293,45 +294,47 @@ header {
         transition: 0.2s;
     }
 
-    .navbar-collapse {
+    .collapsible-menu {
         position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-
-        .nav-link {
-            padding: 0;
-        }
-    }
-
-    ul {
-        list-style: none;
         display: flex;
-        align-items: center;
-        margin-bottom: 0;
+        width: 100%;
 
-        li {
-            margin: 0 30px;
-            font-size: 18px;
-            border-bottom: 2px solid rgba($color: $yellow, $alpha: 0.0);
-            transition: 0.3s;
-            line-height: initial;
-            white-space: nowrap;
-
-            &:hover {
-                border-bottom: 2px solid $yellow;
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            position: absolute;
+            top: 56%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+    
+            .nav-link {
+                margin: 0 30px;
+                padding: 0;
+                font-size: 18px;
+                border-bottom: 2px solid rgba($color: $yellow, $alpha: 0.0);
+                transition: 0.3s;
+                line-height: initial;
+                white-space: nowrap;
+    
+                &:hover {
+                    border-bottom: 2px solid $yellow;
+                }
             }
         }
     }
 }
 
 .search-bar {
-    margin-right: 100px;
-    position: relative;
-    margin-left: auto;
+    right: 100px;
+    margin: -20px;
+    position: absolute;
     width: 40px;
     height: 40px;
     border: 1px solid $dark-blue;
     border-radius: 20px;
+    background: white;
     padding: 5px;
     transition: width 0.5s;
     overflow: hidden;
@@ -343,7 +346,6 @@ header {
         right: 1px;
         cursor: pointer;
         float: right;
-        background: white;
         color: $dark-blue;
         transition: color 0.2s;
         padding: 10px;
@@ -381,7 +383,7 @@ header {
     }
 
     &.active {
-        width: 300px;
+        width: 280px;
 
         .search-input {
             opacity: 1;

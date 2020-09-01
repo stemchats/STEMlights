@@ -216,10 +216,12 @@ header {
   background: white;
   z-index: 1000;
   overflow: hidden;
+  /* */
 }
 
-header button {
+header #menu-icon, header #menu-icon ~ label, header input[type=checkbox] {
   display: none;
+  z-index: 5;
 }
 
 header .logo {
@@ -296,18 +298,15 @@ header a {
   transition: 0.2s;
 }
 
-header .navbar-collapse {
+header .collapsible-menu {
   position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
-header .navbar-collapse .nav-link {
-  padding: 0;
-}
-
-header ul {
+header .collapsible-menu ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,10 +315,16 @@ header ul {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 0;
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-header ul li {
+header .collapsible-menu ul .nav-link {
   margin: 0 30px;
+  padding: 0;
   font-size: 18px;
   border-bottom: 2px solid rgba(246, 217, 112, 0);
   -webkit-transition: 0.3s;
@@ -328,18 +333,19 @@ header ul li {
   white-space: nowrap;
 }
 
-header ul li:hover {
+header .collapsible-menu ul .nav-link:hover {
   border-bottom: 2px solid #f6d970;
 }
 
 .search-bar {
-  margin-right: 100px;
-  position: relative;
-  margin-left: auto;
+  right: 100px;
+  margin: -20px;
+  position: absolute;
   width: 40px;
   height: 40px;
   border: 1px solid #233142;
   border-radius: 20px;
+  background: white;
   padding: 5px;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
@@ -353,7 +359,6 @@ header ul li:hover {
   right: 1px;
   cursor: pointer;
   float: right;
-  background: white;
   color: #233142;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
@@ -394,7 +399,7 @@ header ul li:hover {
 }
 
 .search-bar.active {
-  width: 300px;
+  width: 280px;
 }
 
 .search-bar.active .search-input {
@@ -662,7 +667,7 @@ body {
 footer {
   background-color: #233142;
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-top: 100px;
+  padding-top: 10px;
   padding-bottom: 5px;
 }
 
@@ -672,10 +677,10 @@ footer .copy {
 }
 
 footer .wave img {
-  width: 55%;
+  width: 60%;
   position: absolute;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-90%);
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
 }
 
 footer .wave img:first-child {
