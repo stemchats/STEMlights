@@ -661,7 +661,7 @@ footer {
         img {
             width: 60%;
             position: absolute;
-            transform: translateY(-50%);
+            transform: translateY(-50%) scaleY(0.5);
 
             &:first-child {
                 left: 0;

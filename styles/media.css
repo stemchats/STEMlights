@@ -12,6 +12,10 @@
   header .search-bar {
     right: 70px;
   }
+  footer .wave img {
+    -webkit-transform: translateY(-50%) scaleY(1);
+            transform: translateY(-50%) scaleY(1);
+  }
 }
 
 @media screen and (max-width: 991px) {

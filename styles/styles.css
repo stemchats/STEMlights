@@ -680,8 +680,8 @@ footer .copy {
 footer .wave img {
   width: 60%;
   position: absolute;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-50%) scaleY(0.5);
+          transform: translateY(-50%) scaleY(0.5);
 }
 
 footer .wave img:first-child {
