@@ -513,7 +513,7 @@ body {
 
 .card-body2{
     background-color: $lavendar;
-    padding: 3em 0 4em;
+    padding: 3em 0 7em;
 }
 
 .card-deck1{
@@ -646,31 +646,25 @@ body {
 /* FOOTER */
 
 footer {
-    background-color: $dark-blue;
     /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-    padding-top: 10px;
+    padding-top: 50px;
     padding-bottom: 5px;
 
-    .copy {
-        font-size: 0.5px;
-        padding-bottom: 0px;
-        z-index: 1;
+    .wave {
+        width: 100%;
+        position: absolute;
+        transform: translateY(-60%) scaleY(0.6);
+
+        &:first-child {
+            left: 0;
+        }
+        &:nth-child(2) {
+            display: none;
+        }
     }
 
-    .wave {
-        img {
-            width: 60%;
-            position: absolute;
-            transform: translateY(-50%) scaleY(0.5);
-
-            &:first-child {
-                left: 0;
-                margin-left: -30px;
-            }
-            &:nth-child(2) {
-                left: 50%;
-            }
-        }
+    .content {
+        background-color: $dark-blue;
     }
 
     .row {
@@ -700,6 +694,12 @@ footer {
                 opacity: 1;
             }
         }
+    }
+
+    .copy {
+        font-size: 0.5px;
+        padding-bottom: 0px;
+        z-index: 1;
     }
 }
 

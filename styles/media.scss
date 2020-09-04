@@ -45,9 +45,7 @@ $light-grey : #f8f8f8;
 
     footer {
         .wave {
-            img {
-                transform: translateY(-50%) scaleY(1);
-            }
+            transform: translateY(-75%) scaleY(0.7);
         }
     }
 }
@@ -191,14 +189,13 @@ $light-grey : #f8f8f8;
     }
 
     footer {
-        .wave {
-            img:nth-child(1) {
-                width: 140%;
-                transform: translateY(-45%);
-            }
-            img:nth-child(2) {
-                display: none;
-            }
+        .wave:nth-child(1) {
+            display: none;
+        }
+        .wave:nth-child(2) {
+            display: block;
+            width: 100%;
+            transform: translateY(-95%) scaleY(1);
         }
     }
 }
@@ -212,6 +209,12 @@ $light-grey : #f8f8f8;
         img {
             display: block;
             width: 100%;
+        }
+    }
+
+    footer {
+        .wave:nth-child(2) {
+            transform: translateY(-100%) scaleY(1);
         }
     }
 }

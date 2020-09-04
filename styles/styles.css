@@ -526,7 +526,7 @@ body {
 
 .card-body2 {
   background-color: #a6b1e1;
-  padding: 3em 0 4em;
+  padding: 3em 0 7em;
 }
 
 .card-deck1 {
@@ -665,32 +665,28 @@ body {
 
 /* FOOTER */
 footer {
-  background-color: #233142;
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-top: 10px;
+  padding-top: 50px;
   padding-bottom: 5px;
 }
 
-footer .copy {
-  font-size: 0.5px;
-  padding-bottom: 0px;
-  z-index: 1;
-}
-
-footer .wave img {
-  width: 60%;
+footer .wave {
+  width: 100%;
   position: absolute;
-  -webkit-transform: translateY(-50%) scaleY(0.5);
-          transform: translateY(-50%) scaleY(0.5);
+  -webkit-transform: translateY(-60%) scaleY(0.6);
+          transform: translateY(-60%) scaleY(0.6);
 }
 
-footer .wave img:first-child {
+footer .wave:first-child {
   left: 0;
-  margin-left: -30px;
 }
 
-footer .wave img:nth-child(2) {
-  left: 50%;
+footer .wave:nth-child(2) {
+  display: none;
+}
+
+footer .content {
+  background-color: #233142;
 }
 
 footer .row {
@@ -724,6 +720,12 @@ footer .social-icons i:hover {
   -webkit-transform: translateY(-20%);
           transform: translateY(-20%);
   opacity: 1;
+}
+
+footer .copy {
+  font-size: 0.5px;
+  padding-bottom: 0px;
+  z-index: 1;
 }
 
 /* ANIMATIONS (GENERALLY FOR ONLOAD) */
