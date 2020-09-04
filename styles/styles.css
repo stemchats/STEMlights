@@ -673,16 +673,9 @@ footer {
 footer .wave {
   width: 100%;
   position: absolute;
-  -webkit-transform: translateY(-60%) scaleY(0.6);
-          transform: translateY(-60%) scaleY(0.6);
-}
-
-footer .wave:first-child {
+  -webkit-transform: translateY(-60%) scaleY(0.7);
+          transform: translateY(-60%) scaleY(0.7);
   left: 0;
-}
-
-footer .wave:nth-child(2) {
-  display: none;
 }
 
 footer .content {

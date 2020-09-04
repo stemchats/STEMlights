@@ -45,7 +45,7 @@ $light-grey : #f8f8f8;
 
     footer {
         .wave {
-            transform: translateY(-75%) scaleY(0.7);
+            transform: translateY(-75%) scaleY(0.8);
         }
     }
 }
@@ -189,13 +189,10 @@ $light-grey : #f8f8f8;
     }
 
     footer {
-        .wave:nth-child(1) {
-            display: none;
-        }
-        .wave:nth-child(2) {
+        .wave {
             display: block;
-            width: 100%;
-            transform: translateY(-95%) scaleY(1);
+            width: 166%;
+            transform: translateY(-70%) scaleY(1);
         }
     }
 }
@@ -213,8 +210,8 @@ $light-grey : #f8f8f8;
     }
 
     footer {
-        .wave:nth-child(2) {
-            transform: translateY(-100%) scaleY(1);
+        .wave {
+            transform: translateY(-90%) scaleY(1);
         }
     }
 }

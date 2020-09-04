@@ -653,14 +653,8 @@ footer {
     .wave {
         width: 100%;
         position: absolute;
-        transform: translateY(-60%) scaleY(0.6);
-
-        &:first-child {
-            left: 0;
-        }
-        &:nth-child(2) {
-            display: none;
-        }
+        transform: translateY(-60%) scaleY(0.7);
+        left: 0;
     }
 
     .content {
