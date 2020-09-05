@@ -13,8 +13,8 @@
     right: 70px;
   }
   footer .wave {
-    -webkit-transform: translateY(-75%) scaleY(0.8);
-            transform: translateY(-75%) scaleY(0.8);
+    -webkit-transform: translateY(-50%) scaleY(0.8);
+            transform: translateY(-50%) scaleY(0.8);
   }
 }
 
@@ -146,8 +146,8 @@
   footer .wave {
     display: block;
     width: 166%;
-    -webkit-transform: translateY(-70%) scaleY(1);
-            transform: translateY(-70%) scaleY(1);
+    -webkit-transform: translateY(-50%) scaleY(1);
+            transform: translateY(-50%) scaleY(1);
   }
 }
 
@@ -156,10 +156,6 @@
   .newsletter img {
     display: block;
     width: 100%;
-  }
-  footer .wave {
-    -webkit-transform: translateY(-90%) scaleY(1);
-            transform: translateY(-90%) scaleY(1);
   }
 }
 /*# sourceMappingURL=media.css.map */

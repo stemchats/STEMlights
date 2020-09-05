@@ -47,6 +47,7 @@
 
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .main {
@@ -666,20 +667,16 @@ body {
 /* FOOTER */
 footer {
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-top: 50px;
   padding-bottom: 5px;
+  background-color: #233142;
 }
 
 footer .wave {
   width: 100%;
   position: absolute;
-  -webkit-transform: translateY(-60%) scaleY(0.7);
-          transform: translateY(-60%) scaleY(0.7);
+  -webkit-transform: translateY(-50%) scaleY(0.5);
+          transform: translateY(-50%) scaleY(0.5);
   left: 0;
-}
-
-footer .content {
-  background-color: #233142;
 }
 
 footer .row {

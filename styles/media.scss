@@ -45,7 +45,7 @@ $light-grey : #f8f8f8;
 
     footer {
         .wave {
-            transform: translateY(-75%) scaleY(0.8);
+            transform: translateY(-50%) scaleY(0.8);
         }
     }
 }
@@ -192,7 +192,7 @@ $light-grey : #f8f8f8;
         .wave {
             display: block;
             width: 166%;
-            transform: translateY(-70%) scaleY(1);
+            transform: translateY(-50%) scaleY(1);
         }
     }
 }
@@ -206,12 +206,6 @@ $light-grey : #f8f8f8;
         img {
             display: block;
             width: 100%;
-        }
-    }
-
-    footer {
-        .wave {
-            transform: translateY(-90%) scaleY(1);
         }
     }
 }

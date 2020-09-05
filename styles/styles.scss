@@ -67,6 +67,7 @@ $light-grey : #f8f8f8;
 
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .main {
@@ -647,18 +648,14 @@ body {
 
 footer {
     /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-    padding-top: 50px;
     padding-bottom: 5px;
+    background-color: $dark-blue;
 
     .wave {
         width: 100%;
         position: absolute;
-        transform: translateY(-60%) scaleY(0.7);
+        transform: translateY(-50%) scaleY(0.5);
         left: 0;
-    }
-
-    .content {
-        background-color: $dark-blue;
     }
 
     .row {
