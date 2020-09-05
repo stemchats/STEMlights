@@ -68,6 +68,7 @@ html {
   list-style-position: inside;
   -webkit-animation: 1.5s ease-out 0s 1 fadeIn;
           animation: 1.5s ease-out 0s 1 fadeIn;
+  z-index: 5;
 }
 
 #directory h3 {
