@@ -1,6 +1,10 @@
 var db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
+const searchbar = document.getElementById("searchBar");
+
+
+
 const elements = {
     image: function() {
       const img = document.createElement("img");
@@ -140,14 +144,7 @@ function search(input){
   }
   }
 
-<<<<<<< HEAD
+  searchbar.addEventListener("search", search(this.value))
 
-const searchbar = document.getElementById("search");
-
-searchbar.addEventListener('search', function (event){
-  search(this.value);
-});
-=======
-  console.log(search("lgbt"))
   
->>>>>>> f54825a944fdc720d07d11379c7431feebedd741
+
