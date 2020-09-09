@@ -110,6 +110,7 @@ function createDirectory(title) {
 
 
 // loop generating editions in newsletter page
+var edition = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 for (var i=0; i<edition.length; i++) {
   var editionNum = document.createElement('div');
   editionNum.classList.add('card');
