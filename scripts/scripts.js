@@ -138,5 +138,10 @@ function search(input){
     };
   }
   }
-  console.log("hi");
-  console.log(search("hi"));
+
+
+const searchbar = document.getElementById("search");
+
+searchbar.addEventListener('search', function (event){
+  search(this.value);
+});
