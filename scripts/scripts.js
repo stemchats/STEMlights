@@ -128,8 +128,9 @@ function search(input){
             let entries1 = Object.entries(data); //return array of each object's key-value pairs
             for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
               let new_val = `${value}`;
-              console.log(new_val);
+              
               if(new_val.includes(input)==true){
+                console.log(new_val);
                 //create a card thingy ig?
               }
             }
@@ -139,9 +140,14 @@ function search(input){
   }
   }
 
+<<<<<<< HEAD
 
 const searchbar = document.getElementById("search");
 
 searchbar.addEventListener('search', function (event){
   search(this.value);
 });
+=======
+  console.log(search("lgbt"))
+  
+>>>>>>> f54825a944fdc720d07d11379c7431feebedd741
