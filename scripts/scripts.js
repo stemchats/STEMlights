@@ -126,8 +126,9 @@ function search(input){
             const data = doc.data(); //retrieves all the sections as 'objects'
             let entries1 = Object.entries(data); //return array of each object's key-value pairs
             for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
-              console.log(value);
-              if(value.includes(input)==true){
+              let new_val = `${value}`;
+              console.log(new_val);
+              if(new_val.includes(input)==true){
                 //create a card thingy ig?
               }
             }
