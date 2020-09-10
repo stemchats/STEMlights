@@ -1,9 +1,9 @@
 var db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
-const searchbar = document.getElementById("searchBar");
 
-
+// const input = document.querySelector('#searchBar');
+// input.addEventListener("click", search);
 
 const elements = {
     image: function() {
@@ -133,7 +133,7 @@ function search(input){
             for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
               let new_val = `${value}`;
               
-              if(new_val.includes(input)==true){
+              if(new_val.includes(input.target.value)==true){
                 console.log(new_val);
                 //create a card thingy ig?
               }
@@ -143,8 +143,11 @@ function search(input){
     };
   }
   }
+ 
+  // console.log(searchbar);
 
-  searchbar.addEventListener("search", search(this.value))
+  // searchbar.addEventListener("search", search(this.value))
+  
 
   
 
