@@ -12,6 +12,7 @@
     })
 </script>
 </head>
+<body>
 <header>
     <div class="logo">
         <a class="logo-text" href="/">
@@ -46,24 +47,23 @@
                 </ul>
             </nav>
         </div>
-    
+
         <div class="search-bar" >
             <form>
                 <input type="search" class="search-input" placeholder="Search..." id= "searchBar" value="" name="search" autocomplete="off">
                 <input type="submit" class="search-submit" value="">
                 <span class="search-icon"><i class="fas fa-search"></i></span>
             </form>
-            
-              
+
+
         </div>
     </div>
 </header>
-
+  <!-- search bar script -->
+    <script type="text/javascript">
+        const input = document.getElementById("searchBar");
+        input.addEventListener("click", search);
+        console.log(input);
+     </script>
+</body>
 </html>
-
-<script type="text/javascript">
-   
-    const input = document.getElementById("searchBar");
-    input.addEventListener("click", search);
-    console.log(input);
- </script> 
