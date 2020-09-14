@@ -12,6 +12,9 @@
   header .search-bar {
     right: 70px;
   }
+  #directory {
+    display: none;
+  }
   footer .wave {
     -webkit-transform: translateY(-50%) scaleY(0.8);
             transform: translateY(-50%) scaleY(0.8);
@@ -41,7 +44,7 @@
     color: #f6d970 !important;
   }
   header #menu-icon:checked ~ .collapsible-menu {
-    height: 29%;
+    height: 25%;
   }
   header .collapsible-menu {
     display: block;
@@ -76,12 +79,9 @@
     width: max-content;
   }
   header .collapsible-menu .search-bar {
-    top: 205px;
+    top: 170px;
     right: 40px;
     margin: 0;
-  }
-  #directory {
-    display: none;
   }
   .img-row-container {
     display: -webkit-box;

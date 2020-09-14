@@ -485,8 +485,7 @@ body {
 }
 
 .card-deck {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin: 0 3rem;
 }
 
 .card-deck .card {
@@ -669,6 +668,7 @@ body {
 footer {
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
   padding-bottom: 5px;
+  margin-top: 10rem;
   background-color: #233142;
 }
 
