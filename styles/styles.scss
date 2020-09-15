@@ -68,6 +68,7 @@ $light-grey : #f8f8f8;
 html {
     overflow-y: scroll;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .main {
@@ -87,7 +88,7 @@ html {
 // directory
 #directory {
     position: fixed;
-    top: 170px;
+    top: 225px;
     left: 6%;
     list-style-position: inside;
     animation: 1.5s ease-out 0s 1 fadeIn;

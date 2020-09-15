@@ -23,7 +23,17 @@ $light-grey : #f8f8f8;
 
 
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1450px) {
+    //directory moves over
+    #directory {
+        left: 3%;
+    }
+}
+
+
+
+
+@media screen and (max-width: 1330px) {
     //directory disappears
     #directory {
         display: none;
