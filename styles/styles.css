@@ -97,6 +97,7 @@ html {
   text-align: center;
   width: 100%;
   max-width: 800px;
+  min-height: 100vh;
   font-size: 1.1em;
   margin-top: 150px;
   margin-bottom: 110px;
@@ -138,7 +139,7 @@ html {
 }
 
 #edition h4 {
-  margin: 2rem 30px 1rem;
+  margin: 1.25rem 30px;
 }
 
 #edition p {
@@ -634,15 +635,16 @@ body {
 /* FOOTER */
 footer {
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-bottom: 5px;
-  margin-top: 10rem;
+  padding-bottom: 2rem;
+  margin-top: 15rem;
   background-color: #233142;
 }
 
 footer .wave {
   width: 100%;
   position: absolute;
-  transform: translateY(-50%) scaleY(0.5);
+  -webkit-transform: translateY(-60%) scaleY(0.9);
+          transform: translateY(-60%) scaleY(0.9);
   left: 0;
 }
 

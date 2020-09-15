@@ -121,6 +121,7 @@ html {
 #edition {
     @include center;
     @include responsive-edition;
+    min-height: 100vh;
     font-size: 1.1em;
     margin-top: 150px;
     margin-bottom: 110px;
@@ -160,7 +161,7 @@ html {
     }
 
     h4 {
-        margin: 2rem 30px 1rem;
+        margin: 1.25rem 30px;
     }
 
     p {
@@ -667,14 +668,14 @@ body {
 
 footer {
     /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-    padding-bottom: 5px;
-    margin-top: 10rem;
+    padding-bottom: 2rem;
+    margin-top: 15rem;
     background-color: $dark-blue;
 
     .wave {
         width: 100%;
         position: absolute;
-        transform: translateY(-50%) scaleY(0.5);
+        transform: translateY(-60%) scaleY(0.9);
         left: 0;
     }
 

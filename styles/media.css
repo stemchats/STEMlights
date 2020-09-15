@@ -1,4 +1,10 @@
 /* VARIABLES */
+@media screen and (max-width: 1350px) {
+  #directory {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1190px) {
   header .logo {
     margin-left: 50px;
@@ -12,11 +18,9 @@
   header .search-bar {
     right: 70px;
   }
-  #directory {
-    display: none;
-  }
   footer .wave {
-    transform: translateY(-50%) scaleY(0.8);
+    -webkit-transform: translateY(-65%) scaleY(1);
+            transform: translateY(-65%) scaleY(1);
   }
 }
 
@@ -41,7 +45,7 @@
     color: #f6d970 !important;
   }
   header #menu-icon:checked ~ .collapsible-menu {
-    height: 25%;
+    height: 19%;
   }
   header .collapsible-menu {
     display: block;
@@ -89,6 +93,10 @@
     margin-left: auto;
     text-align: center;
   }
+  footer .wave {
+    -webkit-transform: translateY(-70%) scaleY(1.2);
+            transform: translateY(-70%) scaleY(1.2);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -128,7 +136,8 @@
   footer .wave {
     display: block;
     width: 166%;
-    transform: translateY(-50%) scaleY(1);
+    -webkit-transform: translateY(-69%) scaleY(1.2);
+            transform: translateY(-69%) scaleY(1.2);
   }
 }
 
