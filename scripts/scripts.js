@@ -120,68 +120,68 @@ for (var i=0; i<edition.length; i++) {
   editionNum.classList.add('card');
 }
 
-var editionNum;
-//var sectionName;
+// var editionNum;
+// //var sectionName;
 
-var editions_array = [];
-//var sections_array = [];
+// var editions_array = [];
+// //var sections_array = [];
 
-var sections_ = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", "coronavirus", "spotlight"];
-function search(input){
-  var edition_= [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // update this later depending on # of completed editions (searches through them)
-  for(let j = 0; j<edition_.length;j++){
+// var sections_ = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", "coronavirus", "spotlight"];
+// function search(input){
+//   var edition_= [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // update this later depending on # of completed editions (searches through them)
+//   for(let j = 0; j<edition_.length;j++){
    
-    for(var i = 0;i<sections_.length;i++){ //how many sections the edition has, iterates through sections (below)
+//     for(var i = 0;i<sections_.length;i++){ //how many sections the edition has, iterates through sections (below)
       
-      db.collection("editions").doc("edition" + edition_[j]).collection(sections_[i]).get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            const data = doc.data(); //retrieves all the sections as 'objects'
-            let entries1 = Object.entries(data); //return array of each object's key-value pairs
-            for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
-              let new_val = `${value}`;
+//       db.collection("editions").doc("edition" + edition_[j]).collection(sections_[i]).get()
+//         .then(querySnapshot => {
+//           querySnapshot.forEach(doc => {
+//             const data = doc.data(); //retrieves all the sections as 'objects'
+//             let entries1 = Object.entries(data); //return array of each object's key-value pairs
+//             for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
+//               let new_val = `${value}`;
               
-              if(new_val.includes(input.target.value)==true){
-                //console.log(new_val);
-                //create a card thingy ig?
-                editionNum = edition_[j];
-                //console.log(editionNum);
-                //sectionName = sections[i];
-                if(editions_array.length == 0) {
-                  editions_array.push(editionNum);
-                  console.log(editionNum);
-                } else if(editions_array.length>0) {
-                  for (var g = 0; g < editions_array.length; g++) {
-                    console.log(editionNum);
-                    //console.log(editions_array[g]);
-                    if(editionNum != editions_array[g]) {
-                      editions_array.push(editionNum);
-                      console.log(editionNum);
-                    } 
+//               if(new_val.includes(input.target.value)==true){
+//                 //console.log(new_val);
+//                 //create a card thingy ig?
+//                 editionNum = edition_[j];
+//                 //console.log(editionNum);
+//                 //sectionName = sections[i];
+//                 if(editions_array.length == 0) {
+//                   editions_array.push(editionNum);
+//                   console.log(editionNum);
+//                 } else if(editions_array.length>0) {
+//                   for (var g = 0; g < editions_array.length; g++) {
+//                     console.log(editionNum);
+//                     //console.log(editions_array[g]);
+//                     if(editionNum != editions_array[g]) {
+//                       editions_array.push(editionNum);
+//                       console.log(editionNum);
+//                     } 
                   
-                  }
-                }  
+//                   }
+//                 }  
                 
               
           
-              }
-            }
-          });
-        });
-    };
-  }
-  }
+//               }
+//             }
+//           });
+//         });
+//     };
+//   }
+//   }
 
 
-  for(var i = 0;i<editions_array.length;i++){
-    console.log(editions_array[i]);
-  }
+//   for(var i = 0;i<editions_array.length;i++){
+//     console.log(editions_array[i]);
+//   }
 
-  console.log(editions_array);
+//   console.log(editions_array);
  
-  // console.log(searchbar);
+//   // console.log(searchbar);
 
-  // searchbar.addEventListener("search", search(this.value))
+//   // searchbar.addEventListener("search", search(this.value))
   
 
   
