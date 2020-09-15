@@ -23,6 +23,16 @@ $light-grey : #f8f8f8;
 
 
 
+@media screen and (max-width: 1350px) {
+    //directory disappears
+    #directory {
+        display: none;
+    }
+}
+
+
+
+
 @media screen and (max-width: 1190px) {
 // header condenses
     header {
@@ -43,13 +53,9 @@ $light-grey : #f8f8f8;
         }
     }
 
-    #directory {
-        display: none;
-    }
-
     footer {
         .wave {
-            transform: translateY(-50%) scaleY(0.8);
+            transform: translateY(-65%) scaleY(1);
         }
     }
 }
@@ -138,6 +144,12 @@ $light-grey : #f8f8f8;
             }
         }
     }
+
+    footer {
+        .wave {
+            transform: translateY(-70%) scaleY(1.2);
+        }
+    }
 }
 
 
@@ -192,7 +204,7 @@ $light-grey : #f8f8f8;
         .wave {
             display: block;
             width: 166%;
-            transform: translateY(-50%) scaleY(1);
+            transform: translateY(-69%) scaleY(1.2);
         }
     }
 }
