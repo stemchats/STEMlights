@@ -121,12 +121,15 @@ for (var i=0; i<edition.length; i++) {
 }
 
 var editionNum;
-var sectionName;
+//var sectionName;
+
+var editions_array = [];
+//var sections_array = [];
 
 var sections = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", "coronavirus", "spotlight"];
 function search(input){
   var edition_= [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // update this later depending on # of completed editions (searches through them)
-  for(var j = 0; j<edition_.length;j++){
+  for(let j = 0; j<edition_.length;j++){
    
     for(var i = 0;i<sections.length;i++){ //how many sections the edition has, iterates through sections (below)
       
@@ -139,10 +142,28 @@ function search(input){
               let new_val = `${value}`;
               
               if(new_val.includes(input.target.value)==true){
-                console.log(new_val);
+                //console.log(new_val);
                 //create a card thingy ig?
-                editionNum = editions[j];
-                sectionName = sections[i];
+                editionNum = edition_[j];
+                //console.log(editionNum);
+                //sectionName = sections[i];
+                if(editions_array.length == 0) {
+                  editions_array.push(editionNum);
+                } else {
+                for (var g = 0; g < editions_array.length - 1; g++) {
+                  //console.log(editionNum);
+                  console.log(editions_array[g]);
+                  if(editionNum == editions_array[g]) {
+                    break;
+                  } else {
+                    continue;
+                  }
+                  editions_array.push(editionNum);
+                  console.log(editionNum);
+              }
+            }
+              
+          
               }
             }
           });
@@ -150,6 +171,13 @@ function search(input){
     };
   }
   }
+
+
+  for(var i = 0;i<editions_array.length;i++){
+    console.log(editions_array[i]);
+  }
+
+  console.log(editions_array);
  
   // console.log(searchbar);
 
