@@ -516,6 +516,9 @@ body {
 
 .card-deck .card img {
   padding: 2rem;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .card-deck .card-title {
