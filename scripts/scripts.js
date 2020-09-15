@@ -1,4 +1,4 @@
-var db = firebase.firestore()
+const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
 
@@ -126,12 +126,12 @@ var editionNum;
 var editions_array = [];
 //var sections_array = [];
 
-var sections = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", "coronavirus", "spotlight"];
+var sections_ = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", "coronavirus", "spotlight"];
 function search(input){
   var edition_= [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // update this later depending on # of completed editions (searches through them)
   for(let j = 0; j<edition_.length;j++){
    
-    for(var i = 0;i<sections.length;i++){ //how many sections the edition has, iterates through sections (below)
+    for(var i = 0;i<sections_.length;i++){ //how many sections the edition has, iterates through sections (below)
       
       db.collection("editions").doc("edition" + edition_[j]).collection(sections[i]).get()
         .then(querySnapshot => {
