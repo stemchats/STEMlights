@@ -184,6 +184,7 @@ $light-grey : #f8f8f8;
             img {
                 @include center();
                 float: none;
+                padding: 1.5rem 1.5rem 0;
                 max-width: 100%;
                 max-height: 100%;
             }

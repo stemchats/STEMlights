@@ -516,7 +516,7 @@ body {
   font-size: 16px;
   text-align: center;
   display: block;
-  margin: 30px auto 70px;
+  margin: 30px auto 0;
 }
 
 .text-center {
@@ -668,7 +668,7 @@ body {
 /* FOOTER */
 footer {
   /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
   margin-top: 15rem;
   background-color: #233142;
 }
@@ -690,7 +690,7 @@ footer .socialmedia-links {
 }
 
 footer .social-icons {
-  margin: 20px auto;
+  margin: 20px auto 40px;
   font-size: 24px;
   width: -webkit-max-content;
   width: -moz-max-content;
