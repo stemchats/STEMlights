@@ -39,12 +39,25 @@ const elements = {
     },
     button: function() {
       const button = document.createElement("button");
-      button.setAttribute('onclick', "location.href='" + this.content.link + "';");
+      button.setAttribute('onclick', "window.open('" + this.content.link + "','_blank');");
       button.textContent = this.content.text;
       editionSection.appendChild(button);
+    },
+    video: function() {
+      const video = document.createElement("iframe");
+      const yt = document.createElement("div");
+      yt.classList.add("yt-container");
+      video.classList.add("responsive-iframe");
+      video.setAttribute('frameborder', "0");
+      video.setAttribute('allowfullscreen', "");
+      video.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      video.src = this.content.link;
+      yt.appendChild(video);
+      editionSection.appendChild(yt);
     }
 };
 
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/U8r3oTVMtQ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 function createEdition(edition){
   for(var i = 0;i<sections.length;i++){ //how many sections the edition has, iterates through sections (below)
       db.collection("editions").doc("edition" + edition).collection(sections[i]).get()
@@ -71,6 +84,8 @@ function createEdition(edition){
                     elements.paragraph.call(renderElement);
                   } else if(entries2[j][0] == "button") {
                     elements.button.call(renderElement);
+                  } else if(entries2[j][0] == "video") {
+                    elements.video.call(renderElement);
                   }
                 }
               }
@@ -130,9 +145,9 @@ for (var i=0; i<edition.length; i++) {
 // function search(input){
 //   var edition_= [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // update this later depending on # of completed editions (searches through them)
 //   for(let j = 0; j<edition_.length;j++){
-   
+
 //     for(var i = 0;i<sections_.length;i++){ //how many sections the edition has, iterates through sections (below)
-      
+
 //       db.collection("editions").doc("edition" + edition_[j]).collection(sections_[i]).get()
 //         .then(querySnapshot => {
 //           querySnapshot.forEach(doc => {
@@ -140,7 +155,7 @@ for (var i=0; i<edition.length; i++) {
 //             let entries1 = Object.entries(data); //return array of each object's key-value pairs
 //             for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
 //               let new_val = `${value}`;
-              
+
 //               if(new_val.includes(input.target.value)==true){
 //                 //console.log(new_val);
 //                 //create a card thingy ig?
@@ -157,13 +172,13 @@ for (var i=0; i<edition.length; i++) {
 //                     if(editionNum != editions_array[g]) {
 //                       editions_array.push(editionNum);
 //                       console.log(editionNum);
-//                     } 
-                  
+//                     }
+
 //                   }
-//                 }  
-                
-              
-          
+//                 }
+
+
+
 //               }
 //             }
 //           });
@@ -178,11 +193,7 @@ for (var i=0; i<edition.length; i++) {
 //   }
 
 //   console.log(editions_array);
- 
+
 //   // console.log(searchbar);
 
 //   // searchbar.addEventListener("search", search(this.value))
-  
-
-  
-

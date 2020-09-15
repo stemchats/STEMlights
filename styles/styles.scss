@@ -125,7 +125,7 @@ html {
     font-size: 1.1em;
     margin-top: 150px;
     margin-bottom: 110px;
-    
+
     a {
         color: $lavendar;
         text-decoration: underline;
@@ -135,7 +135,26 @@ html {
             color: $yellow;
         }
     }
-        
+
+    .yt-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    }
+
+    /* Then style the iframe to fit in the container div with full height and width */
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      margin: 1em 0em;
+    }
+
     .disabled {
         text-decoration: none;
         pointer-events: none;
@@ -156,7 +175,7 @@ html {
         padding: 0 1rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .section-header-img, .edition-header-img {
         @include responsive-edition;
         margin-top: 3rem;
@@ -311,7 +330,7 @@ header {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-    
+
             .nav-link {
                 margin: 0 30px;
                 padding: 0;
@@ -320,7 +339,7 @@ header {
                 transition: 0.3s;
                 line-height: initial;
                 white-space: nowrap;
-    
+
                 &:hover {
                     border-bottom: 2px solid $yellow;
                 }
@@ -471,13 +490,13 @@ body {
 }
 
 .card-text {
-    color: white; 
-    font-weight: 5px; 
+    color: white;
+    font-weight: 5px;
 }
 
 .card-deck{
     margin: 0 3rem;
-    
+
     .card{
         background-color:  $light-grey;
 
@@ -486,7 +505,7 @@ body {
         }
     }
     .card-title{
-        font-weight: bold; 
+        font-weight: bold;
     }
     .card-text {
         color: black;
@@ -507,7 +526,7 @@ body {
 }
 
 .text-center{
-    width: 100%; 
+    width: 100%;
     background-color: $dark-blue;
     border: none;
     border-radius: 0;
@@ -519,11 +538,11 @@ body {
 }
 
 .card-deck1{
-    margin-left: auto; 
-    margin-right: auto; 
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     .card-title {
         color: black;
     }
@@ -532,8 +551,8 @@ body {
         color: black;
         padding: 25px 10px 25px 10px;
         border-radius: 12px;
-        float: left; 
-        margin: 30px 25px 25px 25px;; 
+        float: left;
+        margin: 30px 25px 25px 25px;;
     }
 }
 
@@ -667,21 +686,21 @@ footer {
     .socialmedia-links {
         padding-top: 40px;
     }
-    
+
     .social-icons {
         margin: 20px auto 40px;
         font-size: 24px;
         width: max-content;
-    
+
         &:hover i {
             opacity: 0.5;
         }
-    
+
         i {
             margin: 0 10px;
             color: white;
             transition: 0.2s;
-    
+
             &:hover {
                 transform: translateY(-20%);
                 opacity: 1;

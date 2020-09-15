@@ -34,12 +34,10 @@
     position: absolute;
     right: 50px;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     font-size: 24px;
     color: black;
     cursor: pointer;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
   header input[type=checkbox]:checked ~ label,
@@ -53,12 +51,10 @@
     display: block;
     position: fixed;
     background-color: white;
-    -webkit-box-shadow: 0px 10px 16px -16px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 10px 16px -16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 16px -16px rgba(0, 0, 0, 0.2);
     height: 0;
     top: 70px;
     z-index: 10;
-    -webkit-transition: height 0.3s;
     transition: height 0.3s;
     overflow: hidden;
   }
@@ -68,8 +64,7 @@
     padding: 10px 20px;
     top: 0;
     left: 100%;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
   header .collapsible-menu nav ul .nav-item {
     padding: 8px;
@@ -77,8 +72,6 @@
   header .collapsible-menu nav ul .nav-item .nav-link {
     margin-right: 10px;
     margin-left: auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
   header .collapsible-menu .search-bar {
@@ -87,13 +80,8 @@
     margin: 0;
   }
   .img-row-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .img-row-container .teamcard-container {
     display: block;
@@ -127,13 +115,8 @@
 
 @media screen and (max-width: 645px) {
   .newsletter .card {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .newsletter .card img {
     display: block;
@@ -166,4 +149,3 @@
     width: 100%;
   }
 }
-/*# sourceMappingURL=media.css.map */
