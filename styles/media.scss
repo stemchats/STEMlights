@@ -75,12 +75,12 @@ $light-grey : #f8f8f8;
             cursor: pointer;
             transition: 0.2s;
         }
-    
-        input[type=checkbox]:checked ~ label, 
+
+        input[type=checkbox]:checked ~ label,
         input[type=checkbox] ~ label:hover {
             color: $yellow !important;
         }
-    
+
         #menu-icon:checked ~ .collapsible-menu {
             height: 25%; //height of navbar when open
         }
@@ -104,10 +104,10 @@ $light-grey : #f8f8f8;
                     top: 0;
                     left: 100%;
                     transform: translateX(-100%);
-    
+
                     .nav-item {
                         padding: 8px;
-    
+
                         .nav-link {
                             margin-right: 10px;
                             margin-left: auto;
@@ -128,7 +128,7 @@ $light-grey : #f8f8f8;
     .img-row-container {
         display: flex;
         flex-direction: column;
-    
+
         .teamcard-container {
             display: block;
             width: 100%;
@@ -208,4 +208,5 @@ $light-grey : #f8f8f8;
             width: 100%;
         }
     }
+
 }
