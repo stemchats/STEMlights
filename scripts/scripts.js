@@ -133,7 +133,7 @@ function search(input){
    
     for(var i = 0;i<sections_.length;i++){ //how many sections the edition has, iterates through sections (below)
       
-      db.collection("editions").doc("edition" + edition_[j]).collection(sections[i]).get()
+      db.collection("editions").doc("edition" + edition_[j]).collection(sections_[i]).get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             const data = doc.data(); //retrieves all the sections as 'objects'
@@ -149,19 +149,19 @@ function search(input){
                 //sectionName = sections[i];
                 if(editions_array.length == 0) {
                   editions_array.push(editionNum);
-                } else {
-                for (var g = 0; g < editions_array.length - 1; g++) {
-                  //console.log(editionNum);
-                  console.log(editions_array[g]);
-                  if(editionNum == editions_array[g]) {
-                    break;
-                  } else {
-                    continue;
-                  }
-                  editions_array.push(editionNum);
                   console.log(editionNum);
-              }
-            }
+                } else if(editions_array.length>0) {
+                  for (var g = 0; g < editions_array.length; g++) {
+                    console.log(editionNum);
+                    //console.log(editions_array[g]);
+                    if(editionNum != editions_array[g]) {
+                      editions_array.push(editionNum);
+                      console.log(editionNum);
+                    } 
+                  
+                  }
+                }  
+                
               
           
               }
