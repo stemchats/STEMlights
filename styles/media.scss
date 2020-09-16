@@ -34,9 +34,49 @@ $light-grey : #f8f8f8;
 
 
 @media screen and (max-width: 1330px) {
-    //directory disappears
+    //directory moves to right side of screen --> directory buttons
     #directory {
-        display: none;
+        right: 55px;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        list-style: none;
+        text-align: right;
+
+        h3 {
+            display: none;
+        }
+
+        li {
+            white-space: nowrap;
+
+            .dir-link {
+                transform: translateX(100%);
+                pointer-events: none;
+                color: rgba($color: black, $alpha: 0);
+                background-color: rgba($color: white, $alpha: 0);
+                padding: 7px;
+                border-radius: 10px;
+                transition: 0.3s;
+            }
+    
+            &:hover {
+                .dir-link {
+                    transform: translateX(0%);
+                    opacity: 1;
+                    color: rgba($color: black, $alpha: 1);
+                    background-color: rgba($color: white, $alpha: 1);
+                }
+            }
+
+            &:not(:nth-child(2)) {
+                border: 0; //gets rid of dividers
+            }
+        }
+
+        .after {
+            display: inline-block;
+        }
     }
 }
 
@@ -160,6 +200,14 @@ $light-grey : #f8f8f8;
         .wave {
             transform: translateY(-70%) scaleY(1.2);
         }
+    }
+}
+
+
+
+@media screen and (max-width: 890px) {
+    #directory {
+        display: none;
     }
 }
 

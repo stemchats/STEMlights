@@ -88,6 +88,7 @@ html {
 // directory
 #directory {
     position: fixed;
+    width: max-content;
     top: 225px;
     left: 6%;
     list-style-position: inside;
@@ -115,6 +116,23 @@ html {
         &:hover a {
             color: $yellow;
             margin-left: 15px;
+        }
+    }
+
+    .after {
+        position: fixed;
+        display: none;
+        width: 15px;
+        height: 15px;
+        border: 1px solid $yellow;
+        border-radius: 50%;
+        background-color: white;
+        margin-top: 5px;
+        transition: 0.3s;
+        z-index: 10;
+
+        &:hover {
+            background-color: $yellow;
         }
     }
 }

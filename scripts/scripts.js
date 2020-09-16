@@ -121,9 +121,18 @@ var directory = document.getElementById('directory');
 function createDirectory(title) {
   var linkText = document.createElement('li');
   var directoryLink = document.createElement('a');
+  directoryLink.classList.add("dir-link");
   directoryLink.setAttribute('href', "#" + title);
   directoryLink.textContent = title;
-  linkText.appendChild(directoryLink); //<li><a>SECTION TITLE</a></li>
+  linkText.appendChild(directoryLink); //<li><a class="dir-link">SECTION TITLE</a></li>
+  
+  var after = document.createElement('span');
+  after.classList.add("after");
+  var afterButton = document.createElement('a');
+  afterButton.setAttribute('href', "#" + title);
+  afterButton.appendChild(after);
+  linkText.appendChild(afterButton); //<li><a class="dir-link">SECTION TITLE</a><a><span class="after">(BUTTON)</span></a></li>
+
   directory.appendChild(linkText);
 }
 
