@@ -569,6 +569,24 @@ body {
         background-color: white;
         position: relative;
         margin-top: 2rem;
+        border-radius: 0;
+        border: none;
+
+        &:not(:last-child)::after { //, &:nth-child(2)::before
+            content: '';
+            position: absolute;
+            width: 256px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.125);
+        }
+        /* &::before {
+            top: 0;
+        } */
+        &::after {
+            bottom: 0;
+        }
 
         .card-body {
             p {

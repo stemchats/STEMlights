@@ -141,6 +141,10 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .newsletter .card::after {
+    width: 100%;
+    margin: 0;
+  }
   .newsletter .card img {
     display: block;
     margin-right: auto;

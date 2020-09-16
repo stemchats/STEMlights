@@ -591,6 +591,26 @@ body {
   background-color: white;
   position: relative;
   margin-top: 2rem;
+  border-radius: 0;
+  border: none;
+  /* &::before {
+            top: 0;
+        } */
+}
+
+.newsletter .card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  width: 256px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.newsletter .card::after {
+  bottom: 0;
 }
 
 .newsletter .card .card-body p {
