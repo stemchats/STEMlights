@@ -181,6 +181,10 @@ $light-grey : #f8f8f8;
             }
         }
     }
+    
+    #directory {
+        display: none;
+    }
 
     .img-row-container {
         display: flex;
@@ -200,14 +204,6 @@ $light-grey : #f8f8f8;
         .wave {
             transform: translateY(-70%) scaleY(1.2);
         }
-    }
-}
-
-
-
-@media screen and (max-width: 890px) {
-    #directory {
-        display: none;
     }
 }
 
