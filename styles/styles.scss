@@ -445,6 +445,18 @@ body {
     overflow-x: hidden;
 }
 
+#STEMlights {
+    .card-header {
+      height: 100vh;
+    }
+}
+
+#recent {
+  margin-top: 20px;
+  section {
+    // height: 100vh
+  }
+}
 
 .card-header{
     width: 100%;
@@ -452,7 +464,6 @@ body {
     padding-top: 10em;
     padding-bottom: 8em;
     border: none;
-    margin-bottom: 20px;
 }
 
 .card-title1{
@@ -521,8 +532,8 @@ body {
 
         img {
             padding: 2rem;
-            height: 300px; 
-            object-fit: contain; 
+            height: 300px;
+            object-fit: contain;
         }
     }
     .card-title{
@@ -709,7 +720,7 @@ body {
 footer {
     /* border-top: 20px solid white;   /* REMOVE WHEN FOOTER + PODCAST =/= SAME COLOR */
     padding-bottom: 4rem;
-    margin-top: 15rem;
+    margin-top: 25rem;
     background-color: $dark-blue;
 
     .wave {
@@ -721,6 +732,10 @@ footer {
 
     .row {
         margin: 0; //nullifies bootstrap margin-right: -15px; margin-left: -15px;
+    }
+
+    .shift-y {
+      margin-bottom: -30px;
     }
 
     .socialmedia-links {
