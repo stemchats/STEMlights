@@ -808,4 +808,11 @@ footer {
     .page-link{
         color: $dark-blue;
     }
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: $dark-blue;
+        border-color: $dark-blue;
+    }
+       
 }
