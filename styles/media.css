@@ -75,7 +75,7 @@
     display: block;
     position: absolute;
     right: 50px;
-    top: 50%;
+    top: 55%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     font-size: 24px;
@@ -89,7 +89,7 @@
     color: #f6d970 !important;
   }
   header #menu-icon:checked ~ .collapsible-menu {
-    height: 19%;
+    height: 180px;
   }
   header .collapsible-menu {
     display: block;
@@ -150,6 +150,9 @@
     margin-left: auto;
     text-align: center;
   }
+  footer {
+    margin-top: 13rem;
+  }
   footer .wave {
     -webkit-transform: translateY(-70%) scaleY(1.2);
             transform: translateY(-70%) scaleY(1.2);
@@ -167,6 +170,9 @@
   }
   .card-header .float-right {
     margin-top: 60px;
+  }
+  footer {
+    margin-top: 10rem;
   }
 }
 
@@ -201,8 +207,10 @@
     margin-bottom: 2rem;
   }
   footer .wave {
+    display: none;
+  }
+  footer .wave:nth-child(2) {
     display: block;
-    width: 166%;
     -webkit-transform: translateY(-69%) scaleY(1.2);
             transform: translateY(-69%) scaleY(1.2);
   }
@@ -210,6 +218,10 @@
 
 @media screen and (max-width: 479px) {
   /* start of phone styles */
+  header .logo {
+    margin-left: 30px;
+    margin-right: auto;
+  }
   .newsletter img {
     display: block;
     width: 100%;

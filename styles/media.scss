@@ -124,7 +124,7 @@ $light-grey : #f8f8f8;
             display: block;
             position: absolute;
             right: 50px;
-            top: 50%;
+            top: 55%;
             transform: translateY(-50%);
             font-size: 24px;
             color: black;
@@ -138,8 +138,8 @@ $light-grey : #f8f8f8;
         }
 
         #menu-icon:checked ~ .collapsible-menu {
-            height: 19%; // w/o search bar
-            //height: 25%; //height of navbar when open (w/ search bar)
+            height: 180px; // w/o search bar
+            //height: 210px; //height of navbar when open (w/ search bar)
         }
 
         .collapsible-menu {
@@ -201,6 +201,8 @@ $light-grey : #f8f8f8;
     }
 
     footer {
+        margin-top: 13rem;
+        
         .wave {
             transform: translateY(-70%) scaleY(1.2);
         }
@@ -223,6 +225,10 @@ $light-grey : #f8f8f8;
         .float-right {
             margin-top: 60px;
         }
+    }
+
+    footer {
+        margin-top: 10rem;
     }
 }
 
@@ -263,9 +269,13 @@ $light-grey : #f8f8f8;
 
     footer {
         .wave {
-            display: block;
-            width: 166%;
-            transform: translateY(-69%) scaleY(1.2);
+            display: none;
+    
+            &:nth-child(2) {
+                display: block;
+                // width: 166%;
+                transform: translateY(-69%) scaleY(1.2);
+            }
         }
     }
 }
@@ -275,6 +285,13 @@ $light-grey : #f8f8f8;
 
 @media screen and (max-width: 479px) {
 /* start of phone styles */
+    header {
+        .logo {
+            margin-left: 30px;
+            margin-right: auto;
+        }
+    }
+
     .newsletter {
         img {
             display: block;

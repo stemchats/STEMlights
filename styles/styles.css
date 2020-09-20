@@ -127,7 +127,7 @@ html {
   max-width: 800px;
   min-height: 100vh;
   font-size: 1.1em;
-  margin-top: 150px;
+  margin-top: 125px;
   margin-bottom: 110px;
   /* Then style the iframe to fit in the container div with full height and width */
 }
@@ -362,7 +362,7 @@ header .collapsible-menu ul {
   margin-bottom: 0;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 52%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -528,7 +528,7 @@ body {
 }
 
 .card-deck {
-  margin: 0 3rem;
+  margin: 0 1.5rem;
 }
 
 .card-deck .card {
@@ -737,6 +737,7 @@ footer {
   padding-bottom: 4rem;
   margin-top: 15rem;
   background-color: #233142;
+  overflow-x: hidden;
 }
 
 footer .wave {
@@ -745,6 +746,10 @@ footer .wave {
   -webkit-transform: translateY(-60%) scaleY(0.9);
           transform: translateY(-60%) scaleY(0.9);
   left: 0;
+}
+
+footer .wave:nth-child(2) {
+  display: none;
 }
 
 footer .row {

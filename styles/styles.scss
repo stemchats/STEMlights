@@ -142,7 +142,7 @@ html {
     @include responsive-edition;
     min-height: 100vh;
     font-size: 1.1em;
-    margin-top: 150px;
+    margin-top: 125px;
     margin-bottom: 110px;
 
     a {
@@ -347,7 +347,7 @@ header {
             margin-bottom: 0;
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 52%;
             transform: translate(-50%, -50%);
 
             .nav-link {
@@ -514,7 +514,7 @@ body {
 }
 
 .card-deck{
-    margin: 0 3rem;
+    margin: 0 1.5rem;
 
     .card{
         background-color:  $light-grey;
@@ -711,12 +711,17 @@ footer {
     padding-bottom: 4rem;
     margin-top: 15rem;
     background-color: $dark-blue;
+    overflow-x: hidden;
 
     .wave {
         width: 100%;
         position: absolute;
         transform: translateY(-60%) scaleY(0.9);
         left: 0;
+
+        &:nth-child(2) {
+            display: none;
+        }
     }
 
     .row {
