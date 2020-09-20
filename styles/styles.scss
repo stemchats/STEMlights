@@ -805,4 +805,7 @@ footer {
 
 .pagination{
     padding: 30px 10px 0px 10px; 
+    .page-link{
+        color: $dark-blue;
+    }
 }

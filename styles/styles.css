@@ -855,4 +855,8 @@ footer .copy {
 .pagination {
   padding: 30px 10px 0px 10px;
 }
+
+.pagination .page-link {
+  color: #233142;
+}
 /*# sourceMappingURL=styles.css.map */
