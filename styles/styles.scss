@@ -806,3 +806,17 @@ footer {
         opacity: 1;
     }
 }
+
+.pagination{
+    padding: 30px 10px 0px 10px; 
+    .page-link{
+        color: $dark-blue;
+    }
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: $dark-blue;
+        border-color: $dark-blue;
+    }
+       
+}
