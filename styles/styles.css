@@ -478,6 +478,14 @@ body {
   margin-top: 20px;
 }
 
+#recent .header-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 30px;
+  color: #233142;
+  margin: 50px 0 30px;
+}
+
 .card-title1 {
   text-align: left;
   font-family: 'Josefin Sans';
@@ -510,24 +518,6 @@ body {
 
 .btn1:hover {
   background-color: #f6d970;
-}
-
-.header-title {
-  text-align: center;
-  font-family: 'Josefin Sans';
-  font-weight: 800;
-  font-size: 30px;
-  width: 100%;
-  color: #233142;
-}
-
-.header-title1 {
-  text-align: center;
-  font-family: 'Josefin Sans';
-  font-weight: 800;
-  font-size: 30px;
-  width: 100%;
-  color: white;
 }
 
 .card-text {

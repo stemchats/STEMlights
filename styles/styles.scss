@@ -460,10 +460,15 @@ body {
 }
 
 #recent {
-  margin-top: 20px;
-  section {
-    // height: 100vh
-  }
+    margin-top: 20px;
+
+    .header-title{
+        text-align: center;
+        font-weight: 800;
+        font-size: 30px;
+        color: $dark-blue;
+        margin: 50px 0 30px;
+    }
 }
 
 .card-title1{
@@ -499,24 +504,6 @@ body {
 .btn1:hover {
     //box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     background-color: $yellow;
-}
-
-.header-title{
-    text-align: center;
-    font-family: 'Josefin Sans';
-    font-weight: 800;
-    font-size: 30px;
-    width: 100%;
-    color: $dark-blue;
-}
-
-.header-title1{
-    text-align: center;
-    font-family: 'Josefin Sans';
-    font-weight: 800;
-    font-size: 30px;
-    width: 100%;
-    color: white;
 }
 
 .card-text {
