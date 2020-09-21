@@ -460,20 +460,22 @@ body {
   overflow-x: hidden;
 }
 
-#STEMlights .card-header {
+#STEMlights {
   min-height: 100vh;
+  padding: .75rem 1.25rem;
+  width: 100%;
+  background-color: #233142;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #recent {
   margin-top: 20px;
-}
-
-.card-header {
-  width: 100%;
-  background-color: #233142;
-  padding-top: 10em;
-  padding-bottom: 8em;
-  border: none;
 }
 
 .card-title1 {

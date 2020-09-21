@@ -450,9 +450,13 @@ body {
 }
 
 #STEMlights {
-    .card-header {
-        min-height: 100vh;
-    }
+    min-height: 100vh;
+    padding: .75rem 1.25rem;
+    width: 100%;
+    background-color: $dark-blue;
+    border: none;
+    display: flex;
+    align-items: center;
 }
 
 #recent {
@@ -460,14 +464,6 @@ body {
   section {
     // height: 100vh
   }
-}
-
-.card-header{
-    width: 100%;
-    background-color: $dark-blue;
-    padding-top: 10em;
-    padding-bottom: 8em;
-    border: none;
 }
 
 .card-title1{
