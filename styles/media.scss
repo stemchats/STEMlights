@@ -290,6 +290,8 @@ $light-grey : #f8f8f8;
 @media screen and (max-width: 479px) {
 /* start of phone styles */
     header {
+        height: 60px;
+
         .logo {
             margin-left: 30px;
             margin-right: auto;
