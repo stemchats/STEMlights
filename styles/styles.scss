@@ -265,7 +265,7 @@ header {
     height: 75px;
     background: white;
     z-index: 1000;
-    overflow: hidden;
+    //overflow: hidden;
 
     #menu-icon, #menu-icon ~ label, input[type=checkbox] {
         display: none;
@@ -297,22 +297,26 @@ header {
         }
 
         .logo-text::before, .logo-text::after {
-            content: '\f0eb';
-            font-family: "Font Awesome 5 Free"; font-weight: 400;
+            content: "help";
+            //font-family: "Font Awesome 5 Free"; font-weight: 400;
+            //font-size: 22px;
+            //color: $yellow;
             position: absolute;
-            font-size: 22px;
+            background-image: url('/images/STEMlights_LogoTransparent.png');
+            background-size: 25px;
+            background-repeat: no-repeat;
             opacity: 0;
-            color: $yellow;
+            color: transparent;
             transition: 0.4s;
             top: 50%;
             transform: translateY(-50%);
             pointer-events: none; //doesnt register hover/click --> easter egg
         }
         .logo-text::before {
-            left: -25px;
+            left: -30px;
         }
         .logo-text::after {
-            right: -25px;
+            right: -35px;
         }
 
         &:hover {
@@ -347,7 +351,7 @@ header {
             margin-bottom: 0;
             position: absolute;
             top: 50%;
-            left: 52%;
+            left: 53%;
             transform: translate(-50%, -50%);
 
             .nav-link {
@@ -447,7 +451,7 @@ body {
 
 #STEMlights {
     .card-header {
-      height: 100vh;
+        min-height: 100vh;
     }
 }
 

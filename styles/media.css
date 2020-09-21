@@ -3,6 +3,9 @@
   #directory {
     left: 3%;
   }
+  footer {
+    margin-top: 20rem;
+  }
 }
 
 @media screen and (max-width: 1330px) {
@@ -211,8 +214,8 @@
   }
   footer .wave:nth-child(2) {
     display: block;
-    -webkit-transform: translateY(-69%) scaleY(1.2);
-            transform: translateY(-69%) scaleY(1.2);
+    -webkit-transform: translateY(-69%) scaleY(1.6);
+            transform: translateY(-69%) scaleY(1.6);
   }
 }
 

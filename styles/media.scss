@@ -28,6 +28,10 @@ $light-grey : #f8f8f8;
     #directory {
         left: 3%;
     }
+
+    footer {
+        margin-top: 20rem;
+    }
 }
 
 
@@ -202,7 +206,7 @@ $light-grey : #f8f8f8;
 
     footer {
         margin-top: 13rem;
-        
+
         .wave {
             transform: translateY(-70%) scaleY(1.2);
         }
@@ -274,7 +278,7 @@ $light-grey : #f8f8f8;
             &:nth-child(2) {
                 display: block;
                 // width: 166%;
-                transform: translateY(-69%) scaleY(1.2);
+                transform: translateY(-69%) scaleY(1.6);
             }
         }
     }
