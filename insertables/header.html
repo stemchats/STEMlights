@@ -48,20 +48,53 @@
             </nav>
         </div>
 
-        <!-- <div class="search-bar" >
+        <!-- <div class="search-bar" id="searchBar"></div> -->
+
+        <div class="search-bar">
             <form>
-                <input type="search" class="search-input" placeholder="Search..." id= "searchBar" value="" name="search" autocomplete="off">
+                <input type="search" class="search-input" placeholder="Search..." value="" name="search" autocomplete="off">
                 <input type="submit" class="search-submit" value="">
                 <span class="search-icon"><i class="fas fa-search"></i></span>
             </form>
-        </div> -->
+        </div>
     </div>
 </header>
   <!-- search bar script -->
-    <!-- <script type="text/javascript">
-        const input = document.getElementById("searchBar");
-        input.addEventListener("click", search);
-        console.log(input);
+
+     <!-- Load our React component. -->
+     <!-- <script type="text/babel">
+     class SearchForm extends React.Component {
+       constructor(props) {
+         super(props);
+         this.state = {value: ''};
+
+         this.handleChange = this.handleChange.bind(this);
+         this.handleSubmit = this.handleSubmit.bind(this);
+       }
+
+       handleChange(event) {
+         this.setState({value: event.target.value});
+       }
+
+       handleSubmit(event) {
+         alert(this.state.value);
+         event.preventDefault();
+       }
+
+       render() {
+         return (
+           <form onSubmit={this.handleSubmit}>
+           <input type="search" class="search-input" placeholder="Search..." value={this.state.value} onChange={this.handleChange} name="search" autocomplete="off">
+           <input type="submit" class="search-submit" value="">
+           <span class="search-icon"><i class="fas fa-search"></i></span>
+           </form>
+         );
+       }
+     }
+     ReactDOM.render(
+        <SearchForm />,
+        document.getElementById('searchBar')
+      );
      </script> -->
 </body>
 </html>

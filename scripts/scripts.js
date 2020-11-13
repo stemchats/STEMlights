@@ -125,7 +125,7 @@ function createDirectory(title) {
   directoryLink.setAttribute('href', "#" + title);
   directoryLink.textContent = title;
   linkText.appendChild(directoryLink); //<li><a class="dir-link">SECTION TITLE</a></li>
-  
+
   var after = document.createElement('span');
   after.classList.add("after");
   var afterButton = document.createElement('a');
