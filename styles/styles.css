@@ -361,7 +361,7 @@ header .collapsible-menu ul {
   margin-bottom: 0;
   position: absolute;
   top: 50%;
-  left: 78%;
+  left: 80%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
