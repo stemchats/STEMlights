@@ -118,6 +118,15 @@ html {
   background-color: #f6d970;
 }
 
+#editionBack {
+  position: fixed;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  top: 410px;
+  left: 3%;
+}
+
 #edition {
   display: block;
   margin-right: auto;

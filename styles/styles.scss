@@ -137,6 +137,15 @@ html {
     }
 }
 
+#editionBack {
+    position: fixed;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    top: 410px;
+    left: 6%;
+  }
+
 #edition {
     @include center;
     @include responsive-edition;
