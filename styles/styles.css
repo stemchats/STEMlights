@@ -269,6 +269,8 @@ header {
   height: 65px;
   background: white;
   z-index: 1000;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
   /* */
 }
 
