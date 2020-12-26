@@ -240,5 +240,8 @@
     display: block;
     width: 100%;
   }
+  #editionBack {
+    display: none;
+  }
 }
 /*# sourceMappingURL=media.css.map */
