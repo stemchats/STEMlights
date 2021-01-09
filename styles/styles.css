@@ -67,7 +67,7 @@ html {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  top: 125px;
+  top: 180px;
   left: 6%;
   list-style-position: inside;
   -webkit-animation: 1.5s ease-out 0s 1 fadeIn;
@@ -123,8 +123,10 @@ html {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  top: 70px;
-  left: 5.1%;
+  top: 110px;
+  left: 6%;
+  -webkit-animation: 1.5s ease-out 0s 1 fadeIn;
+          animation: 1.5s ease-out 0s 1 fadeIn;
 }
 
 #edition {
@@ -205,8 +207,8 @@ html {
 }
 
 #edition .section-header-img:target, #edition .edition-header-img:target {
-  padding-top: 100px;
-  margin-top: calc(3rem + -100px);
+  padding-top: 10px;
+  margin-top: calc(3rem + -10px);
 }
 
 #edition button {

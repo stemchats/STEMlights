@@ -1,6 +1,6 @@
 /* VARIABLES */
 @media screen and (max-width: 1450px) {
-  #directory {
+  #directory, #editionBack {
     left: 3%;
   }
   footer {
@@ -9,6 +9,9 @@
 }
 
 @media screen and (max-width: 1330px) {
+  #editionBack {
+    display: none;
+  }
   #directory {
     right: 55px;
     left: auto;

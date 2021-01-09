@@ -24,8 +24,8 @@ $light-grey : #f8f8f8;
 
 
 @media screen and (max-width: 1450px) {
-    //directory moves over
-    #directory {
+    //directory + editionBack button move over
+    #directory, #editionBack {
         left: 3%;
     }
 
@@ -38,6 +38,11 @@ $light-grey : #f8f8f8;
 
 
 @media screen and (max-width: 1330px) {
+    //edition back button disappears
+    #editionBack {
+        display: none;
+    }
+    
     //directory moves to right side of screen --> directory buttons
     #directory {
         right: 55px;
