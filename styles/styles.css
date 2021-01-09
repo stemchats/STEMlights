@@ -207,8 +207,8 @@ html {
 }
 
 #edition .section-header-img:target, #edition .edition-header-img:target {
-  padding-top: 10px;
-  margin-top: calc(3rem + -10px);
+  padding-top: 70px;
+  margin-top: calc(3rem + -70px);
 }
 
 #edition button {
