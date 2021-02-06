@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <!-- Bootstrap Meta Tags -->
   <meta charset="utf-8">
@@ -40,7 +39,7 @@
   <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
   <link rel="stylesheet" type="text/css" href="/styles/media.css">
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i' rel='stylesheet'>
-  <title>STEMlights</title>
+  <title>STEMlights: Edition 40</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-2"></script>
@@ -64,55 +63,29 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <div id="header"></div>
-    <div class="main newsletter">
-        <h1 class="center"><span class="title">Editions</span></h1>
-        <div class="card">
-          <a href="/edition/10.html">
-              <div class="card-body">
-                  <img src="/images/edition10/e10thumbnail.svg" alt="Newsletter Image">
-                  <h2 class="card-title">Edition #10</h2>
-                  <p class="card-text">Read about the Education impacts of COVID-19, Protesting the Pandemic, Youth-STEM leader, Saaniya Kapur, and a NEW challenge yourself section to keep yourself engaged during your quarantine!</p>
-              </div>
-          </a>
-      </div>
-        <div class="card">
-          <a href="/edition/9.html">
-              <div class="card-body">
-                  <img src="/images/edition9/coronacarehome.svg" alt="Newsletter Image">
-                  <h2 class="card-title">Edition #9</h2>
-                  <p class="card-text">Read about Coronavirus symptoms, politics surrounding STEM funding, Youth STEM-Leader, Spencer Hulsey, and a NEW challenge yourself section to spark STEM curiosity during self-quarantine.</p>
-              </div>
-          </a>
-      </div>
-        <div class="card">
-            <a href="/edition/8.html">
-                <div class="card-body">
-                    <img src="/images/edition8/e8thumbnail.svg" alt="Newsletter Image">
-                    <h2 class="card-title">Edition #8</h2>
-                    <p class="card-text">Read about a reliable explanation to Coronavirus, the Global Politics behind the Pandemic, Youth STEM-Leader, Sabina London,  and for variety, STEM opportunities for Students with STEM innovations.</p>
-                </div>
-            </a>
-        </div>
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="/edition/page3.html" tabindex="-1">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="/edition/">1</a></li>
-              <li class="page-item"><a class="page-link" href="/edition/page2.html">2</a></li>
-              <li class="page-item"><a class="page-link" href="/edition/page3.html">3</a></li>
-              <li class="page-item active"><a class="page-link" href="#">4</a></li>
-              <li class="page-item disabled">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
-</div>
+  <!-- HEADER -->
+  <div id="header"></div>
 
-    <!-- footer -->
-    <div id="footer"></div>
+
+  <script>
+    const sections = ["title", "politics", "spotlight", "news", "history", "opportunities"];
+  </script>
+
+  <!-- put 'sections' array before directory -->
+  <ol id="directory">
+    <h3>DIRECTORY</h3>
+  </ol>
+
+  <div id="edition">
+            <!-- everything from the database goes in here (its where the edition goes) -->
+  </div>
+
+  <button id="editionBack" onclick="window.location.pathname = '/edition/'">
+    <i class="fas fa-angle-left"></i> Back to newsletter
+  </button>
+  <!-- footer -->
+  <div id="footer"></div>
+
 
     <!-- The Core Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
@@ -138,18 +111,9 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics()
     </script>
-
-    <!-- Bootstrap Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
-      integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
-      crossorigin="anonymous"></script>
-
-    <!-- Scripts -->
     <script type="text/javascript" src="/scripts/scripts.js"></script>
-
-  </body>
-
+    <script>
+      createEdition(40);
+    </script>
+</body>
 </html>
