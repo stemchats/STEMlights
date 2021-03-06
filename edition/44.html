@@ -39,7 +39,7 @@
   <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
   <link rel="stylesheet" type="text/css" href="/styles/media.css">
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i' rel='stylesheet'>
-  <title>STEMlights: Edition 14</title>
+  <title>STEMlights: Edition 44</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-2"></script>
@@ -68,7 +68,7 @@
 
 
   <script>
-    const sections = ["title", "investemgations", "politics", "spotlight", "news", "opportunities", "challenge", "qna", ];
+    const sections = ["title", "politics", "spotlight", "news", "history", "opportunities"];
   </script>
 
   <!-- put 'sections' array before directory -->
@@ -80,11 +80,12 @@
             <!-- everything from the database goes in here (its where the edition goes) -->
   </div>
 
-  <button id="editionBack" onclick="window.location.pathname = '/edition/page4.html'">
+  <button id="editionBack" onclick="window.location.pathname = '/edition/'">
     <i class="fas fa-angle-left"></i> Back to newsletter
   </button>
   <!-- footer -->
   <div id="footer"></div>
+
 
     <!-- The Core Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
@@ -110,17 +111,9 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics()
     </script>
-    <!-- Bootstrap Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
-      integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
-      crossorigin="anonymous"></script>
-
     <script type="text/javascript" src="/scripts/scripts.js"></script>
     <script>
-      createEdition(14);
+      createEdition(44);
     </script>
 </body>
 </html>
