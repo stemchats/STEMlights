@@ -16,6 +16,7 @@
 </head>
 <body>
 <header>
+  <div class="block">
     <div class="logo">
         <a class="logo-text" href="/">
             <h1>
@@ -23,7 +24,10 @@
             </h1>
         </a>
     </div>
-
+    <div class="logo-link">
+      <a class="stemchats" href="https://stemchats.org" target="_blank">a stemchats program</a>
+    </div>
+  </div>
     <input type="checkbox" id="menu-icon">
     <label for="menu-icon"><i class="fas fa-bars"></i></label>
 
@@ -43,7 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/about-us/">about us</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a href="#" class="btn navbtn1"
                                 onclick="window.open('https://confirmsubscription.com/h/t/88449A101872A7A4', '_blank')">subscribe</a>
@@ -105,13 +109,13 @@
      <script>
         var prevScrollpos = window.pageYOffset;
         window.onscroll = scrollShowNav;
-        
+
         function scrollShowNav() {
             var currentScrollPos = window.pageYOffset;
            if (prevScrollpos > currentScrollPos) {
               document.getElementsByTagName("header")[0].style.top = "0px";
            } else {
-              document.getElementsByTagName("header")[0].style.top = "-55px";
+              document.getElementsByTagName("header")[0].style.top = "-80px";
            }
            prevScrollpos = currentScrollPos;
         }

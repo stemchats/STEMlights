@@ -42,7 +42,7 @@ $light-grey : #f8f8f8;
     #editionBack {
         display: none;
     }
-    
+
     //directory moves to right side of screen --> directory buttons
     #directory {
         right: 55px;
@@ -68,7 +68,7 @@ $light-grey : #f8f8f8;
                 border-radius: 10px;
                 transition: 0.3s;
             }
-    
+
             &:hover {
                 .dir-link {
                     transform: translateX(0%);
@@ -190,7 +190,7 @@ $light-grey : #f8f8f8;
             }
         }
     }
-    
+
     #directory {
         display: none;
     }
@@ -291,7 +291,7 @@ $light-grey : #f8f8f8;
     footer {
         .wave {
             display: none;
-    
+
             &:nth-child(2) {
                 display: block;
                 // width: 166%;
@@ -307,9 +307,9 @@ $light-grey : #f8f8f8;
 @media screen and (max-width: 479px) {
 /* start of phone styles */
     header {
-        height: 60px;
+        height: 85px;
 
-        .logo {
+        .logo, .logo-link {
             margin-left: 30px;
             margin-right: auto;
         }
