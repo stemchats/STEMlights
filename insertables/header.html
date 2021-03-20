@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
+
 <head>
 
-  <!-- search bar expands when clicked -->
-  <script>
-    $(document).ready(function() {
-        $(".search-icon").click(function() {
-            $(".search-bar").toggleClass("active")
+    <!-- search bar expands when clicked -->
+    <script>
+        $(document).ready(function () {
+            $(".search-icon").click(function () {
+                $(".search-bar").toggleClass("active")
+            })
         })
-    })
-</script>
+    </script>
 
 
 </head>
-<body>
-<header>
-  <div class="block">
-    <div class="logo">
-        <a class="logo-text" href="/">
-            <h1>
-                <span class="logotxt-stem">stem</span><span class="logotxt-lights">lights</span>
-            </h1>
-        </a>
-    </div>
-    <div class="logo-link">
-      <a class="stemchats" href="https://stemchats.org" target="_blank">a stemchats program</a>
-    </div>
-  </div>
-    <input type="checkbox" id="menu-icon">
-    <label for="menu-icon"><i class="fas fa-bars"></i></label>
 
-    <div class="collapsible-menu">
-        <div class="show collapse" id="navbarTogglerDemo02">
-            <nav>
-                <ul>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/edition/">newsletter</a>
-                    </li>
-                    <!-- <li class="nav-item">
+<body>
+    <header>
+        <div class="block">
+            <div class="logo">
+                <a class="logo-text" href="/">
+                    <h1>
+                        <span class="logotxt-stem">stem</span><span class="logotxt-lights">lights</span>
+                    </h1>
+                </a>
+            </div>
+            <a class="stemchats" href="https://stemchats.org" target="_blank">a stemchats program</a>
+        </div>
+        <input type="checkbox" id="menu-icon">
+        <label for="menu-icon"><i class="fas fa-bars"></i></label>
+
+        <div class="collapsible-menu">
+            <div class="show collapse" id="navbarTogglerDemo02">
+                <nav>
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/edition/">newsletter</a>
+                        </li>
+                        <!-- <li class="nav-item">
                         <a class="nav-link" href="#">podcast</a>
                     </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about-us/">about us</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about-us/">about us</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="btn navbtn1"
+                        <li class="nav-item">
+                            <a href="#" class="btn navbtn1"
                                 onclick="window.open('https://confirmsubscription.com/h/t/88449A101872A7A4', '_blank')">subscribe</a>
-                        <!-- <a class="nav-link" target="_blank" href="https://confirmsubscription.com/h/t/88449A101872A7A4">subscribe</a> -->
-                    </li>
-                </ul>
-            </nav>
-        </div>
+                            <!-- <a class="nav-link" target="_blank" href="https://confirmsubscription.com/h/t/88449A101872A7A4">subscribe</a> -->
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
-        <!-- <div class="search-bar" id="searchBar"></div> -->
+            <!-- <div class="search-bar" id="searchBar"></div> -->
 
-        <!-- <div class="search-bar">
+            <!-- <div class="search-bar">
             <form>
                 <input type="search" class="search-input" placeholder="Search..." value="" name="search" autocomplete="off">
                 <input type="submit" class="search-submit" value="">
                 <span class="search-icon"><i class="fas fa-search"></i></span>
             </form>
         </div> -->
-    </div>
-</header>
-  <!-- search bar script -->
+        </div>
+    </header>
+    <!-- search bar script -->
 
-     <!-- Load our React component. -->
-     <!-- <script type="text/babel">
+    <!-- Load our React component. -->
+    <!-- <script type="text/babel">
      class SearchForm extends React.Component {
        constructor(props) {
          super(props);
@@ -106,19 +106,20 @@
       );
      </script> -->
 
-     <script>
+    <script>
         var prevScrollpos = window.pageYOffset;
         window.onscroll = scrollShowNav;
 
         function scrollShowNav() {
             var currentScrollPos = window.pageYOffset;
-           if (prevScrollpos > currentScrollPos) {
-              document.getElementsByTagName("header")[0].style.top = "0px";
-           } else {
-              document.getElementsByTagName("header")[0].style.top = "-80px";
-           }
-           prevScrollpos = currentScrollPos;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementsByTagName("header")[0].style.top = "0px";
+            } else {
+                document.getElementsByTagName("header")[0].style.top = "-80px";
+            }
+            prevScrollpos = currentScrollPos;
         }
-        </script>
+    </script>
 </body>
+
 </html>

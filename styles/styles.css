@@ -266,11 +266,6 @@ span.title::before, span.title::after {
   color: #ff5959;
 }
 
-.block {
-  display: block;
-  text-align: center;
-}
-
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,6 +289,18 @@ header {
 header #menu-icon, header #menu-icon ~ label, header input[type=checkbox] {
   display: none;
   z-index: 5;
+}
+
+header .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .block .stemchats {
+  margin-left: 40px;
+  position: relative;
+  bottom: 0;
 }
 
 header .logo {

@@ -263,18 +263,13 @@ span.title {
 /* HEADER */
 
 .stemchats {
-  color: #ff5959;
-  border-bottom: 1px dashed #ccc;
-  font-size: 14px;
-}
+    color: #ff5959;
+    border-bottom: 1px dashed #ccc;
+    font-size: 14px;
 
-.stemchats:hover {
-  color: #ff5959;
-}
-
-.block {
-  display: block;
-  text-align: center;
+    &:hover {
+        color: #ff5959;
+    }
 }
 
 header {
@@ -295,6 +290,16 @@ header {
         display: none;
         z-index: 5;
     } /* */
+
+    .block {
+        display: flex;
+
+        .stemchats {
+            margin-left: 40px;
+            position: relative;
+            bottom: 0;
+        }
+    }
 
     .logo {
         width: max-content;
