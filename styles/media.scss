@@ -126,10 +126,14 @@ $light-grey : #f8f8f8;
 /* start of large tablet styles */
     header {
         .logo {
-            margin: 0 auto;
+            margin: 0 auto 0 20px;
+        }
+        
+        .block .stemchats {
+            margin-left: 0;
         }
 
-        #menu-icon + label {
+        #menu-icon + label { //header menu icon appears
             display: block;
             position: absolute;
             right: 50px;
@@ -159,7 +163,7 @@ $light-grey : #f8f8f8;
             height: 0;
             top: 60px; //height of navbar
             z-index: 10;
-            transition: height 0.3s;
+            transition: 0.3s;
             overflow: hidden;
 
             nav {
@@ -307,11 +311,18 @@ $light-grey : #f8f8f8;
 @media screen and (max-width: 479px) {
 /* start of phone styles */
     header {
-        height: 85px;
+        height: 65px;
 
         .logo, .logo-link {
             margin-left: 30px;
             margin-right: auto;
+            margin-top: -20px;
+        }
+
+        .block .stemchats {
+            margin-left: 40px;
+            position: absolute;
+            bottom: 5px;
         }
     }
 

@@ -26,7 +26,7 @@
                     </h1>
                 </a>
             </div>
-            <a class="stemchats" href="https://stemchats.org" target="_blank">a stemchats program</a>
+            <p class="stemchats">a <a class="stemchats-link" href="https://stemchats.org" target="_blank">stemchats</a> program</p>
         </div>
         <input type="checkbox" id="menu-icon">
         <label for="menu-icon"><i class="fas fa-bars"></i></label>
@@ -112,10 +112,43 @@
 
         function scrollShowNav() {
             var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementsByTagName("header")[0].style.top = "0px";
+            var header = document.getElementsByTagName("header")[0];
+            var menu = document.getElementsByClassName("collapsible-menu")[0];
+            var stemchats = document.getElementsByClassName("stemchats")[0];
+            if (prevScrollpos > currentScrollPos || currentScrollPos == '0') {
+                header.style.top = "0px";
+                header.style.pointerEvents = "auto";
+
+                if (window.matchMedia("(max-width: 991px)").matches) {
+                    menu.style.top = "60px";
+                }
+                else {
+                    menu.style.top = "30px";
+                }
+
+                if (window.matchMedia("(max-width: 479px)").matches) {
+                    stemchats.style.opacity = 1;
+                }
+                else {
+                    stemchats.style.opacity = 1;
+                }
             } else {
-                document.getElementsByTagName("header")[0].style.top = "-80px";
+                header.style.top = "-50px";
+                header.style.pointerEvents = "none";
+
+                if (window.matchMedia("(max-width: 991px)").matches) {
+                    menu.style.top = "10px";
+                }
+                else {
+                    menu.style.top = "-20px";
+                }
+
+                if (window.matchMedia("(max-width: 479px)").matches) {
+                    stemchats.style.opacity = 0;
+                }
+                else {
+                    stemchats.style.opacity = 1;
+                }
             }
             prevScrollpos = currentScrollPos;
         }
