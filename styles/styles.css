@@ -264,6 +264,8 @@ span.title::before, span.title::after {
 .stemchats .stemchats-link {
   color: #ff5959;
   border-bottom: 1px dashed #ccc;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .stemchats .stemchats-link:hover {
