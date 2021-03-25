@@ -1,6 +1,26 @@
 const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
+var editionsList = [];
+
+db.collection("editions")
+    .onSnapshot((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            //console.log(doc.data()); // For data inside doc
+            //console.log(doc.id); // For doc name
+            var doc_name = doc.id;
+            editionsList.push(doc_name);
+        });
+    });
+
+console.log(editionsList);
+
+//WORKING WITH EDITIONSLIST
+// for(var i =0;i<editionsList.length;i++){
+//   console.log(editionslist[i]);
+// }
+
+
 const elements = {
     image: function() {
       const img = document.createElement("img");
