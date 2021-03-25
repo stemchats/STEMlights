@@ -4,21 +4,26 @@ const editionSection = document.getElementById("edition"); //section where the e
 var editionsList = [];
 
 db.collection("editions")
-    .onSnapshot((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            //console.log(doc.data()); // For data inside doc
-            //console.log(doc.id); // For doc name
-            var doc_name = doc.id;
-            editionsList.push(doc_name);
-        });
+.onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        //console.log(doc.data()); // For data inside doc
+        //console.log(doc.id); // For doc name
+        var doc_name = doc.id;
+        editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
     });
+});
 
-console.log(editionsList);
+console.log("editionsList:", editionsList);
 
-//WORKING WITH EDITIONSLIST
-// for(var i =0;i<editionsList.length;i++){
-//   console.log(editionslist[i]);
-// }
+for (var i=0; i<39; i++) {
+  // console.log(editionsList[i]);
+  // editionsList[i] = editionsList[i].substring(7);
+}
+
+// WORKING WITH EDITIONSLIST
+for(var i=0; i<editionsList.length; i++){
+  console.log(editionsList[i]);
+}
 
 
 const elements = {
