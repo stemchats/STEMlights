@@ -3,17 +3,58 @@ const editionSection = document.getElementById("edition"); //section where the e
 
 var editionsList = [];
 
-db.collection("editions")
-.onSnapshot((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        //console.log(doc.data()); // For data inside doc
-        //console.log(doc.id); // For doc name
-        var doc_name = doc.id;
-        editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
-    });
-});
 
-console.log("editionsList:", editionsList);
+function pagination(){
+  db.collection("editions")
+  .onSnapshot((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          //console.log(doc.data()); // For data inside doc
+          //console.log(doc.id); // For doc name
+          var doc_name = doc.id;
+          //console.log(doc_name.substring(7));
+          editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
+
+          // href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
+          // //creating the main card div
+          // var card_div = document.createElement("div").setAttribute("class", "card").setAttribute("href", href_val);
+          
+          // //console.log(href_val);
+          // //card_div
+
+          // //creating the card body div
+          // var card_body = document.createElement("div").setAttribute("class", "card-body");
+          // var header = document.createElement("h2").setAttribute("class", "card-title");
+          // header.innerHTML="Edition #"+ doc_name.substring(7);
+          // var desc = document.createElement("p").setAttribute("class", "card-text");
+          // desc.innerHTML="Generic Description Text (for now) AND NO IMAGE YET"
+
+          // //adding to card body
+          // card_body.appendChild(header);
+          // card_body.appendChild(desc);
+
+          // //adding card body to card div
+          // card_div.appendChild(card_body);
+
+          // document.getElementById("the_cards").appendChild(card_div);
+
+      });
+  });
+
+  console.log("editionsList:", editionsList);
+}
+pagination();
+
+//This is an example of a card 
+{/* <div class="card">
+<a href="/edition/47.html">
+    <div class="card-body">
+        <img src="/images/edition47/celebration.svg" alt="Newsletter Image">
+        <h2 class="card-title">Edition #47</h2>
+        <p class="card-text">This newsletter is the final installment of our Women's History Month series! We'll be diving into Daylight Savings Time, highlighting Dr. Susan La Flesche Picotte, sharing STEM opportunities, and more!</p>
+    </div>
+</a>
+</div> */}
+
 
 for (var i=0; i<39; i++) {
   // console.log(editionsList[i]);
@@ -21,9 +62,14 @@ for (var i=0; i<39; i++) {
 }
 
 // WORKING WITH EDITIONSLIST
-for(var i=0; i<editionsList.length; i++){
-  console.log(editionsList[i]);
-}
+
+parsedEditions = JSON.parse(localStorage.getItem("editions"));
+
+console.log(parsedEditions);
+
+// for(var i=0; i<localStorage['editions'].length; i++){
+//   console.log(localStorage['editions'][i]);
+// }
 
 
 const elements = {
