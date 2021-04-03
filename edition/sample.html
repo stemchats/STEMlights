@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script>
+        // uses edition 48
+        fetch('https://createsend.com/t/t-5FD7CD44D05FE1FB2540EF23F30FEDED').then(function (response) {
+            // The API call was successful!
+            return response.text();
+
+        }).then(function (html) {
+            console.log(html);
+            // Convert the HTML string into a document object
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, 'text/html');
+            console.log("body elements:", document.body.getElementsByTagName("*"));
+
+            // Get the image file
+            //var img = doc.querySelector('img');
+            //console.log(img);
+
+            var all_elements = doc.querySelectorAll("*:not(div)");
+            console.log("all_elements:", all_elements);
+
+            for (var i=0, max=all_elements.length; i < max; i++) {
+                //console.log(all_elements.item(i));
+                document.body.appendChild(all_elements.item(i));
+            }
+            
+        }).catch(function (err) {
+            // There was an error
+            console.warn('Something went wrong.', err);
+        });
+    </script>
+</head>
+<body>
+    <!-- CONTENT GOES HERE -->
+</body>
+</html>
