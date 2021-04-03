@@ -14,6 +14,7 @@ function pagination(){
           //console.log(doc_name.substring(7));
           editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
 
+
           // href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
           // //creating the main card div
           // var card_div = document.createElement("div").setAttribute("class", "card").setAttribute("href", href_val);
@@ -43,6 +44,12 @@ function pagination(){
   console.log("editionsList:", editionsList);
 }
 pagination();
+
+//for adding each edition from createsend
+//get all elements from createsend and filter them out 
+// var all = document.getElementsByTagName("*");
+//list.filter(elem => elem.tag === 'p'  elem.tag === 'img'  ... etc)
+
 
 //This is an example of a card 
 {/* <div class="card">
