@@ -452,7 +452,6 @@ header {
         margin: 0 0 0 10px;
         border: none;
         outline: none;
-        pointer-events: none;
         opacity: 0;
         transition: opacity 0.5s;
     }
@@ -466,7 +465,6 @@ header {
         border: none;
         outline: none;
         background: transparent;
-        pointer-events: none; /* MAKE SURE TO TURN POINTER EVENTS BACK ON WHEN SUBMIT IS IMPLEMENTED */
     }
 
     .search-input::-webkit-search-cancel-button{
