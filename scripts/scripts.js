@@ -1,7 +1,7 @@
 const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
-var editionsList = [];
+var editionsList = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "8", "9"];
 
 
 function pagination(){
@@ -14,7 +14,7 @@ function pagination(){
           //console.log(doc_name.substring(7));
           editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
 
-
+          
           // href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
           // //creating the main card div
           // var card_div = document.createElement("div").setAttribute("class", "card").setAttribute("href", href_val);
@@ -39,11 +39,63 @@ function pagination(){
           // document.getElementById("the_cards").appendChild(card_div);
 
       });
+      console.log("editionsList:", editionsList);
   });
-
   console.log("editionsList:", editionsList);
 }
-pagination();
+// end of pagination function
+// pagination();
+
+//Pagination
+pageSize = 10;
+
+var pageCount = Math.ceil((editionsList.length).size() / pageSize);
+
+//we use page count in the newsletter index and create pageCount many buttons
+
+if (n >= pageSize * (page - 1) && n < pageSize * page)
+      $(this).show();
+});
+
+$(function() {
+  
+
+  for (var i = 0; i < pageCount; i++) {
+    if (i == 0)
+
+    // instead of adding to #pagin, add all the cards we need to our designated list
+      $(".pagination").append('<li><a class="current" href="#">' + (i + 1) + '</a></li>');
+    else
+      $(".pagination").append('<li><a href="#">' + (i + 1) + '</a></li>');
+  }
+
+
+  showPage(1);
+
+  //changes the "current" page
+  $(".pagination li a").click(function() {
+    $(".pagination li a").removeClass("current");
+    $(this).addClass("current");
+    showPage(parseInt($(this).text()))
+  });
+
+})
+
+showPage = function(page) {
+  $(".line-content").hide();
+
+  $(".line-content").each(function(n) {
+    
+}
+// async function printEdition(){
+//   console.log('calling');
+//   const result = await pagination();
+//   console.log(result);
+// }
+// printEdition();
+ 
+// console.log("editionsList:", editionsList);
+
 
 //for adding each edition from createsend
 //get all elements from createsend and filter them out 
