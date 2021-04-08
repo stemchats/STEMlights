@@ -46,47 +46,40 @@ function pagination(){
 // end of pagination function
 // pagination();
 
-//Pagination
-pageSize = 10;
+//Pagination yay!!
 
-var pageCount = Math.ceil((editionsList.length).size() / pageSize);
+//Things to do:
+//- make sure the button changes from passive to active
+//- dynamically iterate through card list and generate cards based on returned value from button
+//- dynamically create next and previous buttons
+
+function pagination2(){
+  pageSize = 10;
+
+  var pageCount = Math.ceil((editionsList.length) / pageSize);
+
+//   $(".pagination").append();
+// <li class="page-item disabled">
+//   <a class="page-link" href="#" tabindex="-1">Previous</a>
+// </li>
+  for (var i = 0; i < pageCount; i++) {
+  if (i == 0)
+    $(".pagination").append('<li class="page-item active" ><a class="page-link" href="#">' + (i + 1) + '</a></li>');
+  else
+    $(".pagination").append('<li class="page-item"><a class="page-link" href="#">' + (i + 1) + '</a></li>');
+  }
+  console.log("please work")
+}//end function
+// pagination2();
+
 
 //we use page count in the newsletter index and create pageCount many buttons
 
-if (n >= pageSize * (page - 1) && n < pageSize * page)
-      $(this).show();
-});
-
-$(function() {
-  
-
-  for (var i = 0; i < pageCount; i++) {
-    if (i == 0)
-
-    // instead of adding to #pagin, add all the cards we need to our designated list
-      $(".pagination").append('<li><a class="current" href="#">' + (i + 1) + '</a></li>');
-    else
-      $(".pagination").append('<li><a href="#">' + (i + 1) + '</a></li>');
-  }
+// if (n >= pageSize * (page - 1) && n < pageSize * page)
+//       $(this).show();
+// });
 
 
-  showPage(1);
-
-  //changes the "current" page
-  $(".pagination li a").click(function() {
-    $(".pagination li a").removeClass("current");
-    $(this).addClass("current");
-    showPage(parseInt($(this).text()))
-  });
-
-})
-
-showPage = function(page) {
-  $(".line-content").hide();
-
-  $(".line-content").each(function(n) {
-    
-}
 // async function printEdition(){
 //   console.log('calling');
 //   const result = await pagination();
@@ -113,12 +106,6 @@ showPage = function(page) {
     </div>
 </a>
 </div> */}
-
-
-for (var i=0; i<39; i++) {
-  // console.log(editionsList[i]);
-  // editionsList[i] = editionsList[i].substring(7);
-}
 
 // WORKING WITH EDITIONSLIST
 
