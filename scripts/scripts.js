@@ -1,8 +1,7 @@
 const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
-var editionsList = ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "8", "9"];
-
+var editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"];
 
 function pagination(){
   db.collection("editions")
@@ -15,7 +14,7 @@ function pagination(){
           editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
 
           
-          // href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
+          // var href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
           // //creating the main card div
           // var card_div = document.createElement("div").setAttribute("class", "card").setAttribute("href", href_val);
           
@@ -53,24 +52,74 @@ function pagination(){
 //- dynamically iterate through card list and generate cards based on returned value from button
 //- dynamically create next and previous buttons
 
-function pagination2(){
-  pageSize = 10;
+function pagination2(inputChoice){
+  $('.pagination').empty();
+  var pageSize = 10;
 
   var pageCount = Math.ceil((editionsList.length) / pageSize);
+
+  //test val for buttonSelect
+
+  //I believe this work
+
+  var buttonSelect = inputChoice; //will have the value of the clicked "page number" at the bottom of the editions newsletter page
+  var returnedList;
+
+  var threshold = editionsList.length-(pageSize*(buttonSelect));
+
+  if(threshold<0){
+    returnedList = editionsList.slice(0, editionsList.length-(pageSize*(buttonSelect-1)));
+  }else{//end if
+    returnedList = editionsList.slice(editionsList.length-(pageSize*(buttonSelect)), editionsList.length-(pageSize*(buttonSelect-1)));
+  }
+
+console.log(returnedList);
+
+for(var i = returnedList.length-1;i>-1;i--){
+
+  var href_val = "/edition/"+returnedList[i]+".html";
+  //creating the main card div
+  var card_div = document.createElement("div");
+  card_div.setAttribute("class", "card");
+  card_div.setAttribute("href", href_val);
+  
+  //console.log(href_val);
+  //card_div
+
+  //creating the card body div
+  var card_body = document.createElement("div");
+  card_body.setAttribute("class", "card-body");
+  var header = document.createElement("h2");
+  header.setAttribute("class", "card-title");
+  header.innerHTML="Edition #"+ returnedList[i];
+  var desc = document.createElement("p");
+  desc.setAttribute("class", "card-text");
+  desc.innerHTML="Generic Description Text (for now) AND NO IMAGE YET"
+
+  //adding to card body
+  card_body.appendChild(header);
+  card_body.appendChild(desc);
+
+  //adding card body to card div
+  card_div.appendChild(card_body);
+
+  document.getElementById("the_cards").appendChild(card_div);
+
+}//end for
 
 //   $(".pagination").append();
 // <li class="page-item disabled">
 //   <a class="page-link" href="#" tabindex="-1">Previous</a>
 // </li>
   for (var i = 0; i < pageCount; i++) {
-  if (i == 0)
-    $(".pagination").append('<li class="page-item active" ><a class="page-link" href="#">' + (i + 1) + '</a></li>');
+  if (i == inputChoice-1)
+    $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2('+(i+1)+')" href="#">' + (i + 1) + '</a></li>');
   else
-    $(".pagination").append('<li class="page-item"><a class="page-link" href="#">' + (i + 1) + '</a></li>');
+    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2('+(i+1)+')" href="#">' + (i + 1) + '</a></li>');
   }
-  console.log("please work")
+  //console.log("please work")
 }//end function
-// pagination2();
+//pagination2(1);
 
 
 //we use page count in the newsletter index and create pageCount many buttons
