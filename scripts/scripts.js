@@ -58,68 +58,29 @@ function pagination2(inputChoice){
 
   var pageCount = Math.ceil((editionsList.length) / pageSize);
 
-  //test val for buttonSelect
-
-  //I believe this work
-
-  var buttonSelect = inputChoice; //will have the value of the clicked "page number" at the bottom of the editions newsletter page
-  var returnedList;
-
-  var threshold = editionsList.length-(pageSize*(buttonSelect));
-
-  if(threshold<0){
-    returnedList = editionsList.slice(0, editionsList.length-(pageSize*(buttonSelect-1)));
-  }else{//end if
-    returnedList = editionsList.slice(editionsList.length-(pageSize*(buttonSelect)), editionsList.length-(pageSize*(buttonSelect-1)));
-  }
-
-console.log(returnedList);
-
-for(var i = returnedList.length-1;i>-1;i--){
-
-  var href_val = "/edition/"+returnedList[i]+".html";
-  //creating the main card div
-  var card_div = document.createElement("div");
-  card_div.setAttribute("class", "card");
-  card_div.setAttribute("href", href_val);
-  
-  //console.log(href_val);
-  //card_div
-
-  //creating the card body div
-  var card_body = document.createElement("div");
-  card_body.setAttribute("class", "card-body");
-  var header = document.createElement("h2");
-  header.setAttribute("class", "card-title");
-  header.innerHTML="Edition #"+ returnedList[i];
-  var desc = document.createElement("p");
-  desc.setAttribute("class", "card-text");
-  desc.innerHTML="Generic Description Text (for now) AND NO IMAGE YET"
-
-  //adding to card body
-  card_body.appendChild(header);
-  card_body.appendChild(desc);
-
-  //adding card body to card div
-  card_div.appendChild(card_body);
-
-  document.getElementById("the_cards").appendChild(card_div);
-
-}//end for
-
-//   $(".pagination").append();
+  $(".pagination").append();
 // <li class="page-item disabled">
 //   <a class="page-link" href="#" tabindex="-1">Previous</a>
 // </li>
   for (var i = 0; i < pageCount; i++) {
-  if (i == inputChoice-1)
-    $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2('+(i+1)+')" href="#">' + (i + 1) + '</a></li>');
+  if (i == 0)
+    $(".pagination").append('<li class="page-item active" aria-current = "page" ><a class="page-link" href="#">' + (i + 1) + '</a></li>');
   else
     $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2('+(i+1)+')" href="#">' + (i + 1) + '</a></li>');
   }
-  //console.log("please work")
+  console.log("please work");
+
+  $(".pagination li").click(function() {
+    $(".pagination li").removeClass("page-item active");
+    $(".pagination li").addClass("page-item");
+    $(this).removeClass("page-item");
+    $(this).addClass("page-item active");
+    console.log("tears");
+  });
+
 }//end function
 //pagination2(1);
+
 
 
 //we use page count in the newsletter index and create pageCount many buttons
