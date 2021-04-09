@@ -58,19 +58,29 @@ function pagination2(){
 
   var pageCount = Math.ceil((editionsList.length) / pageSize);
 
-//   $(".pagination").append();
+  $(".pagination").append();
 // <li class="page-item disabled">
 //   <a class="page-link" href="#" tabindex="-1">Previous</a>
 // </li>
   for (var i = 0; i < pageCount; i++) {
   if (i == 0)
-    $(".pagination").append('<li class="page-item active" ><a class="page-link" href="#">' + (i + 1) + '</a></li>');
+    $(".pagination").append('<li class="page-item active" aria-current = "page" ><a class="page-link" href="#">' + (i + 1) + '</a></li>');
   else
     $(".pagination").append('<li class="page-item"><a class="page-link" href="#">' + (i + 1) + '</a></li>');
   }
-  console.log("please work")
+  console.log("please work");
+
+  $(".pagination li").click(function() {
+    $(".pagination li").removeClass("page-item active");
+    $(".pagination li").addClass("page-item");
+    $(this).removeClass("page-item");
+    $(this).addClass("page-item active");
+    console.log("tears");
+  });
+
 }//end function
 // pagination2();
+
 
 
 //we use page count in the newsletter index and create pageCount many buttons
