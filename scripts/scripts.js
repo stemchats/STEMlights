@@ -306,20 +306,18 @@ function createEditions() {
             }        
         }
         editions[i].parentNode.removeChild(editions[i]);
-        console.log("remove card");
     }
-    console.log(desc);
 
     for (var i = editionsList.length-1; i>=0; i--) {
         var ed = document.createElement('div');
         ed.classList.add('card');
+        var body = document.createElement('div');
+        body.classList.add('card-body');
 
         var link = document.createElement('a');
         link.setAttribute('href', "/edition/"+editionsList[i]+".html");
         ed.appendChild(link);
-
-        var body = document.createElement('div');
-        body.classList.add('card-body');
+        link.appendChild(body);
 
         var edName = document.createElement('h2');
         edName.textContent = "Edition #" + (editionsList[i]);
@@ -327,15 +325,11 @@ function createEditions() {
 
         var descTxt = document.createElement('p');
         if (desc[editionsList.length-i]) {
-            console.log("exists");
             descTxt.textContent = desc[editionsList.length-i-1];
         }
         body.appendChild(descTxt);
-
-        link.appendChild(body);
 
         editions = document.getElementById("editions");
         editions.appendChild(ed);
     }
 }
-createEditions();
