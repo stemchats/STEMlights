@@ -3,44 +3,44 @@ const editionSection = document.getElementById("edition"); //section where the e
 
 var editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"];
 
-function pagination(){
-  db.collection("editions")
-  .onSnapshot((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-          //console.log(doc.data()); // For data inside doc
-          //console.log(doc.id); // For doc name
-          var doc_name = doc.id;
-          //console.log(doc_name.substring(7));
-          editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
+function pagination() {
+    db.collection("editions")
+        .onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                //console.log(doc.data()); // For data inside doc
+                //console.log(doc.id); // For doc name
+                var doc_name = doc.id;
+                //console.log(doc_name.substring(7));
+                editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
 
-          
-          // var href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
-          // //creating the main card div
-          // var card_div = document.createElement("div").setAttribute("class", "card").setAttribute("href", href_val);
-          
-          // //console.log(href_val);
-          // //card_div
 
-          // //creating the card body div
-          // var card_body = document.createElement("div").setAttribute("class", "card-body");
-          // var header = document.createElement("h2").setAttribute("class", "card-title");
-          // header.innerHTML="Edition #"+ doc_name.substring(7);
-          // var desc = document.createElement("p").setAttribute("class", "card-text");
-          // desc.innerHTML="Generic Description Text (for now) AND NO IMAGE YET"
+                // var href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
+                // //creating the main card div
+                // var card_div = document.createElement("div").setAttribute("class", "card").setAttribute("href", href_val);
 
-          // //adding to card body
-          // card_body.appendChild(header);
-          // card_body.appendChild(desc);
+                // //console.log(href_val);
+                // //card_div
 
-          // //adding card body to card div
-          // card_div.appendChild(card_body);
+                // //creating the card body div
+                // var card_body = document.createElement("div").setAttribute("class", "card-body");
+                // var header = document.createElement("h2").setAttribute("class", "card-title");
+                // header.innerHTML="Edition #"+ doc_name.substring(7);
+                // var desc = document.createElement("p").setAttribute("class", "card-text");
+                // desc.innerHTML="Generic Description Text (for now) AND NO IMAGE YET"
 
-          // document.getElementById("the_cards").appendChild(card_div);
+                // //adding to card body
+                // card_body.appendChild(header);
+                // card_body.appendChild(desc);
 
-      });
-      console.log("editionsList:", editionsList);
-  });
-  console.log("editionsList:", editionsList);
+                // //adding card body to card div
+                // card_div.appendChild(card_body);
+
+                // document.getElementById("the_cards").appendChild(card_div);
+
+            });
+            console.log("editionsList:", editionsList);
+        });
+    console.log("editionsList:", editionsList);
 }
 // end of pagination function
 // pagination();
@@ -52,72 +52,72 @@ function pagination(){
 //- dynamically iterate through card list and generate cards based on returned value from button
 //- dynamically create next and previous buttons
 
-function pagination2(inputChoice){
-  $('.pagination').empty();
-  var pageSize = 10;
+function pagination2(inputChoice) {
+    $('.pagination').empty();
+    var pageSize = 10;
 
-  var pageCount = Math.ceil((editionsList.length) / pageSize);
+    var pageCount = Math.ceil((editionsList.length) / pageSize);
 
-  //test val for buttonSelect
+    //test val for buttonSelect
 
-  //I believe this work
+    //I believe this work
 
-  var buttonSelect = inputChoice; //will have the value of the clicked "page number" at the bottom of the editions newsletter page
-  var returnedList;
+    var buttonSelect = inputChoice; //will have the value of the clicked "page number" at the bottom of the editions newsletter page
+    var returnedList;
 
-  var threshold = editionsList.length-(pageSize*(buttonSelect));
+    var threshold = editionsList.length - (pageSize * (buttonSelect));
 
-  if(threshold<0){
-    returnedList = editionsList.slice(0, editionsList.length-(pageSize*(buttonSelect-1)));
-  }else{//end if
-    returnedList = editionsList.slice(editionsList.length-(pageSize*(buttonSelect)), editionsList.length-(pageSize*(buttonSelect-1)));
-  }
+    if (threshold < 0) {
+        returnedList = editionsList.slice(0, editionsList.length - (pageSize * (buttonSelect - 1)));
+    } else {//end if
+        returnedList = editionsList.slice(editionsList.length - (pageSize * (buttonSelect)), editionsList.length - (pageSize * (buttonSelect - 1)));
+    }
 
-console.log(returnedList);
+    console.log(returnedList);
 
-for(var i = returnedList.length-1;i>-1;i--){
+    for (var i = returnedList.length - 1; i > -1; i--) {
 
-  var href_val = "/edition/"+returnedList[i]+".html";
-  //creating the main card div
-  var card_div = document.createElement("div");
-  card_div.setAttribute("class", "card");
-  card_div.setAttribute("href", href_val);
-  
-  //console.log(href_val);
-  //card_div
+        var href_val = "/edition/" + returnedList[i] + ".html";
+        //creating the main card div
+        var card_div = document.createElement("div");
+        card_div.setAttribute("class", "card");
+        card_div.setAttribute("href", href_val);
 
-  //creating the card body div
-  var card_body = document.createElement("div");
-  card_body.setAttribute("class", "card-body");
-  var header = document.createElement("h2");
-  header.setAttribute("class", "card-title");
-  header.innerHTML="Edition #"+ returnedList[i];
-  var desc = document.createElement("p");
-  desc.setAttribute("class", "card-text");
-  desc.innerHTML="Generic Description Text (for now) AND NO IMAGE YET"
+        //console.log(href_val);
+        //card_div
 
-  //adding to card body
-  card_body.appendChild(header);
-  card_body.appendChild(desc);
+        //creating the card body div
+        var card_body = document.createElement("div");
+        card_body.setAttribute("class", "card-body");
+        var header = document.createElement("h2");
+        header.setAttribute("class", "card-title");
+        header.innerHTML = "Edition #" + returnedList[i];
+        var desc = document.createElement("p");
+        desc.setAttribute("class", "card-text");
+        desc.innerHTML = "Generic Description Text (for now) AND NO IMAGE YET"
 
-  //adding card body to card div
-  card_div.appendChild(card_body);
+        //adding to card body
+        card_body.appendChild(header);
+        card_body.appendChild(desc);
 
-  document.getElementById("the_cards").appendChild(card_div);
+        //adding card body to card div
+        card_div.appendChild(card_body);
 
-}//end for
+        document.getElementById("the_cards").appendChild(card_div);
 
-//   $(".pagination").append();
-// <li class="page-item disabled">
-//   <a class="page-link" href="#" tabindex="-1">Previous</a>
-// </li>
-  for (var i = 0; i < pageCount; i++) {
-  if (i == inputChoice-1)
-    $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2('+(i+1)+')" href="#">' + (i + 1) + '</a></li>');
-  else
-    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2('+(i+1)+')" href="#">' + (i + 1) + '</a></li>');
-  }
-  //console.log("please work")
+    }//end for
+
+    //   $(".pagination").append();
+    // <li class="page-item disabled">
+    //   <a class="page-link" href="#" tabindex="-1">Previous</a>
+    // </li>
+    for (var i = 0; i < pageCount; i++) {
+        if (i == inputChoice - 1)
+            $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+        else
+            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+    }
+    //console.log("please work")
 }//end function
 //pagination2(1);
 
@@ -135,7 +135,7 @@ for(var i = returnedList.length-1;i>-1;i--){
 //   console.log(result);
 // }
 // printEdition();
- 
+
 // console.log("editionsList:", editionsList);
 
 
@@ -168,94 +168,94 @@ console.log(parsedEditions);
 
 
 const elements = {
-    image: function() {
-      const img = document.createElement("img");
-      img.src = this.content.link;
-      if(typeof this.content.class == "string") {
-        img.classList.add(this.content.class);
-      }
-      if(typeof this.content.title == "string") {
-         img.id = this.content.title; //set
-         createDirectory(this.content.title); //add title name of each section to the directory
-      }
-      editionSection.appendChild(img);
+    image: function () {
+        const img = document.createElement("img");
+        img.src = this.content.link;
+        if (typeof this.content.class == "string") {
+            img.classList.add(this.content.class);
+        }
+        if (typeof this.content.title == "string") {
+            img.id = this.content.title; //set
+            createDirectory(this.content.title); //add title name of each section to the directory
+        }
+        editionSection.appendChild(img);
     },
-    hyperlink: function() {
-      const link = document.createElement("a");
-      link.href = this.content.link;
-      link.textContent = this.content.text;
-      if(typeof this.content.class == "string") {
-        link.classList.add(this.content.class);
-      }
-      editionSection.appendChild(link);
+    hyperlink: function () {
+        const link = document.createElement("a");
+        link.href = this.content.link;
+        link.textContent = this.content.text;
+        if (typeof this.content.class == "string") {
+            link.classList.add(this.content.class);
+        }
+        editionSection.appendChild(link);
     },
-    paragraph: function() {
-      const p = document.createElement("p");
-      p.innerHTML = this.content;
-      editionSection.appendChild(p);
+    paragraph: function () {
+        const p = document.createElement("p");
+        p.innerHTML = this.content;
+        editionSection.appendChild(p);
     },
-    header: function() {
-      const head = document.createElement("h4");
-      head.innerHTML = this.content;
-      editionSection.appendChild(head);
+    header: function () {
+        const head = document.createElement("h4");
+        head.innerHTML = this.content;
+        editionSection.appendChild(head);
     },
-    button: function() {
-      const button = document.createElement("button");
-      button.setAttribute('onclick', "window.open('" + this.content.link + "','_blank');");
-      button.textContent = this.content.text;
-      editionSection.appendChild(button);
+    button: function () {
+        const button = document.createElement("button");
+        button.setAttribute('onclick', "window.open('" + this.content.link + "','_blank');");
+        button.textContent = this.content.text;
+        editionSection.appendChild(button);
     },
-    video: function() {
-      const video = document.createElement("iframe");
-      const yt = document.createElement("div");
-      yt.classList.add("yt-container");
-      video.classList.add("responsive-iframe");
-      video.setAttribute('frameborder', "0");
-      video.setAttribute('allowfullscreen', "");
-      video.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-      video.src = this.content.link;
-      yt.appendChild(video);
-      editionSection.appendChild(yt);
+    video: function () {
+        const video = document.createElement("iframe");
+        const yt = document.createElement("div");
+        yt.classList.add("yt-container");
+        video.classList.add("responsive-iframe");
+        video.setAttribute('frameborder', "0");
+        video.setAttribute('allowfullscreen', "");
+        video.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        video.src = this.content.link;
+        yt.appendChild(video);
+        editionSection.appendChild(yt);
     }
 };
 // <iframe width="560" height="315" src="https://www.youtube.com/embed/U8r3oTVMtQ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-function createEdition(edition){
-  for(var i = 0;i<sections.length;i++){ //how many sections the edition has, iterates through sections (below)
-      db.collection("editions").doc("edition" + edition).collection(sections[i]).get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            const data = doc.data(); //retrieves all the sections as 'objects'
-            let entries1 = Object.entries(data); //return array of each object's key-value pairs
-            for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
-              let keyword = `${key}`; //the different key properties
-              let values = `${value}`; //the different value properties
-              let renderElement = new Object();
-              renderElement.content = value;
-              //create a new object with content property of value
-              let entries2 = Object.entries(elements); //create array of the 'elements'
-              for(let j=0;j<entries2.length;j++) { //access the elements + call the apropriate function to the element
-                if(keyword.includes(entries2[j][0])==true) {
-                  if(entries2[j][0] == "image") { //use call method
-                    elements.image.call(renderElement);
-                  } else if(entries2[j][0] == "header") {
-                    elements.header.call(renderElement);
-                  } else if(entries2[j][0] == "hyperlink") {
-                    elements.hyperlink.call(renderElement);
-                  } else if(entries2[j][0] == "paragraph") {
-                    elements.paragraph.call(renderElement);
-                  } else if(entries2[j][0] == "button") {
-                    elements.button.call(renderElement);
-                  } else if(entries2[j][0] == "video") {
-                    elements.video.call(renderElement);
-                  }
-                }
-              }
-            }
-          });
-        });
+function createEdition(edition) {
+    for (var i = 0; i < sections.length; i++) { //how many sections the edition has, iterates through sections (below)
+        db.collection("editions").doc("edition" + edition).collection(sections[i]).get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    const data = doc.data(); //retrieves all the sections as 'objects'
+                    let entries1 = Object.entries(data); //return array of each object's key-value pairs
+                    for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
+                        let keyword = `${key}`; //the different key properties
+                        let values = `${value}`; //the different value properties
+                        let renderElement = new Object();
+                        renderElement.content = value;
+                        //create a new object with content property of value
+                        let entries2 = Object.entries(elements); //create array of the 'elements'
+                        for (let j = 0; j < entries2.length; j++) { //access the elements + call the apropriate function to the element
+                            if (keyword.includes(entries2[j][0]) == true) {
+                                if (entries2[j][0] == "image") { //use call method
+                                    elements.image.call(renderElement);
+                                } else if (entries2[j][0] == "header") {
+                                    elements.header.call(renderElement);
+                                } else if (entries2[j][0] == "hyperlink") {
+                                    elements.hyperlink.call(renderElement);
+                                } else if (entries2[j][0] == "paragraph") {
+                                    elements.paragraph.call(renderElement);
+                                } else if (entries2[j][0] == "button") {
+                                    elements.button.call(renderElement);
+                                } else if (entries2[j][0] == "video") {
+                                    elements.video.call(renderElement);
+                                }
+                            }
+                        }
+                    }
+                });
+            });
     };
-  }
+}
 
 
 /*
@@ -274,27 +274,62 @@ function createEdition(edition){
 var directory = document.getElementById('directory');
 
 function createDirectory(title) {
-  var linkText = document.createElement('li');
-  var directoryLink = document.createElement('a');
-  directoryLink.classList.add("dir-link");
-  directoryLink.setAttribute('href', "#" + title);
-  directoryLink.textContent = title;
-  linkText.appendChild(directoryLink); //<li><a class="dir-link">SECTION TITLE</a></li>
+    var linkText = document.createElement('li');
+    var directoryLink = document.createElement('a');
+    directoryLink.classList.add("dir-link");
+    directoryLink.setAttribute('href', "#" + title);
+    directoryLink.textContent = title;
+    linkText.appendChild(directoryLink); //<li><a class="dir-link">SECTION TITLE</a></li>
 
-  var after = document.createElement('span');
-  after.classList.add("after");
-  var afterButton = document.createElement('a');
-  afterButton.setAttribute('href', "#" + title);
-  afterButton.appendChild(after);
-  linkText.appendChild(afterButton); //<li><a class="dir-link">SECTION TITLE</a><a><span class="after">(BUTTON)</span></a></li>
+    var after = document.createElement('span');
+    after.classList.add("after");
+    var afterButton = document.createElement('a');
+    afterButton.setAttribute('href', "#" + title);
+    afterButton.appendChild(after);
+    linkText.appendChild(afterButton); //<li><a class="dir-link">SECTION TITLE</a><a><span class="after">(BUTTON)</span></a></li>
 
-  directory.appendChild(linkText);
+    directory.appendChild(linkText);
 }
 
 
-// loop generating editions in <i class="fas fa-angle-left"></i> Back to newsletter
-var edition = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-for (var i=0; i<edition.length; i++) {
-  var editionNum = document.createElement('div');
-  editionNum.classList.add('card');
+// create editions cards
+var editions = document.getElementsByClassName("card");
+
+function createEditions() {
+    var desc = [];
+
+    for (var i=editions.length-1; i>=0; i--) {
+        var children = editions[i].getElementsByTagName("*");
+        for (var j = 0; j < children.length; j++) {
+            if (children[j].className == "card-text") {
+                desc[i] = children[j].textContent;
+            }        
+        }
+        editions[i].parentNode.removeChild(editions[i]);
+    }
+
+    for (var i = editionsList.length-1; i>=0; i--) {
+        var ed = document.createElement('div');
+        ed.classList.add('card');
+        var body = document.createElement('div');
+        body.classList.add('card-body');
+
+        var link = document.createElement('a');
+        link.setAttribute('href', "/edition/"+editionsList[i]+".html");
+        ed.appendChild(link);
+        link.appendChild(body);
+
+        var edName = document.createElement('h2');
+        edName.textContent = "Edition #" + (editionsList[i]);
+        body.appendChild(edName);
+
+        var descTxt = document.createElement('p');
+        if (desc[editionsList.length-i]) {
+            descTxt.textContent = desc[editionsList.length-i-1];
+        }
+        body.appendChild(descTxt);
+
+        editions = document.getElementById("editions");
+        editions.appendChild(ed);
+    }
 }
