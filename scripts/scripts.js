@@ -3,6 +3,50 @@ const editionSection = document.getElementById("edition"); //section where the e
 
 var editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"];
 
+var imageDict = {
+    8: "/images/edition8/e8thumbnail.svg",
+    9: "/images/edition9/coronacarehome.svg",
+    10: "/images/edition10/e10thumbnail.svg",
+    11: "/images/edition11/coronahome.svg",
+    12: "/images/edition12/e12thumbnail.svg",
+    13: "/images/edition13/coronahome.svg",
+    14: "/images/edition14/pridehome.svg",
+    15: "/images/edition15/conspiracieshome.svg",
+    16: "/images/edition16/e16thumbnail.svg",
+    17: "/images/edition17/collegehome.svg",
+    18: "/images/edition18/digital_learning.svg",
+    19: "/images/edition19/phone_addiction.svg",
+    20: "/images/edition20/movie-scifiorfact.svg",
+    21: "/images/edition21/meditation.svg",
+    22: "/images/edition22/eco.svg",
+    23: "/images/edition23/earth.svg",
+    24: "/images/edition24/voting.svg",
+    25: "/images/edition25/edition25home.svg",
+    26: "/images/edition26/edition26home.svg",
+    27: "/images/edition27/edition27home.svg",
+    28: "/images/edition28/politics_img.svg",
+    29: "/images/edition29/thumbnail_29.svg",
+    30: "/images/edition30/thumbnail30.svg",
+    31: "/images/edition31/thumbnail31.svg",
+    32: "/images/edition32/thumbnail.svg",
+    33: "/images/edition33/thumbnail33.svg",
+    34: "/images/edition34/thumbnail.svg",
+    35: "/images/edition35/thumbnail35.svg",
+    36: "/images/edition36/newyear.svg",
+    37: "/images/edition37/thumbnail_37.svg",
+    38: "/images/edition38/capitol.svg",
+    39: "/images/edition39/temp.svg",
+    40: "/images/edition40/thumbnail40.svg",
+    41: "/images/edition41/med.svg",
+    42: "/images/edition42/thumbnail_42.svg",
+    43: "/images/edition43/thumbnail.svg",
+    44: "/images/edition44/thumbnail44.svg",
+    45: "/images/edition45/thumbnail45.svg",
+    46: "/images/edition46/edition46.svg",
+    47: "/images/edition47/celebration.svg",
+    48: "/images/edition48/thumbnail_48.svg",
+};
+
 function pagination() {
     db.collection("editions")
         .onSnapshot((querySnapshot) => {
@@ -54,6 +98,9 @@ function pagination() {
 
 function pagination2(inputChoice) {
     $('.pagination').empty();
+    //var result = document.getElementById("the_cards")
+    $('#the_cards').empty();
+    
     var pageSize = 10;
 
     var pageCount = Math.ceil((editionsList.length) / pageSize);
@@ -81,7 +128,11 @@ function pagination2(inputChoice) {
         //creating the main card div
         var card_div = document.createElement("div");
         card_div.setAttribute("class", "card");
-        card_div.setAttribute("href", href_val);
+        //card_div.setAttribute("href", href_val);
+        var a_tag = document.createElement("a");
+        a_tag.setAttribute("href", href_val);
+
+        // <div onclick="location.href='newurl.html';">&nbsp;</div>
 
         //console.log(href_val);
         //card_div
@@ -89,6 +140,9 @@ function pagination2(inputChoice) {
         //creating the card body div
         var card_body = document.createElement("div");
         card_body.setAttribute("class", "card-body");
+        var image = new Image();
+        image.src= imageDict[i];
+        image.setAttribute("alt", "Newsletter Image");
         var header = document.createElement("h2");
         header.setAttribute("class", "card-title");
         header.innerHTML = "Edition #" + returnedList[i];
@@ -97,13 +151,29 @@ function pagination2(inputChoice) {
         desc.innerHTML = "Generic Description Text (for now) AND NO IMAGE YET"
 
         //adding to card body
+        card_body.append(image);
         card_body.appendChild(header);
         card_body.appendChild(desc);
+        //card_body.appendChild(a_tag);
 
         //adding card body to card div
+        //card_div.appendChild(a_tag);
         card_div.appendChild(card_body);
 
-        document.getElementById("the_cards").appendChild(card_div);
+        a_tag.appendChild(card_div);
+
+        document.getElementById("the_cards").appendChild(a_tag);
+
+        //This is an example of a card 
+        {/* <div class="card">
+        <a href="/edition/47.html">
+            <div class="card-body">
+                <img src="/images/edition47/celebration.svg" alt="Newsletter Image">
+                <h2 class="card-title">Edition #47</h2>
+                <p class="card-text">This newsletter is the final installment of our Women's History Month series! We'll be diving into Daylight Savings Time, highlighting Dr. Susan La Flesche Picotte, sharing STEM opportunities, and more!</p>
+            </div>
+        </a>
+        </div> */}
 
     }//end for
 
@@ -145,16 +215,7 @@ function pagination2(inputChoice) {
 //list.filter(elem => elem.tag === 'p'  elem.tag === 'img'  ... etc)
 
 
-//This is an example of a card 
-{/* <div class="card">
-<a href="/edition/47.html">
-    <div class="card-body">
-        <img src="/images/edition47/celebration.svg" alt="Newsletter Image">
-        <h2 class="card-title">Edition #47</h2>
-        <p class="card-text">This newsletter is the final installment of our Women's History Month series! We'll be diving into Daylight Savings Time, highlighting Dr. Susan La Flesche Picotte, sharing STEM opportunities, and more!</p>
-    </div>
-</a>
-</div> */}
+
 
 // WORKING WITH EDITIONSLIST
 
