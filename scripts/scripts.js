@@ -57,30 +57,6 @@ function pagination() {
                 //console.log(doc_name.substring(7));
                 editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
 
-
-                // var href_val = "/"+doc_name.substring(0, 7)+"/"+doc_name.substring(7)+".html";
-                // //creating the main card div
-                // var card_div = document.createElement("div").setAttribute("class", "card").setAttribute("href", href_val);
-
-                // //console.log(href_val);
-                // //card_div
-
-                // //creating the card body div
-                // var card_body = document.createElement("div").setAttribute("class", "card-body");
-                // var header = document.createElement("h2").setAttribute("class", "card-title");
-                // header.innerHTML="Edition #"+ doc_name.substring(7);
-                // var desc = document.createElement("p").setAttribute("class", "card-text");
-                // desc.innerHTML="Generic Description Text (for now) AND NO IMAGE YET"
-
-                // //adding to card body
-                // card_body.appendChild(header);
-                // card_body.appendChild(desc);
-
-                // //adding card body to card div
-                // card_div.appendChild(card_body);
-
-                // document.getElementById("the_cards").appendChild(card_div);
-
             });
             console.log("editionsList:", editionsList);
         });
@@ -148,7 +124,7 @@ function pagination2(inputChoice) {
         header.innerHTML = "Edition #" + returnedList[i];
         var desc = document.createElement("p");
         desc.setAttribute("class", "card-text");
-        desc.innerHTML = "Generic Description Text (for now) AND NO IMAGE YET"
+        desc.innerHTML = "Generic Description Text (for now)"
 
         //adding to card body
         card_body.append(image);
@@ -181,11 +157,24 @@ function pagination2(inputChoice) {
     // <li class="page-item disabled">
     //   <a class="page-link" href="#" tabindex="-1">Previous</a>
     // </li>
+    
+    if(inputChoice==1){
+        $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>');
+    } else if(inputChoice!=1){
+        $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice-1) + ')" href="#">Previous</a></li>');
+    }
+
     for (var i = 0; i < pageCount; i++) {
-        if (i == inputChoice - 1)
+        if (i == inputChoice-1)
             $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
         else
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+    }
+
+    if(inputChoice==pageCount){
+        $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>');
+    } else if(inputChoice!=pageCount){
+        $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice+1) + ')" href="#">Next</a></li>');
     }
     //console.log("please work")
 }//end function
