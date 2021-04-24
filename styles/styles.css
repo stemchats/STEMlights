@@ -958,7 +958,7 @@ footer .copy {
 }
 
 .share-button.sharer .social.top {
-  margin-top: -90px;
+  margin-top: 20px;
   -webkit-transform-origin: 0 0 0;
           transform-origin: 0 0 0;
 }
