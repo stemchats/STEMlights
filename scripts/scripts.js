@@ -1,7 +1,8 @@
 const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
-var editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"];
+let editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51"];
+let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 var imageDict = {
     8: "/images/edition8/e8thumbnail.svg",
@@ -76,7 +77,7 @@ function pagination2(inputChoice) {
     $('.pagination').empty();
     //var result = document.getElementById("the_cards")
     $('#the_cards').empty();
-    
+
     var pageSize = 10;
 
     var pageCount = Math.ceil((editionsList.length) / pageSize);
@@ -140,7 +141,7 @@ function pagination2(inputChoice) {
 
         document.getElementById("the_cards").appendChild(a_tag);
 
-        //This is an example of a card 
+        //This is an example of a card
         {/* <div class="card">
         <a href="/edition/47.html">
             <div class="card-body">
@@ -157,7 +158,7 @@ function pagination2(inputChoice) {
     // <li class="page-item disabled">
     //   <a class="page-link" href="#" tabindex="-1">Previous</a>
     // </li>
-    
+
     if(inputChoice==1){
         $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>');
     } else if(inputChoice!=1){
@@ -199,7 +200,7 @@ function pagination2(inputChoice) {
 
 
 //for adding each edition from createsend
-//get all elements from createsend and filter them out 
+//get all elements from createsend and filter them out
 // var all = document.getElementsByTagName("*");
 //list.filter(elem => elem.tag === 'p'  elem.tag === 'img'  ... etc)
 
@@ -353,7 +354,7 @@ function createEditions() {
         for (var j = 0; j < children.length; j++) {
             if (children[j].className == "card-text") {
                 desc[i] = children[j].textContent;
-            }        
+            }
         }
         editions[i].parentNode.removeChild(editions[i]);
     }
