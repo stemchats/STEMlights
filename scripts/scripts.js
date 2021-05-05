@@ -1,7 +1,23 @@
 const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
-let editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51"];
+//let editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51"];
+var editionsList = [];
+const getEditionsList = async () => {
+    let editionsRef = db.collection('editions');
+    let allEditions = await editionsRef.get();
+    for(const doc of allEditions.docs){
+        //console.log(doc.id, '=>', doc.data());
+        editionsList.push(doc.id);
+    }//end for
+    console.log(editionsList[0]);
+}//end func
+
+//getEditionsList();
+
+  
+  
+
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 var imageDict = {
