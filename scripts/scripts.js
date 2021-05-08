@@ -53,7 +53,7 @@ const getEditionsList = async () => {
     pagination2(1);
 }//end func
 
-getEditionsList();
+// getEditionsList();
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 var imageDict = {
@@ -209,7 +209,7 @@ function pagination2(inputChoice) {
     }
     //console.log("please work")
 }//end function
-//pagination2(1);
+// pagination2(1);
 
 
 //we use page count in the newsletter index and create pageCount many buttons
@@ -337,19 +337,6 @@ function createEdition(edition) {
             });
     };
 }
-
-
-/*
-8/13/2020
-
-- rename each field alphanumerically for each field in each section
-  - e.g (1) header, (2), image1, etc.
-- add a sections array to each html file with the unique order of the sections in the given edition
-  - e.g for edition15, var sections = [title, investemgations, politics, challenges, etc.]
-- creating the individual functions for each element type
-- using a parse function to find out which element function to call
-  - e.g if we use (1) header, it should call the createHeader() function
-*/
 
 // creating a dynamic directory for each edition page
 var directory = document.getElementById('directory');
