@@ -1,8 +1,59 @@
 const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
-//let editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51"];  
+function insertionSort(arr, arr2) {
+    for (let i = 1; i < arr.length; i++) {
 
+        // Start comparing current element with every element before it
+        for (let j = i - 1; j > -1; j--) {
+
+            // Swap elements as required
+            if (arr[j + 1] < arr[j]) {
+                [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
+                [arr2[j + 1], arr2[j]] = [arr2[j], arr2[j + 1]];
+            }
+        }
+    }
+    return arr, arr2;
+}
+
+//const editionsList = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51"];
+var editionsList = [];
+var imageList = [];
+const getEditionsList = async () => {
+    let editionsRef = db.collection('editions');
+    let allEditions = await editionsRef.get();
+    for(const doc of allEditions.docs){
+
+        editionsList.push(doc.id);
+        var doc_data = doc.get('card-img');
+        //console.log(doc.id, '=>', doc_data);
+        imageList.push(doc_data);
+    }//end for
+
+    //substring values so only number remains
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i]=editionsList[i].substring(7);
+    }//end
+
+    //cnvert values to integers
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i] = parseInt(editionsList[i]);
+    }//end
+
+    //sort
+    editionsList, imageList = insertionSort(editionsList, imageList);
+
+    //convert values back to strings
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i] = editionsList[i].toString();
+    }//end
+
+    //call pagination
+    pagination2(1);
+}//end func
+
+getEditionsList();
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 var imageDict = {
@@ -49,31 +100,6 @@ var imageDict = {
     48: "/images/edition48/thumbnail_48.svg",
 };
 
-function pagination() {
-    db.collection("editions")
-        .onSnapshot((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                //console.log(doc.data()); // For data inside doc
-                //console.log(doc.id); // For doc name
-                var doc_name = doc.id;
-                //console.log(doc_name.substring(7));
-                editionsList.push(doc_name.substring(7)); //get rid of "edition" at the beginning
-
-            });
-            console.log("editionsList:", editionsList);
-        });
-    console.log("editionsList:", editionsList);
-}
-// end of pagination function
-// pagination();
-
-//Pagination yay!!
-
-//Things to do:
-//- make sure the button changes from passive to active
-//- dynamically iterate through card list and generate cards based on returned value from button
-//- dynamically create next and previous buttons
-
 function pagination2(inputChoice) {
     $('.pagination').empty();
     //var result = document.getElementById("the_cards")
@@ -89,13 +115,16 @@ function pagination2(inputChoice) {
 
     var buttonSelect = inputChoice; //will have the value of the clicked "page number" at the bottom of the editions newsletter page
     var returnedList;
+    var returnedImageList;
 
     var threshold = editionsList.length - (pageSize * (buttonSelect));
 
     if (threshold < 0) {
         returnedList = editionsList.slice(0, editionsList.length - (pageSize * (buttonSelect - 1)));
+        returnedImageList = imageList.slice(0, imageList.length - (pageSize * (buttonSelect - 1)));
     } else {//end if
         returnedList = editionsList.slice(editionsList.length - (pageSize * (buttonSelect)), editionsList.length - (pageSize * (buttonSelect - 1)));
+        returnedImageList = imageList.slice(imageList.length - (pageSize * (buttonSelect)), imageList.length - (pageSize * (buttonSelect - 1)));
     }
 
     console.log(returnedList);
@@ -119,7 +148,7 @@ function pagination2(inputChoice) {
         var card_body = document.createElement("div");
         card_body.setAttribute("class", "card-body");
         var image = new Image();
-        image.src= imageDict[i];
+        image.src= returnedImageList[i];
         image.setAttribute("alt", "Newsletter Image");
         var header = document.createElement("h2");
         header.setAttribute("class", "card-title");
