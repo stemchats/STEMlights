@@ -1,0 +1,22 @@
+{
+  "name": "stemlights",
+  "version": "1.0.0",
+  "description": "STEMlights website",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stemchats/STEMlights.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stemchats/STEMlights/issues"
+  },
+  "homepage": "https://github.com/stemchats/STEMlights#readme",
+  "dependencies": {
+    "firebase": "^8.6.1"
+  }
+}
