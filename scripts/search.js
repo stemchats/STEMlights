@@ -12,35 +12,6 @@ query.addEventListener('keyup', (event) => {
   }
 })
 
-
-//search function
-// function search(queryString) {
-//   const result = [];
-//   console.log(`searched ${queryString}`);
-//   for(let i=0; i<editionsList.length; i++) {
-//     for(let j=0; j<sectionsList.length; j++) {
-//         db.collection("editions").doc("edition" + editionsList[i]).collection(sectionsList[j]).get().then((querySnapshot) => {
-//                 querySnapshot.forEach((doc) => {
-//                     const data = doc.data();
-//                     let entries1 = Object.entries(data); //return array of each object's key-value pairs
-//                     for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
-//                         let keyword = `${key}`; //the different key properties
-//                         let values = `${value}`; //the different value properties
-//                         if (values.includes(`${queryString}`) == true) {
-//                             result.push("edition" + editionsList[i]);
-//                         }
-//                     }
-//                     // console.log(formatArray(result));
-//
-//                 });
-//                     return result;
-//                     // editionsList.push(editionNum); //get rid of "edition" at the beginning
-//                     // editionsList.sort((a, b) => {return a - b}) // sort editionList array into ascending numerical order
-//               })
-//         }
-//     }
-// }
-
 const search = async (queryString) => {
     const editions = []; // will contain array of all editions live in database
       let editionsRef = db.collection('editions');
@@ -72,4 +43,6 @@ const search2 = async (editionsList, queryString) => {
     }
     console.log(returnEditions) // returns an array of the editions which the query is found in
 }
+
+
 // SUPER SLOW SEARCH, NEED TO IMPLEMENT SEARCH VALIDATION AND REDUCE TIME
