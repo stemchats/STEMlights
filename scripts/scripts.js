@@ -266,6 +266,8 @@ function createDirectory(title) {
     linkText.appendChild(afterButton); //<li><a class="dir-link">SECTION TITLE</a><a><span class="after">(BUTTON)</span></a></li>
 
     directory.appendChild(linkText);
+    var share = document.createElement('share-button');
+    directory.appendChild(share);
 }
 
 
