@@ -939,13 +939,16 @@ footer .copy {
 }
 
 .share-button.sharer {
-  left: 2%;
-  position: fixed;
+  display: block;
+  margin-top: 10px;
 }
 
-.share-button.sharer .social.active.top {
-  -webkit-transform: scale(1) translateY(-10px);
-          transform: scale(1) translateY(-10px);
+.share-button.sharer .social {
+  margin-left: -0px;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  visibility: hidden;
 }
 
 .share-button.sharer .social.active {
@@ -955,18 +958,25 @@ footer .copy {
   visibility: visible;
 }
 
+.share-button.sharer .social.active.top {
+  -webkit-transform: scale(1) translateY(-10px);
+          transform: scale(1) translateY(-10px);
+}
+
 .share-button.sharer .social.top {
   margin-top: 20px;
   -webkit-transform-origin: 0 0 0;
           transform-origin: 0 0 0;
 }
 
-.share-button.sharer .social {
-  margin-left: -0px;
-  opacity: 0;
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
-  visibility: hidden;
+.share-button.sharer .social .fbtn {
+  z-index: 10;
+}
+
+.share-button.sharer .social .fbtn:hover {
+  z-index: 100000 !important;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .pagination {

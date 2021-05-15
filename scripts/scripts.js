@@ -249,8 +249,10 @@ function createEdition(edition) {
 
 // creating a dynamic directory for each edition page
 var directory = document.getElementById('directory');
+var count=0;
 
 function createDirectory(title) {
+    count++;
     var linkText = document.createElement('li');
     var directoryLink = document.createElement('a');
     directoryLink.classList.add("dir-link");
@@ -265,11 +267,52 @@ function createDirectory(title) {
     afterButton.appendChild(after);
     linkText.appendChild(afterButton); //<li><a class="dir-link">SECTION TITLE</a><a><span class="after">(BUTTON)</span></a></li>
 
-    directory.appendChild(linkText);
-    var share = document.createElement('share-button');
-    directory.appendChild(share);
+    directory.insertBefore(linkText, directory.childNodes[count+1]);
+    // directory.appendChild(linkText);
 }
 
+
+// create share button
+function createShareButton() {
+    var shareBlock = document.createElement('div');
+    shareBlock.className = "share-button sharer";
+    directory.appendChild(shareBlock);
+
+    var shareButt = document.createElement('button');
+    shareButt.type = "button";
+    shareButt.className = "btn btn-success share-btn";
+    shareButt.innerHTML = "Share";
+    shareBlock.appendChild(shareButt);
+
+    var socials = document.createElement('div');
+    socials.className = "social top center networks-5";
+    shareBlock.appendChild(socials);
+
+    var facebook = document.createElement('a');
+    facebook.className = "fbtn share facebook";
+    facebook.href = "https://www.facebook.com/sharer/sharer.php?u=https://stemlights.stemchats.org/edition/49.html";
+    facebook.innerHTML = "<i class=\"fa fa-facebook\"></i>";
+    socials.appendChild(facebook);
+
+    var twitter = document.createElement('a');
+    twitter.className = "fbtn share twitter";
+    twitter.href = "https://twitter.com/intent/tweet?text=title&amp;url=https://stemlights.stemchats.org/edition/49.html&amp;via=creativedevs";
+    twitter.innerHTML = "<i class=\"fa fa-twitter\"></i>";
+    socials.appendChild(twitter);
+
+    var pinterest = document.createElement('a');
+    pinterest.className = "fbtn share pinterest";
+    pinterest.href = "http://pinterest.com/pin/create/button/?url=https://stemlights.stemchats.org/edition/49.html&amp;description=data&amp;media=image";
+    pinterest.innerHTML = "<i class=\"fa fa-pinterest\"></i>";
+    socials.appendChild(pinterest);
+
+    var linkedin = document.createElement('a');
+    linkedin.className = "fbtn share linkedin";
+    linkedin.href = "http://www.linkedin.com/shareArticle?mini=true&amp;url=https://stemlights.stemchats.org/edition/49.html&amp;title=title&amp;source=url/";
+    linkedin.innerHTML = "<i class=\"fa fa-linkedin\"></i>";
+    socials.appendChild(linkedin);
+}
+createShareButton();
 
 // create editions cards
 var editions = document.getElementsByClassName("card");
