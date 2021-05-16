@@ -1,8 +1,18 @@
-var admin = require("firebase-admin");
+const FirestoreClient = require('./firestoreClient');
+// import module firestoreClient's functions
 
-var serviceAccount = require("path/to/serviceAccountKey.json");
+// const deletion = async() => {
+//   await FirestoreClient.deletion('hello/page');
+//   //example path = 'data/editionsData'
+// }
+// deletion();
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://stemlights-website.firebaseio.com"
-});
+// const create = async() => {
+//   await FirestoreClient.create("hello/page", {edition: 1});
+// }
+// create();
+
+const read = async() => {
+  await FirestoreClient.read("data/editionsData");
+}
+read();
