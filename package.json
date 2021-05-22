@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/stemchats/STEMlights#readme",
   "dependencies": {
-    "@google-cloud/firestore": "^4.11.1"
+    "@google-cloud/firestore": "^4.12.0"
   }
 }
