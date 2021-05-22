@@ -1,7 +1,7 @@
 const Firestore = require('@google-cloud/firestore');
 const path = require('path');
-// Create a new client
 
+// Create a new client
 class FirestoreClient {
   constructor() {
     this.firestore = new Firestore({
@@ -27,7 +27,7 @@ class FirestoreClient {
   async read(path) {
     const docRef = this.firestore.doc(path);
     const doc = await docRef.get();
-    console.log(doc);
+    return doc;
   }
 
   // Delete the document.
@@ -37,5 +37,18 @@ class FirestoreClient {
     console.log('Deleted the document');
   }
 
+  //get edition list
+  async getEditionList(path, arr) {
+    const editionRef = this.firestore.collection(path);
+    let allEditions = await editionRef.get();
+    for(const doc of allEditions.docs){
+        arr.push(doc.id);
+    }
+  }
+
+  async isSubCollection(path) {
+    const docLength = this.firestore.doc.length;
+    return docLength;
+  }
 }
 module.exports = new FirestoreClient();
