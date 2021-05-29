@@ -29,21 +29,19 @@ const search = async(queryString) => {
     // await loadData();
     let returnEditions = []; //the editions that match queryString
 
-    for(const doc of allEditionsData) {
-        let entries1 = Object.entries(doc); //return array of each object's key-value pairs
+    //for(const doc of allEditionsData) {
+    for(var j = 0;j<allEditionsData.length;j++){
+        //let entries1 = Object.entries(doc); //return array of each object's key-value pairs
+        let entries1 = Object.entries(allEditionsData[j]);
         let data = Object.keys(entries1[1][1]).map((key) => entries1[1][1][key]);
-        console.log(data)
-        // console.log(entries1[1][1]);
-        for (const [key, value] of data) { //loop through each element (key-value) in the array
-            let keyword = `${key}`; //the different key properties
-            let values = `${value}`; //the different value properties
-            // if(values.includes(`${queryString}`) == true && returnEditions.includes(entries1[0][1]) === false) {
-            //     returnEditions.push(entries1[0][1]);
-            // }
-            console.log(keyword, values);
+        for(let i = 0;i<data.length;i++){
+          //console.log(j+ " | " + data[i]);
+          if(data[i].includes(`${queryString}`) == true && returnEditions.includes(entries1[0][1]) === false) {
+            returnEditions.push(entries1[0][1]);
+          }
         }
     }
-    // console.log(returnEditions);
+    console.log(returnEditions);
 }
 
 const search2 = async (editionsList, queryString) => {
