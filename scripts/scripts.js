@@ -21,7 +21,7 @@ function insertionSort(arr, arr2, arr3) {
 var editionsList = [];
 var imageList = [];
 var descList = [];
-const getEditionsList = async () => {
+const sortList = async (list) => {
     let editionsRef = db.collection('editions');
     let allEditions = await editionsRef.get();
     for(const doc of allEditions.docs){
@@ -33,6 +33,10 @@ const getEditionsList = async () => {
         imageList.push(doc_data);
         descList.push(desc_data);
     }//end for
+
+    //chnge editionslist to returned list here!
+    //editionsList = search(queryString);
+    //editionsList=list;
 
     //substring values so only number remains
     for(var i = 0;i<editionsList.length;i++){
@@ -56,7 +60,7 @@ const getEditionsList = async () => {
     pagination2(1);
 }//end func
 
-getEditionsList();
+sortList();
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 function pagination2(inputChoice) {
