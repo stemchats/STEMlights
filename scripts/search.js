@@ -12,39 +12,15 @@ query.addEventListener('keyup', (event) => {
   }
 })
 
-const allEditionsData = []; // will contain array of all editions live in database
-
-const loadData = async() => {
-    let editionsRef = db.collection('data');
-    let allEditions = await editionsRef.get();
-    for(const doc of allEditions.docs) {
-        allEditionsData.push([doc.id, doc.data()]);
+const search = async (queryString) => {
+    const editions = []; // will contain array of all editions live in database
+      let editionsRef = db.collection('editions');
+      let allEditions = await editionsRef.get();
+      for(const doc of allEditions.docs){
+          editions.push(doc.id);
       }
-}
-
-loadData();
-
-const search = async(queryString) => {
-    //load all editions data from 'data' collection first
-    // await loadData();
-    let returnEditions = []; //the editions that match queryString
-
-    for(const doc of allEditionsData) {
-        let entries1 = Object.entries(doc); //return array of each object's key-value pairs
-        let data = Object.keys(entries1[1][1]).map((key) => entries1[1][1][key]);
-        console.log(data)
-        // console.log(entries1[1][1]);
-        for (const [key, value] of data) { //loop through each element (key-value) in the array
-            let keyword = `${key}`; //the different key properties
-            let values = `${value}`; //the different value properties
-            // if(values.includes(`${queryString}`) == true && returnEditions.includes(entries1[0][1]) === false) {
-            //     returnEditions.push(entries1[0][1]);
-            // }
-            console.log(keyword, values);
-        }
+      search2(editions, queryString);
     }
-    // console.log(returnEditions);
-}
 
 const search2 = async (editionsList, queryString) => {
     const returnEditions = [];
@@ -67,3 +43,6 @@ const search2 = async (editionsList, queryString) => {
     }
     console.log(returnEditions) // returns an array of the editions which the query is found in
 }
+
+
+// SUPER SLOW SEARCH, NEED TO IMPLEMENT SEARCH VALIDATION AND REDUCE TIME
