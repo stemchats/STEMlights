@@ -12,21 +12,42 @@ query.addEventListener('keyup', (event) => {
   }
 })
 
-const allEditionsData = []; // will contain array of all editions live in database
+const allEditionsData = []; // will contain array of all edition data from database
+const imageAndDesc = []; // will contain array of all edition image src and description text
 
 const loadData = async() => {
-    let editionsRef = db.collection('data');
-    let allEditions = await editionsRef.get();
-    for(const doc of allEditions.docs) {
+    //get edition name + all sections of that edition
+    let dataRef = db.collection('data');
+    let allData = await dataRef.get();
+    for(const doc of allData.docs) {
         allEditionsData.push([doc.id, doc.data()]);
-      }
+    };
+
+    //get edition image src and description text
+    let editionRef = db.collection('editions');
+    editionRef.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        regex = /\d*/g;
+        editionNum = "";
+        if(doc.id.match(regex)) {
+          let num = doc.id.match(regex);
+          //loop through the match result to find edition number
+          for(let i = 0; i < num.length; i++) {
+            if(num[i] !== "") editionNum = "edition"+num[i];
+          }
+        }
+        imageAndDesc.push([editionNum, doc.data()]);
+        //NOTE: some images are used for multiple editions
+      })
+    });
+
+    // console.log(imageAndDesc);
+    // console.log(allEditionsData);
 }
 
-loadData();
+window.onload = loadData(); //load all editions data from 'data' collection first
 
 const search = async(queryString) => {
-    //load all editions data from 'data' collection first
-    // await loadData();
     let returnEditions = []; //the editions that match queryString
 
     //for(const doc of allEditionsData) {
