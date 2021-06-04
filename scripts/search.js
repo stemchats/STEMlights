@@ -58,12 +58,13 @@ const search = async(queryString) => {
         for(let i = 0;i<data.length;i++){
           //console.log(j+ " | " + data[i]);
           if(data[i].includes(`${queryString}`) == true && returnEditions.includes(entries1[0][1]) === false) {
-            returnEditions.push(entries1[0][1]);
+            returnEditions.push({name: entries1[0][1], image: imageLink, desc: descLink});
           }
         }
     }
-    console.log(returnEditions);
-}
+    //console.log(returnEditions);
+    sortList(returnEditions);
+  }
 
 const search2 = async (editionsList, queryString) => {
     const returnEditions = [];
