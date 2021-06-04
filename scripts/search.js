@@ -87,3 +87,6 @@ const search2 = async (editionsList, queryString) => {
     }
     console.log(returnEditions) // returns an array of the editions which the query is found in
 }
+
+
+// SUPER SLOW SEARCH, NEED TO IMPLEMENT SEARCH VALIDATION AND REDUCE TIME
