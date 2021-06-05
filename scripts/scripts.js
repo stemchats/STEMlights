@@ -324,13 +324,15 @@ function createShareButton() {
 
     var pinterest = document.createElement('a');
     pinterest.className = "fbtn share pinterest";
-    pinterest.href = "http://pinterest.com/pin/create/button/?url=https://stemlights.stemchats.org/edition/49.html&amp;description=data&amp;media=image";
+    //pinterest.href = "http://pinterest.com/pin/create/button/?url=https://stemlights.stemchats.org/edition/49.html&amp;description=data&amp;media=image";
+    pinterest.href = "http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fstemlights.stemchats.org/edition/49.html"
     pinterest.innerHTML = "<i class=\"fa fa-pinterest\"></i>";
     socials.appendChild(pinterest);
 
     var linkedin = document.createElement('a');
     linkedin.className = "fbtn share linkedin";
-    linkedin.href = "http://www.linkedin.com/shareArticle?mini=true&amp;url=https://stemlights.stemchats.org/edition/49.html&amp;title=title&amp;source=url/";
+    linkedin.href = "https://www.linkedin.com/sharing/share-offsite/?url=https://stemlights.stemchats.org/edition/49.html"
+    //linkedin.href = "http://www.linkedin.com/shareArticle?mini=true&amp;url=https://stemlights.stemchats.org/edition/49.html&amp;title=title&amp;source=url/";
     linkedin.innerHTML = "<i class=\"fa fa-linkedin\"></i>";
     socials.appendChild(linkedin);
 }
