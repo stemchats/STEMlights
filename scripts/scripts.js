@@ -1,5 +1,5 @@
-const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
+let isSearched = false; //default case, no search has been done, load all editions
 
 function insertionSort(arr, arr2, arr3) {
     for (let i = 1; i < arr.length; i++) {
@@ -21,48 +21,66 @@ function insertionSort(arr, arr2, arr3) {
 var editionsList = [];
 var imageList = [];
 var descList = [];
-const sortList = async (list) => {
-    let editionsRef = db.collection('editions');
+
+// sort returned edition array and calls pagination function
+const sortList = async (searchedEditions, isSearched) => {
+  // console.log(isSearched)
+  if(!isSearched) {
+    //if has not been searched, aka default
+    let editionsRef = firebase.firestore().collection('editions');
     let allEditions = await editionsRef.get();
-    for(const doc of allEditions.docs){
+    for(const doc of allEditions.docs) {
+       editionsList.push(doc.id);
+       var doc_data = doc.get('card-img');
+       var desc_data = doc.get('desc');
+       imageList.push(doc_data);
+       descList.push(desc_data);
+   }
+ } else if(isSearched) {
+   // console.log(allEditions);
+   // array of image src + description of the returned edition (list)
+   for(let i = 0; i < searchedEditions.length; i++) {
+     for(const data of imageAndDesc) {
+       if(searchedEditions[i] == data[0]) {
+         editionsList.push(data[0]); // edition#
+         imageList.push(data[1]["card-img"]);
+         descList.push(data[1].desc);
+       }
+     }
+   }
+ }
 
-        editionsList.push(doc.id);
-        var doc_data = doc.get('card-img');
-        var desc_data = doc.get('desc');
-        //console.log(doc.id, '=>', doc_data);
-        imageList.push(doc_data);
-        descList.push(desc_data);
-    }//end for
+  console.log(editionsList)
+  console.log(imageList)
+  console.log(descList)
 
-    //chnge editionslist to returned list here!
-    //editionsList = search(queryString);
-    //editionsList=list;
+  //substring values so only number remains
+  for(var i = 0;i<editionsList.length;i++){
+      editionsList[i]=editionsList[i].substring(7);
+  }//end
 
-    //substring values so only number remains
-    for(var i = 0;i<editionsList.length;i++){
-        editionsList[i]=editionsList[i].substring(7);
-    }//end
+  //cnvert values to integers
+  for(var i = 0;i<editionsList.length;i++){
+      editionsList[i] = parseInt(editionsList[i]);
+  }//end
 
-    //cnvert values to integers
-    for(var i = 0;i<editionsList.length;i++){
-        editionsList[i] = parseInt(editionsList[i]);
-    }//end
+  //sort
+  editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
 
-    //sort
-    editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
+  //convert values back to strings
+  for(var i = 0;i<editionsList.length;i++){
+      editionsList[i] = editionsList[i].toString();
+  }
+  //call pagination
+  pagination2(1);
+}
 
-    //convert values back to strings
-    for(var i = 0;i<editionsList.length;i++){
-        editionsList[i] = editionsList[i].toString();
-    }//end
-
-    //call pagination
-    pagination2(1);
-}//end func
-
+// sortList([], false);
 sortList();
+
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
+// creates edition cards + pagination
 function pagination2(inputChoice) {
     $('.pagination').empty();
     $('#the_cards').empty();
@@ -216,7 +234,7 @@ const elements = {
 
 function createEdition(edition) {
     for (var i = 0; i < sections.length; i++) { //how many sections the edition has, iterates through sections (below)
-        db.collection("editions").doc("edition" + edition).collection(sections[i]).get()
+        firebase.firestore().collection("editions").doc("edition" + edition).collection(sections[i]).get()
             .then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     const data = doc.data(); //retrieves all the sections as 'objects'

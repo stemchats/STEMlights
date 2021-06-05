@@ -1,3 +1,4 @@
+const db = firebase.firestore();
 const selectSearch = document.querySelector('.search-icon');
 const query = document.querySelector('.search-input');
 
@@ -58,12 +59,12 @@ const search = async(queryString) => {
         for(let i = 0;i<data.length;i++){
           //console.log(j+ " | " + data[i]);
           if(data[i].includes(`${queryString}`) == true && returnEditions.includes(entries1[0][1]) === false) {
-            returnEditions.push({name: entries1[0][1], image: imageLink, desc: descLink});
+            // returnEditions.push({name: entries1[0][1], image: imageLink, desc: descLink});
+            returnEditions.push(entries1[0][1]);
           }
         }
     }
-    //console.log(returnEditions);
-    sortList(returnEditions);
+    sortList(returnEditions, true);
   }
 
 const search2 = async (editionsList, queryString) => {
