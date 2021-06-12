@@ -1,6 +1,10 @@
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 let isSearched = false; //default case, no search has been done, load all editions
 
+function removeWhiteSpace(){
+    document.getElementById("space_div").style.height = "0vh";
+}
+
 function insertionSort(arr, arr2, arr3) {
     for (let i = 1; i < arr.length; i++) {
 
@@ -37,6 +41,9 @@ const sortList = async (searchedEditions, isSearched) => {
        descList.push(desc_data);
    }
  } else if(isSearched) {
+    editionsList = [];
+    imageList = [];
+    descList = [];
    // console.log(allEditions);
    // array of image src + description of the returned edition (list)
    for(let i = 0; i < searchedEditions.length; i++) {
@@ -158,6 +165,9 @@ function pagination2(inputChoice) {
     } else if(inputChoice!=pageCount){
         $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice+1) + ')" href="#">Next</a></li>');
     }
+
+    removeWhiteSpace();
+
 }//end function
 
 //for adding each edition from createsend
