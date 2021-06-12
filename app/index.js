@@ -20,6 +20,7 @@ const getEditionList = async() => {
   await FirestoreClient.getEditionList("editions", editionsList);
 }
 
+// create the data collection in firestore
 const create = async() => {
   //get edition list
   await getEditionList();
