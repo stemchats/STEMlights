@@ -1,5 +1,5 @@
+const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
-let isSearched = false; //default case, no search has been done, load all editions
 
 function insertionSort(arr, arr2, arr3) {
     for (let i = 1; i < arr.length; i++) {
@@ -21,66 +21,44 @@ function insertionSort(arr, arr2, arr3) {
 var editionsList = [];
 var imageList = [];
 var descList = [];
-
-// sort returned edition array and calls pagination function
-const sortList = async (searchedEditions, isSearched) => {
-  // console.log(isSearched)
-  if(!isSearched) {
-    //if has not been searched, aka default
-    let editionsRef = firebase.firestore().collection('editions');
+const getEditionsList = async () => {
+    let editionsRef = db.collection('editions');
     let allEditions = await editionsRef.get();
-    for(const doc of allEditions.docs) {
-       editionsList.push(doc.id);
-       var doc_data = doc.get('card-img');
-       var desc_data = doc.get('desc');
-       imageList.push(doc_data);
-       descList.push(desc_data);
-   }
- } else if(isSearched) {
-   // console.log(allEditions);
-   // array of image src + description of the returned edition (list)
-   for(let i = 0; i < searchedEditions.length; i++) {
-     for(const data of imageAndDesc) {
-       if(searchedEditions[i] == data[0]) {
-         editionsList.push(data[0]); // edition#
-         imageList.push(data[1]["card-img"]);
-         descList.push(data[1].desc);
-       }
-     }
-   }
- }
+    for(const doc of allEditions.docs){
 
-  console.log(editionsList)
-  console.log(imageList)
-  console.log(descList)
+        editionsList.push(doc.id);
+        var doc_data = doc.get('card-img');
+        var desc_data = doc.get('desc');
+        //console.log(doc.id, '=>', doc_data);
+        imageList.push(doc_data);
+        descList.push(desc_data);
+    }//end for
 
-  //substring values so only number remains
-  for(var i = 0;i<editionsList.length;i++){
-      editionsList[i]=editionsList[i].substring(7);
-  }//end
+    //substring values so only number remains
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i]=editionsList[i].substring(7);
+    }//end
 
-  //cnvert values to integers
-  for(var i = 0;i<editionsList.length;i++){
-      editionsList[i] = parseInt(editionsList[i]);
-  }//end
+    //cnvert values to integers
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i] = parseInt(editionsList[i]);
+    }//end
 
-  //sort
-  editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
+    //sort
+    editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
 
-  //convert values back to strings
-  for(var i = 0;i<editionsList.length;i++){
-      editionsList[i] = editionsList[i].toString();
-  }
-  //call pagination
-  pagination2(1);
-}
+    //convert values back to strings
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i] = editionsList[i].toString();
+    }//end
 
-// sortList([], false);
-sortList();
+    //call pagination
+    pagination2(1);
+}//end func
 
+getEditionsList();
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
-// creates edition cards + pagination
 function pagination2(inputChoice) {
     $('.pagination').empty();
     $('#the_cards').empty();
@@ -234,7 +212,7 @@ const elements = {
 
 function createEdition(edition) {
     for (var i = 0; i < sections.length; i++) { //how many sections the edition has, iterates through sections (below)
-        firebase.firestore().collection("editions").doc("edition" + edition).collection(sections[i]).get()
+        db.collection("editions").doc("edition" + edition).collection(sections[i]).get()
             .then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     const data = doc.data(); //retrieves all the sections as 'objects'
@@ -324,13 +302,15 @@ function createShareButton() {
 
     var pinterest = document.createElement('a');
     pinterest.className = "fbtn share pinterest";
-    pinterest.href = "http://pinterest.com/pin/create/button/?url=https://stemlights.stemchats.org/edition/49.html&amp;description=data&amp;media=image";
+    //pinterest.href = "http://pinterest.com/pin/create/button/?url=https://stemlights.stemchats.org/edition/49.html&amp;description=data&amp;media=image";
+    pinterest.href = "http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fstemlights.stemchats.org/edition/49.html"
     pinterest.innerHTML = "<i class=\"fa fa-pinterest\"></i>";
     socials.appendChild(pinterest);
 
     var linkedin = document.createElement('a');
     linkedin.className = "fbtn share linkedin";
-    linkedin.href = "http://www.linkedin.com/shareArticle?mini=true&amp;url=https://stemlights.stemchats.org/edition/49.html&amp;title=title&amp;source=url/";
+    linkedin.href = "https://www.linkedin.com/sharing/share-offsite/?url=https://stemlights.stemchats.org/edition/49.html"
+    //linkedin.href = "http://www.linkedin.com/shareArticle?mini=true&amp;url=https://stemlights.stemchats.org/edition/49.html&amp;title=title&amp;source=url/";
     linkedin.innerHTML = "<i class=\"fa fa-linkedin\"></i>";
     socials.appendChild(linkedin);
 }
