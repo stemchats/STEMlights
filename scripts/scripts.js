@@ -1,6 +1,10 @@
 const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 
+function removeWhiteSpace(){
+    document.getElementById("space_div").style.height = "0vh";
+}
+
 function insertionSort(arr, arr2, arr3) {
     for (let i = 1; i < arr.length; i++) {
 
@@ -136,6 +140,9 @@ function pagination2(inputChoice) {
     } else if(inputChoice!=pageCount){
         $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice+1) + ')" href="#">Next</a></li>');
     }
+
+    removeWhiteSpace();
+
 }//end function
 
 //for adding each edition from createsend
