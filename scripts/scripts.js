@@ -1,6 +1,14 @@
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 let isSearched = false; //default case, no search has been done, load all editions
 
+//local storage set up [initial load] [page]
+const myStorage = window.localStorage;
+
+let defaultLoad = localStorage.setItem('initial load', 1);
+let isDefault;
+let lastPage = localStorage.getItem('Page');
+
+
 function removeWhiteSpace(){
     document.getElementById("space_div").style.height = "0vh";
 }
@@ -57,9 +65,9 @@ const sortList = async (searchedEditions, isSearched) => {
    }
  }
 
-  console.log(editionsList)
-  console.log(imageList)
-  console.log(descList)
+  // console.log(editionsList)
+  // console.log(imageList)
+  // console.log(descList)
 
   //substring values so only number remains
   for(var i = 0;i<editionsList.length;i++){
@@ -79,16 +87,35 @@ const sortList = async (searchedEditions, isSearched) => {
       editionsList[i] = editionsList[i].toString();
   }
   //call pagination
-  pagination2(1);
+  if(!isDefault) {
+    //if not default load pass the last page visited as argument
+    pagination2(lastPage);
+  } else {
+    //if default load just load first page
+    pagination2(1);
+  }
 }
 
 // sortList([], false);
 sortList();
 
+// detect once storage has been changed if we are in default state or not (initial load), sets the isDefault variable
+window.addEventListener("storage", function () {
+    // do your checks to detect
+    if(localStorage.getItem('initial load') >= 1) {
+      isDefault = false;
+    } else {
+      isDefault = true;
+    }
+}, false);
+
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 // creates edition cards + pagination
 function pagination2(inputChoice) {
+    //remember the page number in local storage
+    localStorage.setItem('Page', inputChoice);
+
     $('.pagination').empty();
     $('#the_cards').empty();
 
@@ -147,19 +174,20 @@ function pagination2(inputChoice) {
     }//end for
 
     //creating page selection
+    // previous button
     if(inputChoice==1){
         $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>');
     } else if(inputChoice!=1){
         $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice-1) + ')" href="#">Previous</a></li>');
     }
-
+    // actual page numbers
     for (var i = 0; i < pageCount; i++) {
         if (i == inputChoice-1)
             $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
         else
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
     }
-
+    // next button
     if(inputChoice==pageCount){
         $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>');
     } else if(inputChoice!=pageCount){
