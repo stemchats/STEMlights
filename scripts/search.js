@@ -66,28 +66,3 @@ const search = async(queryString) => {
     }
     sortList(returnEditions, true);
   }
-
-const search2 = async (editionsList, queryString) => {
-    const returnEditions = [];
-    for(let i = 0; i < editionsList.length; i++) {
-      for(let j = 0; j < sectionsList.length; j++) {
-        let editionsRef = db.collection('editions').doc(editionsList[i]).collection(sectionsList[j]);
-        let allEditions = await editionsRef.get();
-        for(const doc of allEditions.docs){
-            const data = doc.data();
-            let entries1 = Object.entries(data); //return array of each object's key-value pairs
-            for (const [key, value] of entries1.sort()) { //loop through each element (key-value) in the array
-                let keyword = `${key}`; //the different key properties
-                let values = `${value}`; //the different value properties
-                if(values.includes(`${queryString}`) === true && returnEditions.includes(editionsList[i]) === false) {
-                    returnEditions.push(editionsList[i]);
-                }
-            }
-        }
-      }
-    }
-    console.log(returnEditions) // returns an array of the editions which the query is found in
-}
-
-
-// SUPER SLOW SEARCH, NEED TO IMPLEMENT SEARCH VALIDATION AND REDUCE TIME
