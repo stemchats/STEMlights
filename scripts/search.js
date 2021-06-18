@@ -2,6 +2,9 @@ const db = firebase.firestore();
 const selectSearch = document.querySelector('.search-icon');
 const query = document.querySelector('.search-input');
 
+//local storage set up [initial load] [page]
+myStorage = window.sessionStorage;
+
 // search input text on click
 selectSearch.addEventListener('click', (event) => {
   search(query.value);
@@ -41,7 +44,6 @@ const loadData = async() => {
         //NOTE: some images are used for multiple editions
       })
     });
-
     // console.log(imageAndDesc);
     // console.log(allEditionsData);
 }
@@ -49,6 +51,9 @@ const loadData = async() => {
 window.onload = loadData(); //load all editions data from 'data' collection first
 
 const search = async(queryString) => {
+    //remember query
+    sessionStorage.setItem("query", queryString);
+
     let returnEditions = []; //the editions that match queryString
 
     //for(const doc of allEditionsData) {

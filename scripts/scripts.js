@@ -1,13 +1,21 @@
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
 let isSearched = false; //default case, no search has been done, load all editions
 
-//local storage set up [initial load] [page]
-const myStorage = window.localStorage;
-
-let defaultLoad = localStorage.setItem('initial load', 1);
+if(sessionStorage.getItem('initial load') == null) {
+  let defaultLoad = sessionStorage.setItem('initial load', 1);
+}
 let isDefault;
-let lastPage = localStorage.getItem('Page');
+let lastPage = sessionStorage.getItem('Page');
 
+function checkDefault() {
+  if(sessionStorage.getItem('initial load') == 1) {
+    isDefault = true;
+  } else if(sessionStorage.getItem('initial load') == 0) {
+    isDefault = false;
+  }
+}
+//sets the default value to true on load
+checkDefault();
 
 function removeWhiteSpace(){
     document.getElementById("space_div").style.height = "0vh";
@@ -88,10 +96,13 @@ const sortList = async (searchedEditions, isSearched) => {
   }
   //call pagination
   if(!isDefault) {
-    //if not default load pass the last page visited as argument
+    //if not default load, pass the last page visited as argument
     pagination2(lastPage);
-  } else {
+    //keep search value in the bar
+    query.textContent = sessionStorage.getItem("query");
+  } else if(isDefault) {
     //if default load just load first page
+    sessionStorage.setItem('initial load', 0);
     pagination2(1);
   }
 }
@@ -99,22 +110,12 @@ const sortList = async (searchedEditions, isSearched) => {
 // sortList([], false);
 sortList();
 
-// detect once storage has been changed if we are in default state or not (initial load), sets the isDefault variable
-window.addEventListener("storage", function () {
-    // do your checks to detect
-    if(localStorage.getItem('initial load') >= 1) {
-      isDefault = false;
-    } else {
-      isDefault = true;
-    }
-}, false);
-
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 // creates edition cards + pagination
 function pagination2(inputChoice) {
-    //remember the page number in local storage
-    localStorage.setItem('Page', inputChoice);
+    //remember the page number in session storage
+    sessionStorage.setItem('Page', inputChoice);
 
     $('.pagination').empty();
     $('#the_cards').empty();
@@ -202,19 +203,6 @@ function pagination2(inputChoice) {
 //get all elements from createsend and filter them out
 // var all = document.getElementsByTagName("*");
 //list.filter(elem => elem.tag === 'p'  elem.tag === 'img'  ... etc)
-
-
-
-
-// WORKING WITH EDITIONSLIST
-
-parsedEditions = JSON.parse(localStorage.getItem("editions"));
-
-console.log(parsedEditions);
-
-// for(var i=0; i<localStorage['editions'].length; i++){
-//   console.log(localStorage['editions'][i]);
-// }
 
 
 const elements = {
