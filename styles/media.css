@@ -98,7 +98,7 @@
     color: #f6d970 !important;
   }
   header #menu-icon:checked ~ .collapsible-menu {
-    height: 180px;
+    height: 190px;
   }
   header .collapsible-menu {
     display: block;

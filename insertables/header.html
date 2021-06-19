@@ -152,6 +152,18 @@
             }
             prevScrollpos = currentScrollPos;
         }
+
+        
+        var menu_check = document.getElementById("menu-icon");
+
+        // click anywhere will close menu icon
+        document.body.addEventListener('mouseup', function() {
+                console.log("clicked");
+                if (menu_check.checked) {
+                    menu_check.checked = false;
+                }
+            }
+        ); 
     </script>
 </body>
 
