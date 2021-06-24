@@ -50,6 +50,20 @@ const loadData = async() => {
 
 window.onload = loadData(); //load all editions data from 'data' collection first
 
+stopwords = ['i','me','my','myself','we','our','ours','ourselves','you','your','yours','yourself','yourselves','he','him','his','himself','she','her','hers','herself','it','its','itself','they','them','their','theirs','themselves','what','which','who','whom','this','that','these','those','am','is','are','was','were','be','been','being','have','has','had','having','do','does','did','doing','a','an','the','and','but','if','or','because','as','until','while','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','to','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','s','t','can','will','just','don','should','now'];
+
+function remove_stopwords(str) {
+  res = []
+  words = str.split(' ')
+  for(i=0;i<words.length;i++) {
+     word_clean = words[i].split(".").join("")
+     if(!stopwords.includes(word_clean)) {
+         res.push(word_clean)
+     }
+  }
+  return(res.join(' '))
+}  
+
 const search = async(queryString) => {
     //remember query
     sessionStorage.setItem("query", queryString);
@@ -63,9 +77,19 @@ const search = async(queryString) => {
         let data = Object.keys(entries1[1][1]).map((key) => entries1[1][1][key]);
         for(let i = 0;i<data.length;i++){
           //console.log(j+ " | " + data[i]);
-          if(data[i].includes(`${queryString}`) == true && returnEditions.includes(entries1[0][1]) === false) {
-            // returnEditions.push({name: entries1[0][1], image: imageLink, desc: descLink});
-            returnEditions.push(entries1[0][1]);
+
+          //regex stuff
+          regexExp = /[\p{L}\d\s'.]/gu;
+          if(queryString.match(regexExp)){
+            qList = queryString.match(regexExp);
+            qString = "";
+            for(let i = 0;i<qList.length;i++){
+              qString+=qList[i];
+            }
+            if(data[i].toLowerCase().includes(`${remove_stopwords(qString.toLowerCase())}`) == true && returnEditions.includes(entries1[0][1]) === false) {
+              // returnEditions.push({name: entries1[0][1], image: imageLink, desc: descLink});
+              returnEditions.push(entries1[0][1]);
+            }
           }
         }
     }
