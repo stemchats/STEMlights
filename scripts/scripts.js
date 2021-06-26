@@ -47,6 +47,8 @@ const sortList = async (searchedEditions, isSearched) => {
   // console.log(isSearched)
   if(!isSearched) {
     //if has not been searched, aka default
+    $('#num_results').empty();
+
     let editionsRef = firebase.firestore().collection('editions');
     let allEditions = await editionsRef.get();
     for(const doc of allEditions.docs) {
@@ -57,6 +59,19 @@ const sortList = async (searchedEditions, isSearched) => {
        descList.push(desc_data);
    }
  } else if(isSearched) {
+     //adding the number of query responses
+    $('#num_results').empty();
+    let pResult = document.createElement('p'); //pResult = paragraph object of results
+    if(searchedEditions.length==1){
+        results = "There is 1 result for " + sessionStorage.getItem("query");
+    } else if (searchedEditions.length>1){
+        results = "There are " + searchedEditions.length + " results for \"" + sessionStorage.getItem("query") + "\"";
+    }
+    
+    pResult.innerHTML = results
+
+    document.getElementById("num_results").appendChild(pResult);
+
     editionsList = [];
     imageList = [];
     descList = [];
