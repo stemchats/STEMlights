@@ -335,6 +335,7 @@ function createDirectory(title) {
 }
 
 
+
 // create share button
 function createShareButton() {
     var shareBlock = document.createElement('div');
