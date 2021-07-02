@@ -44,9 +44,9 @@ var descList = [];
 
 // sort returned edition array and calls pagination function
 const sortList = async (searchedEditions, isSearched) => {
-  // console.log(isSearched)
+
   if(!isSearched) {
-    //if has not been searched, aka default
+    //default loading of page or searching for empty query
     $('#num_results').empty();
 
     let editionsRef = firebase.firestore().collection('editions');
@@ -115,8 +115,6 @@ const sortList = async (searchedEditions, isSearched) => {
   if(!isDefault) {
     //if not default load, pass the last page visited as argument
     pagination2(lastPage);
-    //keep search value in the bar
-    query.textContent = sessionStorage.getItem("query");
   } else if(isDefault) {
     //if default load just load first page
     sessionStorage.setItem('initial load', 0);
@@ -133,6 +131,8 @@ let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "oppo
 function pagination2(inputChoice) {
     //remember the page number in session storage
     sessionStorage.setItem('Page', inputChoice);
+    //remember search query in search bar
+    query.value = sessionStorage.getItem("query");
 
     $('.pagination').empty();
     $('#the_cards').empty();
