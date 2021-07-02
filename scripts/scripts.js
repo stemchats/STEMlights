@@ -62,13 +62,15 @@ const sortList = async (searchedEditions, isSearched) => {
      //adding the number of query responses
     $('#num_results').empty();
     let pResult = document.createElement('p'); //pResult = paragraph object of results
-    if(searchedEditions.length==1){
-        results = "There is 1 result for " + sessionStorage.getItem("query");
-    } else if (searchedEditions.length>1){
-        results = "There are " + searchedEditions.length + " results for \"" + sessionStorage.getItem("query") + "\"";
+    if(searchedEditions.length == 1) {
+        results = "Found 1 result for \"" + sessionStorage.getItem("query") + "\"";
+    } else if (searchedEditions.length > 1) {
+        results = "Found " + searchedEditions.length + " results for \"" + sessionStorage.getItem("query") + "\"";
+    } else if (searchedEditions.length == 0) {
+      results = "Found 0 results for \"" + sessionStorage.getItem("query") + "\"";
     }
-    
-    pResult.innerHTML = results
+
+    pResult.innerHTML = results;
 
     document.getElementById("num_results").appendChild(pResult);
 
