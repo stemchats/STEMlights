@@ -120,6 +120,9 @@ const sortList = async (searchedEditions, isSearched) => {
     sessionStorage.setItem('initial load', 0);
     pagination2(1);
   }
+  if(searchedEditions.length==0){
+    $('.pagination').empty();
+  }
 }
 
 // sortList([], false);
