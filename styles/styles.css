@@ -440,8 +440,8 @@ header .collapsible-menu ul .nav-link:hover {
 
 .search-bar {
   position: absolute;
-  -webkit-transform: translate(50%, -5.5rem);
-          transform: translate(50%, -5.5rem);
+  -webkit-transform: translate(50%, -6.75rem);
+          transform: translate(50%, -6.75rem);
   right: 50%;
   width: 40px;
   height: 40px;
@@ -662,7 +662,7 @@ body {
 
 .newsletter .banner {
   width: 100vw;
-  height: 200px;
+  height: 275px;
   margin-left: -50%;
   margin-top: -10%;
   margin-bottom: 5.5rem;
