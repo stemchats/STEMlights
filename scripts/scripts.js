@@ -44,9 +44,9 @@ var descList = [];
 
 // sort returned edition array and calls pagination function
 const sortList = async (searchedEditions, isSearched) => {
-  // console.log(isSearched)
+
   if(!isSearched) {
-    //if has not been searched, aka default
+    //default loading of page or searching for empty query
     $('#num_results').empty();
 
     let editionsRef = firebase.firestore().collection('editions');
@@ -62,13 +62,15 @@ const sortList = async (searchedEditions, isSearched) => {
      //adding the number of query responses
     $('#num_results').empty();
     let pResult = document.createElement('p'); //pResult = paragraph object of results
-    if(searchedEditions.length==1){
-        results = "There is 1 result for " + sessionStorage.getItem("query");
-    } else if (searchedEditions.length>1){
-        results = "There are " + searchedEditions.length + " results for \"" + sessionStorage.getItem("query") + "\"";
+    if(searchedEditions.length == 1) {
+        results = "Found 1 result for \"" + sessionStorage.getItem("query") + "\"";
+    } else if (searchedEditions.length > 1) {
+        results = "Found " + searchedEditions.length + " results for \"" + sessionStorage.getItem("query") + "\"";
+    } else if (searchedEditions.length == 0) {
+      results = "Found 0 results for \"" + sessionStorage.getItem("query") + "\"";
     }
-    
-    pResult.innerHTML = results
+
+    pResult.innerHTML = results;
 
     document.getElementById("num_results").appendChild(pResult);
 
@@ -113,12 +115,13 @@ const sortList = async (searchedEditions, isSearched) => {
   if(!isDefault) {
     //if not default load, pass the last page visited as argument
     pagination2(lastPage);
-    //keep search value in the bar
-    query.textContent = sessionStorage.getItem("query");
   } else if(isDefault) {
     //if default load just load first page
     sessionStorage.setItem('initial load', 0);
     pagination2(1);
+  }
+  if(searchedEditions.length==0){
+    $('.pagination').empty();
   }
 }
 
@@ -131,6 +134,8 @@ let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "oppo
 function pagination2(inputChoice) {
     //remember the page number in session storage
     sessionStorage.setItem('Page', inputChoice);
+    //remember search query in search bar
+    query.value = sessionStorage.getItem("query");
 
     $('.pagination').empty();
     $('#the_cards').empty();

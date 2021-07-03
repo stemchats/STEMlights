@@ -50,7 +50,8 @@ const loadData = async() => {
 
 window.onload = loadData(); //load all editions data from 'data' collection first
 
-stopwords = ['i','me','my','myself','we','our','ours','ourselves','you','your','yours','yourself','yourselves','he','him','his','himself','she','her','hers','herself','it','its','itself','they','them','their','theirs','themselves','what','which','who','whom','this','that','these','those','am','is','are','was','were','be','been','being','have','has','had','having','do','does','did','doing','a','an','the','and','but','if','or','because','as','until','while','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','to','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','s','t','can','will','just','don','should','now'];
+stopwords = [       'a','an','the','i','me','my','myself','we','our','ours','ourselves','you','your','yours','yourself','yourselves','he','him','his','himself','she','her','hers','herself','it','its','itself','they','them','their','theirs','themselves','what','which','who','whom','this','that','these','those','am','is','are','was','were','be','been','being','have','has','had','having','do','does','did','doing','a','an','the','and','but','if','or','because','as','until','while','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','to','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','s','t','can','will','just','don','should','now'
+];
 
 function remove_stopwords(str) {
   res = []
@@ -62,7 +63,7 @@ function remove_stopwords(str) {
      }
   }
   return(res.join(' '))
-}  
+}
 
 const search = async(queryString) => {
     //remember query
@@ -86,7 +87,7 @@ const search = async(queryString) => {
             for(let i = 0;i<qList.length;i++){
               qString+=qList[i];
             }
-            if(data[i].toLowerCase().includes(`${remove_stopwords(qString.toLowerCase())}`) == true && returnEditions.includes(entries1[0][1]) === false) {
+            if(data[i].toLowerCase().includes(remove_stopwords(qString.toLowerCase())) && remove_stopwords(qString.toLowerCase()) != "" && !returnEditions.includes(entries1[0][1])) {
               // returnEditions.push({name: entries1[0][1], image: imageLink, desc: descLink});
               returnEditions.push(entries1[0][1]);
             }
