@@ -439,9 +439,10 @@ header .collapsible-menu ul .nav-link:hover {
 }
 
 .search-bar {
-  right: 100px;
-  margin: -20px;
   position: absolute;
+  -webkit-transform: translate(50%, -5.5rem);
+          transform: translate(50%, -5.5rem);
+  right: 50%;
   width: 40px;
   height: 40px;
   border: 1px solid #233142;
@@ -657,6 +658,19 @@ body {
 /* NEWSLETTER MENU */
 .newsletter {
   padding: 0 2rem;
+}
+
+.newsletter .banner {
+  width: 100vw;
+  height: 200px;
+  margin-left: -50%;
+  margin-top: -10%;
+  margin-bottom: 5.5rem;
+  background-image: url("/images/edition-constants/stem-spotlight.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  visibility: visible;
 }
 
 .newsletter .card {
