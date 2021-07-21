@@ -207,6 +207,9 @@ function pagination2(inputChoice) {
 
     let pageNumList = [];
 
+    //If page count is less than or equal to 4, we dont need to use ellipses at all, so this just generates buttons up to 4.
+    //It also checks to see which button is active, and makes that button a dark blue
+
     if(pageCount<=4){
         for (var i = 0; i < pageCount; i++) {
             if (i == inputChoice-1)
@@ -215,10 +218,15 @@ function pagination2(inputChoice) {
                 $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
         }
     } else {
+
+
+        //generating a list of pagenumbers to use so we don't have to work with a jank loop and we have an object instead
         for (var i = 0; i < pageCount; i++) {
             pageNumList.push(i+1);
         }
-        if(inputChoice==1 || inputChoice==2){//first value/page
+        if(inputChoice==1 || inputChoice==2){
+            //If inputChoice is either the first or second page, it will display 1, 2, 3 and then move onto the last page
+            //with ellipses in between
             for(var i = 0;i<3;i++){
                 if (i == inputChoice-1)
                     $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
@@ -228,7 +236,9 @@ function pagination2(inputChoice) {
             $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
         }
-        if(inputChoice==pageNumList[pageNumList.length-1] || inputChoice==pageNumList[pageNumList.length-2]){//last value/page
+        if(inputChoice==pageNumList[pageNumList.length-1] || inputChoice==pageNumList[pageNumList.length-2]){
+            //If inputChoice is either the last or second-last page, it will display 1, ellipses, and then third last, second last,
+            //and the last page
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
             $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
             for(var i = pageNumList.length-3;i<pageNumList.length;i++){
@@ -238,11 +248,16 @@ function pagination2(inputChoice) {
                     $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
             }//end for
         }
-        if(inputChoice>2 && inputChoice<pageNumList[pageNumList.length-2]){//everything in the middle!
-            //beginning stuff
+        if(inputChoice>2 && inputChoice<pageNumList[pageNumList.length-2]){
+
+            //if the pages are in the middle (not 1, 2, 5, or 6), then we add 1 to the beginning, add ellipses, and then have 3
+            //pages in the middle, followed by ellipses again, and then the last page.
+
+            //beginning page + ellipses
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
             $(".pagination").append('<li class="spacer" ><a class="page-link" >. . .</a></li>');
 
+            //middle pages 
             for(var i = pageNumList[inputChoice-1]-2;i<pageNumList[inputChoice];i++){
                 if (i == inputChoice-1)
                     $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
@@ -250,17 +265,11 @@ function pagination2(inputChoice) {
                     $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
             }
 
+            //ellipses + final page
             $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
 
         }//end
-
-        // for (var i = 0; i < pageCount; i++) {
-        //     if (i == inputChoice-1)
-        //         $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        //     else
-        //         $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        // }
     }//end else
 
 
