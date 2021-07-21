@@ -225,12 +225,12 @@ function pagination2(inputChoice) {
                 else
                     $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
             }//end for
-            $(".pagination").append('<li  ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
         }
         if(inputChoice==pageNumList[pageNumList.length-1] || inputChoice==pageNumList[pageNumList.length-2]){//last value/page
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
-            $(".pagination").append('<li  ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
             for(var i = pageNumList.length-3;i<pageNumList.length;i++){
                 if (i == inputChoice-1)
                     $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
@@ -241,7 +241,7 @@ function pagination2(inputChoice) {
         if(inputChoice>2 && inputChoice<pageNumList[pageNumList.length-2]){//everything in the middle!
             //beginning stuff
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
-            $(".pagination").append('<li  ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link" >. . .</a></li>');
 
             for(var i = pageNumList[inputChoice-1]-2;i<pageNumList[inputChoice];i++){
                 if (i == inputChoice-1)
@@ -250,7 +250,7 @@ function pagination2(inputChoice) {
                     $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
             }
 
-            $(".pagination").append('<li  ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
 
         }//end

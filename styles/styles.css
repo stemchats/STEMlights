@@ -1006,4 +1006,8 @@ footer .copy {
   background-color: #233142;
   border-color: #233142;
 }
+
+.pagination .spacer {
+  pointer-events: none;
+}
 /*# sourceMappingURL=styles.css.map */

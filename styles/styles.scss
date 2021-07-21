@@ -934,5 +934,8 @@ footer {
         background-color: $dark-blue;
         border-color: $dark-blue;
     }
+    .spacer{
+        pointer-events: none;
+    }
 
 }
