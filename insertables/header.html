@@ -29,7 +29,13 @@
             <p class="stemchats">a <a class="stemchats-link" href="https://stemchats.org" target="_blank">stemchats</a> program</p>
         </div>
         <input type="checkbox" id="menu-icon">
-        <label for="menu-icon"><i class="fas fa-bars"></i></label>
+        <!-- <label for="menu-icon"><i class="fas fa-bars"></i></label> -->
+        
+        <label for="menu-icon" class="lines-button x" >
+            <span class="lines"></span>
+        </label>
+        <!-- <button class="lines-button x navbar-toggler ml-auto custom-toggler" type="button" role="button" aria-label="Toggle Navigation" data-toggle = "collapse" data-target = "#mainNav">
+        </button> -->
 
         <div class="collapsible-menu">
             <div class="show collapse" id="navbarTogglerDemo02">
@@ -153,17 +159,29 @@
             prevScrollpos = currentScrollPos;
         }
 
-        
+
+        // var menu_check = document.getElementsByClassName("navbar-toggler ml-auto custom-toggler")[0];
         var menu_check = document.getElementById("menu-icon");
+        var lines = document.getElementsByClassName("lines-button x")[0];
+
+        menu_check.addEventListener('change', (event) => {
+            if (event.currentTarget.checked) {
+                lines.classList.add("close");
+            } else {
+                lines.classList.remove("close");
+            }
+        });
+
+        
 
         // click anywhere will close menu icon
-        document.body.addEventListener('mouseup', function() {
+        /* document.body.addEventListener('mouseup', function() {
                 console.log("clicked");
                 if (menu_check.checked) {
                     menu_check.checked = false;
                 }
             }
-        ); 
+        ); */
     </script>
 </body>
 
