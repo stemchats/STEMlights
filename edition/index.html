@@ -68,23 +68,30 @@
     <div id="header"></div>
 
     <div class="main newsletter">
-
-        <h1 class="center"><span class="title">Editions</span></h1>
+		<div class="banner"></div>
+		
         <!-- search bar -->
-        <!-- <div class="search-bar active">
+        <div class="search-bar active">
           <form onsubmit="return false">
               <input type="search" class="search-input" placeholder="Search..." value="" name="search" autocomplete="off">
               <input type="submit" class="search-submit" value="">
               <span class="search-icon"><i class="fas fa-search"></i></span>
           </form>
-        </div> -->
+        </div>
+
+        <center><button type="button" onclick="location.href='/edition/index.html', sessionStorage.setItem('query', '')">Go back to all editions!</button></center>
+
+        <div id="num_results" style="margin: 20px;"></div>
+
+        <h1 class="center"><span class="title">Editions</span></h1>
+
         <div id="the_cards">
-         
+
         </div>
         <!-- end the_cards div -->
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
-          
+
             </ul>
         </nav>
         <!-- end nav bar -->
@@ -132,9 +139,8 @@
       crossorigin="anonymous"></script>
 
     <!-- Scripts -->
+    <script type="text/javascript" src="/scripts/search.js"></script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/data.js"></script> -->
-    <!-- <script type="text/javascript" src="/scripts/search.js"></script> -->
     <script>
         //createEditions();
         //pagination2(1);

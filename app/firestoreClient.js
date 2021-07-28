@@ -46,9 +46,22 @@ class FirestoreClient {
     }
   }
 
-  async isSubCollection(path) {
-    const docLength = this.firestore.doc.length;
-    return docLength;
+  // watching changes to collection
+  async observer(collection) {
+    const reference = this.firestore.collection(collection);
+    reference.onSnapshot((querySnapshot) => {
+          console.log('Listening to Editions collection');
+          querySnapshot.docChanges().forEach((change) => {
+            // An edition has been added
+            if (change.type === 'added') {
+              return `Added: ${change.doc.id}`;
+            }
+            // An edition has been deleted
+            if (change.type === 'removed') {
+                return `Removed: ${change.doc.id}`;
+            }
+        });
+      });
   }
 }
 module.exports = new FirestoreClient();
