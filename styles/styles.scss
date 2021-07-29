@@ -626,13 +626,14 @@ body {
 
     .banner {
         width: 100vw;
-        height: 275px;
+        height: 300px;
         margin-left: -50%;
         margin-top: -10%;
         margin-bottom: 5.5rem;
-        background-image: url("/images/edition-constants/stem-spotlight.png");
-        background-size: cover;
+        background-image: url("/images/search_light.png");
+        //background-size: cover;
         background-repeat: no-repeat;
+        background-size: auto 100%;
         background-position: 50% 50%; //centered image
         visibility: visible;
     }
@@ -901,7 +902,7 @@ footer {
             opacity: 1;
             transition: all 0.4s ease 0s;
             visibility: visible;
-    
+
             &.top {
                 transform: scale(1) translateY(-10px);
             }
