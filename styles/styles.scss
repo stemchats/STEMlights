@@ -99,6 +99,13 @@ html {
     }
 }
 
+// header highlight for whatever page the user is on
+.home #home-nav, 
+.about-us #about-nav, 
+.newsletter #newsletter-nav {
+    border-bottom: 2px solid $yellow;
+}
+
 
 
 
@@ -255,26 +262,12 @@ html {
     background-color: $light-grey;
 }
 
-.img-row-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-        height: 300px;
-    }
-}
-
 span.title {
     font-weight: bold;
 
     &::before, &::after {
         content: ' - ';
     }
-}
-
-.content-notitle {
-    margin-top: 20px;
 }
 
 
@@ -773,21 +766,28 @@ body {
 /* ABOUT US */
 
 .about-us {
-    .subtitle {
-        font-size: 1.1em;
-        padding: 1rem 1.5rem 3rem;
+    .main {
+        margin-bottom: 0;
     }
 }
 
-.teamcard-container {
-    position: relative;
+.subtitle {
+    font-size: 1.1em;
+    padding: 1rem 1.5rem 3rem;
+}
+
+.meet-the-team {
+    img {
+        max-height: 300px;
+        max-width: 100%;
+    }
 
     .img-hover {
         position: relative;
         border-radius: 50%;
         width: 300px;
         height: 300px;
-        margin: 50px 40px 20px;
+        margin: 50px auto 20px;
         overflow: hidden;
         animation: 0.7s ease-out 0s 1 slideUp;
         transition: 0.35s;
