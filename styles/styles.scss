@@ -303,6 +303,8 @@ $transition: .3s; // increase this to see the transformations in slow-motion
     //padding-bottom: $button-size/2;
 
     .lines {
+        margin-left: -50%;
+        
         &:before { top: $button-size/3; }
         &:after { top: -$button-size/3; }
     }
@@ -321,7 +323,7 @@ $transition: .3s; // increase this to see the transformations in slow-motion
     //create middle line
     @include line;
     position: relative;
-    top: -7px;
+    top: -5px;
     right: -15px;
     
     /*create the upper and lower lines as pseudo-elements of the middle line*/

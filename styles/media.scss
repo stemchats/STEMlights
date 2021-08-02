@@ -165,7 +165,7 @@ $cards-per-line: (
         #menu-icon + label { //header menu icon appears
             display: block;
             position: absolute;
-            right: 50px;
+            right: 40px;
             top: 55%;
             transform: translateY(-50%);
             font-size: 24px;
@@ -253,14 +253,14 @@ $cards-per-line: (
         display: none;
     }
 
-    .teamcard-container {
+    .meet-the-team {
         .img-hover {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
 
             img {
-                width: 250px;
-                height: 250px;
+                width: 200px;
+                height: 200px;
             }
         }
     }
@@ -292,16 +292,14 @@ $cards-per-line: (
         }
     }
 
-    .img-row-container {
-        display: flex;
-        flex-direction: column;
+    .meet-the-team {
+        .img-hover {
+            width: 300px;
+            height: 300px;
 
-        .teamcard-container {
-            display: block;
-            width: 100%;
-
-            .img-hover {
-                @include center();
+            img {
+                width: 300px;
+                height: 300px;
             }
         }
     }
