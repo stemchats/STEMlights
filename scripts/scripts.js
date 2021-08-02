@@ -1,5 +1,21 @@
-const db = firebase.firestore()
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
+let isSearched = false; //default case, no search has been done, load all editions
+
+if(sessionStorage.getItem('initial load') == null) {
+  let defaultLoad = sessionStorage.setItem('initial load', 1);
+}
+let isDefault;
+let lastPage = sessionStorage.getItem('Page');
+
+function checkDefault() {
+  if(sessionStorage.getItem('initial load') == 1) {
+    isDefault = true;
+  } else if(sessionStorage.getItem('initial load') == 0) {
+    isDefault = false;
+  }
+}
+//sets the default value to true on load
+checkDefault();
 
 function removeWhiteSpace(){
     document.getElementById("space_div").style.height = "0vh";
@@ -25,45 +41,102 @@ function insertionSort(arr, arr2, arr3) {
 var editionsList = [];
 var imageList = [];
 var descList = [];
-const getEditionsList = async () => {
-    let editionsRef = db.collection('editions');
+
+// sort returned edition array and calls pagination function
+const sortList = async (searchedEditions, isSearched) => {
+
+  if(!isSearched) {
+    //default loading of page or searching for empty query
+    $('#num_results').empty();
+
+    let editionsRef = firebase.firestore().collection('editions');
     let allEditions = await editionsRef.get();
-    for(const doc of allEditions.docs){
+    for(const doc of allEditions.docs) {
+       editionsList.push(doc.id);
+       var doc_data = doc.get('card-img');
+       var desc_data = doc.get('desc');
+       imageList.push(doc_data);
+       descList.push(desc_data);
+   }
+ } else if(isSearched) {
+     //adding the number of query responses
+    $('#num_results').empty();
+    let pResult = document.createElement('p'); //pResult = paragraph object of results
+    if(searchedEditions.length == 1) {
+        results = "Found 1 result for \"" + sessionStorage.getItem("query") + "\"";
+    } else if (searchedEditions.length > 1) {
+        results = "Found " + searchedEditions.length + " results for \"" + sessionStorage.getItem("query") + "\"";
+    } else if (searchedEditions.length == 0) {
+      results = "Found 0 results for \"" + sessionStorage.getItem("query") + "\"";
+    }
 
-        editionsList.push(doc.id);
-        var doc_data = doc.get('card-img');
-        var desc_data = doc.get('desc');
-        //console.log(doc.id, '=>', doc_data);
-        imageList.push(doc_data);
-        descList.push(desc_data);
-    }//end for
+    pResult.innerHTML = results;
 
-    //substring values so only number remains
-    for(var i = 0;i<editionsList.length;i++){
-        editionsList[i]=editionsList[i].substring(7);
-    }//end
+    document.getElementById("num_results").appendChild(pResult);
 
-    //cnvert values to integers
-    for(var i = 0;i<editionsList.length;i++){
-        editionsList[i] = parseInt(editionsList[i]);
-    }//end
+    editionsList = [];
+    imageList = [];
+    descList = [];
+   // console.log(allEditions);
+   // array of image src + description of the returned edition (list)
+   for(let i = 0; i < searchedEditions.length; i++) {
+     for(const data of imageAndDesc) {
+       if(searchedEditions[i] == data[0]) {
+         editionsList.push(data[0]); // edition#
+         imageList.push(data[1]["card-img"]);
+         descList.push(data[1].desc);
+       }
+     }
+   }
+ }
 
-    //sort
-    editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
+  // console.log(editionsList)
+  // console.log(imageList)
+  // console.log(descList)
 
-    //convert values back to strings
-    for(var i = 0;i<editionsList.length;i++){
-        editionsList[i] = editionsList[i].toString();
-    }//end
+  //substring values so only number remains
+  for(var i = 0;i<editionsList.length;i++){
+      editionsList[i]=editionsList[i].substring(7);
+  }//end
 
-    //call pagination
+  //cnvert values to integers
+  for(var i = 0;i<editionsList.length;i++){
+      editionsList[i] = parseInt(editionsList[i]);
+  }//end
+
+  //sort
+  editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
+
+  //convert values back to strings
+  for(var i = 0;i<editionsList.length;i++){
+      editionsList[i] = editionsList[i].toString();
+  }
+  //call pagination
+  if(!isDefault) {
+    //if not default load, pass the last page visited as argument
+    pagination2(lastPage);
+  } else if(isDefault) {
+    //if default load just load first page
+    sessionStorage.setItem('initial load', 0);
     pagination2(1);
-}//end func
+  }
+  if(searchedEditions.length==0){
+    $('.pagination').empty();
+  }
+}
 
-getEditionsList();
+// sortList([], false);
+sortList();
+
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
+// creates edition cards + pagination
 function pagination2(inputChoice) {
+    //remember the page number in session storage
+    sessionStorage.setItem('Page', inputChoice);
+    //remember search query in search bar
+    query.value = sessionStorage.getItem("query");
+
     $('.pagination').empty();
     $('#the_cards').empty();
 
@@ -122,19 +195,85 @@ function pagination2(inputChoice) {
     }//end for
 
     //creating page selection
+    // previous button
     if(inputChoice==1){
         $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>');
     } else if(inputChoice!=1){
         $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice-1) + ')" href="#">Previous</a></li>');
     }
 
-    for (var i = 0; i < pageCount; i++) {
-        if (i == inputChoice-1)
-            $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        else
-            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-    }
 
+    // actual page numbers
+
+    let pageNumList = [];
+
+    //If page count is less than or equal to 4, we dont need to use ellipses at all, so this just generates buttons up to 4.
+    //It also checks to see which button is active, and makes that button a dark blue
+
+    if(pageCount<=4){
+        for (var i = 0; i < pageCount; i++) {
+            if (i == inputChoice-1)
+                $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+            else
+                $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+        }
+    } else {
+
+
+        //generating a list of pagenumbers to use so we don't have to work with a jank loop and we have an object instead
+        for (var i = 0; i < pageCount; i++) {
+            pageNumList.push(i+1);
+        }
+        if(inputChoice==1 || inputChoice==2){
+            //If inputChoice is either the first or second page, it will display 1, 2, 3 and then move onto the last page
+            //with ellipses in between
+            for(var i = 0;i<3;i++){
+                if (i == inputChoice-1)
+                    $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                else
+                    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+            }//end for
+            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
+        }
+        if(inputChoice==pageNumList[pageNumList.length-1] || inputChoice==pageNumList[pageNumList.length-2]){
+            //If inputChoice is either the last or second-last page, it will display 1, ellipses, and then third last, second last,
+            //and the last page
+            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
+            for(var i = pageNumList.length-3;i<pageNumList.length;i++){
+                if (i == inputChoice-1)
+                    $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                else
+                    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+            }//end for
+        }
+        if(inputChoice>2 && inputChoice<pageNumList[pageNumList.length-2]){
+
+            //if the pages are in the middle (not 1, 2, 5, or 6), then we add 1 to the beginning, add ellipses, and then have 3
+            //pages in the middle, followed by ellipses again, and then the last page.
+
+            //beginning page + ellipses
+            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link" >. . .</a></li>');
+
+            //middle pages 
+            for(var i = pageNumList[inputChoice-1]-2;i<pageNumList[inputChoice];i++){
+                if (i == inputChoice-1)
+                    $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                else
+                    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+            }
+
+            //ellipses + final page
+            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
+
+        }//end
+    }//end else
+
+
+    // next button
     if(inputChoice==pageCount){
         $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>');
     } else if(inputChoice!=pageCount){
@@ -149,19 +288,6 @@ function pagination2(inputChoice) {
 //get all elements from createsend and filter them out
 // var all = document.getElementsByTagName("*");
 //list.filter(elem => elem.tag === 'p'  elem.tag === 'img'  ... etc)
-
-
-
-
-// WORKING WITH EDITIONSLIST
-
-parsedEditions = JSON.parse(localStorage.getItem("editions"));
-
-console.log(parsedEditions);
-
-// for(var i=0; i<localStorage['editions'].length; i++){
-//   console.log(localStorage['editions'][i]);
-// }
 
 
 const elements = {
@@ -219,7 +345,7 @@ const elements = {
 
 function createEdition(edition) {
     for (var i = 0; i < sections.length; i++) { //how many sections the edition has, iterates through sections (below)
-        db.collection("editions").doc("edition" + edition).collection(sections[i]).get()
+        firebase.firestore().collection("editions").doc("edition" + edition).collection(sections[i]).get()
             .then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     const data = doc.data(); //retrieves all the sections as 'objects'
