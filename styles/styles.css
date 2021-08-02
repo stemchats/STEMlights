@@ -665,7 +665,28 @@ body {
 }
 
 .card-deck .card {
-  background-color: #f8f8f8;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.card-deck .card::after {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.125);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.card-deck .card:hover::after {
+  width: 100%;
+  background-color: black;
 }
 
 .card-deck .card img {
@@ -673,6 +694,20 @@ body {
   height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.card-deck .card:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 200px;
+  left: -20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.125);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .card-deck .card-title {

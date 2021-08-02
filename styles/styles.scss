@@ -17,6 +17,25 @@ $light-grey : #f8f8f8;
     max-width: 800px;
 }
 
+@mixin hover-line {
+    &::after { //, &:nth-child(2)::before
+        content: '';
+        position: absolute;
+        width: 256px;
+        height: 1px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.125);
+        transition: 0.4s;
+    }
+
+    &:hover::after {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 1);
+    }
+}
+
 
 
 
@@ -628,22 +647,37 @@ body {
 .card-deck{
     margin: 0 1.5rem;
 
-    .card{
-        background-color:  $light-grey;
+    .card {
+        @include hover-line();
+        background-color:  transparent;
+        border: none;
+        border-radius: 0;
 
         img {
             padding: 2rem;
             height: 300px;
             object-fit: contain;
         }
+
+        &:not(:first-of-type)::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 200px;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.125);
+            transition: 0.4s;
+        }
     }
-    .card-title{
+    .card-title {
         font-weight: bold;
     }
     .card-text {
         color: black;
     }
-    .card-body{
+    .card-body {
         padding: 1.5rem 1.5rem 2rem;
     }
 }
@@ -708,29 +742,13 @@ body {
     }
 
     .card {
+        @include hover-line();
         width: 100%;
         background-color: white;
         position: relative;
         margin-top: 2rem;
         border-radius: 0;
         border: none;
-
-        &::after { //, &:nth-child(2)::before
-            content: '';
-            position: absolute;
-            width: 256px;
-            height: 1px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.125);
-            transition: 0.4s;
-        }
-
-        &:hover::after {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 1);
-        }
 
         .card-body {
             p {
