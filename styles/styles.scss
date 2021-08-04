@@ -17,6 +17,25 @@ $light-grey : #f8f8f8;
     max-width: 800px;
 }
 
+@mixin hover-line {
+    &::after { //, &:nth-child(2)::before
+        content: '';
+        position: absolute;
+        width: 256px;
+        height: 1px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.125);
+        transition: 0.4s;
+    }
+
+    &:hover::after {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 1);
+    }
+}
+
 
 
 
@@ -78,6 +97,13 @@ html {
     p {
         font-family: 'Josefin Sans', sans-serif !important;
     }
+}
+
+// header highlight for whatever page the user is on
+.home #home-nav, 
+.about-us #about-nav, 
+.newsl #newsletter-nav {
+    border-bottom: 2px solid $yellow;
 }
 
 
@@ -236,26 +262,12 @@ html {
     background-color: $light-grey;
 }
 
-.img-row-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-        height: 300px;
-    }
-}
-
 span.title {
     font-weight: bold;
 
     &::before, &::after {
         content: ' - ';
     }
-}
-
-.content-notitle {
-    margin-top: 20px;
 }
 
 
@@ -275,6 +287,78 @@ span.title {
             color: #ff5959;
             border-bottom: 1px dashed #ff5959;
         }
+    }
+}
+
+
+$button-size : 1.6rem;
+$transition: .3s; // increase this to see the transformations in slow-motion
+
+.lines-button {
+    display: block;
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 0;
+    //padding-bottom: $button-size/2;
+
+    .lines {
+        margin-left: -50%;
+        
+        &:before { top: $button-size/3; }
+        &:after { top: -$button-size/3; }
+    }
+}
+
+@mixin line {
+    display: inline-block;
+    width: $button-size;
+    height: 2px;
+    background: #A2A2A2;
+    border-radius: $button-size/14;
+    transition: $transition;
+}
+
+.lines {
+    //create middle line
+    @include line;
+    position: relative;
+    top: -5px;
+    right: -15px;
+    
+    /*create the upper and lower lines as pseudo-elements of the middle line*/
+    &:before, &:after {
+        @include line;
+        position: absolute;
+        left:0;
+        content: '';
+        transform-origin: $button-size/14 center;
+    }
+    &:before {
+        top: $button-size/4;
+    }
+    &:after {
+        top: -$button-size/4;
+    }
+}
+
+.lines-button.x.close .lines {
+    /*hide the middle line*/
+    background: transparent;
+
+    /*overlay the lines by setting both their top values to 0*/
+    &:before, &:after {
+        transform-origin: 50% 50%;
+        top: 0;
+        width: $button-size;
+    }
+
+    // rotate the lines to form the x shape
+    &:before{
+        transform: rotate3d(0,0,1,45deg);
+    }
+    &:after{
+        transform: rotate3d(0,0,1,-45deg);
     }
 }
 
@@ -558,22 +642,37 @@ body {
 .card-deck{
     margin: 0 1.5rem;
 
-    .card{
-        background-color:  $light-grey;
+    .card {
+        @include hover-line();
+        background-color:  transparent;
+        border: none;
+        border-radius: 0;
 
         img {
             padding: 2rem;
             height: 300px;
             object-fit: contain;
         }
+
+        &:not(:first-of-type)::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 200px;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.125);
+            transition: 0.4s;
+        }
     }
-    .card-title{
+    .card-title {
         font-weight: bold;
     }
     .card-text {
         color: black;
     }
-    .card-body{
+    .card-body {
         padding: 1.5rem 1.5rem 2rem;
     }
 }
@@ -621,47 +720,30 @@ body {
 
 /* NEWSLETTER MENU */
 
+.banner {
+    max-width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    margin-bottom: -4rem;
+    background-image: url("/images/search_light.png");
+    //background-size: cover;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50% 50%; //centered image
+    visibility: visible;
+}
+
 .newsletter {
     padding: 0 2rem;
 
-    .banner {
-        width: 100vw;
-        height: 300px;
-        margin-left: -50%;
-        margin-top: -10%;
-        margin-bottom: 5.5rem;
-        background-image: url("/images/search_light.png");
-        //background-size: cover;
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: 50% 50%; //centered image
-        visibility: visible;
-    }
-
     .card {
+        @include hover-line();
         width: 100%;
         background-color: white;
         position: relative;
         margin-top: 2rem;
         border-radius: 0;
         border: none;
-
-        &::after { //, &:nth-child(2)::before
-            content: '';
-            position: absolute;
-            width: 256px;
-            height: 1px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.125);
-            transition: 0.4s;
-        }
-
-        &:hover::after {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 1);
-        }
 
         .card-body {
             p {
@@ -686,21 +768,28 @@ body {
 /* ABOUT US */
 
 .about-us {
-    .subtitle {
-        font-size: 1.1em;
-        padding: 1rem 1.5rem 3rem;
+    .main {
+        margin-bottom: 0;
     }
 }
 
-.teamcard-container {
-    position: relative;
+.subtitle {
+    font-size: 1.1em;
+    padding: 1rem 1.5rem 3rem;
+}
+
+.meet-the-team {
+    img {
+        max-height: 300px;
+        max-width: 100%;
+    }
 
     .img-hover {
         position: relative;
         border-radius: 50%;
         width: 300px;
         height: 300px;
-        margin: 50px 40px 20px;
+        margin: 50px auto 20px;
         overflow: hidden;
         animation: 0.7s ease-out 0s 1 slideUp;
         transition: 0.35s;

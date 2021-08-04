@@ -1,4 +1,44 @@
 /* VARIABLES */
+@media (min-width: 0) {
+  .card-deck .card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 30px);
+            flex: 0 0 calc(100% - 30px);
+  }
+}
+
+@media (min-width: 576px) {
+  .card-deck .card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 30px);
+            flex: 0 0 calc(100% - 30px);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-deck .card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.33333% - 30px);
+            flex: 0 0 calc(33.33333% - 30px);
+  }
+}
+
+@media (min-width: 992px) {
+  .card-deck .card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.33333% - 30px);
+            flex: 0 0 calc(33.33333% - 30px);
+  }
+}
+
+@media (min-width: 1600px) {
+  .card-deck .card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.33333% - 30px);
+            flex: 0 0 calc(33.33333% - 30px);
+  }
+}
+
 @media screen and (max-width: 1450px) {
   #directory, #editionBack {
     left: 3%;
@@ -83,7 +123,7 @@
   header #menu-icon + label {
     display: block;
     position: absolute;
-    right: 50px;
+    right: 40px;
     top: 55%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
@@ -99,6 +139,25 @@
   }
   header #menu-icon:checked ~ .collapsible-menu {
     height: 190px;
+  }
+  header #menu-icon:checked .lines {
+    /*hide the middle line*/
+    background: transparent;
+    /*overlay the lines by setting both their top values to 0*/
+  }
+  header #menu-icon:checked .lines:before, header #menu-icon:checked .lines:after {
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    top: 0;
+    width: 1.6rem;
+  }
+  header #menu-icon:checked .lines:before {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+            transform: rotate3d(0, 0, 1, 45deg);
+  }
+  header #menu-icon:checked .lines:after {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+            transform: rotate3d(0, 0, 1, -45deg);
   }
   header .collapsible-menu {
     display: block;
@@ -140,13 +199,13 @@
   #directory {
     display: none;
   }
-  .teamcard-container .img-hover {
-    width: 250px;
-    height: 250px;
+  .meet-the-team .img-hover {
+    width: 200px;
+    height: 200px;
   }
-  .teamcard-container .img-hover img {
-    width: 250px;
-    height: 250px;
+  .meet-the-team .img-hover img {
+    width: 200px;
+    height: 200px;
   }
   footer {
     margin-top: 13rem;
@@ -169,24 +228,16 @@
   #STEMlights .float-right {
     margin-top: 60px;
   }
-  .img-row-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .meet-the-team .img-hover {
+    width: 300px;
+    height: 300px;
   }
-  .img-row-container .teamcard-container {
-    display: block;
-    width: 100%;
+  .meet-the-team .img-hover img {
+    width: 300px;
+    height: 300px;
   }
-  .img-row-container .teamcard-container .img-hover {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+  .card-deck .card::before {
+    display: none;
   }
   footer {
     margin-top: 10rem;
@@ -205,7 +256,6 @@
   }
   .newsletter .card::after {
     width: 100%;
-    margin: 0;
   }
   .newsletter .card img {
     display: block;
@@ -216,6 +266,9 @@
     padding: 1.5rem 1.5rem 0;
     max-width: 100%;
     max-height: 100%;
+  }
+  .card-deck .card::after {
+    width: 100%;
   }
 }
 

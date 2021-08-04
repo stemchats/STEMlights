@@ -21,6 +21,35 @@ $light-grey : #f8f8f8;
 }
 
 
+// Cards responsiveness
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1600px
+) !default;
+
+$grid-gutter-width: 30px !default;
+
+// number of cards per line for each breakpoint
+$cards-per-line: (
+    xs: 1,
+    sm: 1,
+    md: 3,
+    lg: 3,
+    xl: 3
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+    @media (min-width: $breakpoint) {
+        .card-deck .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+        }
+    }
+}
+
+
 
 
 @media screen and (max-width: 1450px) {
@@ -136,7 +165,7 @@ $light-grey : #f8f8f8;
         #menu-icon + label { //header menu icon appears
             display: block;
             position: absolute;
-            right: 50px;
+            right: 40px;
             top: 55%;
             transform: translateY(-50%);
             font-size: 24px;
@@ -150,9 +179,34 @@ $light-grey : #f8f8f8;
             color: $yellow !important;
         }
 
-        #menu-icon:checked ~ .collapsible-menu {
-            height: 190px; // w/o search bar
-            //height: 210px; //height of navbar when open (w/ search bar)
+        $button-size : 1.6rem;
+        $transition: .3s; // increase this to see the transformations in slow-motion
+
+        #menu-icon:checked {
+            ~ .collapsible-menu {
+                height: 190px; // w/o search bar
+                //height: 210px; //height of navbar when open (w/ search bar)
+            }
+
+            .lines {
+                /*hide the middle line*/
+                background: transparent;
+            
+                /*overlay the lines by setting both their top values to 0*/
+                &:before, &:after {
+                    transform-origin: 50% 50%;
+                    top: 0;
+                    width: $button-size;
+                }
+            
+                // rotate the lines to form the x shape
+                &:before{
+                    transform: rotate3d(0,0,1,45deg);
+                }
+                &:after{
+                    transform: rotate3d(0,0,1,-45deg);
+                }
+            }
         }
 
         .collapsible-menu {
@@ -199,14 +253,14 @@ $light-grey : #f8f8f8;
         display: none;
     }
 
-    .teamcard-container {
+    .meet-the-team {
         .img-hover {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
 
             img {
-                width: 250px;
-                height: 250px;
+                width: 200px;
+                height: 200px;
             }
         }
     }
@@ -238,16 +292,22 @@ $light-grey : #f8f8f8;
         }
     }
 
-    .img-row-container {
-        display: flex;
-        flex-direction: column;
+    .meet-the-team {
+        .img-hover {
+            width: 300px;
+            height: 300px;
 
-        .teamcard-container {
-            display: block;
-            width: 100%;
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
 
-            .img-hover {
-                @include center();
+    .card-deck {
+        .card {
+            &::before {
+                display: none;
             }
         }
     }
@@ -268,7 +328,6 @@ $light-grey : #f8f8f8;
 
             &::after {
                 width: 100%;
-                margin: 0;
             }
 
             img {
@@ -277,6 +336,14 @@ $light-grey : #f8f8f8;
                 padding: 1.5rem 1.5rem 0;
                 max-width: 100%;
                 max-height: 100%;
+            }
+        }
+    }
+
+    .card-deck {
+        .card {
+            &::after {
+                width: 100%;
             }
         }
     }
