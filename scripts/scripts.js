@@ -48,6 +48,8 @@ const sortList = async (searchedEditions, isSearched) => {
   if(!isSearched) {
     //default loading of page or searching for empty query
     $('#num_results').empty();
+    //if not searched, no all editions button
+    $('#all-editions').empty();
 
     let editionsRef = firebase.firestore().collection('editions');
     let allEditions = await editionsRef.get();
@@ -59,6 +61,22 @@ const sortList = async (searchedEditions, isSearched) => {
        descList.push(desc_data);
    }
  } else if(isSearched) {
+
+    //add the all editions button only if searched
+    $('#all-editions').empty();
+
+    editionsButton = document.createElement("button");
+    editionsButton.type = "button";
+    editionsButton.setAttribute("onclick", "location.href='/edition/index.html', sessionStorage.setItem('query', '')");
+    editionsButton.innerHTML = "All Editions!"
+
+    centered = document.createElement("center");
+    centered.appendChild(editionsButton);
+
+    //document.getElementById("all-editions").appendChild(editionsButton);
+    document.getElementById("all-editions").appendChild(centered);
+
+
      //adding the number of query responses
     $('#num_results').empty();
     let pResult = document.createElement('p'); //pResult = paragraph object of results
@@ -71,6 +89,9 @@ const sortList = async (searchedEditions, isSearched) => {
     }
 
     pResult.innerHTML = results;
+    // adding styles to results
+    pResult.style.fontWeight = "bold";
+    pResult.style.fontStyle = "italic";
 
     document.getElementById("num_results").appendChild(pResult);
 
