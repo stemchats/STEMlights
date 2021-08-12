@@ -254,14 +254,14 @@ function pagination2(inputChoice) {
                 else
                     $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
             }//end for
-            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link">...</a></li>');
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
         }
         if(inputChoice==pageNumList[pageNumList.length-1] || inputChoice==pageNumList[pageNumList.length-2]){
             //If inputChoice is either the last or second-last page, it will display 1, ellipses, and then third last, second last,
             //and the last page
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
-            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link">...</a></li>');
             for(var i = pageNumList.length-3;i<pageNumList.length;i++){
                 if (i == inputChoice-1)
                     $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
@@ -276,7 +276,7 @@ function pagination2(inputChoice) {
 
             //beginning page + ellipses
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
-            $(".pagination").append('<li class="spacer" ><a class="page-link" >. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link" >...</a></li>');
 
             //middle pages 
             for(var i = pageNumList[inputChoice-1]-2;i<pageNumList[inputChoice];i++){
@@ -287,7 +287,7 @@ function pagination2(inputChoice) {
             }
 
             //ellipses + final page
-            $(".pagination").append('<li class="spacer" ><a class="page-link">. . .</a></li>');
+            $(".pagination").append('<li class="spacer" ><a class="page-link">...</a></li>');
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
 
         }//end
