@@ -100,8 +100,8 @@ html {
 }
 
 // header highlight for whatever page the user is on
-.home #home-nav, 
-.about-us #about-nav, 
+.home #home-nav,
+.about-us #about-nav,
 .newsl #newsletter-nav {
     border-bottom: 2px solid $yellow;
 }
@@ -171,13 +171,34 @@ html {
     animation: 1.5s ease-out 0s 1 fadeIn;
 }
 
+
 #edition {
+    // overwrite createSend inline styles
+    div[style] {
+      line-height: 1.7 !important;
+      span[style] {
+        line-height: 1.7 !important;
+        font-size: 1rem !important;
+      }
+      p[style] {
+        line-height: 1.7 !important;
+        font-size: 1rem !important;
+      }
+      h2[style] {
+        line-height: 1.7 !important;
+        font-size: 1rem !important;
+      }
+      .btn {
+        padding: 0 !important;
+      }
+    }
+
     @include center;
     @include responsive-edition;
-    min-height: 100vh;
+    min-height: 100vh !important;
+    margin-top: 125px !important;
+    margin-bottom: 110px !important;
     font-size: 1.1em;
-    margin-top: 125px;
-    margin-bottom: 110px;
 
     a {
         color: $lavendar;
@@ -218,7 +239,7 @@ html {
     }
 
     p {
-        padding: 0.75rem 30px;
+        // padding: 0.75rem 30px;
         text-align: left;
         margin-bottom: 0;
     }
@@ -231,16 +252,16 @@ html {
 
     .section-header-img, .edition-header-img {
         @include responsive-edition;
-        margin-top: 3rem;
-        padding: 0;
+        margin-top: 3rem !important;
+        padding: 0 !important;
 
         &:first-child {
             margin-top: 0;
         }
 
         &:target { //allows header space when jumped to with id anchor link
-            padding-top: 70px;
-            margin-top: calc(3rem + -70px);
+            padding-top: 70px !important;
+            margin-top: calc(3rem + -70px) !important;
         }
     }
 
@@ -248,8 +269,6 @@ html {
         margin-bottom: 30px;
     }
 }
-
-
 
 
 /* REUSABLE */
@@ -304,7 +323,7 @@ $transition: .3s; // increase this to see the transformations in slow-motion
 
     .lines {
         margin-left: -50%;
-        
+
         &:before { top: $button-size/3; }
         &:after { top: -$button-size/3; }
     }
@@ -325,7 +344,7 @@ $transition: .3s; // increase this to see the transformations in slow-motion
     position: relative;
     top: -5px;
     right: -15px;
-    
+
     /*create the upper and lower lines as pseudo-elements of the middle line*/
     &:before, &:after {
         @include line;
