@@ -9,6 +9,17 @@
     content="A weekly student-run newsletter that aims to provide equitable stem education while highlighting different STEM opportunities and news, while shining light on intersections where STEM can be applied, developed, and learned.">
   <meta name="keywords" content="stemlights, stemlight, newsletter, edition, stem, stemchast, stemchats, nonprofit, students, programs">
 
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="STEMlights">
+  <meta property="og:description" content="A weekly student-run newsletter that aims to provide equitable stem education while shining light on intersections where STEM can be applied, developed, and learned.">
+  <meta property="og:image" content="stemlights_alternate.png">
+  <meta property="og:url" content="https://stemlights.stemchats.org/">
+
+  <meta name="twitter:title" content="STEMlights">
+  <meta name="twitter:description" content="A weekly student-run newsletter that aims to provide equitable stem education while shining light on intersections where STEM can be applied, developed, and learned.">
+  <meta name="twitter:image" content=" stemlights_alternate.png">
+  <meta name="twitter:card" content="STEMlights">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
     integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
@@ -82,7 +93,11 @@
         <div id="num_results" style="margin: 20px;"></div>
 
         <h1 class="center"><span class="title">Editions</span></h1>
-        <center><button type="button" onclick="location.href='/edition/index.html', sessionStorage.setItem('query', '')">All Editions!</button></center>
+
+        <div id="all-editions">
+          <!-- <center><button id="all-editions" type="button" onclick="location.href='/edition/index.html', sessionStorage.setItem('query', '')">All Editions!</button></center> -->
+        </div>
+
         <div id="the_cards">
 
         </div>
