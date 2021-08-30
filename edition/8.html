@@ -86,21 +86,16 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZQ5PR3"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- HEADER -->
   <div id="header"></div>
-
-
-  <script>
-    const sections = ["title", "coronavirus", "politics", "spotlight", "news", "opportunities"];
-  </script>
 
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
 
-  
+
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
   </div>
@@ -138,8 +133,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(8);
+      const sections = ["coronavirus awareness", "politics + stem", "stem spotlight", "stem news", "opportunities"];
+      assignBanners(8);
     </script>
 </body>
 </html>
