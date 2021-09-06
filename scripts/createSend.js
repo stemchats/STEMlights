@@ -1,6 +1,13 @@
 // loads edition + create directory
 const assignBanners = async(edition) => {
   await createSend(edition);
+  try {
+    const dividerImages = document.querySelectorAll('[alt="sectionImage"]');
+    [...dividerImages].map(image => image.classList.add("section-header-img"));
+  }
+  catch (e) {
+    console.log("old edition")
+  }
   const sectionBanners = document.querySelectorAll(".section-header-img");
   sectionBanners.forEach((banner, index) => {
     if(sections[index] != "title") {
