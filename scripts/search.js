@@ -50,6 +50,7 @@ const loadData = async() => {
     // console.log(allEditionsData);
 }
 
+//new solution START
 const newEditionsData = [];
 const newLoad = async() => {
   //get edition name + all sections of that edition
@@ -83,6 +84,7 @@ const newSearch = async(queryString) => {
   }
   sortList(returnEditions, true);
 }
+// END
 
 //window.onload = newLoad();
 window.onload = loadData(); //load all editions data from 'data' collection first
