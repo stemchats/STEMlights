@@ -257,6 +257,7 @@ function pagination2(inputChoice) {
             $(".pagination").append('<li class="spacer" ><a class="page-link">...</a></li>');
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length-1] + ')" href="#">' + pageNumList[pageNumList.length-1] + '</a></li>');
         }
+        
         if(inputChoice==pageNumList[pageNumList.length-1] || inputChoice==pageNumList[pageNumList.length-2]){
             //If inputChoice is either the last or second-last page, it will display 1, ellipses, and then third last, second last,
             //and the last page
@@ -274,16 +275,35 @@ function pagination2(inputChoice) {
             //if the pages are in the middle (not 1, 2, 5, or 6), then we add 1 to the beginning, add ellipses, and then have 3
             //pages in the middle, followed by ellipses again, and then the last page.
 
+
             //beginning page + ellipses
             $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
             $(".pagination").append('<li class="spacer" ><a class="page-link" >...</a></li>');
 
-            //middle pages 
-            for(var i = pageNumList[inputChoice-1]-2;i<pageNumList[inputChoice];i++){
-                if (i == inputChoice-1)
-                    $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-                else
-                    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+            if(inputChoice==3){
+                //middle pages 
+                for(var i = pageNumList[inputChoice-1]-1;i<pageNumList[inputChoice];i++){
+                    if (i == inputChoice-1)
+                        $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                    else
+                        $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                }
+            } else if(inputChoice = pageNumList[pageNumList.length-3]){
+                //middle pages 
+                for(var i = pageNumList[inputChoice-1]-2;i<pageNumList[inputChoice]-1;i++){
+                    if (i == inputChoice-1)
+                        $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                    else
+                        $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                }
+            } else {
+                //middle pages 
+                for(var i = pageNumList[inputChoice-1]-2;i<pageNumList[inputChoice];i++){
+                    if (i == inputChoice-1)
+                        $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                    else
+                        $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
+                }
             }
 
             //ellipses + final page
