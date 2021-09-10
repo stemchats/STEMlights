@@ -18,12 +18,12 @@
 
   <!-- Social Media Meta Tags -->
   <meta property="og:title" content="STEMlights Edition: 15">
-  <meta property="og:description" content="Read about conspiracies behind the Moon Landing, the controversial Tik Tok ban, the wise-words of the STEMchats CEO, Nicole Felix-Tovar, and our NEW Q & A section!">
+  <meta property="og:description" content="Read about a reliable explanation to Coronavirus, the Global Politics behind the Pandemic, Youth STEM-Leader, Sabina London, and for variety, STEM opportunities for Students with STEM innovations.">
   <meta property="og:image" content="stemlights_alternate.png">
-  <meta property="og:url" content="https://stemlights.stemchats.org/edition/15.html">
+  <meta property="og:url" content="https://stemlights.stemchats.org/edition/8.html">
 
   <meta name="twitter:title" content="STEMlights Edition: 15">
-  <meta name="twitter:description" content="Read about conspiracies behind the Moon Landing, the controversial Tik Tok ban, the wise-words of the STEMchats CEO, Nicole Felix-Tovar, and our NEW Q & A section!">
+  <meta name="twitter:description" content="Read about a reliable explanation to Coronavirus, the Global Politics behind the Pandemic, Youth STEM-Leader, Sabina London, and for variety, STEM opportunities for Students with STEM innovations.">
   <meta name="twitter:image" content="stemlights_alternate.png">
   <meta name="twitter:card" content="STEMlights">
 
@@ -86,28 +86,27 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZQ5PR3"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- HEADER -->
   <div id="header"></div>
-
-
-  <script>
-    const sections = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", "qna", ];
-  </script>
 
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
 
+
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
   </div>
+
   <!-- <button id="editionBack" onclick="window.location.pathname = '/edition/'" onclick="pagination2(1);">
     <i class="fas fa-angle-left"></i> Back to newsletter
   </button> -->
+
   <!-- footer -->
   <div id="footer"></div>
+
 
     <!-- The Core Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
@@ -133,17 +132,11 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics()
     </script>
-    <!-- Bootstrap Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
-      integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
-      crossorigin="anonymous"></script>
-
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(15);
+      const sections = ["inveSTEMgations", "politics + stem", "voice of stemchats", "stem news", "opportunities", "challenge yourself", "questions + answers"];
+      assignBanners(15);
     </script>
 </body>
 </html>
