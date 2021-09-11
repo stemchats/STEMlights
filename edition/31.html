@@ -91,9 +91,7 @@
   <div id="header"></div>
 
 
-  <script>
-    const sections = ["title", "investemgations", "voices", "news", "opportunities", "history"];
-  </script>
+  
 
   <!-- put 'sections' array before directory -->
   <ol id="directory">
@@ -120,6 +118,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
     <script>
+
+    
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyAAOwUXgy5tZe0SbQqdLaaj86BugGGQWJA",
@@ -136,8 +136,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
-    <script>
-      createEdition(31);
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
+    <script>    
+      const sections = ["inveSTEMgations", "voices of stemchats", "stem news", "opportunities", "history + stem"];
+      assignBanners(31);
     </script>
 </body>
 </html>
