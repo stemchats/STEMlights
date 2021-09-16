@@ -91,9 +91,9 @@
   <div id="header"></div>
 
 
-  <script>
+  <!-- <script>
     const sections = ["title", "investemgations", "news", "opportunities", "history"];
-  </script>
+  </script> -->
 
   <!-- put 'sections' array before directory -->
   <ol id="directory">
@@ -147,8 +147,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(43);
+      const sections =['inveSTEMgations','stem news','opportunities','history + stem'];
+      assignBanners(43)
     </script>
 </body>
 </html>
