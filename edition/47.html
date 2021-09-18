@@ -58,7 +58,7 @@
   <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
   <link rel="stylesheet" type="text/css" href="/styles/media.css">
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i' rel='stylesheet'>
-  <title>STEMlights: Edition 47</title>
+  <title>STEMlights: Edition 8</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-2"></script>
@@ -90,34 +90,20 @@
   <!-- HEADER -->
   <div id="header"></div>
 
-
-  <script>
-    const sections = ["title", "investemgations", "news", "history", "voices", "opportunities"];
-  </script>
-
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
-  <script>
-    $( document ).ready(function() {
-  //custom button for homepage
-  $( ".share-btn" ).click(function(e) {
-       $('.networks-5').not($(this).next( ".networks-5" )).each(function(){
-          $(this).removeClass("active");
-      });
-      $(this).next( ".networks-5" ).toggleClass( "active" );
- });   
-});
-</script>
+
 
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
   </div>
-<!-- 
-  <button id="editionBack" onclick="window.location.pathname = '/edition/'">
+
+  <!-- <button id="editionBack" onclick="window.location.pathname = '/edition/'" onclick="pagination2(1);">
     <i class="fas fa-angle-left"></i> Back to newsletter
   </button> -->
+
   <!-- footer -->
   <div id="footer"></div>
 
@@ -147,8 +133,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(47);
+      const sections = ["inveSTEMgations", "stem + news", "history + stem", "voice of stemchats", "opportunities"];
+      assignBanners(47);
     </script>
 </body>
 </html>
