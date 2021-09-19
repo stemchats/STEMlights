@@ -17,13 +17,13 @@
   <meta name="keywords" content="stemlights, stemlight, newsletter, edition, stem, stemchast, stemchats, nonprofit, students, programs">
 
   <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="STEMlights Edition: 25">
-  <meta property="og:description" content="Read about the psychology behind scary phenomena, the brilliant student Ana Cucalon, and some wonderful STEM opportunities!">
+  <meta property="og:title" content="STEMlights Edition: 8">
+  <meta property="og:description" content="Read about a reliable explanation to Coronavirus, the Global Politics behind the Pandemic, Youth STEM-Leader, Sabina London, and for variety, STEM opportunities for Students with STEM innovations.">
   <meta property="og:image" content="stemlights_alternate.png">
-  <meta property="og:url" content="https://stemlights.stemchats.org/edition/25.html">
+  <meta property="og:url" content="https://stemlights.stemchats.org/edition/8.html">
 
-  <meta name="twitter:title" content="STEMlights Edition: 25">
-  <meta name="twitter:description" content="Read about the psychology behind scary phenomena, the brilliant student Ana Cucalon, and some wonderful STEM opportunities!">
+  <meta name="twitter:title" content="STEMlights Edition: 8">
+  <meta name="twitter:description" content="Read about a reliable explanation to Coronavirus, the Global Politics behind the Pandemic, Youth STEM-Leader, Sabina London, and for variety, STEM opportunities for Students with STEM innovations.">
   <meta name="twitter:image" content="stemlights_alternate.png">
   <meta name="twitter:card" content="STEMlights">
 
@@ -58,7 +58,7 @@
   <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
   <link rel="stylesheet" type="text/css" href="/styles/media.css">
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i' rel='stylesheet'>
-  <title>STEMlights: Edition 25</title>
+  <title>STEMlights: Edition 24</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-2"></script>
@@ -86,19 +86,15 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZQ5PR3"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- HEADER -->
   <div id="header"></div>
-
-
-  <script>
-    const sections = ["title", "investemgations", "spotlight", "news", "opportunities" ];
-  </script>
 
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
+
 
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
@@ -137,8 +133,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(25);
+      const sections = ["inveSTEMgations", "stem spotlight", "stem news", "opportunities"];
+      assignBanners(25);
     </script>
 </body>
 </html>
