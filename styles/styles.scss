@@ -260,8 +260,9 @@ html {
         }
 
         &:target { //allows header space when jumped to with id anchor link
-            padding-top: 70px !important;
-            margin-top: calc(3rem + -70px) !important;
+            // padding-top: 3rem !important;
+            // margin-top: calc(-3rem) !important;
+            scroll-margin-top: 3.5rem;
         }
     }
 

@@ -235,8 +235,7 @@ html {
 }
 
 #edition .section-header-img:target, #edition .edition-header-img:target {
-  padding-top: 70px !important;
-  margin-top: calc(3rem + -70px) !important;
+  scroll-margin-top: 3.5rem;
 }
 
 #edition button {
