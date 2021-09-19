@@ -17,13 +17,13 @@
   <meta name="keywords" content="stemlights, stemlight, newsletter, edition, stem, stemchast, stemchats, nonprofit, students, programs">
 
   <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="STEMlights Edition: 54">
-  <meta property="og:description" content="This week, we will be discussing COVID-19 in India and mental health, exploring supertaskers, and, as always, providing STEM opportunities for students.">
+  <meta property="og:title" content="STEMlights Edition: 49">
+  <meta property="og:description" content="This week, we will be exploring humanity's interest in 'true crime,' diving into the history of the metric system, and highlighting STEM opportunities for students.">
   <meta property="og:image" content="stemlights_alternate.png">
-  <meta property="og:url" content="https://stemlights.stemchats.org/edition/54.html">
+  <meta property="og:url" content="https://stemlights.stemchats.org/edition/49.html">
 
-  <meta name="twitter:title" content="STEMlights Edition: 54">
-  <meta name="twitter:description" content="This week, we will be discussing COVID-19 in India and mental health, exploring supertaskers, and, as always, providing STEM opportunities for students.">
+  <meta name="twitter:title" content="STEMlights Edition: 49">
+  <meta name="twitter:description" content="This week, we will be exploring humanity's interest in 'true crime,' diving into the history of the metric system, and highlighting STEM opportunities for students.">
   <meta name="twitter:image" content=" stemlights_alternate.png">
   <meta name="twitter:card" content="STEMlights">
 
@@ -90,35 +90,19 @@
   <!-- HEADER -->
   <div id="header"></div>
 
-
-  <script>
-    const sections = ["title", "politics", "spotlight", "news", "scifi", "opportunities", "media", "social"];
-  </script>
-
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
-  <script>
-    $( document ).ready(function() {
-  //custom button for homepage
-  $( ".share-btn" ).click(function(e) {
-       $('.networks-5').not($(this).next( ".networks-5" )).each(function(){
-          $(this).removeClass("active");
-      });
-      $(this).next( ".networks-5" ).toggleClass( "active" );
- });   
-});
-</script>
+
+
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
   </div>
 
-  <!-- <button id="editionBack" onclick="window.location.pathname = '/edition/'">
+  <!-- <button id="editionBack" onclick="window.location.pathname = '/edition/'" onclick="pagination2(1);">
     <i class="fas fa-angle-left"></i> Back to newsletter
   </button> -->
-
-  
 
   <!-- footer -->
   <div id="footer"></div>
@@ -149,8 +133,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(54);
+      const sections = ["politics + stem", "stem spotlight", "stem news", "sci-fi or fact", "opportunities", "media of the week", "social media"];
+      assignBanners(54);
     </script>
 </body>
 </html>
