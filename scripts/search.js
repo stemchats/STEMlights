@@ -7,14 +7,14 @@ myStorage = window.sessionStorage;
 
 // search input text on click
 selectSearch.addEventListener('click', (event) => {
-  //newSearch(query.value);
-  search(query.value);
+  newSearch(query.value);
+  // search(query.value);
 })
 // search input text on enter
 query.addEventListener('keyup', (event) => {
   if(event.keyCode === 13) {
-    //newSearch(query.value);
-    search(query.value);
+    newSearch(query.value);
+    // search(query.value);
   }
 })
 
@@ -86,7 +86,7 @@ const newSearch = async(queryString) => {
 }
 // END
 
-//window.onload = newLoad();
+window.onload = newLoad(); // new search functionality, load from searchData collection
 window.onload = loadData(); //load all editions data from 'data' collection first
 
 stopwords = [
