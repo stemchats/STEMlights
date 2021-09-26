@@ -151,6 +151,103 @@ sortList();
 
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
+async function cardDeck(){
+
+    let editionsRef = firebase.firestore().collection('editions');
+    let allEditions = await editionsRef.get();
+    for(const doc of allEditions.docs) {
+       editionsList.push(doc.id);
+       var doc_data = doc.get('card-img');
+       var desc_data = doc.get('desc');
+       imageList.push(doc_data);
+       descList.push(desc_data);
+    }
+
+     //substring values so only number remains
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i]=editionsList[i].substring(7);
+    }//end
+
+    //cnvert values to integers
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i] = parseInt(editionsList[i]);
+    }//end
+
+    //sort
+    editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
+
+    //convert values back to strings
+    for(var i = 0;i<editionsList.length;i++){
+        editionsList[i] = editionsList[i].toString();
+    }
+
+    $('.card-deck').empty();
+
+    var pageSize = 10;
+    var pageCount = Math.ceil((editionsList.length) / pageSize);
+
+    var buttonSelect = 1; //will have the value of the clicked "page number" at the bottom of the editions newsletter page
+    var returnedList;
+    var returnedImageList;
+    var returnedDescList;
+
+    var threshold = editionsList.length - (pageSize * (buttonSelect));
+
+    if (threshold < 0) {
+        returnedList = editionsList.slice(0, editionsList.length - (pageSize * (buttonSelect - 1)));
+        returnedImageList = imageList.slice(0, imageList.length - (pageSize * (buttonSelect - 1)));
+        returnedDescList = descList.slice(0, descList.length - (pageSize * (buttonSelect - 1)));
+    } else {//end if
+        returnedList = editionsList.slice(editionsList.length - (pageSize * (buttonSelect)), editionsList.length - (pageSize * (buttonSelect - 1)));
+        returnedImageList = imageList.slice(imageList.length - (pageSize * (buttonSelect)), imageList.length - (pageSize * (buttonSelect - 1)));
+        returnedDescList = descList.slice(descList.length - (pageSize * (buttonSelect)), descList.length - (pageSize * (buttonSelect - 1)));
+    }
+    console.log(editionsList.length);
+    for(var i = returnedList.length - 1; i > returnedList.length-4; i--){
+        
+        var href_val = "/edition/" + returnedList[i] + ".html";
+        //creating the main card div
+        var card_div = document.createElement("div");
+        card_div.setAttribute("class", "card h-100");
+        // card_div.setAttribute("style", "width: 33.33%");
+
+        var a_tag = document.createElement("a");
+        a_tag.setAttribute("href", href_val);
+        a_tag.setAttribute("style", "width: 33.33%");
+        a_tag.setAttribute("class", "col");
+
+        //creating the card body div
+        var card_body = document.createElement("div");
+        card_body.setAttribute("class", "card-body");
+        var image = new Image();
+        image.src = returnedImageList[i];
+        image.setAttribute("alt", "Newsletter Image");
+        image.setAttribute("style", "width: 100%");
+        var header = document.createElement("h2");
+        header.setAttribute("class", "card-title");
+        header.innerHTML = "Edition #" + returnedList[i];
+        var desc = document.createElement("p");
+        desc.setAttribute("class", "card-text");
+        desc.innerHTML = returnedDescList[i];
+        // card_body.setAttribute("style", "width: 33.33%");
+
+        //adding to card body
+        card_body.append(image);
+        card_body.appendChild(header);
+        card_body.appendChild(desc);
+
+        //adding card body to card div
+        card_div.appendChild(card_body);
+
+        a_tag.appendChild(card_div);
+
+        document.getElementById("card-deck").appendChild(a_tag);
+        
+    }
+}
+
+
+
 // creates edition cards + pagination
 function pagination2(inputChoice) {
     //remember the page number in session storage
@@ -212,7 +309,7 @@ function pagination2(inputChoice) {
         card_div.appendChild(card_body);
 
         a_tag.appendChild(card_div);
-        document.getElementById("the_cards").appendChild(a_tag);
+        document.getElementById("the_cards").appendChild(a_tag);        
     }//end for
 
     //creating page selection
@@ -324,6 +421,8 @@ function pagination2(inputChoice) {
     removeWhiteSpace();
 
 }//end function
+
+cardDeck();
 
 //for adding each edition from createsend
 //get all elements from createsend and filter them out
