@@ -214,7 +214,7 @@ async function cardDeck(){
         var a_tag = document.createElement("a");
         a_tag.setAttribute("href", href_val);
         a_tag.setAttribute("style", "width: 33.33%");
-        a_tag.setAttribute("class", "col");
+        // a_tag.setAttribute("class", "col");
 
         //creating the card body div
         var card_body = document.createElement("div");
