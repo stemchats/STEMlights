@@ -1,823 +1,545 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!--[if IE]><html xmlns="http://www.w3.org/1999/xhtml" class="ie"><![endif]--><!--[if !IE]><!--><html style="margin: 0;padding: 0;" xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]--><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title></title>
-  <!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
-  <meta name="viewport" content="width=device-width"><style type="text/css">
-@media only screen and (min-width: 620px){.wrapper{min-width:600px !important}.wrapper h1{}.wrapper h1{font-size:22px !important;line-height:31px !important}.wrapper h2{}.wrapper h2{font-size:20px !important;line-height:28px !important}.wrapper h3{}.wrapper h3{font-size:18px !important;line-height:26px !important}.column{}.wrapper .size-8{font-size:8px !important;line-height:14px !important}.wrapper .size-9{font-size:9px !important;line-height:16px !important}.wrapper .size-10{font-size:10px !important;line-height:18px !important}.wrapper .size-11{font-size:11px !important;line-height:19px !important}.wrapper .size-12{font-size:12px !important;line-height:19px !important}.wrapper .size-13{font-size:13px !important;line-height:21px !important}.wrapper .size-14{font-size:14px !important;line-height:21px !important}.wrapper .size-15{font-size:15px !important;line-height:23px 
-!important}.wrapper .size-16{font-size:16px !important;line-height:24px !important}.wrapper .size-17{font-size:17px !important;line-height:26px !important}.wrapper .size-18{font-size:18px !important;line-height:26px !important}.wrapper .size-20{font-size:20px !important;line-height:28px !important}.wrapper .size-22{font-size:22px !important;line-height:31px !important}.wrapper .size-24{font-size:24px !important;line-height:32px !important}.wrapper .size-26{font-size:26px !important;line-height:34px !important}.wrapper .size-28{font-size:28px !important;line-height:36px !important}.wrapper .size-30{font-size:30px !important;line-height:38px !important}.wrapper .size-32{font-size:32px !important;line-height:40px !important}.wrapper .size-34{font-size:34px !important;line-height:43px !important}.wrapper .size-36{font-size:36px !important;line-height:43px !important}.wrapper 
-.size-40{font-size:40px !important;line-height:47px !important}.wrapper .size-44{font-size:44px !important;line-height:50px !important}.wrapper .size-48{font-size:48px !important;line-height:54px !important}.wrapper .size-56{font-size:56px !important;line-height:60px !important}.wrapper .size-64{font-size:64px !important;line-height:63px !important}}
-</style>
-  <meta name="x-apple-disable-message-reformatting">
-  <style type="text/css">
-body {
-margin: 0;
-padding: 0;
-}
-table {
-border-collapse: collapse;
-table-layout: fixed;
-}
-* {
-line-height: inherit;
-}
-[x-apple-data-detectors] {
-color: inherit !important;
-text-decoration: none !important;
-}
-.wrapper .footer__share-button a:hover,
-.wrapper .footer__share-button a:focus {
-color: #ffffff !important;
-}
-.btn a:hover,
-.btn a:focus,
-.footer__share-button a:hover,
-.footer__share-button a:focus,
-.email-footer__links a:hover,
-.email-footer__links a:focus {
-opacity: 0.8;
-}
-.preheader,
-.header,
-.layout,
-.column {
-transition: width 0.25s ease-in-out, max-width 0.25s ease-in-out;
-}
-.preheader td {
-padding-bottom: 8px;
-}
-.layout,
-div.header {
-max-width: 400px !important;
--fallback-width: 95% !important;
-width: calc(100% - 20px) !important;
-}
-div.preheader {
-max-width: 360px !important;
--fallback-width: 90% !important;
-width: calc(100% - 60px) !important;
-}
-.snippet,
-.webversion {
-Float: none !important;
-}
-.stack .column {
-max-width: 400px !important;
-width: 100% !important;
-}
-.fixed-width.has-border {
-max-width: 402px !important;
-}
-.fixed-width.has-border .layout__inner {
-box-sizing: border-box;
-}
-.snippet,
-.webversion {
-width: 50% !important;
-}
-.ie .btn {
-width: 100%;
-}
-.ie .stack .column,
-.ie .stack .gutter {
-display: table-cell;
-float: none !important;
-}
-.ie div.preheader,
-.ie .email-footer {
-max-width: 560px !important;
-width: 560px !important;
-}
-.ie .snippet,
-.ie .webversion {
-width: 280px !important;
-}
-.ie div.header,
-.ie .layout {
-max-width: 600px !important;
-width: 600px !important;
-}
-.ie .two-col .column {
-max-width: 300px !important;
-width: 300px !important;
-}
-.ie .three-col .column,
-.ie .narrow {
-max-width: 200px !important;
-width: 200px !important;
-}
-.ie .wide {
-width: 400px !important;
-}
-.ie .stack.fixed-width.has-border,
-.ie .stack.has-gutter.has-border {
-max-width: 602px !important;
-width: 602px !important;
-}
-.ie .stack.two-col.has-gutter .column {
-max-width: 290px !important;
-width: 290px !important;
-}
-.ie .stack.three-col.has-gutter .column,
-.ie .stack.has-gutter .narrow {
-max-width: 188px !important;
-width: 188px !important;
-}
-.ie .stack.has-gutter .wide {
-max-width: 394px !important;
-width: 394px !important;
-}
-.ie .stack.two-col.has-gutter.has-border .column {
-max-width: 292px !important;
-width: 292px !important;
-}
-.ie .stack.three-col.has-gutter.has-border .column,
-.ie .stack.has-gutter.has-border .narrow {
-max-width: 190px !important;
-width: 190px !important;
-}
-.ie .stack.has-gutter.has-border .wide {
-max-width: 396px !important;
-width: 396px !important;
-}
-.ie .fixed-width .layout__inner {
-border-left: 0 none white !important;
-border-right: 0 none white !important;
-}
-.ie .layout__edges {
-display: none;
-}
-.mso .layout__edges {
-font-size: 0;
-}
-.layout-fixed-width,
-.mso .layout-full-width {
-background-color: #ffffff;
-}
-@media only screen and (min-width: 620px) {
-.column,
-.gutter {
-  display: table-cell;
-  Float: none !important;
-  vertical-align: top;
-}
-div.preheader,
-.email-footer {
-  max-width: 560px !important;
-  width: 560px !important;
-}
-.snippet,
-.webversion {
-  width: 280px !important;
-}
-div.header,
-.layout,
-.one-col .column {
-  max-width: 600px !important;
-  width: 600px !important;
-}
-.fixed-width.has-border,
-.fixed-width.x_has-border,
-.has-gutter.has-border,
-.has-gutter.x_has-border {
-  max-width: 602px !important;
-  width: 602px !important;
-}
-.two-col .column {
-  max-width: 300px !important;
-  width: 300px !important;
-}
-.three-col .column,
-.column.narrow,
-.column.x_narrow {
-  max-width: 200px !important;
-  width: 200px !important;
-}
-.column.wide,
-.column.x_wide {
-  width: 400px !important;
-}
-.two-col.has-gutter .column,
-.two-col.x_has-gutter .column {
-  max-width: 290px !important;
-  width: 290px !important;
-}
-.three-col.has-gutter .column,
-.three-col.x_has-gutter .column,
-.has-gutter .narrow {
-  max-width: 188px !important;
-  width: 188px !important;
-}
-.has-gutter .wide {
-  max-width: 394px !important;
-  width: 394px !important;
-}
-.two-col.has-gutter.has-border .column,
-.two-col.x_has-gutter.x_has-border .column {
-  max-width: 292px !important;
-  width: 292px !important;
-}
-.three-col.has-gutter.has-border .column,
-.three-col.x_has-gutter.x_has-border .column,
-.has-gutter.has-border .narrow,
-.has-gutter.x_has-border .narrow {
-  max-width: 190px !important;
-  width: 190px !important;
-}
-.has-gutter.has-border .wide,
-.has-gutter.x_has-border .wide {
-  max-width: 396px !important;
-  width: 396px !important;
-}
-}
-@supports (display: flex) {
-@media only screen and (min-width: 620px) {
-  .fixed-width.has-border .layout__inner {
-    display: flex !important;
-  }
-}
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-.fblike {
-  background-image: url(http://i7.createsend1.com/static/eb/master/13-the-blueprint-3/images/fblike@2x.png) !important;
-}
-.tweet {
-  background-image: url(http://i8.createsend1.com/static/eb/master/13-the-blueprint-3/images/tweet@2x.png) !important;
-}
-.linkedinshare {
-  background-image: url(http://i9.createsend1.com/static/eb/master/13-the-blueprint-3/images/lishare@2x.png) !important;
-}
-.forwardtoafriend {
-  background-image: url(http://i10.createsend1.com/static/eb/master/13-the-blueprint-3/images/forward@2x.png) !important;
-}
-}
-@media (max-width: 321px) {
-.fixed-width.has-border .layout__inner {
-  border-width: 1px 0 !important;
-}
-.layout,
-.stack .column {
-  min-width: 320px !important;
-  width: 320px !important;
-}
-.border {
-  display: none;
-}
-.has-gutter .border {
-  display: table-cell;
-}
-}
-.mso div {
-border: 0 none white !important;
-}
-.mso .w560 .divider {
-Margin-left: 260px !important;
-Margin-right: 260px !important;
-}
-.mso .w360 .divider {
-Margin-left: 160px !important;
-Margin-right: 160px !important;
-}
-.mso .w260 .divider {
-Margin-left: 110px !important;
-Margin-right: 110px !important;
-}
-.mso .w160 .divider {
-Margin-left: 60px !important;
-Margin-right: 60px !important;
-}
-.mso .w354 .divider {
-Margin-left: 157px !important;
-Margin-right: 157px !important;
-}
-.mso .w250 .divider {
-Margin-left: 105px !important;
-Margin-right: 105px !important;
-}
-.mso .w148 .divider {
-Margin-left: 54px !important;
-Margin-right: 54px !important;
-}
-.mso .size-8,
-.ie .size-8 {
-font-size: 8px !important;
-line-height: 14px !important;
-}
-.mso .size-9,
-.ie .size-9 {
-font-size: 9px !important;
-line-height: 16px !important;
-}
-.mso .size-10,
-.ie .size-10 {
-font-size: 10px !important;
-line-height: 18px !important;
-}
-.mso .size-11,
-.ie .size-11 {
-font-size: 11px !important;
-line-height: 19px !important;
-}
-.mso .size-12,
-.ie .size-12 {
-font-size: 12px !important;
-line-height: 19px !important;
-}
-.mso .size-13,
-.ie .size-13 {
-font-size: 13px !important;
-line-height: 21px !important;
-}
-.mso .size-14,
-.ie .size-14 {
-font-size: 14px !important;
-line-height: 21px !important;
-}
-.mso .size-15,
-.ie .size-15 {
-font-size: 15px !important;
-line-height: 23px !important;
-}
-.mso .size-16,
-.ie .size-16 {
-font-size: 16px !important;
-line-height: 24px !important;
-}
-.mso .size-17,
-.ie .size-17 {
-font-size: 17px !important;
-line-height: 26px !important;
-}
-.mso .size-18,
-.ie .size-18 {
-font-size: 18px !important;
-line-height: 26px !important;
-}
-.mso .size-20,
-.ie .size-20 {
-font-size: 20px !important;
-line-height: 28px !important;
-}
-.mso .size-22,
-.ie .size-22 {
-font-size: 22px !important;
-line-height: 31px !important;
-}
-.mso .size-24,
-.ie .size-24 {
-font-size: 24px !important;
-line-height: 32px !important;
-}
-.mso .size-26,
-.ie .size-26 {
-font-size: 26px !important;
-line-height: 34px !important;
-}
-.mso .size-28,
-.ie .size-28 {
-font-size: 28px !important;
-line-height: 36px !important;
-}
-.mso .size-30,
-.ie .size-30 {
-font-size: 30px !important;
-line-height: 38px !important;
-}
-.mso .size-32,
-.ie .size-32 {
-font-size: 32px !important;
-line-height: 40px !important;
-}
-.mso .size-34,
-.ie .size-34 {
-font-size: 34px !important;
-line-height: 43px !important;
-}
-.mso .size-36,
-.ie .size-36 {
-font-size: 36px !important;
-line-height: 43px !important;
-}
-.mso .size-40,
-.ie .size-40 {
-font-size: 40px !important;
-line-height: 47px !important;
-}
-.mso .size-44,
-.ie .size-44 {
-font-size: 44px !important;
-line-height: 50px !important;
-}
-.mso .size-48,
-.ie .size-48 {
-font-size: 48px !important;
-line-height: 54px !important;
-}
-.mso .size-56,
-.ie .size-56 {
-font-size: 56px !important;
-line-height: 60px !important;
-}
-.mso .size-64,
-.ie .size-64 {
-font-size: 64px !important;
-line-height: 63px !important;
-}
-</style>
-  
-<!--[if !mso]><!--><style type="text/css">
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400italic,400,700,700italic);
-</style><link href="https://fonts.googleapis.com/css?family=Merriweather:400italic,400,700,700italic" rel="stylesheet" type="text/css"><!--<![endif]--><style type="text/css">
-body{background-color:#fff}.logo a:hover,.logo a:focus{color:#fff !important}.mso .layout-has-border{border-top:1px solid #ccc;border-bottom:1px solid #ccc}.mso .layout-has-bottom-border{border-bottom:1px solid #ccc}.mso .border,.ie .border{background-color:#ccc}.mso h1,.ie h1{}.mso h1,.ie h1{font-size:22px !important;line-height:31px !important}.mso h2,.ie h2{}.mso h2,.ie h2{font-size:20px !important;line-height:28px !important}.mso h3,.ie h3{}.mso h3,.ie h3{font-size:18px !important;line-height:26px !important}.mso .layout__inner,.ie .layout__inner{}.mso .footer__share-button p{}.mso .footer__share-button p{font-family:Merriweather,Georgia,serif}
-</style><meta name="robots" content="noindex,nofollow"></meta>
-<meta property="og:title" content="STEMlights: Issue 29"></meta>
-</head>
-<!--[if mso]>
-<body class="mso">
-<![endif]-->
-<!--[if !mso]><!-->
-<body class="no-padding" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;">
-<!--<![endif]-->
-  <table class="wrapper" style="border-collapse: collapse;table-layout: fixed;min-width: 320px;width: 100%;background-color: #fff;" cellpadding="0" cellspacing="0" role="presentation"><tbody><tr><td>
-    <div role="banner">
-      <div class="preheader" style="Margin: 0 auto;max-width: 560px;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">
-        <div style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table align="center" class="preheader" cellpadding="0" cellspacing="0" role="presentation"><tr><td style="width: 280px" valign="top"><![endif]-->
-          <div class="snippet" style="display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 140px; width: 140px;width: calc(14000% - 78120px);padding: 10px 0 5px 0;color: #bbb;font-family: Merriweather,Georgia,serif;">
-            
-          </div>
-        <!--[if (mso)|(IE)]></td><td style="width: 280px" valign="top"><![endif]-->
-          <div class="webversion" style="display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 139px; width: 139px;width: calc(14100% - 78680px);padding: 10px 0 5px 0;text-align: right;color: #bbb;font-family: Merriweather,Georgia,serif;">
-            
-          </div>
-        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-        </div>
-      </div>
-      
-    </div>
-    <div>
-    <div style="background-color: #ffffff;">
-      <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;color: #353638;font-size: 17px;line-height: 26px;font-family: Merriweather,Georgia,serif;">
-          
-      <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
-        <img class="gnd-corner-image gnd-corner-image-center gnd-corner-image-top" style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="" width="600" src="http://i1.createsend1.com/ei/t/B5/A1F/32D/132107/csfinal/STEMlights_EmailDividers972-9900000000079e3c.png">
-      </div>
-    
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-16" style="Margin-top: 0;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 16px;line-height: 24px;text-align: left;" lang="x-size-16"><span class="font-avenir"><span style="color:#353638">Good Morning&nbsp;Reader,&nbsp;Welcome&nbsp;to STEMlights!</span></span></p><p class="size-16" style="Margin-top: 20px;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 16px;line-height: 24px;text-align: left;" lang="x-size-16"><span class="font-avenir"><span style="color:#353638">This week, we will be discussing the <strong>psychology behind conspiracy theories</strong>,&nbsp;<strong>shining lights</strong>&nbsp;on political-STEM youth leaders,&nbsp;and for variety,&nbsp;<strong>opportunities</strong>&nbsp;for Students with&nbsp;STEM <strong>innovations and creativity.</strong></span></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div class="divider" style="display: block;font-size: 2px;line-height: 2px;Margin-left: auto;Margin-right: auto;width: 40px;background-color: #ccc;Margin-bottom: 20px;">&nbsp;</div>
-  </div>
-          
-      <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
-        <img class = "section-header-img" style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="" width="600" src="http://i2.createsend1.com/ei/t/B5/A1F/32D/132107/csfinal/STEMlights_EmailDividers973-9900000000079e3c.png">
-      </div>
-    
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;text-align: center;"><span class="font-avenir"><span style="color:#f6d970"><strong>The Psychology Behind Conspiracy Theories</strong></span></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-14" style="Margin-top: 0;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">From the flat earth theory to the moon landing hoax, it seems as though there has been an overall increase in conspiracy theories within the past couple years. <span style="color:#a6b1e1"><strong>But what has caused this increased skepticism, and what is the psychology behind conspiracy theorists?</strong></span></span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Some people&#8217;s <a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #289fd8;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-y/"><span 
-style="color:#353638">personality characteristics</span></a><span style="color:#353638">,</span> such as openness to experience, distrust, low agreeability, and Machiavellianism, make one more likely to believe in conspiracies. On the other hand, conspiracy theories also increase after great tragedies and events, creating an almost scapegoat mentality where people try to push blame on someone or something even if it is illogical.</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">It is also important to note that conspiracy theories exist on a spectrum in which some are much more harmful than others. For example, the popularization of anti-vaxxers and climate change deniers has led many individuals to lose their trust in science as a result of misinformation. 
-Conspiracy theories thrive off of confirmation bias -- &#8220;<strong><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #289fd8;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-j/"><span style="color:#a6b1e1">the tendency to reinforce pre-existing beliefs when we look for informatio</span></a><span style="color:#a6b1e1">n</span></strong>&#8221; -- which has only been exacerbated in the digital age where there is limitless access to any and all information. Scientists and professionals must now focus their efforts on regaining the trust of certain individuals while also being mindful of how they explain information to the general public.</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span 
-class="font-avenir">Furthermore, <strong><span style="color:#a6b1e1">&#8220;</span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #289fd8;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-t/"><span style="color:#a6b1e1">studies have also revealed that half of the US population believes in at least one political or medical conspiracy theory. So belief in conspiracy theories is far more &#8220;normal&#8221; than many of us might think.&#8221;</span></a></strong></span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">So though conspiracy theories are fun to entertain, it is crucial to be mindful of the information you are consuming and to always have multiple sources of factual 
-information.</span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 10px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-          </div>
-        <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
-        </div>
-      </div>
-    </div>
-
-    <div style="background-color: #ffffff;">
-      <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;color: #353638;font-size: 17px;line-height: 26px;font-family: Merriweather,Georgia,serif;">
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 5px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 1px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-          </div>
-        <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
-        </div>
-      </div>
-    </div>
-
-    <div style="background-color: #ffffff;">
-      <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;color: #353638;font-size: 17px;line-height: 26px;font-family: Merriweather,Georgia,serif;">
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 5px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 1px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-          </div>
-        <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
-        </div>
-      </div>
-    </div>
-
-    <div style="background-color: #ffffff;">
-      <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;color: #353638;font-size: 17px;line-height: 26px;font-family: Merriweather,Georgia,serif;">
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 13px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-      <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
-        <img class = "section-header-img" style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="" width="600" src="http://i3.createsend1.com/ei/t/B5/A1F/32D/132107/csfinal/STEMlights_EmailDividers-2020-11-01T013308.378-9900000000079e3c.png">
-      </div>
-    
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-18" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-18"><span class="font-avenir"><span style="color:#f6d970"><strong>Vijeta Revankar</strong></span></span></p>
-    </div>
-  </div>
-          
-      <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
-        <img style="border: 0;display: block;height: auto;width: 100%;max-width: 184px;" alt="" width="184" src="http://i4.createsend1.com/ei/t/B5/A1F/32D/132107/csfinal/ScreenShot2020-11-15at2.04.47PM-9905140a2801453c.png">
-      </div>
-    
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-14" style="Margin-top: 0;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Coming away from her research experiences with an appreciation for impactful STEM opportunities, <span style="color:#a6b1e1"><strong>Vijeta Revankar looks to make an impact in the field of medicine and beyond.</strong></span> Revankar is a member of the i-STEM Scholars team who attends the University of Houston as a Business major on the pre-med track.&nbsp;</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Revankar joined STEMchats to help students access impactful STEM opportunities. &#8220;Although it is not involved with my major, STEMchats&#8217; initiative is involved with my 
-track,&#8221; Revankar explained. &#8220;Being a pre-med is hard, not only because of the challenging classes, but because there is an immense pressure to get yourself involved in areas that you&#8217;ve never had the opportunity to previously explore. <span style="color:#a6b1e1"><strong>Knowing how important my research experience was for me in shaping my future plans, I realized that I wanted to afford other students the same opportunities that I had</strong></span>.&#8221;</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Revankar&#8217;s experience conducting research also allowed her to further appreciate the importance of impactful STEM opportunities. &#8220;I&#8217;ve participated in several STEM initiatives, but the ones that impacted me the most had to 
-do with research. I spent two summers working with the graduate students and professors at UTMB on a bioimaging project, and eventually presented two posters on our research. I also worked for one year under a NASA mentor where I developed my own procedure for quality-controlling engineered tissue,&#8221; Revankar noted.&nbsp;&nbsp;</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Revankar&#8217;s STEM experiences informed her mission. &#8220;<span style="color:#a6b1e1"><strong>My mission has always been to make education more accessible to underprivileged students.</strong></span> I&#8217;ve led initiatives in areas such as robotics and coding that have sought to increase the number of kids interested in pursuing a career in the STEM field,&#8221; Revankar 
-said.</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">&#8220;I found out about STEMchats last year when I was looking for STEM related organizations that I could involve myself with. <span style="color:#a6b1e1"><strong>I was really excited to hear about STEMchats&#8217; emphasis on serving underprivileged students, and couldn&#8217;t believe my luck when applications opened that summer</strong></span>.&#8221; Revankar is currently working on i-STEM Scholars&#8217; research program. &#8220;Right now, I&#8217;m communicating with professors at universities in Texas to see if they would be interested in potentially joining our summer research program as mentors for our students,&#8221; Revankar shared.</span></p><p class="size-14" style="Margin-top: 
-20px;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">In the future,&nbsp; Revankar aspires to attend medical high school and assist in the expansion of STEMchats and the i-STEM Scholars program.</span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 15px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 11px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-          </div>
-        <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
-        </div>
-      </div>
-    </div>
-
-    <div style="background-color: #ffffff;">
-      <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;color: #353638;font-size: 17px;line-height: 26px;font-family: Merriweather,Georgia,serif;">
-          
-      <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
-        <img class="section-header-img" style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="" width="600" src="http://i5.createsend1.com/ei/t/B5/A1F/32D/132107/csfinal/STEMlights_EmailDividers100-9900000000079e3c.png">
-      </div>
-    
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-14" style="Margin-top: 0;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;text-align: center;" lang="x-size-14"><span class="font-avenir"><strong><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #289fd8;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-i/"><span style="color:#a6b1e1">Hurricanes are more dangerous than before&nbsp;</span></a></strong></span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Hurricanes are now moving closer inland and weakening slower due to climate change, increasing the amount of damage inflicted on average. A rise in climate change equates to warmer oceans, which increases the amount of moisture in the 
-hurricanes, which allows them to stay for a longer period of time and cause more damage. More inland communities, who do not typically have hurricanes inland, must prepare for the possibility of damage now.</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;text-align: center;" lang="x-size-14"><span class="font-avenir"><strong><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #289fd8;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-d/"><span style="color:#a6b1e1">Half of the stars similar to the Sun could have rocky planets with water</span></a></strong></span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">A new 
-study with NASA&#8217;s Kepler telescope data found that around 50% of stars similar to the sun could have rocky planets with the capacity for water and life. While the most cautious estimates round the number to be at around 7%, there is still a large capacity for life within these planets, making the opportunity for life more exciting.</span></p><p class="size-14" style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;text-align: center;" lang="x-size-14"><span class="font-avenir"><strong><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #289fd8;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-h/"><span style="color:#a6b1e1">&#8220;Volume control knob&#8221; in the brain affecting learning and memory</span></a></strong></span></p><p class="size-14" style="Margin-top: 
-20px;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Dartmouth College researchers discovered a new part of the brain controlling memory and learning. There is a molecular system within the brain that controls the extent to which the electrical signals flow across synapses between neurons, which oversees learning and memory and implicates further connections with neurological diseases such as Alzheimer&#8217;s and Parkinson&#8217;s disease.</span></p><p style="Margin-top: 20px;Margin-bottom: 0;font-family: avenir,sans-serif;"><span class="font-avenir">&nbsp;</span></p>
-    </div>
-  </div>
-          
-          </div>
-        <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
-        </div>
-      </div>
-    </div>
-
-    <div style="background-color: #ffffff;">
-      <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;color: #353638;font-size: 17px;line-height: 26px;font-family: Merriweather,Georgia,serif;">
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 33px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-      <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
-        <img class ="section-header-img" style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="" width="600" src="http://i6.createsend1.com/ei/t/B5/A1F/32D/132107/csfinal/STEMlights_EmailDividers-2020-11-01T013320.584-9900000000079e3c.png">
-      </div>
-    
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 13px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;text-align: center;"><span class="font-avenir"><span style="color:#f6d970"><strong>Apply to be a Program Coordinator for STEMlights!</strong></span></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-14" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">STEMchats is opening applications for new team members, specifically for our <strong><span style="color:#a6b1e1">STEMlights and Funding team</span></strong>. Both teams are looking for two new team members minimum and applications close November 27th, so check out our application soon. <strong><span style="color:#a6b1e1">Everyone is welcome to apply despite their backgrounds and we&#8217;re excited to be expanding our team again!</span></strong></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
-      <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-k/">Start your Application NOW!</a><![endif]>
-    <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-k/" style="width:202px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Start your Application NOW!</center></v:textbox></v:roundrect><![endif]--></div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;text-align: center;"><span class="font-avenir"><span style="color:#f6d970"><strong>EngineerGirl Writing Contest</strong></span></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-14" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">In response to COVID-19 and the pandemic, engineers have been working with many of the frontline workers, as well as scientists and researchers, to help ease the pandemic. <span style="color:#a6b1e1"><strong>This writing contest encourages students to highlight how engineers have stepped up to their roles as a salute to them.</strong></span> There are three age categories ranging from elementary, middle, and high school, each with a different prompt. The submission form closes on February 1st, 2021, and winners will be able to receive cash prizes, so make sure to keep your eye on this contest!</span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 3px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-          </div>
-        <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
-        </div>
-      </div>
-    </div>
-
-    <div style="background-color: #ffffff;">
-      <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;color: #353638;font-size: 17px;line-height: 26px;font-family: Merriweather,Georgia,serif;">
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
-      <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-u/">Start Your Submission!</a><![endif]>
-    <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-u/" style="width:166px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Start Your Submission!</center></v:textbox></v:roundrect><![endif]--></div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;text-align: center;"><span class="font-avenir"><span style="color:#f6d970"><strong>MIT PRIMES Math Research Program</strong></span></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-14" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Are you a high school junior interested in math and research? <span style="color:#a6b1e1"><strong>Massachusetts Institute of Technology (MIT) is hosting a math-based research program for high school juniors living outside of the Boston area. </strong></span>To apply, you must get a letter of rec, try the problem sets, fill out a personal statement, and fill out the application itself. The deadline for applications is December 1, 2020, so be sure to check this opportunity out quickly to ensure you have time to fill out the application.</span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
-      <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-o/">Start your Application Today!</a><![endif]>
-    <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-o/" style="width:204px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Start your Application Today!</center></v:textbox></v:roundrect><![endif]--></div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;text-align: center;"><span class="font-avenir"><span style="color:#f6d970"><strong>NASA Internships</strong></span></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-14" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;" lang="x-size-14"><span class="font-avenir">Want to intern for NASA and contribute to various missions and projects they&#8217;re working on? Lucky for you, there are many chances and projects for you to apply to intern for! <span style="color:#a6b1e1"><strong>There are internships available for high school students, undergrads, and graduate students, and you can choose projects based on the time of the year (spring, summer, fall).</strong></span> Making it easier for you too, when you submit your application, it&#8217;ll come across the whole agency, so you don&#8217;t have to apply multiple times. Be sure to keep an eye out for the summer deadline as well as the projects they&#8217;re planning.</span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
-      <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-b/">Click Here for More Information!</a><![endif]>
-    <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-b/" style="width:223px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Click Here for More Information!</center></v:textbox></v:roundrect><![endif]--></div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 25px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 5px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 1px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <p class="size-18" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-18"><span class="font-avenir"><span style="color:#f6d970"><strong>Let Us Know What You Think</strong></span><span style="color:#ff5959"><strong>&nbsp;</strong></span></span></p>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
-      <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-n/">Take This Survey!</a><![endif]>
-    <!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-n/" style="width:136px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Take This Survey!</center></v:textbox></v:roundrect><![endif]--></div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
-      <h2 class="size-14" style="Margin-top: 0;Margin-bottom: 16px;font-style: normal;font-weight: normal;color: #353638;font-size: 14px;line-height: 21px;font-family: avenir,sans-serif;" lang="x-size-14"><span class="font-avenir">We at STEMlights hope that you learned&nbsp;<em>something</em>&nbsp;from this&nbsp;issue, even if you just browsed it!&nbsp;Every week the newsletter will continue to improve from the feedback we receive. Send an email to&nbsp;<a style="text-decoration: none;transition: opacity 0.1s ease-in;color: #289fd8;" href="mailto:stemchats@gmail.com"><span style="color:#a6b1e1">stemlights.stemchats@gmail.com</span></a>&nbsp;and let us know how you felt about this newsletter.&nbsp;</span></h2>
-    </div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 27px;font-size: 1px;">&nbsp;</div>
-  </div>
-    
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
-    <div class="divider" style="display: block;font-size: 2px;line-height: 2px;Margin-left: auto;Margin-right: auto;width: 40px;background-color: #ccc;Margin-bottom: 20px;">&nbsp;</div>
-  </div>
-          
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-    <div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
-  </div>
-          
-          </div>
-        <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
-        </div>
-      </div>
-    </div>
-
-    
-    <div role="contentinfo">
-      <div class="layout email-footer stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-email-footer"><td style="width: 400px;" valign="top" class="w360"><![endif]-->
-          <div class="column wide" style="text-align: left;font-size: 12px;line-height: 19px;color: #bbb;font-family: Merriweather,Georgia,serif;Float: left;max-width: 400px;min-width: 320px; width: 320px;width: calc(8000% - 47600px);">
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
-              <table class="email-footer__links" style="border-collapse: collapse;table-layout: fixed;" role="presentation" emb-web-links><tbody><tr role="navigation">
-              <td style="padding: 0;width: 26px;" emb-web-links><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-p/"><img style="border: 0;" src="http://i2.createsend1.com/static/eb/master/13-the-blueprint-3/images/facebook.png" width="26" height="26" alt="Facebook"></a></td><td style="padding: 0 0 0 3px;width: 26px;" emb-web-links><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-x/"><img style="border: 0;" src="http://i3.createsend1.com/static/eb/master/13-the-blueprint-3/images/twitter.png" width="26" height="26" alt="Twitter"></a></td><td style="padding: 0 0 0 3px;width: 26px;" emb-web-links><a 
-style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-m/"><img style="border: 0;" src="http://i5.createsend1.com/static/eb/master/13-the-blueprint-3/images/instagram.png" width="26" height="26" alt="Instagram"></a></td><td style="padding: 0 0 0 3px;width: 26px;" emb-web-links><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-c/"><img style="border: 0;" src="http://i6.createsend1.com/static/eb/master/13-the-blueprint-3/images/linkedin.png" width="26" height="26" alt="LinkedIn"></a></td><td style="padding: 0 0 0 3px;width: 26px;" emb-web-links><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" 
-href="https://stemchats.createsend1.com/t/t-l-xdldhyk-l-q/"><img style="border: 0;" src="http://i7.createsend1.com/static/eb/master/13-the-blueprint-3/images/website.png" width="26" height="26" alt="Website"></a></td>
-              </tr></tbody></table>
-              <div style="font-size: 12px;line-height: 19px;Margin-top: 20px;">
-                <div>STEMlights / A STEMchats Program<br>
-The STEM newsletter by teens, for teens.</div>
-              </div>
-              <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;">
+<style type="text/css">
+  .main,.mso{background-color:#fff}.logo a:hover,.logo a:focus{color:#fff !important}.footer-logo a:hover,.footer-logo a:focus{color:#372d1b !important}.mso .layout-has-border{border-top:1px solid #ccc;border-bottom:1px solid #ccc}.mso .layout-has-bottom-border{border-bottom:1px solid #ccc}.mso .border,.ie .border{background-color:#ccc}.mso h1,.ie h1{}.mso h1,.ie h1{font-size:22px !important;line-height:31px !important}.mso h2,.ie h2{}.mso h2,.ie h2{font-size:20px !important;line-height:28px !important}.mso h3,.ie h3{}.mso h3,.ie h3{font-size:18px !important;line-height:26px !important}.mso .layout__inner,.ie .layout__inner{}.mso .footer__share-button p{}.mso .footer__share-button p{font-family:Avenir,sans-serif}
+  </style><meta name="robots" content="noindex,nofollow"></meta>
+  <meta property="og:title" content="STEMlights Issue 78: Mind-Controlled Robots, Element 118, and Competition Opportunities!"></meta>
+  </head>
+  <!--[if mso]>
+    <body class="mso">
+  <![endif]-->
+  <!--[if !mso]><!-->
+    <body class="main no-padding" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;">
+  <!--<![endif]-->
+      <table class="wrapper" style="border-collapse: collapse;table-layout: fixed;min-width: 320px;width: 100%;background-color: #fff;" cellpadding="0" cellspacing="0" role="presentation"><tbody><tr><td>
+        <div role="banner">
+          <div class="preheader" style="Margin: 0 auto;max-width: 560px;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">
+            <div style="border-collapse: collapse;display: table;width: 100%;">
+            <!--[if (mso)|(IE)]><table align="center" class="preheader" cellpadding="0" cellspacing="0" role="presentation"><tr><td style="width: 280px" valign="top"><![endif]-->
+              <div class="snippet" style="display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 140px; width: 140px;width: calc(14000% - 78120px);padding: 10px 0 5px 0;color: #bbb;font-family: Avenir,sans-serif;">
                 
               </div>
-              <!--[if mso]>&nbsp;<![endif]-->
-            </div>
-          </div>
-        <!--[if (mso)|(IE)]></td><td style="width: 200px;" valign="top" class="w160"><![endif]-->
-          <div class="column narrow" style="text-align: left;font-size: 12px;line-height: 19px;color: #bbb;font-family: Merriweather,Georgia,serif;Float: left;max-width: 320px;min-width: 200px; width: 320px;width: calc(72200px - 12000%);">
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
-              
-            </div>
-          </div>
-        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-        </div>
-      </div>
-      <div class="layout one-col email-footer" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-email-footer"><td style="width: 600px;" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;font-size: 12px;line-height: 19px;color: #bbb;font-family: Merriweather,Georgia,serif;">
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
-              <div style="font-size: 12px;line-height: 19px;">
-                <span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="http://createsend.com/functionalityDisabled.html" lang="en">Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;</span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="http://createsend.com/functionalityDisabled.html">Unsubscribe</a>
+            <!--[if (mso)|(IE)]></td><td style="width: 280px" valign="top"><![endif]-->
+              <div class="webversion" style="display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 139px; width: 139px;width: calc(14100% - 78680px);padding: 10px 0 5px 0;text-align: right;color: #bbb;font-family: Avenir,sans-serif;">
+                
               </div>
+            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
             </div>
           </div>
-        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+          
         </div>
-      </div>
-    </div>
-    <div style="line-height:40px;font-size:40px;">&nbsp;</div>
-  </div></td></tr></tbody></table>
+        <div>
+<div style="background-color: #ffffff;">
+  <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+    <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
+    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
+      <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;">
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img class="gnd-corner-image gnd-corner-image-center gnd-corner-image-top" style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="" width="600" src="https://i1.createsend1.com/ei/t/38/4EE/252/141226/csfinal/STEMlightsEmailDividers50-9900000000079e3c.png">
+  </div>
 
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-16" style="Margin-top: 0;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 16px;line-height: 24px;text-align: center;" lang="x-size-16"><span class="font-avenir"><span style="color:#353638">Good Morning&nbsp;Reader,&nbsp;Welcome&nbsp;to STEMlights!</span></span></p><p class="size-16" style="Margin-top: 20px;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 16px;line-height: 24px;text-align: left;" lang="x-size-16"><span class="font-avenir"><span style="color:#353638">This week, we will be discussing <strong>mind-controlled robots</strong><strong>,&nbsp;STEM&nbsp;</strong><strong>news, Element 118,&nbsp;</strong>and, as always, <strong>opportunities</strong> <strong>for students</strong>.</span></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-16" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 16px;line-height: 24px;" lang="x-size-16"><span class="font-avenir"><strong>We want to hear from you: fill out the STEMlights feedback survey below!</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
+  <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-r/">Take Our Feedback Survey!</a><![endif]>
+<!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-r/" style="width:193px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Take Our Feedback Survey!</center></v:textbox></v:roundrect><![endif]--></div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="divider" style="display: block;font-size: 2px;line-height: 2px;Margin-left: auto;Margin-right: auto;width: 40px;background-color: #ccc;Margin-bottom: 20px;">&nbsp;</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 900px;" alt="sectionImage" width="600" src="https://i2.createsend1.com/ei/t/38/4EE/252/141226/csfinal/ScreenShot2021-09-25at2.21.14PM-9900000000079e3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><span style="color:#f6d970"><strong>Godzilla vs. Kong</strong></span></span></p>
+</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 283px;" alt="Dinosaur @ Jurassic Park Water Ride" width="283" src="https://i3.createsend1.com/ei/t/38/4EE/252/141226/csfinal/ScreenShot2021-10-23at11.09.08PM-9903cf0a28028a3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-8" style="mso-text-raise: 9px;Margin-top: 0;Margin-bottom: 20px;font-size: 8px;line-height: 14px;text-align: center;" lang="x-size-8"><em><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-y/"><span style="color:#353638">Image from&nbsp;</span></a><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-j/"><span style="color:#353638">Kirainet</span></a></em></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 0;">Today, we will be debunking the science behind the famous film, &#8220;Godzilla vs. Kong&#8221;. To recap, this movie is essentially about a titan-gorilla, Kong, and a titan-dinosaur, Godzilla, clashing to the death multiple times to establish titan supremacy. <span style="color:#a6b1e1"><strong>However, the plot of the movie also revolves around a tech organization known as Apex Cybernetics</strong></span>. This company claimed to work towards advancing the world of technology, but Walter Simmons, the founder of Apex, had the true intention of eliminating titans from existence. He planned on accomplishing this by creating a mechanized titan known as Mechagodzilla. <span style="color:#a6b1e1"><strong>The interesting part was that this mechanism was entirely controlled through the mind! </strong></span>Is that even possible? Can robots 
+really be controlled telepathically? Let&#8217;s find out!</p><p style="Margin-top: 20px;Margin-bottom: 0;">Well, during a project conducted by a team from Boston University (BU) and MIT&#8217;s Computer Science and Artificial Intelligence Laboratory (CSAIL), <span style="color:#a6b1e1"><strong>researchers found a way to control robots using their minds. </strong></span>During this experiment, these teams monitored signals within the brain through a device known as an electroencephalography (EEG) monitor. Using this device, researchers were able to detect error-related potential (ErrP) signals which are signals the brain automatically created when a human detects some sort of error. <strong><span style="color:#a6b1e1">With the EEG monitor detecting ErrP signals, this team developed a robot that recognized mistakes almost instantaneously. To view this amazing robot click </span><a 
+style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-t/"><span style="color:#a6b1e1">here</span></a><span style="color:#a6b1e1">.</span></strong> Specifically, this robot was designed to organize items in two categories. Once the robot detected any ErrP signals, the robot would correct its course of action. If an incorrect action has already been done, the robot was even able to display embarrassment. <span style="color:#a6b1e1"><strong>Overall, this experiment proves that mind controlled robots are possible today, but can humans control robots to the extent that Apex Cybernetics did with Mechagodzilla?</strong></span></p><p style="Margin-top: 20px;Margin-bottom: 0;">During an advanced experiment of the ErrP detection project, the same CSAIL and BU team found a way to 
+correlate muscle actions with robots<span style="color:#a6b1e1"><strong>. These researchers used a biosignal known as the Electromyography (EMG) signal to correct robot actions more precisely. EMG is also used to control prosthetic limbs. </strong></span>These biosignals are emitted whenever any actions of movement are done. The robot used to conduct this experiment utilized both EEG and EMG signals to drill one of three targets. If a mistake was made, researchers focused on movement of the arm to manually direct the drill in the right direction. <strong><span style="color:#a6b1e1">To view this experiment click </span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-i/"><span style="color:#a6b1e1">here</span></a><span style="color:#a6b1e1">. In the end, this 
+experiment showed that humans are able to use bodily movements to guide robots&#8217; actions.</span></strong></p><p style="Margin-top: 20px;Margin-bottom: 20px;">In &#8220;Godzilla vs Kong&#8221;, a person controlling Mechagodzilla neurally links and transfers their consciousness to the machine. Although it is proven that neurally linking a person to a robot to guide their actions is possible, <span style="color:#a6b1e1"><strong>the extent to which Apex Cybernetics controlled Mechagodizilla may be a little out of reach.</strong></span> Today, engineers are only able to accomplish simple tasks such as categorizing items and drilling products. <span style="color:#a6b1e1"><strong>To conclude, the advanced technology seen in Mechagodzilla from &#8220;Godzilla vs Kong&#8221; is not impossible, but the complex movement used to attack the two titans may take some time to 
+accomplish.&nbsp;</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 1px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+      </div>
+    <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
+    </div>
+  </div>
+</div>
+
+<div style="background-color: #ffffff;">
+  <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+    <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
+    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
+      <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;">
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 5px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 1px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+      </div>
+    <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
+    </div>
+  </div>
+</div>
+
+<div style="background-color: #ffffff;">
+  <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+    <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
+    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
+      <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;">
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img class="gnd-corner-image gnd-corner-image-center gnd-corner-image-top" style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="sectionImage" width="600" src="https://i4.createsend1.com/ei/t/38/4EE/252/141226/csfinal/STEMlights_EmailDividers100-9900000000079e3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><strong><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-d/"><span style="color:#f6d970">Spain&#8217;s Mar Menor Turns Green</span></a></strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-14" style="Margin-top: 0;Margin-bottom: 0;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;text-align: left;" lang="x-size-14"><span class="font-avenir">What used to be a sparkling blue lagoon in Spain <span style="color:#a6b1e1"><strong>is now covered with algal blooms and dead fish.</strong></span> This change comes from the increasing threat of climate change and runoff from nearby farms. Rainfall causes the nitrate fertilizers to flow into the lagoon, drastically increasing the nitrate levels. <span style="color:#a6b1e1"><strong>This process is called eutrophication and it causes algae to bloom more, creating a layer on the water&#8217;s surface.</strong></span> The algae blocks off sunlight, making it much more difficult for photosynthesis to occur. The algae and plants eventually decompose increasing carbon dioxide levels and making the water 
+more acidic<span style="color:#a6b1e1"><strong>. Fish and other organisms struggle to find food and breathe, leading to them dying as the ecosystem experiences ruination.</strong></span></span></p>
+</div>
+</div>
+      
+      </div>
+    <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
+    </div>
+  </div>
+</div>
+
+<div style="background-color: #ffffff;">
+  <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+    <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
+    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
+      <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;">
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 17px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-h/"><strong><span style="color:#f6d970">Planet MOA-2010-BLG-477b</span></strong></a></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;">Astronomers recently<span style="color:#a6b1e1"><strong> discovered a planet the size of Jupiter orbiting a white dwarf 6,500 light years from Earth. </strong></span>A white dwarf is when a star uses up all of its nuclear fuel, turning white but maintaining its hot core. <span style="color:#a6b1e1"><strong>This is a revolutionary discovery as the planet is surviving even after its star has died.</strong></span> Scientist Lisa Kaltenegger from the Carl Sagan Institute at Cornell University, believes that this planet could provide more information about Earth&#8217;s future when the sun dies. <span style="color:#a6b1e1"><strong>She believes a &#8220;second genesis&#8221; will occur, creating new organisms.</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><strong><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-k/"><span style="color:#f6d970">Pig Kidneys for Humans</span></a></strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;text-align: left;">Could pigs be the solution for future human organ transplants?<span style="color:#a6b1e1"><strong> Surgeons at N.Y.U. Langone Health attached a pig kidney, that was grown in a genetically modified pig, to a human patient.</strong></span> This is a new approach to xenotransplantation, a transplant of living cells, tissue, and organs, that goes from one species to another. <span style="color:#a6b1e1"><strong>The kidney was attached to the patient&#8217;s leg blood vessels to test if the organ would function with the human body</strong></span>. The kidney was successful outside of the body and even worked immediately, unlike most kidney transplants. <span style="color:#a6b1e1"><strong>There are currently over 100,000 in need of an organ transplant, with 90,240 of those in need of kidneys.&nbsp;</strong></span></p>
+</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 514px;" alt="sunlight, outerspace, kidney" width="514" src="https://i5.createsend1.com/ei/t/38/4EE/252/141226/csfinal/ScreenShot2021-10-23at10.08.46AM-990514014504513c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-10" style="Margin-top: 0;Margin-bottom: 20px;font-size: 10px;line-height: 18px;text-align: center;" lang="x-size-10"><em><span style="color:#353638">Photos by&nbsp;</span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-u/"><span style="color:#353638">Wendy Longo photography</span></a><span style="color:#353638">, </span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-o/"><span style="color:#353638">Stefan S&#246;derstr&#246;m</span></a><span style="color:#353638">, </span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" 
+href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-b/"><span style="color:#353638">Joshua Schwimmer</span></a></em></p>
+</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="sectionImage" width="600" src="https://i6.createsend1.com/ei/t/38/4EE/252/141226/csfinal/821-9900000000079e3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><span style="color:#f6d970"><strong>The Creation of Element 118</strong></span></span></p>
+</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 329px;" alt="periodic table" width="329" src="https://i7.createsend1.com/ei/t/38/4EE/252/141226/csfinal/ScreenShot2021-10-08at11.47.47PM-990b6d028a03cf3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-9" style="mso-text-raise: 9px;Margin-top: 0;Margin-bottom: 20px;font-size: 9px;line-height: 16px;text-align: center;" lang="x-size-9"><em><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-n/"><span style="color:#757575">Photo from </span></a><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-p/"><span style="color:#757575">Dmarcus100</span></a></em></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 0;"><span style="color:#353638">In 2002, </span><strong><span style="color:#a6b1e1">a group of researchers at the Joint Institute for Nuclear Research at Dubna synthesized oganesson </span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-x/"><span style="color:#a6b1e1">(element 118)</span></a><span style="color:#a6b1e1"> by blasting californium atoms with calcium ions for approximately 1,080 hours. </span></strong><span style="color:#353638">This reaction produced a single atom of oganesson. However, little is known about element 118. It is particularly difficult to study due to its impracticality and the fact that</span><span style="color:#a6b1e1"><strong> &#8203;&#8203;it decays instantaneously (after a mere 
+millisecond).</strong></span></p><p style="Margin-top: 20px;Margin-bottom: 0;"><span style="color:#353638">In 2018, the discovery of the 118th element was officially recognized by the International Union of Pure and Applied Chemistry (IUPAC) as well as the International Union of Pure and Applied Physics (IUPAP). </span><span style="color:#a6b1e1"><strong>T<strong>h</strong>e element is named after Yuri Oganessian, deemed the the world's leading researcher in superheavy chemical elements</strong></span><span style="color:#353638"> thanks to his development of the &#8220;hot fusion&#8221; and &#8220;cold fusion&#8221; methods (key to their discovery). He is the only living person </span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-m/"><span 
+style="color:#353638">to have an element named after him.</span></a><span style="color:#353638">&nbsp;</span></p><p style="Margin-top: 20px;Margin-bottom: 0;"><span style="color:#353638">Superheavy elements </span><span style="color:#a6b1e1"><strong>are generally defined as elements with atomic numbers that are greater than 100,</strong></span><span style="color:#353638"> although there is no agreed upon definition in the science world. Because this element is so difficult to produce, oganesson has no uses outside of scientific research (at least right now). Though the element is positioned with the noble gases,</span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-c/"><span style="color:#353638"> many believe that</span></a><span style="color:#353638">, &#8220;it 
+is neither a gas nor &#8220;noble&#8221;&#8212;that is, unreactive.&#8221; </span><span style="color:#a6b1e1"><strong>Element 118 currently has the highest atomic number and highest atomic mass in the entire periodic table. </strong></span><span style="color:#353638">It is also one of the most recently discovered, alongside 113, 115, 116, 117.&nbsp;</span></p><p style="Margin-top: 20px;Margin-bottom: 20px;"><span style="color:#353638">Element 119 is still purely hypothetical, but scientists are eager to learn more. </span><span style="color:#a6b1e1"><strong>Many have already fleshed out&nbsp;theories and predictions in anticipation of&nbsp;that exciting discovery!</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="sectionImage" width="600" src="https://i8.createsend1.com/ei/t/38/4EE/252/141226/csfinal/STEMlights_EmailDividers-2020-11-01T013320.584-9900000000079e3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span style="color:#f6d970"><strong>STEMlights Program Coordinator</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;">Do you enjoy what you're reading? Do you want to explore science journalism and write STEM-related articles every week? <span style="color:#a6b1e1"><strong>Join STEMlights by applying to be a STEMlights Program Coordinator, where you will help craft the newsletter with the rest of the team on a weekly basis.</strong>&nbsp;</span>&nbsp;We're so excited to learn more about you! <span style="color:#a6b1e1"><strong>APPLICATIONS ARE DUE NOVEMBER 6th, 11:59 EST.</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
+  <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-q/">Join Us!</a><![endif]>
+<!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-q/" style="width:84px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Join Us!</center></v:textbox></v:roundrect><![endif]--></div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><span style="color:#f6d970"><strong>&nbsp;&quot;Storytellers of Tomorrow&quot; High School Creative Writing Contest</strong></span></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;">The Ringling College of Art and Design Creative Writing Program, &#8220;was created to support, empower, and honor young writers.&#8221; Every year, <span style="color:#a6b1e1"><strong>they host a creative writing contest where high schoolers can submit original works of up to 2,000 words in length.</strong></span> First place winners receive $1,000, a 1:1 consultation about your writing with a literary agent or editor, an iPad for your high school teacher, and a Ringling College Creative Writing T-shirt! <strong><span style="color:#a6b1e1">Pieces are due January 15th, 2022.&nbsp;</span></strong></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
+  <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-a/">Learn More Here!</a><![endif]>
+<!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-a/" style="width:139px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Learn More Here!</center></v:textbox></v:roundrect><![endif]--></div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 10px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><span style="color:#f6d970"><strong>NYT 3rd Annual Personal Narrative Writing Contest</strong></span></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;">Personal narratives <span style="color:#a6b1e1"><em><strong>c</strong></em><strong><em><strong>a</strong></em>n tell us so much a person is just a few paragraphs</strong></span>. If you&#8217;re interested in being published in the New York Times, tell a short story about a meaningful life experience in 600 words or fewer! <span style="color:#a6b1e1"><strong>Your piece must be original and less than 600 words. </strong></span>If you&#8217;re unsure where to start, you can check out the New York Time<span style="color:#353638">s&#8217; </span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-f/"><span style="color:#353638">thorough research guide for students and teachers.</span></a><span style="color:#353638"> 
+</span><span style="color:#a6b1e1"><strong>Applications are due November 17th.</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
+  <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-z/">Submit Here!</a><![endif]>
+<!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-z/" style="width:114px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Submit Here!</center></v:textbox></v:roundrect><![endif]--></div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 10px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span style="color:#f6d970"><strong>NSCDA Congressional Essay Contest</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;">Write an essay about, &#8220;<span style="color:#a6b1e1"><strong>one of the five freedoms in the First Amendment to the United States Constitution</strong></span> and discuss why it should or should not be changed in today&#8217;s high-tech global society,&#8221; <span style="color:#a6b1e1"><strong>for a chance to win a trip to Washington DC!</strong></span> Essays must be 750 words. Winners receive a fully-covered trip to the Washington Workshop&#8217;s &#8220;Congressional Seminar,&#8221; &#8220;a week-long civic-focused adventure in our nation&#8217;s capital.&#8221; <span style="color:#a6b1e1"><strong>Essays are due December 1st.&nbsp;</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
+  <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-v/">See Here!</a><![endif]>
+<!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-v/" style="width:95px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">See Here!</center></v:textbox></v:roundrect><![endif]--></div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span style="color:#f6d970"><strong>Alzheimer&#8217;s Awareness College Scholarship Essay Contest</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;"><span style="color:#a6b1e1"><strong>How has Alzheimer&#8217;s disease impacted your life?</strong></span> College-bound high school seniors are invited to write a 1,200 to 1,500-word essay that describes, &#8220;the impact of Alzheimer&#8217;s disease or another dementia-related illness on themselves, their families or their communities, and what they have learned in light of coping with the brain disorder.&#8221; <span style="color:#a6b1e1"><strong>The grand prize winner receives $5,000! Entries for the 2022 contest are accepted starting November 1, 2021.</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
+  <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-e/">Apply Here!</a><![endif]>
+<!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-e/" style="width:107px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Apply Here!</center></v:textbox></v:roundrect><![endif]--></div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><strong><span style="color:#f6d970">2021-2022 National High School Poetry Contest</span></strong></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-14" style="Margin-top: 0;Margin-bottom: 20px;font-size: 14px;line-height: 21px;text-align: left;" lang="x-size-14">Do you enjoy writing poetry, or expressing your love of STEM through poetry? E<span style="color:#a6b1e1"><strong>nter your poems into the Gannon University National High School Poetry Contest!</strong></span> Your poem may be in rhyme, free verse, Haiku or other accepted poetry forms with a maximum of 40 lines. <span style="color:#a6b1e1"><strong>Winners receive monetary awards. The deadline is February 1, 2022.&nbsp;</strong></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="btn btn--flat btn--medium" style="Margin-bottom: 20px;text-align: center;">
+  <![if !mso]><a style="border-radius: 4px;display: inline-block;font-size: 12px;font-weight: bold;line-height: 22px;padding: 10px 20px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #233142;font-family: Avenir, sans-serif;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-s/">Check It Out!</a><![endif]>
+<!--[if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-s/" style="width:114px" arcsize="10%" fillcolor="#233142" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0px,9px,0px,9px"><center style="font-size:12px;line-height:22px;color:#FFFFFF;font-family:Avenir,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:4px">Check It Out!</center></v:textbox></v:roundrect><![endif]--></div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="sectionImage" width="600" src="https://i9.createsend1.com/ei/t/38/4EE/252/141226/csfinal/STEMlights_EmailDividers12-9900000000079e3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-17" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 17px;line-height: 26px;text-align: center;" lang="x-size-17"><span class="font-avenir"><span style="color:#f6d970"><strong>You Are What You Eat?&nbsp;</strong></span></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-14" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;text-align: left;" lang="x-size-14"><span class="font-avenir">The food that we put into our mouths have long lasting impacts on our bodies &#8212; including our brains!<span style="color:#a6b1e1"><strong> For example, our brain is full of fatty acids that create and maintain or cell membranes, protecting us from many diseases. </strong></span>That is why you're often encouraged to eat omega-rich foods. However, the consumption of trans or saturated fat<span style="color:#a6b1e1"><strong> may cause poor brain health. </strong></span><span style="color:#353638">That is why it is important to learn about a healthy, balanced diet; take care of your body, </span><span style="color:#a6b1e1"><strong>especially your brain!</strong></span></span></p>
+</div>
+</div>
+      
+<div class="video" style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;">
+  <a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-g/"><img style="display: block;height: auto;width: 100%;border: 0;" src="https://i.vimeocdn.com/filter/overlay?src=http://img.youtube.com/vi/xyQY8a-ng6g/0.jpg&src=https://integrationstore-b0c3f53658fe7a75.microservice.createsend.com/files/9392B9D9-F380-42FC-9571-7E109B7A1C26/youtube-play-button-overlay.png" alt="" width="600"></a>
+</div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 1px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="divider" style="display: block;font-size: 2px;line-height: 2px;Margin-left: auto;Margin-right: auto;width: 40px;background-color: #ccc;Margin-bottom: 20px;">&nbsp;</div>
+</div>
+      
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <img style="border: 0;display: block;height: auto;width: 100%;max-width: 818px;" alt="sectionImage" width="600" src="https://i10.createsend1.com/ei/t/38/4EE/252/141226/csfinal/STEMlights_EmailDividers22-9900000000079e3c.png">
+  </div>
+
+        <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p class="size-14" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 14px;line-height: 21px;text-align: center;" lang="x-size-14"><span class="font-avenir"><strong><span style="color:#a6b1e1">Check out our social media!</span> </strong>Click on the&nbsp;images below to view our STEM-based&nbsp;Instagram content, <strong><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" data-emb-iscopy="true" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-w/"><span style="color:#a6b1e1">@stemlights</span></a></strong>.&nbsp;</span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+      </div>
+    <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
+    </div>
+  </div>
+</div>
+
+<div class="layout two-col fixed-width stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+  <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;background-color: #ffffff;">
+  <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-fixed-width" style="background-color: #ffffff;"><td style="width: 300px" valign="top" class="w260"><![endif]-->
+    <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;max-width: 320px;min-width: 300px; width: 320px;width: calc(12300px - 2000%);Float: left;">
+    
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-yd/"><img class="gnd-corner-image gnd-corner-image-center gnd-corner-image-top gnd-corner-image-bottom" style="border: 0;display: block;height: auto;width: 100%;max-width: 263px;" alt="stem in history post" width="263" src="https://i1.createsend1.com/ei/t/38/4EE/252/141226/csfinal/ScreenShot2021-10-23at10.11.53AM-9903cf079e028a3c.png"></a>
+  </div>
+
+    </div>
+  <!--[if (mso)|(IE)]></td><td style="width: 300px" valign="top" class="w260"><![endif]-->
+    <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;max-width: 320px;min-width: 300px; width: 320px;width: calc(12300px - 2000%);Float: left;">
+    
+  <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;" align="center">
+    <a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-yh/"><img class="gnd-corner-image gnd-corner-image-center gnd-corner-image-top gnd-corner-image-bottom" style="border: 0;display: block;height: auto;width: 100%;max-width: 265px;" alt="join STEMlights!" width="265" src="https://i2.createsend1.com/ei/t/38/4EE/252/141226/csfinal/ScreenShot2021-10-23at10.11.37AM-990451079e028a3c.png"></a>
+  </div>
+
+    </div>
+  <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+  </div>
+</div>
+
+<div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 20px;">&nbsp;</div>
+
+<div style="background-color: #ffffff;">
+  <div class="layout one-col stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+    <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
+    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-full-width" style="background-color: #ffffff;"><td class="layout__edges">&nbsp;</td><td style="width: 600px" class="w560"><![endif]-->
+      <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;">
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 10px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="divider" style="display: block;font-size: 2px;line-height: 2px;Margin-left: auto;Margin-right: auto;width: 40px;background-color: #ccc;Margin-bottom: 20px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <p style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;text-align: center;"><span class="font-avenir"><span style="color:#f6d970"><strong>Thank you for your time!</strong></span></span></p>
+</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+  <h2 class="size-14" style="Margin-top: 0;Margin-bottom: 16px;font-style: normal;font-weight: normal;color: #353638;font-size: 14px;line-height: 21px;font-family: avenir,sans-serif;" lang="x-size-14"><span class="font-avenir"><strong><span style="color:#a6b1e1">We at STEMlights hope that you learned&nbsp;<em>something</em>&nbsp;from this&nbsp;issue, even if you just browsed it!</span>&nbsp;</strong>Every week, this&nbsp;newsletter will continue to improve from the feedback we receive. Send an email to&nbsp;<strong><a style="text-decoration: none;transition: opacity 0.1s ease-in;color: #a6b1e1;" data-emb-iscopy="true" href="mailto:stemchats@gmail.com"><span style="color:#a6b1e1">stemlights@</span></a><span style="color:#a6b1e1">stemchats.org</span></strong><span style="color:#353638">,&nbsp;an</span>d let us know what you think about this newsletter.</span></h2>
+</div>
+</div>
+      
+    
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div class="divider" style="display: block;font-size: 2px;line-height: 2px;Margin-left: auto;Margin-right: auto;width: 40px;background-color: #ccc;Margin-bottom: 20px;">&nbsp;</div>
+</div>
+      
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+<div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;">&nbsp;</div>
+</div>
+      
+      </div>
+    <!--[if (mso)|(IE)]></td><td class="layout__edges">&nbsp;</td></tr></table><![endif]-->
+    </div>
+  </div>
+</div>
+
+<div class="layout one-col fixed-width stack" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+  <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;background-color: #ffffff;">
+  <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-fixed-width" style="background-color: #ffffff;"><td style="width: 600px" class="w560"><![endif]-->
+    <div class="column" style="text-align: left;color: #353638;font-size: 14px;line-height: 21px;font-family: Avenir,sans-serif;">
+  
+      <div style="Margin-left: 20px;Margin-right: 20px;">
+<div>
+  <div style="padding-top: 8px; text-align: left"><span style="padding-right: 4px;"><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;display: inline-block;border-radius: 50%;width: 24px;height: 24px;max-height: 24px;background-color: #7f7f7f;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-yu/"><img style="border: 0;" src="https://i1.createsend1.com/static/eb/master/13-the-blueprint-3/images/socialmedia/facebook-white-small.png" alt="Facebook" height="24" width="24" cm_dontimportimage></a></span><span style="padding-right: 4px;"><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;display: inline-block;border-radius: 50%;width: 24px;height: 24px;max-height: 24px;background-color: #7f7f7f;" 
+href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-jl/"><img style="border: 0;" src="https://i4.createsend1.com/static/eb/master/13-the-blueprint-3/images/socialmedia/twitter-white-small.png" alt="Twitter" height="24" width="24" cm_dontimportimage></a></span><span style="padding-right: 4px;"><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;display: inline-block;border-radius: 50%;width: 24px;height: 24px;max-height: 24px;background-color: #7f7f7f;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-jr/"><img style="border: 0;" src="https://i10.createsend1.com/static/eb/master/13-the-blueprint-3/images/socialmedia/instagram-white-small.png" alt="Instagram" height="24" width="24" cm_dontimportimage></a></span><span style="padding-right: 4px;"><a 
+style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;display: inline-block;border-radius: 50%;width: 24px;height: 24px;max-height: 24px;background-color: #7f7f7f;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-jt/"><img style="border: 0;" src="https://i2.createsend1.com/static/eb/master/13-the-blueprint-3/images/socialmedia/linkedin-white-small.png" alt="LinkedIn" height="24" width="24" cm_dontimportimage></a></span><span style="padding-right: 4px;"><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #a6b1e1;display: inline-block;border-radius: 50%;width: 24px;height: 24px;max-height: 24px;background-color: #7f7f7f;" href="https://stemchats.createsend1.com/t/t-l-ciybdl-l-ji/"><img style="border: 0;" 
+src="https://i5.createsend1.com/static/eb/master/13-the-blueprint-3/images/socialmedia/website-white-small.png" alt="Website" height="24" width="24" cm_dontimportimage></a></span></div>
+</div>
+</div>
+  
+    </div>
+  <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+  </div>
+</div>
+
+</div>
+<div role="contentinfo"><div style="line-height:4px;font-size:4px;" id="footer-top-spacing">&nbsp;</div><div class="layout email-flexible-footer email-footer" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;" id="footer-content">
+<div class="layout__inner left-aligned-footer" style="border-collapse: collapse;display: table;width: 100%;">
+  <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-email-footer"><![endif]-->
+  <!--[if (mso)|(IE)]><td><table cellpadding="0" cellspacing="0"><![endif]-->
+  <!--[if (mso)|(IE)]><td valign="top"><![endif]-->
+    <div class="column" style="text-align: left;font-size: 12px;line-height: 19px;color: #bbb;font-family: Avenir,sans-serif;display: none;">
+<div class="footer-logo emb-logo-margin-box" style="font-size: 26px;line-height: 32px;Margin-top: 10px;Margin-bottom: 20px;color: #7b663d;font-family: Roboto,Tahoma,sans-serif;" align="center">
+  <div emb-flexible-footer-logo align="center"></div>
+</div>
+</div>
+  <!--[if (mso)|(IE)]></td><![endif]-->
+  <!--[if (mso)|(IE)]><td valign="top"><![endif]-->
+    <div class="column" style="text-align: left;font-size: 12px;line-height: 19px;color: #bbb;font-family: Avenir,sans-serif;display: none;">
+<div style="margin-left: 0;margin-right: 0;Margin-top: 10px;Margin-bottom: 10px;">
+  <div class="footer__share-button">
+    
+    
+    
+    
+  </div>
+</div>
+</div>
+  <!--[if (mso)|(IE)]></td><![endif]-->
+  <!--[if (mso)|(IE)]><td valign="top"><![endif]-->
+    <table style="border-collapse: collapse;table-layout: fixed;display: inline-block;width: 600px;" cellpadding="0" cellspacing="0"><tbody><tr><td><div class="column js-footer-additional-info" style="text-align: left;font-size: 12px;line-height: 19px;color: #bbb;font-family: Avenir,sans-serif;width: 600px;">
+<div style="margin-left: 0;margin-right: 0;Margin-top: 10px;Margin-bottom: 10px;">
+  <div class="email-footer__additional-info" style="font-size: 12px;line-height: 19px;margin-bottom: 18px;margin-top: 0px;">
+    <div bind-to="address">STEMlights / A STEMchats Program<br>
+The STEM newsletter by students, for students.</div>
+  </div>
+  
+  
+  <div class="email-footer__additional-info" style="font-size: 12px;line-height: 19px;margin-bottom: 15px;Margin-top: 18px;">
+    <span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="https://stemchats.updatemyprofile.com/t-l-2AD73FFF-l-jd" lang="en">Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;</span><a style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #bbb;" href="https://stemchats.createsend1.com/t/t-u-ciybdl-l-jh/">Unsubscribe</a>
+  </div>
+  <!--[if mso]>&nbsp;<![endif]-->
+</div>
+</div></td></tr></tbody></table>
+  <!--[if (mso)|(IE)]></table></td><![endif]-->
+  <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+</div>
+</div><div style="line-height:40px;font-size:40px;" id="footer-bottom-spacing">&nbsp;</div></div>
+
+</td></tr></tbody></table>
+<style type="text/css">
+@media (max-width:619px){.email-flexible-footer .left-aligned-footer .column,.email-flexible-footer .center-aligned-footer,.email-flexible-footer .right-aligned-footer .column{max-width:100% !important;text-align:center !important;width:100% !important}.flexible-footer-logo{margin-left:0px !important;margin-right:0px !important}.email-flexible-footer .left-aligned-footer .flexible-footer__share-button__container,.email-flexible-footer .center-aligned-footer .flexible-footer__share-button__container,.email-flexible-footer .right-aligned-footer .flexible-footer__share-button__container{display:inline-block;margin-left:5px !important;margin-right:5px !important}.email-flexible-footer__additionalinfo--center{text-align:center !important}.email-flexible-footer .left-aligned-footer table,.email-flexible-footer .center-aligned-footer table,.email-flexible-footer .right-aligned-footer 
+table{display:table !important;width:100% !important}.email-flexible-footer .footer__share-button,.email-flexible-footer .email-footer__additional-info{margin-left:20px;margin-right:20px}}
+</style>
 </body></html>
