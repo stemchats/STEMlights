@@ -90,15 +90,21 @@
   <!-- HEADER -->
   <div id="header"></div>
 
-
-  <script>
-    const sections = ["title", "investemgations", "news", "opportunities", "voices"];
-  </script>
-
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
+  <script>
+    $( document ).ready(function() {
+  //custom button for homepage
+  $( ".share-btn" ).click(function(e) {
+       $('.networks-5').not($(this).next( ".networks-5" )).each(function(){
+          $(this).removeClass("active");
+      });
+      $(this).next( ".networks-5" ).toggleClass( "active" );
+ });
+});
+</script>
 
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
@@ -136,8 +142,11 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(39);
+      //createEdition(39);
+      const sections = ["inveSTEMgations", "stem news", "opportunities", "voices of stemchats"];
+      assignBanners(39);
     </script>
 </body>
 </html>

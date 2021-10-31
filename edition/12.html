@@ -90,10 +90,6 @@
   <!-- HEADER -->
   <div id="header"></div>
 
-  <script>
-    const sections = ["title", "coronavirus", "politics", "spotlight", "news", "opportunities", "challenge"];
-  </script>
-
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
@@ -142,8 +138,11 @@
       crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(12);
+      const sections = ["coronavirus awareness", "politics + stem", "stem spotlight", "stem news", "opportunities", "challenge yourself"];
+      assignBanners(12);
+      //createEdition(12);
     </script>
 </body>
 </html>

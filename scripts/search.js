@@ -7,14 +7,14 @@ myStorage = window.sessionStorage;
 
 // search input text on click
 selectSearch.addEventListener('click', (event) => {
-  //newSearch(query.value);
-  search(query.value);
+  newSearch(query.value);
+  // search(query.value);
 })
 // search input text on enter
 query.addEventListener('keyup', (event) => {
   if(event.keyCode === 13) {
-    //newSearch(query.value);
-    search(query.value);
+    newSearch(query.value);
+    // search(query.value);
   }
 })
 
@@ -50,6 +50,7 @@ const loadData = async() => {
     // console.log(allEditionsData);
 }
 
+//new solution START
 const newEditionsData = [];
 const newLoad = async() => {
   //get edition name + all sections of that edition
@@ -83,8 +84,9 @@ const newSearch = async(queryString) => {
   }
   sortList(returnEditions, true);
 }
+// END
 
-//window.onload = newLoad();
+window.onload = newLoad(); // new search functionality, load from searchData collection
 window.onload = loadData(); //load all editions data from 'data' collection first
 
 stopwords = [

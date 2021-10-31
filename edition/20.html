@@ -60,7 +60,7 @@
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i' rel='stylesheet'>
   <title>STEMlights: Edition 20</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+ <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -90,22 +90,20 @@
   <!-- HEADER -->
   <div id="header"></div>
 
-
-  <script>
-    const sections = ["title", "politics", "voices", "news", "scifi", "opportunities", ];
-  </script>
-
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
 
+
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
   </div>
+
   <!-- <button id="editionBack" onclick="window.location.pathname = '/edition/'" onclick="pagination2(1);">
     <i class="fas fa-angle-left"></i> Back to newsletter
   </button> -->
+
   <!-- footer -->
   <div id="footer"></div>
 
@@ -135,8 +133,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(20);
+      const sections = ["politics + stem", "voice of stemchats", "stem news", "sci-fi or fact", "opportunities"];
+      assignBanners(20);
     </script>
 </body>
 </html>

@@ -86,26 +86,24 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZQ5PR3"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- HEADER -->
   <div id="header"></div>
-
-
-  <script>
-    const sections = ["title", "investemgations", "politics", "voices", "news", "opportunities", "challenge", ];
-  </script>
 
   <!-- put 'sections' array before directory -->
   <ol id="directory">
     <h3>DIRECTORY</h3>
   </ol>
 
+
   <div id="edition">
             <!-- everything from the database goes in here (its where the edition goes) -->
   </div>
+
   <!-- <button id="editionBack" onclick="window.location.pathname = '/edition/'" onclick="pagination2(1);">
     <i class="fas fa-angle-left"></i> Back to newsletter
   </button> -->
+
   <!-- footer -->
   <div id="footer"></div>
 
@@ -135,8 +133,10 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(17);
+      const sections = ["inveSTEMgations", "politics + stem", "voice of stemchats", "stem news", "opportunities", "challenge yourself"];
+      assignBanners(17);
     </script>
 </body>
 </html>

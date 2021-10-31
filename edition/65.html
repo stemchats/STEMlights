@@ -92,7 +92,7 @@
 
 
   <script>
-    const sections = ["title", "investemgation", "news", "history", "opportunities","media", "social"];
+    
   </script>
 
   <!-- put 'sections' array before directory -->
@@ -149,8 +149,14 @@
       firebase.analytics()
     </script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      createEdition(65);
+      const sections = ["inveSTEMgation", "stem news", "history + stem", "opportunities", "media of the week", "social media"];
+      assignBanners(65);
+      // createEdition(65);
+    </script>
+     <script>
+      createShareButton(65);
     </script>
 </body>
 </html>
