@@ -151,27 +151,60 @@ sortList();
 
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
+// generate 3 most recent articles [cards] on home page
 async function cardDeck() {
+  deckEditionsList = [];
+  deckImageList = [];
+  deckDescList = [];
+
+  let editionsRef = firebase.firestore().collection('editions');
+  let allEditions = await editionsRef.get();
+  for (const doc of allEditions.docs) {
+    deckEditionsList.push(doc.id);
+    var doc_data = doc.get('card-img');
+    var desc_data = doc.get('desc');
+    deckImageList.push(doc_data);
+    deckDescList.push(desc_data);
+  }
+
+  //substring values so only number remains
+  for (var i = 0; i < deckEditionsList.length; i++) {
+    deckEditionsList[i] = deckEditionsList[i].substring(7);
+  } //end
+
+  //cnvert values to integers
+  for (var i = 0; i < deckEditionsList.length; i++) {
+    deckEditionsList[i] = parseInt(deckEditionsList[i]);
+  } //end
+
+  //sort
+  deckEditionsList, deckImageList, deckDescList = insertionSort(deckEditionsList, deckImageList, deckDescList);
+
+  //convert values back to strings
+  for (var i = 0; i < deckEditionsList.length; i++) {
+    deckEditionsList[i] = deckEditionsList[i].toString();
+  }
+
   $('.card-deck').empty();
 
   var pageSize = 10;
-  var pageCount = Math.ceil((editionsList.length) / pageSize);
+  var pageCount = Math.ceil((deckEditionsList.length) / pageSize);
 
   var buttonSelect = 1; //will have the value of the clicked "page number" at the bottom of the editions newsletter page
   var returnedList;
   var returnedImageList;
   var returnedDescList;
 
-  var threshold = editionsList.length - (pageSize * (buttonSelect));
+  var threshold = deckEditionsList.length - (pageSize * (buttonSelect));
 
   if (threshold < 0) {
-    returnedList = editionsList.slice(0, editionsList.length - (pageSize * (buttonSelect - 1)));
-    returnedImageList = imageList.slice(0, imageList.length - (pageSize * (buttonSelect - 1)));
-    returnedDescList = descList.slice(0, descList.length - (pageSize * (buttonSelect - 1)));
+    returnedList = deckEditionsList.slice(0, deckEditionsList.length - (pageSize * (buttonSelect - 1)));
+    returnedImageList = deckImageList.slice(0, deckImageList.length - (pageSize * (buttonSelect - 1)));
+    returnedDescList = deckDescList.slice(0, deckDescList.length - (pageSize * (buttonSelect - 1)));
   } else { //end if
-    returnedList = editionsList.slice(editionsList.length - (pageSize * (buttonSelect)), editionsList.length - (pageSize * (buttonSelect - 1)));
-    returnedImageList = imageList.slice(imageList.length - (pageSize * (buttonSelect)), imageList.length - (pageSize * (buttonSelect - 1)));
-    returnedDescList = descList.slice(descList.length - (pageSize * (buttonSelect)), descList.length - (pageSize * (buttonSelect - 1)));
+    returnedList = deckEditionsList.slice(deckEditionsList.length - (pageSize * (buttonSelect)), deckEditionsList.length - (pageSize * (buttonSelect - 1)));
+    returnedImageList = deckImageList.slice(deckImageList.length - (pageSize * (buttonSelect)), deckImageList.length - (pageSize * (buttonSelect - 1)));
+    returnedDescList = deckDescList.slice(deckDescList.length - (pageSize * (buttonSelect)), deckDescList.length - (pageSize * (buttonSelect - 1)));
   }
   for (var i = returnedList.length - 1; i > returnedList.length - 4; i--) {
 
