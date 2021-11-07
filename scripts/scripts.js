@@ -55,6 +55,7 @@ const sortList = async (searchedEditions, isSearched) => {
     let allEditions = await editionsRef.get();
     for (const doc of allEditions.docs) {
       editionsList.push(doc.id);
+      console.log(editionsList.length)
       var doc_data = doc.get('card-img');
       var desc_data = doc.get('desc');
       imageList.push(doc_data);
@@ -151,35 +152,6 @@ sortList();
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 
 async function cardDeck() {
-
-  let editionsRef = firebase.firestore().collection('editions');
-  let allEditions = await editionsRef.get();
-  for (const doc of allEditions.docs) {
-    editionsList.push(doc.id);
-    var doc_data = doc.get('card-img');
-    var desc_data = doc.get('desc');
-    imageList.push(doc_data);
-    descList.push(desc_data);
-  }
-
-  //substring values so only number remains
-  for (var i = 0; i < editionsList.length; i++) {
-    editionsList[i] = editionsList[i].substring(7);
-  } //end
-
-  //cnvert values to integers
-  for (var i = 0; i < editionsList.length; i++) {
-    editionsList[i] = parseInt(editionsList[i]);
-  } //end
-
-  //sort
-  editionsList, imageList, descList = insertionSort(editionsList, imageList, descList);
-
-  //convert values back to strings
-  for (var i = 0; i < editionsList.length; i++) {
-    editionsList[i] = editionsList[i].toString();
-  }
-
   $('.card-deck').empty();
 
   var pageSize = 10;
@@ -201,7 +173,6 @@ async function cardDeck() {
     returnedImageList = imageList.slice(imageList.length - (pageSize * (buttonSelect)), imageList.length - (pageSize * (buttonSelect - 1)));
     returnedDescList = descList.slice(descList.length - (pageSize * (buttonSelect)), descList.length - (pageSize * (buttonSelect - 1)));
   }
-  console.log(editionsList.length);
   for (var i = returnedList.length - 1; i > returnedList.length - 4; i--) {
 
     var href_val = "/edition/" + returnedList[i] + ".html";
@@ -277,6 +248,8 @@ function pagination2(inputChoice) {
     returnedDescList = descList.slice(descList.length - (pageSize * (buttonSelect)), descList.length - (pageSize * (buttonSelect - 1)));
   }
 
+
+  // generates the cards on the newsletter page
   for (var i = returnedList.length - 1; i > -1; i--) {
 
     var href_val = "/edition/" + returnedList[i] + ".html";
@@ -316,7 +289,7 @@ function pagination2(inputChoice) {
   if (inputChoice == 1) {
     $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>');
   } else if (inputChoice != 1) {
-    $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice - 1) + ')" href="#">Previous</a></li>');
+    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (inputChoice - 1) + ')" href="#">Previous</a></li>');
   }
 
 
@@ -335,9 +308,7 @@ function pagination2(inputChoice) {
         $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
     }
   } else {
-
-
-    //generating a list of pagenumbers to use so we don't have to work with a jank loop and we have an object instead
+    //generating a list of page numbers to use so we don't have to work with a jank loop and we have an object instead
     for (var i = 0; i < pageCount; i++) {
       pageNumList.push(i + 1);
     }
