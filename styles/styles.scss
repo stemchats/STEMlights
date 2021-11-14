@@ -101,8 +101,9 @@ html {
 
 // header highlight for whatever page the user is on
 .home #home-nav,
+.search #search-nav,
 .about-us #about-nav,
-.newsl #newsletter-nav {
+.news-archive #news-archive-nav {
     border-bottom: 2px solid $yellow;
 }
 
