@@ -208,7 +208,7 @@ async function cardDeck() {
   }
   for (var i = returnedList.length - 1; i > returnedList.length - 4; i--) {
 
-    var href_val = "/edition/" + returnedList[i] + ".html";
+    var href_val = "/archive/" + returnedList[i] + ".html";
     //creating the main card div
     var card_div = document.createElement("div");
     card_div.setAttribute("class", "card h-100");
@@ -285,7 +285,7 @@ function pagination2(inputChoice) {
   // generates the cards on the newsletter page
   for (var i = returnedList.length - 1; i > -1; i--) {
 
-    var href_val = "/edition/" + returnedList[i] + ".html";
+    var href_val = "/archive/" + returnedList[i] + ".html";
     //creating the main card div
     var card_div = document.createElement("div");
     card_div.setAttribute("class", "card");
@@ -614,7 +614,7 @@ function createEditions() {
     body.classList.add('card-body');
 
     var link = document.createElement('a');
-    link.setAttribute('href', "/edition/" + editionsList[i] + ".html");
+    link.setAttribute('href', "/archive/" + editionsList[i] + ".html");
     ed.appendChild(link);
     link.appendChild(body);
 
