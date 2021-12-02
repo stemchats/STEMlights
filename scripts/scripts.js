@@ -45,38 +45,7 @@ var descList = [];
 // sort returned edition array and calls pagination function
 const sortList = async (searchedEditions, isSearched) => {
 
-  if (!isSearched) {
-    //default loading of page or searching for empty query
-    $('#num_results').empty();
-    //if not searched, no all editions button
-    $('#all-editions').empty();
-
-    let editionsRef = firebase.firestore().collection('editions');
-    let allEditions = await editionsRef.get();
-    for (const doc of allEditions.docs) {
-      editionsList.push(doc.id);
-      console.log(editionsList.length)
-      var doc_data = doc.get('card-img');
-      var desc_data = doc.get('desc');
-      imageList.push(doc_data);
-      descList.push(desc_data);
-    }
-  } else if (isSearched) {
-
-    //add the all editions button only if searched
-    $('#all-editions').empty();
-
-    editionsButton = document.createElement("button");
-    editionsButton.type = "button";
-    editionsButton.setAttribute("onclick", "location.href='/edition/index.html', sessionStorage.setItem('query', '')");
-    editionsButton.innerHTML = "All Editions!"
-
-    centered = document.createElement("center");
-    centered.appendChild(editionsButton);
-
-    //document.getElementById("all-editions").appendChild(editionsButton);
-    document.getElementById("all-editions").appendChild(centered);
-
+if (isSearched) {
 
     //adding the number of query responses
     $('#num_results').empty();
@@ -282,6 +251,7 @@ function pagination2(inputChoice) {
   }
 
 
+
   // generates the cards on the newsletter page
   for (var i = returnedList.length - 1; i > -1; i--) {
 
@@ -316,110 +286,6 @@ function pagination2(inputChoice) {
     a_tag.appendChild(card_div);
     document.getElementById("the_cards").appendChild(a_tag);
   } //end for
-
-  //creating page selection
-  // previous button
-  if (inputChoice == 1) {
-    $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>');
-  } else if (inputChoice != 1) {
-    $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (inputChoice - 1) + ')" href="#">Previous</a></li>');
-  }
-
-
-  // actual page numbers
-
-  let pageNumList = [];
-
-  //If page count is less than or equal to 4, we dont need to use ellipses at all, so this just generates buttons up to 4.
-  //It also checks to see which button is active, and makes that button a dark blue
-
-  if (pageCount <= 4) {
-    for (var i = 0; i < pageCount; i++) {
-      if (i == inputChoice - 1)
-        $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-      else
-        $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-    }
-  } else {
-    //generating a list of page numbers to use so we don't have to work with a jank loop and we have an object instead
-    for (var i = 0; i < pageCount; i++) {
-      pageNumList.push(i + 1);
-    }
-    if (inputChoice == 1 || inputChoice == 2) {
-      //If inputChoice is either the first or second page, it will display 1, 2, 3 and then move onto the last page
-      //with ellipses in between
-      for (var i = 0; i < 3; i++) {
-        if (i == inputChoice - 1)
-          $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        else
-          $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-      } //end for
-      $(".pagination").append('<li class="spacer" ><a class="page-link">...</a></li>');
-      $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length - 1] + ')" href="#">' + pageNumList[pageNumList.length - 1] + '</a></li>');
-    }
-
-    if (inputChoice == pageNumList[pageNumList.length - 1] || inputChoice == pageNumList[pageNumList.length - 2]) {
-      //If inputChoice is either the last or second-last page, it will display 1, ellipses, and then third last, second last,
-      //and the last page
-      $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
-      $(".pagination").append('<li class="spacer" ><a class="page-link">...</a></li>');
-      for (var i = pageNumList.length - 3; i < pageNumList.length; i++) {
-        if (i == inputChoice - 1)
-          $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        else
-          $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-      } //end for
-    }
-    if (inputChoice > 2 && inputChoice < pageNumList[pageNumList.length - 2]) {
-
-      //if the pages are in the middle (not 1, 2, 5, or 6), then we add 1 to the beginning, add ellipses, and then have 3
-      //pages in the middle, followed by ellipses again, and then the last page.
-
-
-      //beginning page + ellipses
-      $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + 1 + ')" href="#">' + 1 + '</a></li>');
-      $(".pagination").append('<li class="spacer" ><a class="page-link" >...</a></li>');
-
-      if (inputChoice == 3) {
-        //middle pages
-        for (var i = pageNumList[inputChoice - 1] - 1; i < pageNumList[inputChoice]; i++) {
-          if (i == inputChoice - 1)
-            $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-          else
-            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        }
-      } else if (inputChoice = pageNumList[pageNumList.length - 3]) {
-        //middle pages
-        for (var i = pageNumList[inputChoice - 1] - 2; i < pageNumList[inputChoice] - 1; i++) {
-          if (i == inputChoice - 1)
-            $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-          else
-            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        }
-      } else {
-        //middle pages
-        for (var i = pageNumList[inputChoice - 1] - 2; i < pageNumList[inputChoice]; i++) {
-          if (i == inputChoice - 1)
-            $(".pagination").append('<li class="page-item active" ><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-          else
-            $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + (i + 1) + ')" href="#">' + (i + 1) + '</a></li>');
-        }
-      }
-
-      //ellipses + final page
-      $(".pagination").append('<li class="spacer" ><a class="page-link">...</a></li>');
-      $(".pagination").append('<li class="page-item"><a class="page-link" onclick="pagination2(' + pageNumList[pageNumList.length - 1] + ')" href="#">' + pageNumList[pageNumList.length - 1] + '</a></li>');
-
-    } //end
-  } //end else
-
-
-  // next button
-  if (inputChoice == pageCount) {
-    $(".pagination").append('<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>');
-  } else if (inputChoice != pageCount) {
-    $(".pagination").append('<li class="page-item" ><a class="page-link" onclick="pagination2(' + (inputChoice + 1) + ')" href="#">Next</a></li>');
-  }
 
   removeWhiteSpace();
 

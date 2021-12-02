@@ -1,6 +1,7 @@
 const db = firebase.firestore();
 const selectSearch = document.querySelector('.search-icon');
 const query = document.querySelector('.search-input');
+sessionStorage.setItem("query", "");
 
 //local storage set up [initial load] [page]
 myStorage = window.sessionStorage;
@@ -62,27 +63,27 @@ const newLoad = async() => {
 }
 
 const newSearch = async(queryString) => {
-  //remember query
-  sessionStorage.setItem("query", queryString);
+  if(!(queryString=="")){
+    //remember query
+    sessionStorage.setItem("query", queryString);
 
-  let returnEditions = []; //the editions that match queryString
-  //await newLoad();
-  for(let i = 0; i < newEditionsData.length; i++) {
-    //regex stuff
-    regexExp = /[\p{L}\d\s'.]/gu;
-    if(queryString.match(regexExp)) {
-      qList = queryString.match(regexExp);
-      qString = "";
-      for(let j = 0; j < qList.length; j++) {
-        qString+=qList[j];
-      }
-      if(newEditionsData[i][1].textArray[0].toLowerCase().includes(remove_stopwords(qString.toLowerCase())) && remove_stopwords(qString.toLowerCase()) != "" && !returnEditions.includes(newEditionsData[i][0])) {
-        // returnEditions.push({name: entries1[0][1], image: imageLink, desc: descLink});
-        returnEditions.push(newEditionsData[i][0]);
+    let returnEditions = []; //the editions that match queryString
+    for(let i = 0; i < newEditionsData.length; i++) {
+      //regex stuff
+      regexExp = /[\p{L}\d\s'.]/gu;
+      if(queryString.match(regexExp)) {
+        qList = queryString.match(regexExp);
+        qString = "";
+        for(let j = 0; j < qList.length; j++) {
+          qString+=qList[j];
+        }
+        if(newEditionsData[i][1].textArray[0].toLowerCase().includes(remove_stopwords(qString.toLowerCase())) && remove_stopwords(qString.toLowerCase()) != "" && !returnEditions.includes(newEditionsData[i][0])) {
+          returnEditions.push(newEditionsData[i][0]);
+        }
       }
     }
-  }
-  sortList(returnEditions, true);
+    searchPage(returnedEditions);
+  } 
 }
 // END
 
