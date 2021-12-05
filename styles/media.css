@@ -138,7 +138,7 @@
     color: #f6d970 !important;
   }
   header #menu-icon:checked ~ .collapsible-menu {
-    height: 190px;
+    height: 210px;
   }
   header #menu-icon:checked .lines {
     /*hide the middle line*/
@@ -175,7 +175,7 @@
   header .collapsible-menu nav ul {
     display: block;
     margin-left: 0;
-    padding: 10px 20px;
+    padding: 0 20px;
     top: 0;
     left: 100%;
     -webkit-transform: translateX(-100%);
