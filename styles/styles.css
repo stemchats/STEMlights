@@ -594,7 +594,7 @@ header .collapsible-menu ul .nav-link:hover {
 }
 
 .search-bar.active {
-  width: 280px;
+  width: 600px;
 }
 
 .search-bar.active .search-input {
@@ -604,6 +604,18 @@ header .collapsible-menu ul .nav-link:hover {
 
 .search-bar.active .search-icon {
   color: #f6d970;
+}
+
+@media (max-device-width: 480px) {
+  .search-bar.active {
+    width: 270px;
+  }
+}
+
+@media (max-device-width: 540px) {
+  .search-bar.active {
+    width: 270px;
+  }
 }
 
 /* Home page */

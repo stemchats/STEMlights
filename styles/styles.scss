@@ -527,6 +527,7 @@ header {
 }
 
 .search-bar {
+
     position: absolute;
     transform: translate(50%, -6.75rem);
     right: 50%;
@@ -581,7 +582,7 @@ header {
     }
 
     &.active {
-        width: 280px;
+        width: 600px;
 
         .search-input {
             opacity: 1;
@@ -590,6 +591,14 @@ header {
 
         .search-icon {
             color: $yellow;
+        }
+
+        @media (max-device-width:480px) {
+            width: 270px;
+        }
+
+        @media (max-device-width:540px) {
+            width: 270px;
         }
     }
 }
