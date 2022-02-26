@@ -39,8 +39,57 @@ function pagination(cardSpecsArray, returnedEditionsList, increment, page){
 //  - Displays 10 initial page results (or less), 1 card (has title, desc, image) per row
 //  - Adds a “see more results” button at the bottom, where upon being pressed add another 10 results (or less) to the page
 
+/*
+    <a href="/edition/83.html">
+<div class="card">
+<div class="card-body">
+<img src="/images/edition83/83.svg" alt="Newsletter Image">
+<h2 class="card-title">Edition #83</h2>
+<p class="card-text">This week, we will be discussing AI for climate change, spotlighting Mary Golda Ross, and as always, providing STEM opportunities for students.</p>
+</div>
+</div>
+</a>
+
+edition85
+*/
+
 function searchPage(returnedEditionsList){
     //pass info from newSearch function here (search.js)
+    let arrayOfCards = [];
+    for(var i = 0;i<imageAndDesc.length;i++){
+        for(var j = 0;j<returnedEditionsList.length;j++){
+            if(returnedEditionsList[j]==imageAndDesc[i][0]){
+                const test_div = document.getElementById("test");
+
+                const atag = document.createElement("a");
+                atag.setAttribute("href", "/archive/"+imageAndDesc[i][0].substring(7)+".html");
+                const card_div = document.createElement("div");
+                card_div.setAttribute("class", "card");
+                const card_body = document.createElement("div");
+                card_body.setAttribute("class", "card-body");
+                const img_element = document.createElement("img")
+                img_element.setAttribute("src", imageAndDesc[i][1]["card-img"]);
+                img_element.setAttribute("alt", "Newsletter Image");
+                img_element.setAttribute("style", "width: 100%");
+                const h2 = document.createElement("h2");
+                h2.setAttribute("class", "card-title")
+                h2.textContent = "Edition #" + imageAndDesc[i][0].substring(7);
+                const ptag = document.createElement("p");
+                ptag.setAttribute("class", "card-text");
+                ptag.textContent = imageAndDesc[i][1]["desc"];
+
+                card_body.appendChild(img_element);
+                card_body.appendChild(h2);
+                card_body.appendChild(ptag);
+
+                card_div.appendChild(card_body);
+                atag.appendChild(card_div);
+
+                arrayOfCards.push(atag);
+                test_div.appendChild(atag);
+            }
+        }//end for
+    }//end for
 }
 
 // Newsletter Archive
