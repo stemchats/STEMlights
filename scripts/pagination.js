@@ -5,6 +5,11 @@
 // and adds an event listener to this button on click to go to specified callback function with the proper parameters
 
 function createButton(buttonText, callbackFunc){
+    let btn = document.createElement("button"); 
+    btn.innerHTML = buttonText;
+    document.querySelector("button");
+    btn.addEventListener("click", callbackFunc());
+    document.body.appendChild(btn);
 
 }
 
