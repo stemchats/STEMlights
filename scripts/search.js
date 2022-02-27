@@ -19,17 +19,9 @@ query.addEventListener('keyup', (event) => {
   }
 })
 
-const allEditionsData = []; // will contain array of all edition data from database
 const imageAndDesc = []; // will contain array of all edition image src and description text
 
 const loadData = async() => {
-    //get edition name + all sections of that edition
-    let dataRef = db.collection('data');
-    let allData = await dataRef.get();
-    for(const doc of allData.docs) {
-        allEditionsData.push([doc.id, doc.data()]);
-    };
-
     //get edition image src and description text
     let editionRef = db.collection('editions');
     editionRef.get().then((querySnapshot) => {
@@ -47,8 +39,6 @@ const loadData = async() => {
         //NOTE: some images are used for multiple editions
       })
     });
-    // console.log(imageAndDesc);
-    // console.log(allEditionsData);
 }
 
 //new solution START
@@ -82,7 +72,7 @@ const newSearch = async(queryString) => {
         }
       }
     }
-    searchPage(returnedEditions);
+    searchPage(returnEditions);
   } 
 }
 // END
