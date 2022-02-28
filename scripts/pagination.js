@@ -6,8 +6,9 @@
 
 function createButton(buttonText, callbackFunc){
     let btn = document.createElement("button"); 
+    btn.setAttribute("class", "btn btn-light");
     btn.innerHTML = buttonText;
-    document.querySelector("button");
+    const seeMoreResults = document.querySelector("#button");
     btn.addEventListener("click", callbackFunc());
     document.body.appendChild(btn);
 
