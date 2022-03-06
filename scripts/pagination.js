@@ -1,45 +1,76 @@
 // Button
 // Parameters (button text, callback function)
 // EFFECTS:
-// - Creates a button with button text, 
+// - Creates a button with button text,
 // and adds an event listener to this button on click to go to specified callback function with the proper parameters
 
-function createButton(buttonText, callbackFunc){
-    let btn = document.createElement("button"); 
+function createButton(buttonText) {
+    let btn = document.createElement("button");
     btn.setAttribute("class", "btn btn-light");
     btn.innerHTML = buttonText;
     const seeMoreResults = document.querySelector("#button");
-    btn.addEventListener("click", callbackFunc());
+    btn.addEventListener("click", pagination(searchRowSpecification, searchColumnSpecification));
     document.body.appendChild(btn);
-
 }
 
-// Create card
-// Parameters ([title, desc, image], page)
+// Parameters ([title, desc, image path])
 // EFFECTS:
-// - Check if each argument contains proper field, else if is null then skip over that field
-// - Create the card with specified fields and the specified classes (the row/column specifications, 
-// will be using bootstrap most likely) based on page
+// Creates the card based on specifications, then returns this card in HTML
 
-function createCard(array, page){
+function createCard(cardsArray) {
+  // creates cards elements, and includes specific card information
+  const a_tag = document.createElement("a");
+  a_tag.setAttribute("href", "/archive/"+cardsArray[0]+".html");
+  const card_div = document.createElement("div");
+  card_div.setAttribute("class", "card");
+  const card_body = document.createElement("div");
+  card_body.setAttribute("class", "card-body");
+  const img_element = document.createElement("img")
+  img_element.setAttribute("src", cardsArray[1]);
+  img_element.setAttribute("alt", "Newsletter Image");
+  img_element.setAttribute("style", "width: 100%");
+  const h2 = document.createElement("h2");
+  h2.setAttribute("class", "card-title")
+  h2.textContent = "Edition #" + cardsArray[0];
+  const p_tag = document.createElement("p");
+  p_tag.setAttribute("class", "card-text");
+  p_tag.textContent = cardsArray[2];
 
+  // construct the HTML of the card
+  card_body.appendChild(img_element);
+  card_body.appendChild(h2);
+  card_body.appendChild(p_tag);
+  card_div.appendChild(card_body);
+  a_tag.appendChild(card_div);
+  return a_tag;
 }
 
-// Pagination
-// Parameters ([createcard specifications], (returned) editions list, increment, page)
+// Parameters (card)
 // EFFECTS:
-// Add the created cards to a container div with correct classes (the row/column specifications, will be using bootstrap most likely) based on page
-// Increment the global index counter by the specified increment (either 10 or 12 depending on page being called from)
+// Creates the card based on specifications, then returns this card in HTML
+function addCard(card) {
+  arrayOfCards.push(card);
+}
 
-function pagination(cardSpecsArray, returnedEditionsList, increment, page){
+
+
+function pagination(cardsPerLoad, columns) {
+  // add the cards to the containr on the page
+  let amountToLoad = searchIncrement * cardsPerLoad;
+  for (let i = 0; i < amountToLoad; i++) {
+    test_div.appendChild(arrayOfCards[i]);
+  }
+  // set arrayOfCards equal to a new arrayOfCards without the added cards
+  arrayOfCards = arrayOfCards.splice(amountToLoad, arrayOfCards.length);
+
 
 }
 
 // Search Page
-// REQUIRES: 
+// REQUIRES:
 //  - Search result (and how many editions are matched to the search query)
 // MODIFIES:
-//  - The search page 
+//  - The search page
 //  - Adds the matched editions to the returned editions list
 // EFFECTS:
 //  - Displays 10 initial page results (or less), 1 card (has title, desc, image) per row
@@ -59,51 +90,56 @@ function pagination(cardSpecsArray, returnedEditionsList, increment, page){
 edition85
 */
 
-function searchPage(returnedEditionsList){
+let searchIncrement = 1;
+let searchRowSpecification = 10;
+let searchColumnSpecification = "1";
+
+// the array of returned cards (representing editions) in  HTML format per search
+let arrayOfCards = [];
+
+// div where the searched editions show up
+const test_div = document.getElementById("test");
+
+function searchPage(returnedEditionsList) {
     //pass info from newSearch function here (search.js)
-    let arrayOfCards = [];
-    for(var i = 0;i<imageAndDesc.length;i++){
-        for(var j = 0;j<returnedEditionsList.length;j++){
-            if(returnedEditionsList[j]==imageAndDesc[i][0]){
-                const test_div = document.getElementById("test");
 
-                const atag = document.createElement("a");
-                atag.setAttribute("href", "/archive/"+imageAndDesc[i][0].substring(7)+".html");
-                const card_div = document.createElement("div");
-                card_div.setAttribute("class", "card");
-                const card_body = document.createElement("div");
-                card_body.setAttribute("class", "card-body");
-                const img_element = document.createElement("img")
-                img_element.setAttribute("src", imageAndDesc[i][1]["card-img"]);
-                img_element.setAttribute("alt", "Newsletter Image");
-                img_element.setAttribute("style", "width: 100%");
-                const h2 = document.createElement("h2");
-                h2.setAttribute("class", "card-title")
-                h2.textContent = "Edition #" + imageAndDesc[i][0].substring(7);
-                const ptag = document.createElement("p");
-                ptag.setAttribute("class", "card-text");
-                ptag.textContent = imageAndDesc[i][1]["desc"];
+    // iterates through image and description arrays
+    for(let i = 0; i < imageAndDesc.length; i++) {
+      // iterates through editions array that has "matched" editions
+        for(let j = 0; j < returnedEditionsList.length; j++) {
 
-                card_body.appendChild(img_element);
-                card_body.appendChild(h2);
-                card_body.appendChild(ptag);
+          // sync the edition from "matched" editions to the corresponding image path and description for that edition
+            if(returnedEditionsList[j] == imageAndDesc[i][0]) {
 
-                card_div.appendChild(card_body);
-                atag.appendChild(card_div);
+                // call create card function, passing in 3 parameters: edition number, image path, edition description
+                let card = createCard([imageAndDesc[i][0].substring(7), imageAndDesc[i][1]["card-img"], imageAndDesc[i][1]["desc"]]);
 
-                arrayOfCards.push(atag);
-                test_div.appendChild(atag);
+                // add the subsequent card to arrayOfCards
+                addCard(card);
+
+
+
+
             }
         }//end for
     }//end for
+
+    // First case for pagination call: first load on search
+    // Second case: user clicks on "see more results"
+
+    // call pagination
+    pagination(searchRowSpecification, searchColumnSpecification);
+
+    // button
+    createButton("See more results");
 }
 
 // Newsletter Archive
 // MODIFIES:
-//  - The newsletter archive page 
+//  - The newsletter archive page
 // EFFECTS:
 //  - Displays 4 cards (title, desc) per row, and show 3 rows initially
-//  - Adds a “load more” button at the bottom, where upon being pressed add another 3 rows to the page 
+//  - Adds a “load more” button at the bottom, where upon being pressed add another 3 rows to the page
 
 function newsletterArchive(){
 
