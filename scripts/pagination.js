@@ -22,6 +22,8 @@ function createButton(buttonText) {
 
 function createCard(cardsArray) {
   // creates cards elements, and includes specific card information
+  const col_div = document.createElement("div");
+  col_div.setAttribute("class", "col");
   const a_tag = document.createElement("a");
   a_tag.setAttribute("href", "/archive/"+cardsArray[0]+".html");
   const card_div = document.createElement("div");
@@ -45,7 +47,10 @@ function createCard(cardsArray) {
   card_body.appendChild(p_tag);
   card_div.appendChild(card_body);
   a_tag.appendChild(card_div);
-  return a_tag;
+  col_div.appendChild(a_tag);
+
+  //add each card to a column, then we can add them to a row row-cols-x class div later on
+  return col_div;
 }
 
 // Parameters (card)
@@ -58,34 +63,30 @@ function addCard(card) {
 
 
 function pagination(cardsPerLoad, columns) {
-
+  console.log(cardsPerLoad);
+  console.log(columns);
   // user clicks back into the search page, display up to (searchPageIncrement * cardsPerLoad) amount of cards
   if(columns == 1) {
     // add the cards to the container on the page
-    let amountToLoad = searchPageIncrement * cardsPerLoad;
+    //let amountToLoad = searchPageIncrement * cardsPerLoad;
+    let amountToLoad = cardsPerLoad;
+    let rowDiv = document.getElementById("rowDiv");
     for (let i = 0; i < amountToLoad; i++) {
-      test_div.appendChild(arrayOfCards[i]);
+      rowDiv.appendChild(arrayOfCards[i]);
     }
   } else if(columns > 1) {
     // add the cards to the container on the page
     let columnString = columns.toString();
     let rowDiv = document.getElementById("rowDiv");
-    rowDiv.setAttribute("class", "row-cols-" + columnString);
+    rowDiv.setAttribute("class", "row row-cols-" + columnString);
     for (let j = 0; j < cardsPerLoad; j++) {
-      //put a card in each column
-      let colDiv = document.createElement("div");
-      colDiv.setAttribute("class", "col");
-      colDiv.appendChild(arrayOfCards[i]);
-      rowDiv.appendChild(colDiv);
+      rowDiv.appendChild(arrayOfCards[j]);
     }
-    test_div.appendChild(rowDiv);
+    //test_div.appendChild(rowDiv);
   }
-
   // set arrayOfCards equal to a new arrayOfCards without the added cards
   arrayOfCards = arrayOfCards.splice(cardsPerLoad, arrayOfCards.length);
-
-
-}
+}//end of function
 
 // Search Page
 // REQUIRES:
@@ -113,7 +114,7 @@ edition85
 
 let searchPageIncrement = 1;
 let searchCardsIncrement = 10;
-let searchColumnSpecification = 4;
+let searchColumnSpecification = 1;
 
 let archiveCardsIncrement = 12;
 let archiveColumnSpecification = 4;
