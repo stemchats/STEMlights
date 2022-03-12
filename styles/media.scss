@@ -146,6 +146,10 @@ $cards-per-line: (
             transform: translateY(-65%) scaleY(1);
         }
     }
+
+    .banner{
+        height:270px;
+    }
 }
 
 
@@ -272,6 +276,10 @@ $cards-per-line: (
             transform: translateY(-70%) scaleY(1.2);
         }
     }
+
+    .banner{
+        height:220px;
+    }
 }
 
 
@@ -315,6 +323,10 @@ $cards-per-line: (
     footer {
         margin-top: 10rem;
     }
+
+    .banner{
+        height:180px;
+    }
 }
 
 
@@ -347,6 +359,10 @@ $cards-per-line: (
             }
         }
     }
+
+    .banner{
+        height:150px;
+    }
 }
 
 
@@ -369,6 +385,10 @@ $cards-per-line: (
                 transform: translateY(-69%) scaleY(1.6);
             }
         }
+    }
+
+    .banner{
+        height:130px;
     }
 }
 
@@ -403,6 +423,12 @@ $cards-per-line: (
     #editionBack
     {
         display: none
+    }
+
+    .banner{
+        background-image: url("/images/search-bannermobile.png");
+        height: 240px;
+        background-position: 50% 50%;
     }
 
 }
