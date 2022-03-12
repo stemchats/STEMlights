@@ -84,13 +84,12 @@
         <!-- search bar -->
         <div class="search-bar active">
           <form onsubmit="return false">
-              <input type="search" class="search-input" placeholder="Search..." value="" name="search" autocomplete="off">
+              <input type="search" class="search-input" placeholder="Search for editions here..." value="" name="search" autocomplete="off">
               <input type="submit" class="search-submit" value="">
               <span class="search-icon"><i class="fas fa-search"></i></span>
           </form>
         </div>
 
-        <p><center>Search for editions here!</center></p>
 
         <div id="num_results" style="margin: 20px;"></div>
 <!--
@@ -111,7 +110,16 @@
         </nav> -->
         <!-- end nav bar -->
     </div>
+    <div id="test" class="container newsletter">
+      <div id = "rowDiv">
+        
+      </div>
+
+    </div>
     <!-- end main newsletter div -->
+
+    <!-- see more results -->
+    <div id = "button"></div>
 
     <div id = "space_div" style="height: 100vh;">
       <!-- whitespace for the loading process -->
@@ -154,8 +162,10 @@
       crossorigin="anonymous"></script>
 
     <!-- Scripts -->
+    <script type="text/javascript" src="/scripts/pagination.js"></script>
     <script type="text/javascript" src="/scripts/search.js"></script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+
     <script>
         newSearch(sessionStorage.getItem("query"));
     </script>
