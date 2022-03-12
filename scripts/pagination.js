@@ -5,12 +5,15 @@
 // and adds an event listener to this button on click to go to specified callback function with the proper parameters
 
 function createButton(buttonText) {
+  if(!document.body.contains(document.querySelector("#results"))) {
     let btn = document.createElement("button");
+    btn.setAttribute("id", "results");
     btn.setAttribute("class", "btn btn-light");
     btn.innerHTML = buttonText;
     const seeMoreResults = document.querySelector("#button");
-    btn.addEventListener("click", pagination(searchRowSpecification, searchColumnSpecification));
+    btn.addEventListener("click", pagination(searchCardsIncrement, searchColumnSpecification));
     document.body.appendChild(btn);
+  }
 }
 
 // Parameters ([title, desc, image path])
@@ -55,13 +58,31 @@ function addCard(card) {
 
 
 function pagination(cardsPerLoad, columns) {
-  // add the cards to the containr on the page
-  let amountToLoad = searchIncrement * cardsPerLoad;
-  for (let i = 0; i < amountToLoad; i++) {
-    test_div.appendChild(arrayOfCards[i]);
+
+  // user clicks back into the search page, display up to (searchPageIncrement * cardsPerLoad) amount of cards
+  if(columns == 1) {
+    // add the cards to the container on the page
+    let amountToLoad = searchPageIncrement * cardsPerLoad;
+    for (let i = 0; i < amountToLoad; i++) {
+      test_div.appendChild(arrayOfCards[i]);
+    }
+  } else if(columns > 1) {
+    // add the cards to the container on the page
+    let columnString = columns.toString();
+    let rowDiv = document.getElementById("rowDiv");
+    rowDiv.setAttribute("class", "row-cols-" + columnString);
+    for (let j = 0; j < cardsPerLoad; j++) {
+      //put a card in each column
+      let colDiv = document.createElement("div");
+      colDiv.setAttribute("class", "col");
+      colDiv.appendChild(arrayOfCards[i]);
+      rowDiv.appendChild(colDiv);
+    }
+    test_div.appendChild(rowDiv);
   }
+
   // set arrayOfCards equal to a new arrayOfCards without the added cards
-  arrayOfCards = arrayOfCards.splice(amountToLoad, arrayOfCards.length);
+  arrayOfCards = arrayOfCards.splice(cardsPerLoad, arrayOfCards.length);
 
 
 }
@@ -90,9 +111,12 @@ function pagination(cardsPerLoad, columns) {
 edition85
 */
 
-let searchIncrement = 1;
-let searchRowSpecification = 10;
-let searchColumnSpecification = "1";
+let searchPageIncrement = 1;
+let searchCardsIncrement = 10;
+let searchColumnSpecification = 4;
+
+let archiveCardsIncrement = 12;
+let archiveColumnSpecification = 4;
 
 // the array of returned cards (representing editions) in  HTML format per search
 let arrayOfCards = [];
@@ -101,8 +125,10 @@ let arrayOfCards = [];
 const test_div = document.getElementById("test");
 
 function searchPage(returnedEditionsList) {
-    //pass info from newSearch function here (search.js)
-
+    arrayOfCards = [];
+    if(document.body.contains(document.querySelector("#results"))) {
+      document.querySelector("#results").remove();
+    };
     // iterates through image and description arrays
     for(let i = 0; i < imageAndDesc.length; i++) {
       // iterates through editions array that has "matched" editions
@@ -116,10 +142,6 @@ function searchPage(returnedEditionsList) {
 
                 // add the subsequent card to arrayOfCards
                 addCard(card);
-
-
-
-
             }
         }//end for
     }//end for
@@ -128,7 +150,7 @@ function searchPage(returnedEditionsList) {
     // Second case: user clicks on "see more results"
 
     // call pagination
-    pagination(searchRowSpecification, searchColumnSpecification);
+    pagination(searchCardsIncrement, searchColumnSpecification);
 
     // button
     createButton("See more results");
