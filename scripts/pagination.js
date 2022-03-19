@@ -10,9 +10,11 @@ function createButton(buttonText) {
     btn.setAttribute("id", "results");
     btn.setAttribute("class", "btn btn-light");
     btn.innerHTML = buttonText;
-    const seeMoreResults = document.querySelector("#button");
-    btn.addEventListener("click", pagination(searchCardsIncrement, searchColumnSpecification));
-    document.body.appendChild(btn);
+    btn.addEventListener("click", (e) => {
+      pagination(searchCardsIncrement, searchColumnSpecification);
+      e.preventDefault();
+    });
+    seeMoreResults.appendChild(btn);
   }
 }
 
@@ -61,19 +63,23 @@ function addCard(card) {
 }
 
 
-
-function pagination(cardsPerLoad, columns) {
-  console.log(cardsPerLoad);
-  console.log(columns);
+const pagination = async(cardsPerLoad, columns) => {
   // user clicks back into the search page, display up to (searchPageIncrement * cardsPerLoad) amount of cards
   if(columns == 1) {
-    // add the cards to the container on the page
-    //let amountToLoad = searchPageIncrement * cardsPerLoad;
-    let amountToLoad = cardsPerLoad;
-    let rowDiv = document.getElementById("rowDiv");
+    // reverse arrayOfCards
+    //arrayOfCards = arrayOfCards.reverse();
+
+    let amountToLoad = 0;
+    if(cardsPerLoad <= arrayOfCards.length) {
+      amountToLoad = cardsPerLoad;
+    } else {
+      amountToLoad = arrayOfCards.length;
+    }
+    console.log(amountToLoad);
     for (let i = 0; i < amountToLoad; i++) {
       rowDiv.appendChild(arrayOfCards[i]);
     }
+
   } else if(columns > 1) {
     // add the cards to the container on the page
     let columnString = columns.toString();
@@ -86,6 +92,11 @@ function pagination(cardsPerLoad, columns) {
   }
   // set arrayOfCards equal to a new arrayOfCards without the added cards
   arrayOfCards = arrayOfCards.splice(cardsPerLoad, arrayOfCards.length);
+
+  // checks arrayOfCards is empty or not, if so remove see more results button
+  if(arrayOfCards.length == 0) {
+    seeMoreResults.innerHTML = "";
+  }
 }//end of function
 
 // Search Page
@@ -125,7 +136,15 @@ let arrayOfCards = [];
 // div where the searched editions show up
 const test_div = document.getElementById("test");
 
+// row div where searched editions are placed in
+const rowDiv = document.getElementById("rowDiv");
+
+// div where see more results button will show up
+const seeMoreResults = document.querySelector("#button");
+
 function searchPage(returnedEditionsList) {
+    rowDiv.innerHTML = "";
+    seeMoreResults.innerHTML = "";
     arrayOfCards = [];
     if(document.body.contains(document.querySelector("#results"))) {
       document.querySelector("#results").remove();
