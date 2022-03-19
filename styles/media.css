@@ -115,7 +115,7 @@
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1260px) {
   /* start of large tablet styles */
   header .logo {
     margin: 0 auto 0 20px;
