@@ -29,7 +29,7 @@ function createCard(cardsArray) {
   const a_tag = document.createElement("a");
   a_tag.setAttribute("href", "/archive/"+cardsArray[0]+".html");
   const card_div = document.createElement("div");
-  card_div.setAttribute("class", "card");
+  card_div.setAttribute("class", "card h-100");
   const card_body = document.createElement("div");
   card_body.setAttribute("class", "card-body");
   const img_element = document.createElement("img")
@@ -44,8 +44,8 @@ function createCard(cardsArray) {
   p_tag.textContent = cardsArray[2];
 
   // construct the HTML of the card
-  card_body.appendChild(img_element);
   card_body.appendChild(h2);
+  card_body.appendChild(img_element);
   card_body.appendChild(p_tag);
   card_div.appendChild(card_body);
   a_tag.appendChild(card_div);
@@ -129,7 +129,6 @@ let archiveColumnSpecification = 4;
 
 // the array of returned cards (representing editions) in  HTML format per search
 let arrayOfCards = [];
-let arrayOfCards2 = [];
 
 // div where the searched editions show up
 const test_div = document.getElementById("test");
@@ -148,7 +147,7 @@ function searchPage(returnedEditionsList) {
       document.querySelector("#results").remove();
     };
     // iterates through image and description arrays
-    for(let i = 0; i < imageAndDesc.length; i++) {
+    for(let i = imageAndDesc.length-1; i > -1; i--) {
       // iterates through editions array that has "matched" editions
         for(let j = 0; j < returnedEditionsList.length; j++) {
 
@@ -182,7 +181,7 @@ function searchPage(returnedEditionsList) {
 //  - Adds a “load more” button at the bottom, where upon being pressed add another 3 rows to the page
 
 function newsletterArchive() {
-  console.log(imageAndDesc);
+  console.log(parseInt(imageAndDesc[0][0].substring(7)));
   rowDiv.innerHTML = "";
   loadButton.innerHTML = "";
   arrayOfCards = [];
@@ -191,7 +190,7 @@ function newsletterArchive() {
   };
   // iterates through image and description arrays
 
-  for(let i = 0; i < imageAndDesc.length; i++) {
+  for(let i = imageAndDesc.length-1; i > -1; i--) {
       // call create card function, passing in 3 parameters: edition number, image path, edition description
       let card = createCard([imageAndDesc[i][0].substring(7), imageAndDesc[i][1]["card-img"], imageAndDesc[i][1]["desc"]]);
       // add the subsequent card to arrayOfCards
@@ -199,7 +198,7 @@ function newsletterArchive() {
   }
 
   // call pagination
-  pagination(searchCardsIncrement, searchColumnSpecification);
+  pagination(archiveCardsIncrement, archiveColumnSpecification);
 
   // button
   createButton("Load more");
