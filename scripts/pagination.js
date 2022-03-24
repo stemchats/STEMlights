@@ -14,7 +14,7 @@ function createButton(buttonText) {
       pagination(searchCardsIncrement, searchColumnSpecification);
       e.preventDefault();
     });
-    seeMoreResults.appendChild(btn);
+    loadButton.appendChild(btn);
   }
 }
 
@@ -63,12 +63,9 @@ function addCard(card) {
 }
 
 
-const pagination = async(cardsPerLoad, columns) => {
+function pagination(cardsPerLoad, columns) {
   // user clicks back into the search page, display up to (searchPageIncrement * cardsPerLoad) amount of cards
   if(columns == 1) {
-    // reverse arrayOfCards
-    //arrayOfCards = arrayOfCards.reverse();
-
     let amountToLoad = 0;
     if(cardsPerLoad <= arrayOfCards.length) {
       amountToLoad = cardsPerLoad;
@@ -95,7 +92,7 @@ const pagination = async(cardsPerLoad, columns) => {
 
   // checks arrayOfCards is empty or not, if so remove see more results button
   if(arrayOfCards.length == 0) {
-    seeMoreResults.innerHTML = "";
+    loadButton.innerHTML = "";
   }
 }//end of function
 
@@ -132,6 +129,7 @@ let archiveColumnSpecification = 4;
 
 // the array of returned cards (representing editions) in  HTML format per search
 let arrayOfCards = [];
+let arrayOfCards2 = [];
 
 // div where the searched editions show up
 const test_div = document.getElementById("test");
@@ -140,11 +138,11 @@ const test_div = document.getElementById("test");
 const rowDiv = document.getElementById("rowDiv");
 
 // div where see more results button will show up
-const seeMoreResults = document.querySelector("#button");
+const loadButton = document.querySelector("#button");
 
 function searchPage(returnedEditionsList) {
     rowDiv.innerHTML = "";
-    seeMoreResults.innerHTML = "";
+    loadButton.innerHTML = "";
     arrayOfCards = [];
     if(document.body.contains(document.querySelector("#results"))) {
       document.querySelector("#results").remove();
@@ -183,6 +181,26 @@ function searchPage(returnedEditionsList) {
 //  - Displays 4 cards (title, desc) per row, and show 3 rows initially
 //  - Adds a “load more” button at the bottom, where upon being pressed add another 3 rows to the page
 
-function newsletterArchive(){
+function newsletterArchive() {
+  console.log(imageAndDesc);
+  rowDiv.innerHTML = "";
+  loadButton.innerHTML = "";
+  arrayOfCards = [];
+  if(document.body.contains(document.querySelector("#results"))) {
+    document.querySelector("#results").remove();
+  };
+  // iterates through image and description arrays
 
+  for(let i = 0; i < imageAndDesc.length; i++) {
+      // call create card function, passing in 3 parameters: edition number, image path, edition description
+      let card = createCard([imageAndDesc[i][0].substring(7), imageAndDesc[i][1]["card-img"], imageAndDesc[i][1]["desc"]]);
+      // add the subsequent card to arrayOfCards
+      addCard(card);
+  }
+
+  // call pagination
+  pagination(searchCardsIncrement, searchColumnSpecification);
+
+  // button
+  createButton("Load more");
 }

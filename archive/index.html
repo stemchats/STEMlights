@@ -92,20 +92,17 @@
 
         <h1 class="center"><span class="title">Newsletter Archive</span></h1>
 
+        <!-- where the editions go -->
         <div id="all-editions">
+          <div id="rowDiv">
 
+          </div>
         </div>
 
-        <div id="the_cards">
+        <!-- see more results -->
+        <div id="button"></div>
 
-        </div>
 
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-
-            </ul>
-        </nav>
-        <!-- end nav bar -->
     </div>
     <!-- end main newsletter div -->
 
@@ -150,11 +147,11 @@
       crossorigin="anonymous"></script>
 
     <!-- Scripts -->
+    <script type="text/javascript" src="/scripts/pagination.js"></script>
     <script type="text/javascript" src="/scripts/search.js"></script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
     <script>
-        //createEditions();
-        //pagination2(1);
+      const myTimeout = setTimeout(newsletterArchive, 1500);
     </script>
   </body>
 
