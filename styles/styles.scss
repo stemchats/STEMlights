@@ -770,6 +770,8 @@ body {
 
 .newsletter {
     padding: 0 2rem;
+    //width: 100%;
+    margin: 150px 50px 100px 50px;
 
     h3, h5 {
       text-align: left;
@@ -780,7 +782,7 @@ body {
         width: 100%;
         background-color: white;
         position: relative;
-        margin-top: 2rem;
+        margin-top: 10px;
         border-radius: 0;
         border: none;
 
@@ -791,7 +793,7 @@ body {
             }
         }
 
-        img {
+        .img {
             top: 0;
             float: right;
             max-width: 25%;
@@ -801,7 +803,15 @@ body {
     }
 }
 
+.all-editions {
+    margin-left: 35px;
+    margin-right: 35px;
+}
 
+.archive-col {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 /* ABOUT US */

@@ -4,14 +4,14 @@
 // - Creates a button with button text,
 // and adds an event listener to this button on click to go to specified callback function with the proper parameters
 
-function createButton(buttonText) {
+function createButton(buttonText, cardIncrement, ColumnSpecification) {
   if(!document.body.contains(document.querySelector("#results"))) {
     let btn = document.createElement("button");
     btn.setAttribute("id", "results");
     btn.setAttribute("class", "btn btn-light");
     btn.innerHTML = buttonText;
     btn.addEventListener("click", (e) => {
-      pagination(searchCardsIncrement, searchColumnSpecification);
+      pagination(cardIncrement, ColumnSpecification);
       e.preventDefault();
     });
     loadButton.appendChild(btn);
@@ -22,10 +22,14 @@ function createButton(buttonText) {
 // EFFECTS:
 // Creates the card based on specifications, then returns this card in HTML
 
-function createCard(cardsArray) {
+function createCard(cardsArray, choice) {
   // creates cards elements, and includes specific card information
   const col_div = document.createElement("div");
-  col_div.setAttribute("class", "col");
+  if(!choice){
+    col_div.setAttribute("class", "col archive-col");
+  } else {
+    col_div.setAttribute("class", "col");
+  }
   const a_tag = document.createElement("a");
   a_tag.setAttribute("href", "/archive/"+cardsArray[0]+".html");
   const card_div = document.createElement("div");
@@ -36,6 +40,7 @@ function createCard(cardsArray) {
   img_element.setAttribute("src", cardsArray[1]);
   img_element.setAttribute("alt", "Newsletter Image");
   img_element.setAttribute("style", "width: 100%");
+  img_element.setAttribute("class", "img");
   const h2 = document.createElement("h2");
   h2.setAttribute("class", "card-title")
   h2.textContent = "Edition #" + cardsArray[0];
@@ -45,7 +50,9 @@ function createCard(cardsArray) {
 
   // construct the HTML of the card
   card_body.appendChild(h2);
-  card_body.appendChild(img_element);
+  if(choice){
+    card_body.appendChild(img_element);
+  }
   card_body.appendChild(p_tag);
   card_div.appendChild(card_body);
   a_tag.appendChild(card_div);
@@ -91,7 +98,7 @@ function pagination(cardsPerLoad, columns) {
       amountToLoad = arrayOfCards.length;
     }
     console.log(amountToLoad);
-    for (let i = 0; i < amountToLoad; i++) {
+    for (let i = 0; i < cardsPerLoad; i++) {
       rowDiv.appendChild(arrayOfCards[i]);
     }
 
@@ -137,7 +144,6 @@ function pagination(cardsPerLoad, columns) {
 
 edition85
 */
-
 let searchPageIncrement = 1;
 let searchCardsIncrement = 10;
 let searchColumnSpecification = 1;
@@ -173,7 +179,7 @@ function searchPage(returnedEditionsList) {
             if(returnedEditionsList[j] == imageAndDesc[i][0]) {
 
                 // call create card function, passing in 3 parameters: edition number, image path, edition description
-                let card = createCard([imageAndDesc[i][0].substring(7), imageAndDesc[i][1]["card-img"], imageAndDesc[i][1]["desc"]]);
+                let card = createCard([imageAndDesc[i][0].substring(7), imageAndDesc[i][1]["card-img"], imageAndDesc[i][1]["desc"]], true);
 
                 // add the subsequent card to arrayOfCards
                 addCard(card);
@@ -185,6 +191,7 @@ function searchPage(returnedEditionsList) {
     // First case for pagination call: first load on search
     // Second case: user clicks on "see more results"
 
+<<<<<<< HEAD
     if(returnedEditionsList.length != 0) {
       // call pagination
       pagination(searchCardsIncrement, searchColumnSpecification);
@@ -192,6 +199,13 @@ function searchPage(returnedEditionsList) {
       createButton("See more results");
       removeWhiteSpace();
     }
+=======
+    // call pagination
+    pagination(searchCardsIncrement, searchColumnSpecification);
+
+    // button
+    createButton("See more results", searchCardsIncrement, searchColumnSpecification);
+>>>>>>> e0ab2f5f5876926915c0084a3766d5e13bc2bda2
 }
 
 // Newsletter Archive
@@ -202,6 +216,7 @@ function searchPage(returnedEditionsList) {
 //  - Adds a “load more” button at the bottom, where upon being pressed add another 3 rows to the page
 
 function newsletterArchive() {
+  console.log("hi");
   console.log(parseInt(imageAndDesc[0][0].substring(7)));
   rowDiv.innerHTML = "";
   loadButton.innerHTML = "";
@@ -213,7 +228,7 @@ function newsletterArchive() {
 
   for(let i = imageAndDesc.length-1; i > -1; i--) {
       // call create card function, passing in 3 parameters: edition number, image path, edition description
-      let card = createCard([imageAndDesc[i][0].substring(7), imageAndDesc[i][1]["card-img"], imageAndDesc[i][1]["desc"]]);
+      let card = createCard([imageAndDesc[i][0].substring(7), imageAndDesc[i][1]["card-img"], imageAndDesc[i][1]["desc"]], false);
       // add the subsequent card to arrayOfCards
       addCard(card);
   }
@@ -222,5 +237,5 @@ function newsletterArchive() {
   pagination(archiveCardsIncrement, archiveColumnSpecification);
 
   // button
-  createButton("Load more");
+  createButton("Load more", archiveCardsIncrement, archiveColumnSpecification);
 }

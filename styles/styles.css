@@ -745,6 +745,7 @@ body {
 
 .newsletter {
   padding: 0 2rem;
+  margin: 150px 50px 100px 50px;
 }
 
 .newsletter h3, .newsletter h5 {
@@ -756,7 +757,7 @@ body {
   width: 100%;
   background-color: white;
   position: relative;
-  margin-top: 2rem;
+  margin-top: 10px;
   border-radius: 0;
   border: none;
 }
@@ -783,12 +784,22 @@ body {
   height: max-content;
 }
 
-.newsletter .card img {
+.newsletter .card .img {
   top: 0;
   float: right;
   max-width: 25%;
   max-height: 150px;
   margin: 0 0 2rem 1.25rem;
+}
+
+.all-editions {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.archive-col {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* ABOUT US */
