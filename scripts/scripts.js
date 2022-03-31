@@ -287,7 +287,7 @@ function pagination2(inputChoice) {
     document.getElementById("the_cards").appendChild(a_tag);
   } //end for
 
-  removeWhiteSpace();
+  // removeWhiteSpace();
 
 } //end function
 

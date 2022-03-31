@@ -62,6 +62,24 @@ function addCard(card) {
   arrayOfCards.push(card);
 }
 
+// generate results from page
+function generateResults() {
+  $('#num_results').empty();
+  let resultWrapper = document.createElement('h5'); //paragraph tag of results
+  if (arrayOfCards.length == 1) {
+    results = "Found 1 result for \"" + sessionStorage.getItem("query") + "\"";
+  } else if (arrayOfCards.length > 1) {
+    results = "Found " + arrayOfCards.length + " results for \"" + sessionStorage.getItem("query") + "\"";
+  } else if (arrayOfCards.length == 0) {
+    results = "Found 0 results for \"" + sessionStorage.getItem("query") + "\"";
+  }
+
+  resultWrapper.innerHTML = results;
+
+  document.getElementById("num_results").appendChild(resultWrapper);
+}
+
+
 
 function pagination(cardsPerLoad, columns) {
   // user clicks back into the search page, display up to (searchPageIncrement * cardsPerLoad) amount of cards
@@ -160,17 +178,20 @@ function searchPage(returnedEditionsList) {
                 // add the subsequent card to arrayOfCards
                 addCard(card);
             }
-        }//end for
-    }//end for
+        }
+    }
 
+    generateResults();
     // First case for pagination call: first load on search
     // Second case: user clicks on "see more results"
 
-    // call pagination
-    pagination(searchCardsIncrement, searchColumnSpecification);
-
-    // button
-    createButton("See more results");
+    if(returnedEditionsList.length != 0) {
+      // call pagination
+      pagination(searchCardsIncrement, searchColumnSpecification);
+      // button
+      createButton("See more results");
+      removeWhiteSpace();
+    }
 }
 
 // Newsletter Archive
