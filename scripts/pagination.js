@@ -189,24 +189,16 @@ function searchPage(returnedEditionsList) {
     }
 
     generateResults();
-    // First case for pagination call: first load on search
-    // Second case: user clicks on "see more results"
 
-<<<<<<< HEAD
     if(returnedEditionsList.length != 0) {
-      // call pagination
-      pagination(searchCardsIncrement, searchColumnSpecification);
-      // button
-      createButton("See more results");
-      removeWhiteSpace();
-    }
-=======
+
     // call pagination
     pagination(searchCardsIncrement, searchColumnSpecification);
 
     // button
     createButton("See more results", searchCardsIncrement, searchColumnSpecification);
->>>>>>> e0ab2f5f5876926915c0084a3766d5e13bc2bda2
+    removeWhiteSpace();
+    }
 }
 
 // Newsletter Archive
