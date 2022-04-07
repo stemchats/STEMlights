@@ -26,7 +26,7 @@ function createCard(cardsArray, choice) {
   // creates cards elements, and includes specific card information
   const col_div = document.createElement("div");
   if(!choice){
-    col_div.setAttribute("class", "col archive-col");
+    col_div.setAttribute("class", "col archive-col col-sm-6 col-lg-4 col-xl-3");
   } else {
     col_div.setAttribute("class", "col");
   }
@@ -88,7 +88,8 @@ function pagination(cardsPerLoad, columns) {
     // add the cards to the container on the page
     let columnString = columns.toString();
     let rowDiv = document.getElementById("rowDiv");
-    rowDiv.setAttribute("class", "row row-cols-" + columnString);
+    //rowDiv.setAttribute("class", "row row-cols-" + columnString);
+    rowDiv.setAttribute("class", "row row-cols-auto");
     for (let j = 0; j < cardsPerLoad; j++) {
       rowDiv.appendChild(arrayOfCards[j]);
     }
