@@ -188,8 +188,7 @@ $cards-per-line: (
 
         #menu-icon:checked {
             ~ .collapsible-menu {
-                height: 210px; // w/o search bar
-                //height: 210px; //height of navbar when open (w/ search bar)
+                height: 225px; // w/o search bar
             }
 
             .lines {
