@@ -79,7 +79,7 @@
     <div id="header"></div>
 
 		<div class="banner"></div>
-    <div class="main newsletter">
+    <div class="main">
 
         <!-- search bar -->
         <div class="search-bar active">
@@ -89,36 +89,22 @@
               <span class="search-icon"><i class="fas fa-search"></i></span>
           </form>
         </div>
-
-        <h3>Find An Edition</h3>
-        <div id="num_results"></div>
-<!--
-        <h1 class="center"><span class="title">Editions</span></h1> -->
-
-        <!-- <div id="all-editions">
-
-        </div> -->
-
-        <!-- <div id="the_cards">
-
-        </div> -->
-
-        <!-- <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-
-            </ul>
-        </nav> -->
-        <!-- end nav bar -->
     </div>
-    <div id="test" class="container newsletter">
+
+    <div class="container results">
+      <h3>Find An Edition</h3>
+      <div id="num_results"></div>
+    </div>
+
+    <!-- newsletters -->
+    <div id="search-results" class="container search-page">
       <div id="rowDiv">
 
       </div>
 
     </div>
-    <!-- end main newsletter div -->
 
-    <!-- see more results -->
+    <!-- see more results button -->
     <div id="button"></div>
 
     <div id="space_div" style="height: 30vh;">
@@ -162,10 +148,12 @@
       crossorigin="anonymous"></script>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="/scripts/pagination.js"></script>
     <script type="text/javascript" src="/scripts/search.js"></script>
+    <script type="text/javascript" src="/scripts/pagination.js"></script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
-
+    <script>
+      const myTimeout = setTimeout(autoSearch, 1500);
+    </script>
   </body>
 
 </html>

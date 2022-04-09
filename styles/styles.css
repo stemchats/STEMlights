@@ -57,6 +57,19 @@ html {
   font-family: 'Josefin Sans', sans-serif !important;
 }
 
+.results {
+  padding-left: 4em;
+}
+
+.results h3, .results h5 {
+  text-align: left;
+  font-weight: bold;
+}
+
+.col {
+  margin-bottom: 1rem;
+}
+
 .home #home-nav,
 .search #search-nav,
 .about-us #about-nav,
@@ -745,12 +758,8 @@ body {
 
 .newsletter {
   padding: 0 2rem;
+  width: 100%;
   margin: 150px 50px 100px 50px;
-}
-
-.newsletter h3, .newsletter h5 {
-  text-align: left;
-  font-weight: bold;
 }
 
 .newsletter .card {
@@ -785,6 +794,51 @@ body {
 }
 
 .newsletter .card .img {
+  top: 0;
+  float: right;
+  max-width: 25%;
+  max-height: 150px;
+  margin: 0 0 2rem 1.25rem;
+}
+
+.search-page {
+  padding: 0 2rem;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.search-page .card {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  margin-top: 10px;
+  border-radius: 0;
+  border: none;
+}
+
+.search-page .card::after {
+  content: '';
+  position: absolute;
+  width: 256px;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.125);
+  transition: 0.4s;
+}
+
+.search-page .card:hover::after {
+  width: 100%;
+  background-color: black;
+}
+
+.search-page .card .card-body p {
+  color: black;
+  height: max-content;
+}
+
+.search-page .card .img {
   top: 0;
   float: right;
   max-width: 25%;

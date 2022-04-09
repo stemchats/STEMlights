@@ -1,9 +1,26 @@
+let isSearched = false; //default case, no search has been done, load all editions
+
+if (sessionStorage.getItem('initial load') == null) {
+  let defaultLoad = sessionStorage.setItem('initial load', 1);
+}
+let isDefault;
+
+function checkDefault() {
+  if (sessionStorage.getItem('initial load') == 1) {
+    isDefault = true;
+  } else if (sessionStorage.getItem('initial load') == 0) {
+    isDefault = false;
+  }
+}
+//sets the default value to true on load
+checkDefault();
+
+
 // Button
 // Parameters (button text, callback function)
 // EFFECTS:
 // - Creates a button with button text,
 // and adds an event listener to this button on click to go to specified callback function with the proper parameters
-
 function createButton(buttonText, cardIncrement, ColumnSpecification) {
   if(!document.body.contains(document.querySelector("#results"))) {
     let btn = document.createElement("button");
@@ -97,7 +114,6 @@ function pagination(cardsPerLoad, columns) {
     } else {
       amountToLoad = arrayOfCards.length;
     }
-    console.log(amountToLoad);
     for (let i = 0; i < cardsPerLoad; i++) {
       rowDiv.appendChild(arrayOfCards[i]);
     }
@@ -111,7 +127,7 @@ function pagination(cardsPerLoad, columns) {
     for (let j = 0; j < cardsPerLoad; j++) {
       rowDiv.appendChild(arrayOfCards[j]);
     }
-    //test_div.appendChild(rowDiv);
+    //search_div.appendChild(rowDiv);
   }
   // set arrayOfCards equal to a new arrayOfCards without the added cards
   arrayOfCards = arrayOfCards.splice(cardsPerLoad, arrayOfCards.length);
@@ -156,7 +172,7 @@ let archiveColumnSpecification = 4;
 let arrayOfCards = [];
 
 // div where the searched editions show up
-const test_div = document.getElementById("test");
+const search_div = document.getElementById("search-page");
 
 // row div where searched editions are placed in
 const rowDiv = document.getElementById("rowDiv");
@@ -191,7 +207,6 @@ function searchPage(returnedEditionsList) {
     generateResults();
 
     if(returnedEditionsList.length != 0) {
-
     // call pagination
     pagination(searchCardsIncrement, searchColumnSpecification);
 
@@ -209,7 +224,6 @@ function searchPage(returnedEditionsList) {
 //  - Adds a “load more” button at the bottom, where upon being pressed add another 3 rows to the page
 
 function newsletterArchive() {
-  console.log("hi");
   console.log(parseInt(imageAndDesc[0][0].substring(7)));
   rowDiv.innerHTML = "";
   loadButton.innerHTML = "";
@@ -231,4 +245,20 @@ function newsletterArchive() {
 
   // button
   createButton("Load more", archiveCardsIncrement, archiveColumnSpecification);
+}
+
+// searches last searched term
+const autoSearch = async() => {
+  if (!isDefault) {
+    //remember search query in search bar
+    query.value = sessionStorage.getItem("query");
+    //if not default load, pass the last page visited as argument
+    try {
+      let autoSearch = await newSearch(query.value);
+    } catch(e) {
+      console.log(e);
+    }
+  } else if(isDefault) {
+    sessionStorage.setItem('initial load', 0);
+  }
 }

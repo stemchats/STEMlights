@@ -1,21 +1,5 @@
 const editionSection = document.getElementById("edition"); //section where the edition will be rendered
-let isSearched = false; //default case, no search has been done, load all editions
 
-if (sessionStorage.getItem('initial load') == null) {
-  let defaultLoad = sessionStorage.setItem('initial load', 1);
-}
-let isDefault;
-let lastPage = sessionStorage.getItem('Page');
-
-function checkDefault() {
-  if (sessionStorage.getItem('initial load') == 1) {
-    isDefault = true;
-  } else if (sessionStorage.getItem('initial load') == 0) {
-    isDefault = false;
-  }
-}
-//sets the default value to true on load
-checkDefault();
 
 function removeWhiteSpace() {
   document.getElementById("space_div").style.height = "0vh";
@@ -115,8 +99,7 @@ if (isSearched) {
   }
 }
 
-// sortList([], false);
-sortList();
+//sortList();
 
 let sectionsList = ["title", "challenge", "corona", "coronavirus", "news", "opportunities", "politics", "spotlight", "qna", "investemgations", "voices", "scifi", "history", "media"]
 

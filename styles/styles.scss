@@ -99,6 +99,20 @@ html {
     }
 }
 
+.results {
+  padding-left: 4em;
+
+  h3, h5 {
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+.col {
+  margin-bottom: 1rem;
+}
+
+
 // header highlight for whatever page the user is on
 .home #home-nav,
 .search #search-nav,
@@ -770,13 +784,40 @@ body {
 
 .newsletter {
     padding: 0 2rem;
-    //width: 100%;
+    width: 100%;
     margin: 150px 50px 100px 50px;
 
-    h3, h5 {
-      text-align: left;
-      font-weight: bold;
+    .card {
+        @include hover-line();
+        width: 100%;
+        background-color: white;
+        position: relative;
+        margin-top: 10px;
+        border-radius: 0;
+        border: none;
+
+        .card-body {
+            p {
+                color: black;
+                height: max-content;
+            }
+        }
+
+        .img {
+            top: 0;
+            float: right;
+            max-width: 25%;
+            max-height: 150px;
+            margin: 0 0 2rem 1.25rem;
+        }
     }
+}
+
+.search-page {
+    padding: 0 2rem;
+    width: 100%;
+    margin-top: 100px;
+
     .card {
         @include hover-line();
         width: 100%;
