@@ -141,7 +141,7 @@
     color: #f6d970 !important;
   }
   header #menu-icon:checked ~ .collapsible-menu {
-    height: 210px;
+    height: 225px;
   }
   header #menu-icon:checked .lines {
     /*hide the middle line*/

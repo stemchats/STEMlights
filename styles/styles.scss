@@ -523,6 +523,10 @@ header {
             left: 75%;
             transform: translate(-50%, -50%);
 
+            .nav-item {
+                text-align: right;
+            }
+
             .nav-link {
                 margin: 0 30px;
                 padding: 0;
