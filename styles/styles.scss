@@ -856,7 +856,17 @@ body {
 .archive-col {
     margin-top: 10px;
     margin-bottom: 10px;
+
+    .card-body {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+    
+    .card-title {
+        margin-bottom: 25px;
+    }
 }
+
 
 
 /* ABOUT US */

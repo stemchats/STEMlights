@@ -901,8 +901,10 @@ body {
   height: 1px;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.125);
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -913,6 +915,8 @@ body {
 
 .search-page .card .card-body p {
   color: black;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
 }
 
@@ -932,6 +936,15 @@ body {
 .archive-col {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.archive-col .card-body {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.archive-col .card-title {
+  margin-bottom: 25px;
 }
 
 /* ABOUT US */
