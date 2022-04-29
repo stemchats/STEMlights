@@ -254,7 +254,7 @@ const autoSearch = async() => {
     query.value = sessionStorage.getItem("query");
     //if not default load, pass the last page visited as argument
     try {
-      let autoSearch = await newSearch(query.value);
+      let autoSearch = await newSearch(query.value.trim());
     } catch(e) {
       console.log(e);
     }
