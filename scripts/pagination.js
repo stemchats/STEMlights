@@ -88,6 +88,7 @@ function addCard(card) {
 
 // generate results from page
 function generateResults() {
+  initialResults = arrayOfCards.length;
   $('#num_results').empty();
   let resultWrapper = document.createElement('h5'); //paragraph tag of results
   if (arrayOfCards.length == 1) {
@@ -106,37 +107,40 @@ function generateResults() {
 
 
 function pagination(cardsPerLoad, columns) {
-  // user clicks back into the search page, display up to (searchPageIncrement * cardsPerLoad) amount of cards
-  if(columns == 1) {
-    let amountToLoad = 0;
-    if(cardsPerLoad <= arrayOfCards.length) {
-      amountToLoad = cardsPerLoad;
-    } else {
-      amountToLoad = arrayOfCards.length;
-    }
-    for (let i = 0; i < cardsPerLoad; i++) {
-      rowDiv.appendChild(arrayOfCards[i]);
-    }
-
-  } else if(columns > 1) {
-    // add the cards to the container on the page
-    let columnString = columns.toString();
-    let rowDiv = document.getElementById("rowDiv");
-    //rowDiv.setAttribute("class", "row row-cols-" + columnString);
-    rowDiv.setAttribute("class", "row row-cols-auto");
-    for (let j = 0; j < cardsPerLoad; j++) {
-      rowDiv.appendChild(arrayOfCards[j]);
-    }
-    //search_div.appendChild(rowDiv);
-  }
-  // set arrayOfCards equal to a new arrayOfCards without the added cards
-  arrayOfCards = arrayOfCards.splice(cardsPerLoad, arrayOfCards.length);
-
-  // checks arrayOfCards is empty or not, if so remove see more results button
-  if(arrayOfCards.length == 0) {
+  // removes button once there are no results left to be loaded
+  if(initialResults == rowDiv.children.length) {
     loadButton.innerHTML = "";
   }
-}//end of function
+  // user clicks back into the search page, display up to (searchPageIncrement * cardsPerLoad) amount of cards
+  try {
+    if(columns == 1) {
+      let amountToLoad = 0;
+      if(cardsPerLoad <= arrayOfCards.length) {
+        amountToLoad = cardsPerLoad;
+      } else {
+        amountToLoad = arrayOfCards.length;
+      }
+      for (let i = 0; i < cardsPerLoad; i++) {
+        rowDiv.appendChild(arrayOfCards[i]);
+      }
+
+    } else if(columns > 1) {
+      // add the cards to the container on the page
+      let columnString = columns.toString();
+      let rowDiv = document.getElementById("rowDiv");
+      //rowDiv.setAttribute("class", "row row-cols-" + columnString);
+      rowDiv.setAttribute("class", "row row-cols-auto");
+      for (let j = 0; j < cardsPerLoad; j++) {
+        rowDiv.appendChild(arrayOfCards[j]);
+      }
+      //search_div.appendChild(rowDiv);
+    }
+    // set arrayOfCards equal to a new arrayOfCards without the added cards
+    arrayOfCards = arrayOfCards.splice(cardsPerLoad, arrayOfCards.length);
+  } catch(e) {
+    console.log(e);
+  }
+}
 
 // Search Page
 // REQUIRES:
@@ -180,6 +184,8 @@ const rowDiv = document.getElementById("rowDiv");
 // div where see more results button will show up
 const loadButton = document.querySelector("#button");
 
+let initialResults = 0;
+
 function searchPage(returnedEditionsList) {
     rowDiv.innerHTML = "";
     loadButton.innerHTML = "";
@@ -203,7 +209,7 @@ function searchPage(returnedEditionsList) {
             }
         }
     }
-
+    initialResults = 0;
     generateResults();
 
     if(returnedEditionsList.length != 0) {
