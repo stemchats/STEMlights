@@ -51,6 +51,7 @@ function createCard(cardsArray, choice) {
   a_tag.setAttribute("href", "/archive/"+cardsArray[0]+".html");
   const card_div = document.createElement("div");
   card_div.setAttribute("class", "card h-100");
+  card_div.setAttribute("class", "shadow-hover");
   const card_body = document.createElement("div");
   card_body.setAttribute("class", "card-body");
   const img_element = document.createElement("img")
