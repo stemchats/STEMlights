@@ -50,11 +50,11 @@ function createCard(cardsArray, choice) {
   const a_tag = document.createElement("a");
   a_tag.setAttribute("href", "/archive/"+cardsArray[0]+".html");
   const card_div = document.createElement("div");
-  card_div.setAttribute("class", "card h-100");
-  card_div.setAttribute("class", "shadow-hover");
+  card_div.setAttribute("class", "card h-100 shadow-hover");
   const card_body = document.createElement("div");
   card_body.setAttribute("class", "card-body");
-  const img_element = document.createElement("img")
+  // const img_element = document.createElement("img")
+  const img_element = new Image()
   img_element.setAttribute("src", cardsArray[1]);
   img_element.setAttribute("alt", "Newsletter Image");
   img_element.setAttribute("style", "width: 100%");
@@ -67,10 +67,10 @@ function createCard(cardsArray, choice) {
   p_tag.textContent = cardsArray[2];
 
   // construct the HTML of the card
-  card_body.appendChild(h2);
   if(choice){
-    card_body.appendChild(img_element);
+    card_body.append(img_element);
   }
+  card_body.appendChild(h2);
   card_body.appendChild(p_tag);
   card_div.appendChild(card_body);
   a_tag.appendChild(card_div);
