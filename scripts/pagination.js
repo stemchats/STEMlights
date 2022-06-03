@@ -187,7 +187,30 @@ const loadButton = document.querySelector("#button");
 
 let initialResults = 0;
 
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+
+    // Start comparing current element with every element before it
+    for (let j = i - 1; j > -1; j--) {
+
+      // Swap elements as required
+      // imageAndDesc[i][0].substring(7)
+      if (parseInt(arr[j + 1][0].substring(7)) < int(arr[j][0].substring(7))) {
+        [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
+        
+      }
+    }
+  }
+  return arr;
+}
+
+var imageAndDesc2 = imageAndDesc
+imageAndDesc2 = insertionSort(imageAndDesc2)
+
+// imageAndDesc = insertionSort(imageAndDesc);
+
 function searchPage(returnedEditionsList) {
+  console.log(imageAndDesc2)
     rowDiv.innerHTML = "";
     loadButton.innerHTML = "";
     arrayOfCards = [];
