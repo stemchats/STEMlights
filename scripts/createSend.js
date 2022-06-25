@@ -20,7 +20,9 @@ const assignBanners = async(edition) => {
 
 // gets raw HTML string from firebase, add to page and call getText function to load onto search database
 const createSend = async(edition) => {
-  const editionRef = firebase.firestore().collection("createSend").doc("edition"+edition);
+  const editionRef = firebase.firestore().collection("createSend").orderBy("num", "desc").doc("edition"+edition);
+  console.log("hello there test")
+  console.log(editionRef)
   const doc = await editionRef.get();
   if (!doc.exists) {
     console.log('No such document!');
