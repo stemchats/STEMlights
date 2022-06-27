@@ -204,12 +204,13 @@ function insertionSort(arr) {
   return arr;
 }
 
+var imageAndDesc2 = imageAndDesc
+imageAndDesc2 = insertionSort(imageAndDesc2)
 
-
-//imageAndDesc = insertionSort(imageAndDesc);
-
+// imageAndDesc = insertionSort(imageAndDesc);
 
 function searchPage(returnedEditionsList) {
+  console.log(imageAndDesc2)
     rowDiv.innerHTML = "";
     loadButton.innerHTML = "";
     arrayOfCards = [];
@@ -253,7 +254,7 @@ function searchPage(returnedEditionsList) {
 //  - Adds a “load more” button at the bottom, where upon being pressed add another 3 rows to the page
 
 function newsletterArchive() {
-  //console.log(parseInt(imageAndDesc[0][0].substring(7)));
+  console.log(parseInt(imageAndDesc[0][0].substring(7)));
   rowDiv.innerHTML = "";
   loadButton.innerHTML = "";
   arrayOfCards = [];

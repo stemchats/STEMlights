@@ -23,7 +23,7 @@ const imageAndDesc = []; // will contain array of all edition image src and desc
 
 const loadData = async() => {
     //get edition image src and description text
-    let editionRef = db.collection('editions').orderBy("num", "asc");
+    let editionRef = db.collection('editions');
     editionRef.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         regex = /\d*/g;
