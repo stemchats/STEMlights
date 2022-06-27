@@ -52,7 +52,7 @@ let str = '';
 const getText = async(edition) => {
   let allText = editionSection.querySelectorAll("p");
   [...allText].map(p => {
-    // all text filtered through regex to remove excess spaces
+    // all text through regex to remove excess spaces
     stringHTML = p.innerHTML;
     string = p.textContent;
     string = string.replace(regex, " ");
