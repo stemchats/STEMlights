@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WZQ5PR3');</script>
+  <!-- End Google Tag Manager -->
+
   <!-- Bootstrap Meta Tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,16 +16,16 @@
     content="A weekly student-run newsletter that aims to provide equitable stem education while highlighting different STEM opportunities and news, while shining light on intersections where STEM can be applied, developed, and learned.">
   <meta name="keywords" content="stemlights, stemlight, newsletter, edition, stem, stemchast, stemchats, nonprofit, students, programs">
 
-  <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="STEMlights">
-  <meta property="og:description" content="A weekly student-run newsletter that aims to provide equitable stem education while shining light on intersections where STEM can be applied, developed, and learned.">
-  <meta property="og:image" content="stemlights_alternate.png">
-  <meta property="og:url" content="https://stemlights.stemchats.org/edition/">
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="STEMlights Edition: 73">
+    <meta property="og:description" content="This week, we will be spotlighting Katerina Manoff, and as always, providing STEM opportunities for students.">
+    <meta property="og:image" content="stemlights_alternate.png">
+    <meta property="og:url" content="https://stemlights.stemchats.org/edition/73.html">
 
-  <meta name="twitter:title" content="STEMlights">
-  <meta name="twitter:description" content="A weekly student-run newsletter that aims to provide equitable stem education while shining light on intersections where STEM can be applied, developed, and learned.">
-  <meta name="twitter:image" content=" stemlights_alternate.png">
-  <meta name="twitter:card" content="STEMlights">
+    <meta name="twitter:title" content="STEMlights Edition: 73">
+    <meta name="twitter:description" content="This week, we will be spotlighting Katerina Manoff, and as always, providing STEM opportunities for students.">
+    <meta name="twitter:image" content=" stemlights_alternate.png">
+    <meta name="twitter:card" content="STEMlights">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
@@ -48,19 +55,19 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- Website CSS -->
-  <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+  <link rel="stylesheet" id="style" type="text/css" href="/styles/styles.css">
   <link rel="stylesheet" type="text/css" href="/styles/media.css">
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i' rel='stylesheet'>
-  <title>STEMlights Search</title>
+  <title>STEMlights: Edition 73</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-2"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907340-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-172907340-2');
-  </script>
+  </script> -->
   <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -74,45 +81,37 @@
   </script>
 </head>
 
-<body class="search">
-    <!-- HEADER -->
-    <div id="header"></div>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZQ5PR3"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-		<div class="banner"></div>
-    <div class="main">
+  <!-- HEADER -->
+  <div id="header"></div>
 
-        <!-- search bar -->
-        <div class="search-bar active">
-          <form onsubmit="return false">
-              <input type="search" class="search-input" placeholder="Search for editions here..." value="" name="search" autocomplete="off">
-              <input type="submit" class="search-submit" value="">
-              <span class="search-icon"><i class="fas fa-search"></i></span>
-          </form>
-        </div>
-    </div>
+  <!-- put 'sections' array before directory -->
+  <ol id="directory">
+    <h3>DIRECTORY</h3>
+  </ol>
+  <script>
+    $( document ).ready(function() {
+  //custom button for homepage
+  $( ".share-btn" ).click(function(e) {
+       $('.networks-5').not($(this).next( ".networks-5" )).each(function(){
+          $(this).removeClass("active");
+      });
+      $(this).next( ".networks-5" ).toggleClass( "active" );
+ });
+});
+</script>
+  <div id="edition">
+            <!-- everything from the database goes in here (its where the edition goes) -->
+  </div>
 
-    <div class="container results">
-      <h3>Find An Edition</h3>
-      <div id="num_results"></div>
-    </div>
+  <!-- footer -->
+  <div id="footer"></div>
 
-    <!-- newsletters -->
-    <div id="search-results" class="container search-page">
-      <div id="rowDiv">
-
-      </div>
-
-    </div>
-
-    <!-- see more results button -->
-    <div id="button"></div>
-
-    <div id="space_div" style="height: 30vh;">
-      <!-- whitespace for the loading process -->
-    </div>
-
-    <!-- footer -->
-    <div id="footer"></div>
 
     <!-- The Core Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
@@ -138,22 +137,14 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics()
     </script>
-
-    <!-- Bootstrap Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
-      integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
-      crossorigin="anonymous"></script>
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="/scripts/search.js"></script>
-    <script type="text/javascript" src="/scripts/pagination.js"></script>
     <script type="text/javascript" src="/scripts/scripts.js"></script>
+    <script type="text/javascript" src="/scripts/createSend.js"></script>
     <script>
-      const myTimeout = setTimeout(autoSearch, 1500);
+      const sections = ["stem news", "stem spotlight", "opportunities", "media of the week", "social media"];
+      assignBanners(73);
     </script>
-  </body>
-
+    <script>
+      createShareButton(73);
+    </script>
+</body>
 </html>

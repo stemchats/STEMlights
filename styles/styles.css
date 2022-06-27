@@ -75,9 +75,8 @@ html {
 }
 
 .home #home-nav,
-.search #search-nav,
 .about-us #about-nav,
-.news-archive #news-archive-nav {
+.newsl #newsletter-nav {
   border-bottom: 2px solid #f6d970;
 }
 
@@ -527,13 +526,9 @@ header .collapsible-menu ul {
   margin-bottom: 0;
   position: absolute;
   top: 50%;
-  left: 75%;
+  left: 80%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-header .collapsible-menu ul .nav-item {
-  text-align: right;
 }
 
 header .collapsible-menu ul .nav-link {
