@@ -413,27 +413,27 @@ function createShareButton(editionNum) {
 
   var facebook = document.createElement('a');
   facebook.className = "fbtn share facebook";
-  facebook.href = "https://www.facebook.com/sharer/sharer.php?u=https://stemlights.stemchats.org/edition/" + editionNum.toString() + ".html";
+  facebook.href = "https://www.facebook.com/sharer/sharer.php?u=https://stemlights.netlify.app/edition/" + editionNum.toString() + ".html";
   facebook.innerHTML = "<i class=\"fa fa-facebook\"></i>";
   socials.appendChild(facebook);
 
   var twitter = document.createElement('a');
   twitter.className = "fbtn share twitter";
-  twitter.href = "https://twitter.com/intent/tweet?text=title&amp;url=https://stemlights.stemchats.org/edition/" + editionNum.toString() + "html&amp;via=creativedevs";
+  twitter.href = "https://twitter.com/intent/tweet?text=title&amp;url=https://stemlights.netlify.app/edition/" + editionNum.toString() + "html&amp;via=creativedevs";
   twitter.innerHTML = "<i class=\"fa fa-twitter\"></i>";
   socials.appendChild(twitter);
 
   var pinterest = document.createElement('a');
   pinterest.className = "fbtn share pinterest";
-  //pinterest.href = "http://pinterest.com/pin/create/button/?url=https://stemlights.stemchats.org/edition/49.html&amp;description=data&amp;media=image";
+  //pinterest.href = "http://pinterest.com/pin/create/button/?url=https://stemlights.netlify.app/edition/49.html&amp;description=data&amp;media=image";
   pinterest.href = "http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fstemlights.stemchats.org/edition/" + editionNum.toString() + ".html"
   pinterest.innerHTML = "<i class=\"fa fa-pinterest\"></i>";
   socials.appendChild(pinterest);
 
   var linkedin = document.createElement('a');
   linkedin.className = "fbtn share linkedin";
-  linkedin.href = "https://www.linkedin.com/sharing/share-offsite/?url=https://stemlights.stemchats.org/edition/" + editionNum.toString() + ".html"
-  //linkedin.href = "http://www.linkedin.com/shareArticle?mini=true&amp;url=https://stemlights.stemchats.org/edition/49.html&amp;title=title&amp;source=url/";
+  linkedin.href = "https://www.linkedin.com/sharing/share-offsite/?url=https://stemlights.netlify.app/edition/" + editionNum.toString() + ".html"
+  //linkedin.href = "http://www.linkedin.com/shareArticle?mini=true&amp;url=https://stemlights.netlify.app/edition/49.html&amp;title=title&amp;source=url/";
   linkedin.innerHTML = "<i class=\"fa fa-linkedin\"></i>";
   socials.appendChild(linkedin);
 }
